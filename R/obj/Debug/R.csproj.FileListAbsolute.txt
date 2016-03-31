@@ -1,6 +1,0 @@
-C:\temp\demo\R\R\bin\Debug\R.exe.config
-C:\temp\demo\R\R\bin\Debug\R.exe
-C:\temp\demo\R\R\bin\Debug\R.pdb
-C:\temp\demo\R\R\obj\Debug\R.csprojResolveAssemblyReference.cache
-C:\temp\demo\R\R\obj\Debug\R.exe
-C:\temp\demo\R\R\obj\Debug\R.pdb
