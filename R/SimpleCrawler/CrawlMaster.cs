@@ -207,7 +207,7 @@ namespace R.SimpleCrawler
                     }
 
                     // 创建并配置Web请求
-                    request = WebRequest.Create(urlInfo.UrlString) as HttpWebRequest;
+                    request = HttpWebRequest.Create(urlInfo.UrlString) as HttpWebRequest;
                     this.ConfigRequest(request);
 
                     if (request != null)
