@@ -157,6 +157,13 @@ namespace R
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(args.Html);
 
+
+            string fileName = string.Format( DateTime.Now.Millisecond + ".html", "c:\\temp");
+            doc.Save(fileName);
+
+
+            /*
+
             HtmlNode node = doc.DocumentNode.SelectSingleNode("//title");
             string title = node.InnerText;
 
@@ -168,10 +175,10 @@ namespace R
 
             HtmlNode node6 = doc.DocumentNode.SelectSingleNode("//*[@id='blogTitle']/h2");
             string motto = node6.InnerText;
+            */
+
 
             
-           
-
 
         }
         #endregion
