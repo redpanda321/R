@@ -88,7 +88,7 @@ namespace R
              Settings.EscapeLinks.Add(".jpg");
 
             // 设置自动限速，1~5 秒随机间隔的自动限速
-            Settings.AutoSpeedLimit = false;
+            Settings.AutoSpeedLimit = true;
 
             // 设置都是锁定域名,去除二级域名后，判断域名是否相等，相等则认为是同一个站点
             Settings.LockHost = false;
@@ -158,7 +158,7 @@ namespace R
             doc.LoadHtml(args.Html);
 
 
-            string fileName = string.Format( DateTime.Now.Millisecond + ".html", "c:\\temp");
+            string fileName = string.Format(@"{0}\" + DateTime.Now.ToString().Replace(":", "-").Replace("/", "-").Replace(" ", "-") + ".html", "c:\\temp");
             doc.Save(fileName);
 
 
