@@ -33,7 +33,11 @@ namespace R
             Filter = new BloomFilter<string>(200000);
             #region 设置种子地址
             // 设置种子地址 
-           
+
+            Settings.SeedsAddress.Add("https://realtor.ca/");
+            Settings.SeedsAddress.Add("https://www.realtor.ca/");
+
+
             Settings.SeedsAddress.Add("https://www.realtor.ca/Residential/Map.aspx#CultureId=1&ApplicationId=1&RecordsPerPage=9&MaximumResults=9&PropertySearchTypeId=1&TransactionTypeId=2&StoreyRange=0-0&BedRange=0-0&BathRange=0-0&LongitudeMin=-114.151184883728&LongitudeMax=-114.11814006866453&LatitudeMin=51.03494537104224&LatitudeMax=51.04247417551822&SortOrder=A&SortBy=1&viewState=g&Longitude=-114.13389&Latitude=51.039&CurrentPage=1");
             Settings.SeedsAddress.Add("https://www.realtor.ca/Residential/Single-Family/16524192/203-1900-25a-SW-Richmond-Calgary-Alberta-t3e1y5-Richmond");
 

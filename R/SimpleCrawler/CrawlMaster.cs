@@ -68,6 +68,19 @@ namespace R.SimpleCrawler
         public CrawlMaster(CrawlSettings settings)
         {
             this.cookieContainer = new CookieContainer();
+
+            this.cookieContainer.MaxCookieSize = 4000;
+            var cookieUri = new Uri("https://www.realotr.ca/");
+            Cookie cookie = new Cookie("TermsOfUseAgreement", "ACCEPTED", "/") ;
+            
+            cookie.Expires = new DateTime(2017, 4, 2, 12, 12, 12);
+
+            StringBuilder sb = new StringBuilder();
+            cookie.Domain = cookieUri.Host;
+
+            this.cookieContainer.Add(cookieUri, cookie);
+
+
             this.random = new Random();
 
             this.Settings = settings;
@@ -144,11 +157,21 @@ namespace R.SimpleCrawler
         /// </param>
         private void ConfigRequest(HttpWebRequest request)
         {
+
+           
+
+
             request.UserAgent = this.Settings.UserAgent;
             request.CookieContainer = this.cookieContainer;
             request.AllowAutoRedirect = true;
             request.MediaType = "text/html";
             request.Headers["Accept-Language"] = "zh-CN,zh;q=0.8";
+
+
+
+
+
+
 
             if (this.Settings.Timeout > 0)
             {
@@ -520,6 +543,10 @@ namespace R.SimpleCrawler
                 return;
             }
 
+          
+
+
+
             string cookies = response.Headers["Set-Cookie"];
             if (!string.IsNullOrEmpty(cookies))
             {
@@ -531,7 +558,16 @@ namespace R.SimpleCrawler
                             response.ResponseUri.Host, 
                             response.ResponseUri.Port));
 
-                this.cookieContainer.SetCookies(cookieUri, cookies);
+                //  this.cookieContainer.SetCookies(cookieUri, cookies);
+                int count = this.cookieContainer.Count;
+
+                
+                for (int i = 0; i < response.Cookies.Count; i++)
+                {
+                    Cookie cookie = new Cookie(response.Cookies[i].Name, response.Cookies[i].Value, response.Cookies[i].Path) { Domain = response.ResponseUri.Host };
+                    this.cookieContainer.Add(cookieUri, cookie);
+                }
+
             }
         }
 
