@@ -1,0 +1,128 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    "DNX,Version=v4.5.1": {
+      "Selenium.Support/2.53.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "2.53.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.Support.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.Support.dll": {}
+        }
+      },
+      "Selenium.WebDriver/2.53.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x86": {
+      "Selenium.Support/2.53.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "2.53.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.Support.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.Support.dll": {}
+        }
+      },
+      "Selenium.WebDriver/2.53.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.dll": {}
+        }
+      }
+    },
+    "DNX,Version=v4.5.1/win7-x64": {
+      "Selenium.Support/2.53.0": {
+        "type": "package",
+        "dependencies": {
+          "Selenium.WebDriver": "2.53.0"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.Support.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.Support.dll": {}
+        }
+      },
+      "Selenium.WebDriver/2.53.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing"
+        ],
+        "compile": {
+          "lib/net40/WebDriver.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebDriver.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Selenium.Support/2.53.0": {
+      "type": "package",
+      "sha512": "grzbNA1RME3/HzVNt635iS92HSCZCX+074yQ2Ei92NAxucu+NvHgBBbATRNz2zCOc7rUIst/Hot0UqT9oUbc3g==",
+      "files": [
+        "lib/net35/WebDriver.Support.dll",
+        "lib/net35/WebDriver.Support.xml",
+        "lib/net40/WebDriver.Support.dll",
+        "lib/net40/WebDriver.Support.xml",
+        "Selenium.Support.2.53.0.nupkg",
+        "Selenium.Support.2.53.0.nupkg.sha512",
+        "Selenium.Support.nuspec"
+      ]
+    },
+    "Selenium.WebDriver/2.53.0": {
+      "type": "package",
+      "sha512": "V/j3ZucpSByuL8FgQuSUnd+lUoVpBWK9nP864o9fyORh44N3am2Osv0WzEGQ2GnXhBtGxPbwuQMJSBLIg+1eFg==",
+      "files": [
+        "lib/net35/WebDriver.dll",
+        "lib/net35/WebDriver.xml",
+        "lib/net40/WebDriver.dll",
+        "lib/net40/WebDriver.xml",
+        "Selenium.WebDriver.2.53.0.nupkg",
+        "Selenium.WebDriver.2.53.0.nupkg.sha512",
+        "Selenium.WebDriver.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Selenium.Support >= 2.53.0",
+      "Selenium.WebDriver >= 2.53.0"
+    ],
+    "DNX,Version=v4.5.1": []
+  }
+}
