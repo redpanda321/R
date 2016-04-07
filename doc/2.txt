@@ -1,0 +1,53 @@
+CultureId	1
+ApplicationId	1
+RecordsPerPage	9
+MaximumResults	9
+PropertySearchTypeId	1
+TransactionTypeId	2
+StoreyRange	0-0
+BedRange	0-0
+BathRange	0-0
+LongitudeMin	-114.1383424669647
+LongitudeMax	-114.12044676841734
+LatitudeMin	51.03642626749449
+LatitudeMax	51.042808086091966
+SortOrder	A
+SortBy	1
+viewState	g
+Longitude	-114.13389
+Latitude	51.039
+CurrentPage	1
+
+
+
+GUID	07bcceea-2d54-4ea7-8a3f-009aec503b2e	/	www.realtor.ca	2017-04-04, 10:54:49 AM
+app_mode	1	/	www.realtor.ca	2017-04-06, 2:33:53 PM
+__utma	134851954.422572508.1459788888.1459797095.1459974727.5	/	.realtor.ca	2018-04-06, 2:33:55 PM
+__utmz	134851954.1459788888.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)	/	.realtor.ca	2016-10-06, 2:33:55 AM
+ICXCookieConversion	1	/	www.realtor.ca	2017-04-04, 10:54:50 AM
+carousel_index	3%2C-1%2C-1%2C-1	/	www.realtor.ca	2017-04-06, 2:33:36 PM
+_ga	GA1.2.422572508.1459788888	/	.realtor.ca	2018-04-06, 2:33:54 PM
+__utmc	134851954	/	.realtor.ca	End Of Session
+cookieTest	val	/	www.realtor.ca	End Of Session
+cookieTestCP	val	/	www.realtor.ca	End Of Session
+ASP.NET_SessionId	lnpd0oqrq4txvmhk4lltkbm2	/	www.realtor.ca	End Of Session
+TargetPage	Map.aspx%23CultureId%3D1%26ApplicationId%3D1%26Area%3D1716%252032%2520st%2520sw%2520calgary%2520%26Longitude%3D-114.13389%26Latitude%3D51.039%26Width%3D0.0035755999999906862%26Height%3D0.002248399999999151%26RecordsPerPage%3D9%26MaximumResults%3D9%26PropertySearchTypeId%3D1%26TransactionTypeId%3D2%26StoreyRange%3D0-0%26BedRange%3D0-0%26BathRange%3D0-0	/	www.realtor.ca	2017-04-04, 10:59:21 AM
+Language	1	/	www.realtor.ca	2017-04-06, 2:33:53 PM
+TermsOfUseAgreement	ACCEPTED	/	www.realtor.ca	2017-04-04, 10:59:29 AM
+_dc_gtm_UA-12908513-11	1	/	.realtor.ca	2016-04-06, 2:42:09 PM
+__utmb	134851954.8.9.1459974835439	/	.realtor.ca	2016-04-06, 3:03:55 PM
+__utmt	1	/	.realtor.ca	2016-04-06, 2:42:07 PM
+
+
+
+(Request-Line)	POST /api/Listing.svc/PropertySearch_Post HTTP/1.1
+Host	www.realtor.ca
+User-Agent	Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
+Accept	*/*
+Accept-Language	en-US,en;q=0.5
+Accept-Encoding	gzip, deflate, br
+Content-Type	application/x-www-form-urlencoded; charset=UTF-8
+Referer	https://www.realtor.ca
+Content-Length	357
+Cookie	GUID=07bcceea-2d54-4ea7-8a3f-009aec503b2e; app_mode=1; __utma=134851954.422572508.1459788888.1459797095.1459974727.5; __utmz=134851954.1459788888.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); ICXCookieConversion=1; carousel_index=3%2C-1%2C-1%2C-1; _ga=GA1.2.422572508.1459788888; TargetPage=Map.aspx%23CultureId%3D1%26ApplicationId%3D1%26Area%3D1716%252032%2520st%2520sw%2520calgary%2520%26Longitude%3D-114.13389%26Latitude%3D51.039%26Width%3D0.0035755999999906862%26Height%3D0.002248399999999151%26RecordsPerPage%3D9%26MaximumResults%3D9%26PropertySearchTypeId%3D1%26TransactionTypeId%3D2%26StoreyRange%3D0-0%26BedRange%3D0-0%26BathRange%3D0-0; Language=1; TermsOfUseAgreement=ACCEPTED; __utmb=134851954.8.9.1459974835439; __utmc=134851954; __utmt=1; cookieTest=val; cookieTestCP=val; ASP.NET_SessionId=lnpd0oqrq4txvmhk4lltkbm2; _dc_gtm_UA-12908513-11=1
+Connection	keep-alive
