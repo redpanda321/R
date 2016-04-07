@@ -12,6 +12,7 @@ using System.Threading;
 using System.Drawing;
 using System.Net;
 using RestSharp;
+using RestSharp.Deserializers;
 
 namespace R
 {
@@ -19,34 +20,27 @@ namespace R
     {
         public static void Main(string[] args)
         {
-
+            
             IWebDriver driver = new FirefoxDriver();
-
             driver.Manage().Window.Position = new Point(-2000, 0);
 
+            driver.Navigate().GoToUrl("https://www.realtor.ca");
             driver.Navigate().GoToUrl("https://www.realtor.ca/Residential/Map.aspx#CultureId=1&ApplicationId=1&RecordsPerPage=9&MaximumResults=9&PropertySearchTypeId=1&TransactionTypeId=2&StoreyRange=0-0&BedRange=0-0&BathRange=0-0&LongitudeMin=-114.13666876853941&LongitudeMax=-114.12212046684263&LatitudeMin=51.03741800312255&LatitudeMax=51.04181646583393&SortOrder=A&SortBy=1&viewState=g&Longitude=-114.13389&Latitude=51.039&CurrentPage=1");
-           
+
             List<OpenQA.Selenium.Cookie> cookies = driver.Manage().Cookies.AllCookies.ToList();
-
             CookieContainer cookieContainer = new CookieContainer();
-
             foreach (var c in cookies)
             {
-
                 System.Console.WriteLine("name:{0} value:{1}", c.Name, c.Value);
                 System.Net.Cookie cookie = new System.Net.Cookie(c.Name,c.Value,c.Path,c.Domain);
-
                 //if(c.Expiry.Value != null)
-               // cookie.Expires = c.Expiry.Value;
-
+                // cookie.Expires = c.Expiry.Value;
                 cookieContainer.Add(cookie);
-
             }
 
             var client = new RestClient("https://www.realtor.ca/api/Listing.svc/PropertySearch_Post");
             client.CookieContainer = cookieContainer;
-
-
+          
             var request = new RestRequest();
 
             request.Method = Method.POST;
@@ -56,7 +50,7 @@ namespace R
             request.AddHeader("Accept-Language", "en-US,en;q=0.5");
             request.AddHeader("Accept-Encoding", "gzip, deflate, br");
             request.AddHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-            request.AddHeader("Referer", "	https://www.realtor.ca");
+            request.AddHeader("Referer", "https://www.realtor.ca");
 
 
             request.AddParameter("CultureId", "1");
@@ -79,20 +73,20 @@ namespace R
             request.AddParameter("Latitude", "51.039");
             request.AddParameter("CurrentPage", "1");
 
-            request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json"; };
+            request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json charset=utf-8"; };
+
+            client.AddHandler("application/json", new DynamicJsonDeserializer());
 
 
+            var response = client.Execute(request).Content.ToList();
 
-
-            IRestResponse response = client.Execute(request);
-
-            var content = response.Content;
+            //var content = response.Content;
 
             // WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(50));
             // wait.Until((d) => { return d.Title.ToLower().StartsWith("Property Search"); });
 
             System.Console.WriteLine("title is :" + driver.Title);
-            System.Console.WriteLine("content is:" + content.ToString());
+            //System.Console.WriteLine("content is:" + content.ToString());
 
             driver.Quit();
 

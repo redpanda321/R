@@ -17,6 +17,15 @@
           "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
+      "Newtonsoft.Json/7.0.1-beta3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
       "RestSharp/105.2.3": {
         "type": "package",
         "compile": {
@@ -69,6 +78,15 @@
           "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
+      "Newtonsoft.Json/7.0.1-beta3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
       "RestSharp/105.2.3": {
         "type": "package",
         "compile": {
@@ -119,6 +137,15 @@
         "runtime": {
           "lib/net45/EntityFramework.dll": {},
           "lib/net45/EntityFramework.SqlServer.dll": {}
+        }
+      },
+      "Newtonsoft.Json/7.0.1-beta3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "RestSharp/105.2.3": {
@@ -188,6 +215,28 @@
         "tools/migrate.exe"
       ]
     },
+    "Newtonsoft.Json/7.0.1-beta3": {
+      "type": "package",
+      "sha512": "065sWAmniKTf+Xg28xrDMwKKU7v0sryThZsB6GwVW9Jm3am0INdbGxhZxwy/0nyzKrh+MkFfS4Bq9na3xH3CkQ==",
+      "files": [
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
+        "Newtonsoft.Json.7.0.1-beta3.nupkg",
+        "Newtonsoft.Json.7.0.1-beta3.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
     "RestSharp/105.2.3": {
       "type": "package",
       "sha512": "50LkciOclb7Lza9QXqR9reKeUoPlDQiFD4iBdOmd6twOBmTtqEFIOXQgdDdsTHQg4HcGh6EvrM6gN1X72vkJLA==",
@@ -254,6 +303,7 @@
   "projectFileDependencyGroups": {
     "": [
       "EntityFramework >= 6.1.3",
+      "Newtonsoft.Json >= 7.0.1-beta3",
       "RestSharp >= 105.2.3",
       "Selenium.Support >= 2.53.0",
       "Selenium.WebDriver >= 2.53.0"
