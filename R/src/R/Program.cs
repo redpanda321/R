@@ -14,36 +14,46 @@ using System.Net;
 using RestSharp;
 using RestSharp.Deserializers;
 
+using Newtonsoft.Json;
+using System.IO;
+using R.Models;
+
 namespace R
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            
-            IWebDriver driver = new FirefoxDriver();
-            driver.Manage().Window.Position = new Point(-2000, 0);
+            /* 
+             IWebDriver driver = new FirefoxDriver();
+             driver.Manage().Window.Position = new Point(-2000, 0);
 
-            driver.Navigate().GoToUrl("https://www.realtor.ca");
-            driver.Navigate().GoToUrl("https://www.realtor.ca/Residential/Map.aspx#CultureId=1&ApplicationId=1&RecordsPerPage=9&MaximumResults=9&PropertySearchTypeId=1&TransactionTypeId=2&StoreyRange=0-0&BedRange=0-0&BathRange=0-0&LongitudeMin=-114.13666876853941&LongitudeMax=-114.12212046684263&LatitudeMin=51.03741800312255&LatitudeMax=51.04181646583393&SortOrder=A&SortBy=1&viewState=g&Longitude=-114.13389&Latitude=51.039&CurrentPage=1");
+             driver.Navigate().GoToUrl("https://www.realtor.ca");
+             driver.Navigate().GoToUrl("https://www.realtor.ca/Residential/Map.aspx#CultureId=1&ApplicationId=1&RecordsPerPage=9&MaximumResults=9&PropertySearchTypeId=1&TransactionTypeId=2&StoreyRange=0-0&BedRange=0-0&BathRange=0-0&LongitudeMin=-114.13666876853941&LongitudeMax=-114.12212046684263&LatitudeMin=51.03741800312255&LatitudeMax=51.04181646583393&SortOrder=A&SortBy=1&viewState=g&Longitude=-114.13389&Latitude=51.039&CurrentPage=1");
+             System.Console.WriteLine("title is :" + driver.Title);
 
-            List<OpenQA.Selenium.Cookie> cookies = driver.Manage().Cookies.AllCookies.ToList();
-            CookieContainer cookieContainer = new CookieContainer();
-            foreach (var c in cookies)
-            {
-                System.Console.WriteLine("name:{0} value:{1}", c.Name, c.Value);
-                System.Net.Cookie cookie = new System.Net.Cookie(c.Name,c.Value,c.Path,c.Domain);
-                //if(c.Expiry.Value != null)
-                // cookie.Expires = c.Expiry.Value;
-                cookieContainer.Add(cookie);
-            }
+
+             List<OpenQA.Selenium.Cookie> cookies = driver.Manage().Cookies.AllCookies.ToList();
+             CookieContainer cookieContainer = new CookieContainer();
+             foreach (var c in cookies)
+             {
+                 System.Console.WriteLine("name:{0} value:{1}", c.Name, c.Value);
+                 System.Net.Cookie cookie = new System.Net.Cookie(c.Name,c.Value,c.Path,c.Domain);
+                 //if(c.Expiry.Value != null)
+                 // cookie.Expires = c.Expiry.Value;
+                 cookieContainer.Add(cookie);
+             }
+             */
+
+            var db = new RContext();
 
             var client = new RestClient("https://www.realtor.ca/api/Listing.svc/PropertySearch_Post");
-            client.CookieContainer = cookieContainer;
+            //client.CookieContainer = cookieContainer;
           
             var request = new RestRequest();
 
             request.Method = Method.POST;
+
             request.AddHeader("Host", "www.realtor.ca");
             request.AddHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0");
             request.AddHeader("Accept", "*/*"); //application/json
@@ -77,18 +87,31 @@ namespace R
 
             client.AddHandler("application/json", new DynamicJsonDeserializer());
 
+            dynamic response = client.Execute(request);
 
-            var response = client.Execute(request).Content.ToList();
+            Results results = JsonConvert.DeserializeObject<Results>(response.Content);
 
-            //var content = response.Content;
+            foreach(var  r in results.results )
+            {
+                System.Console.WriteLine("Id:"+ r.Id);
+                System.Console.WriteLine("MlsNumber:"+r.MlsNumber);
+      
 
+            }
+            
+
+            System.Console.WriteLine("content is:" + response.Content);
+
+            File.WriteAllText("c:\\1.json", response.Content);
+            
+
+           // dynamic data = JsonConvert.DeserializeObject<dynamic>(response.Content);
+            
             // WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(50));
             // wait.Until((d) => { return d.Title.ToLower().StartsWith("Property Search"); });
 
-            System.Console.WriteLine("title is :" + driver.Title);
-            //System.Console.WriteLine("content is:" + content.ToString());
 
-            driver.Quit();
+            //driver.Quit();
 
           
            

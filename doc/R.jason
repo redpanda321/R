@@ -1,1 +1,1238 @@
-{"ErrorCode":{"Description":"Success","Id":200,"LogId":""},"Paging":{"RecordsPerPage":9,"CurrentPage":1,"TotalRecords":56,"MaxRecords":1500,"TotalPages":7,"RecordsShowing":56,"Pins":56},"Results":[{"Id":"16524192","MlsNumber":"C4046591","PublicRemarks":"Great value for 2 bedroom, bright condo in Richmond Park\/ Knob Hill.  Underground parking and secured elevator access.  Large living room and separate dining area.  In suite laundry and storage.  All appliances included.  Killarney Manor is close to schools, shopping, playgrounds and public transportation.  This unit features a West Facing Balcony! 7th floor features a roof top patio with incredible mountain views!","Building":{"BathroomTotal":"1","Bedrooms":"2 + 0","SizeInterior":"827 sqft","StoriesTotal":"1","Type":"Apartment"},"Individual":[{"IndividualID":1469694,"Name":"Alyssa J. Campos","Organization":{"OrganizationID":54575,"Name":"RE\/MAX FIRST","Address":{"AddressText":"115, 8820 BLACKFOOT TRAIL S.E.|CALGARY, AB T2J3J1"},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"278-2900","AreaCode":"403","PhoneTypeId":"1"},{"PhoneType":"Fax","PhoneNumber":"255-8606","AreaCode":"403","PhoneTypeId":"4"}],"Emails":[{"ContactId":"376738701"}],"HasEmail":true,"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"990-8708","AreaCode":"403","PhoneTypeId":"1"}],"Websites":[{"Website":"http:\/\/www.alyssacampos.com","WebsiteTypeId":"1"}],"Emails":[{"ContactId":"389024190"}],"Photo":"https:\/\/cdn.realtor.ca\/individual\/lowres\/1126607.jpg","Position":"Associate","PermitFreetextEmail":true,"FirstName":"Alyssa","LastName":"Campos","CorporationDisplayTypeId":"0"}],"Property":{"Price":"$199,000","Type":"Single Family","Address":{"AddressText":"#203 1900 25a  SW|Richmond, Calgary, Alberta t3e1y5","Longitude":"-114.122279","Latitude":"51.037563"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635897497721430000\/reb9\/highres\/1\/c4046591_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635897497721430000\/reb9\/medres\/1\/c4046591_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635897497721430000\/reb9\/lowres\/1\/c4046591_1.jpg","LastUpdated":"30\/01\/2016 11:22:52 AM"}],"Parking":[{"Name":"Carport","Spaces":"1"}],"TypeId":"300","OwnershipType":"Condominium\/Strata","AmmenitiesNearBy":"Shopping, Public Transit, Schools, Playground"},"Business":{},"Land":{},"PostalCode":"t3e1y5","RelativeDetailsURL":"\/Residential\/Single-Family\/16524192\/203-1900-25a-SW-Richmond-Calgary-Alberta-t3e1y5-Richmond"},{"Id":"16646589","MlsNumber":"C4051790","PublicRemarks":"**ATTENTION FIRST TIME BUYERS AND INVESTORS**   This immaculate condo in a CONCRETE BUILDING is located just steps away from the Shaganappi LRT Station, Westbrook Mall, bus routes, the river, parks and a golf course, and only minutes from downtown! The open kitchen offers real espresso stained MAPLE CABINETS, GRANITE countertops throughout, STAINLESS STEAL appliances, and a DOUBLE SINK. The cozy living room with a electric fireplace and built-in shelves is a great place to spend evenings. How about dark hand-scraped engineered HARDWOOD flooring, TILE, SOAKER TUB, soft line corners, plenty of lighting and your own IN-SUITE LAUNDRY! Assigned PARKING stall with a car plug-in for winter and your own STORAGE LOCKER complete the picture. Some of the new features include windows, roof, electrical, and boilers\/water heater. This building offers a HEALTHY RESERVE FUND and the PROACTIVE CONDO BOARD has done many updates over the years.","Building":{"BathroomTotal":"1","Bedrooms":"1 + 0","SizeInterior":"500 sqft","StoriesTotal":"1","Type":"Apartment"},"Individual":[{"IndividualID":1449201,"Name":"Robin D. Spiers","Organization":{"OrganizationID":92051,"Name":"REAL ESTATE PROFESSIONALS INC.","Address":{"AddressText":"100, 5810 2 STREET S.W.|CALGARY, AB T2H0H2"},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"253-5305","AreaCode":"403","PhoneTypeId":"1"},{"PhoneType":"Fax","PhoneNumber":"253-5392","AreaCode":"403","PhoneTypeId":"4"}],"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"836-0849","AreaCode":"403","PhoneTypeId":"1"}],"Websites":[{"Website":"http:\/\/www.RobinSpiers.com","WebsiteTypeId":"1"},{"Website":"http:\/\/www.facebook.com\/https:\/\/www.facebook.com\/RobinSpiersAssociates","WebsiteTypeId":"2"},{"Website":"http:\/\/www.linkedin.com\/http:\/\/www.linkedin.com\/in\/robinspiers","WebsiteTypeId":"3"},{"Website":"http:\/\/www.twitter.com\/https:\/\/twitter.com\/RobinSpiers","WebsiteTypeId":"4"}],"Emails":[{"ContactId":"389128342"}],"Photo":"https:\/\/cdn.realtor.ca\/individual\/lowres\/1123517.jpg","Position":"Associate","PermitFreetextEmail":true,"FirstName":"Robin","LastName":"Spiers","CorporationDisplayTypeId":"0"}],"Property":{"Price":"$199,900","Type":"Single Family","Address":{"AddressText":"#8 2902 17 AV SW|Shaganappi, Calgary, Alberta T3E0A9","Longitude":"-114.128143","Latitude":"51.03809"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635927014243100000\/reb9\/highres\/0\/c4051790_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635927014243100000\/reb9\/medres\/0\/c4051790_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635927014243100000\/reb9\/lowres\/0\/c4051790_1.jpg","LastUpdated":"04\/03\/2016 3:17:04 PM"}],"Parking":[{"Name":"Stall"}],"TypeId":"300","OwnershipType":"Condominium\/Strata","AmmenitiesNearBy":"Shopping, Public Transit, Golf Course, Playground"},"Business":{},"Land":{},"PostalCode":"T3E0A9","RelativeDetailsURL":"\/Residential\/Single-Family\/16646589\/8-2902-17-AV-SW-Shaganappi-Calgary-Alberta-T3E0A9-Shaganappi"},{"Id":"16431605","MlsNumber":"C4042393","PublicRemarks":"Immaculate and spacious open concept 1 bedroom + den (884 sq ft) in the sought after area of Killarney. Over sized storage room inside unit. Den has in-suite stacked laundry. Large private patio off the living room. Exterior has been extensively renovated this past summer with new patio door, window, railing and roof. Huge living room that features an entertainment wall for projector TV, custom hinged stereo cabinet 5.1 in-wall Bose speaker surround sound. Spacious open kitchen with loads of cupboard space, new appliances and reverse osmosis water filtration system. Wall safe in master bedroom closet, wired for flat screen TV and will fit a King size bed. HEAT, WATER + LARGE SECURE HEATED PARKING INCLUDED IN CONDO FEES. 1 minute walk to the nearest park for kids + pets, 7 minute walk to the nearest C-train station, 10 minute walk to Westbrook Mall (Wal-Mart and Safeway), 4 minute commute to the downtown core. A fantastic location for all sorts of shops, restaurants, pubs and night life along 17th Avenue.","Building":{"BathroomTotal":"1","Bedrooms":"1 + 0","SizeInterior":"884 sqft","StoriesTotal":"1","Type":"Apartment"},"Individual":[{"IndividualID":1445808,"Name":"Carl Mah","Organization":{"OrganizationID":54621,"Name":"THE REAL ESTATE COMPANY LTD.","Logo":"https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/54621.jpg","Address":{"AddressText":"11, 5080 - 12A STREET S.E.|CALGARY, AB T2G5K9"},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"270-4060","AreaCode":"403","PhoneTypeId":"1"}],"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"607-8875","AreaCode":"403","PhoneTypeId":"1"}],"Emails":[{"ContactId":"389029217"}],"Position":"Associate","PermitFreetextEmail":true,"FirstName":"Carl","LastName":"Mah","CccMember":true,"CorporationDisplayTypeId":"0"}],"Property":{"Price":"$199,900","Type":"Single Family","Address":{"AddressText":"#102 1915 26 ST SW|Killarney\/Glengarry, Calgary, Alberta T3E2A2","Longitude":"-114.124024","Latitude":"51.037066"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635919093040500000\/reb9\/highres\/3\/c4042393_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635919093040500000\/reb9\/medres\/3\/c4042393_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635919093040500000\/reb9\/lowres\/3\/c4042393_1.jpg","LastUpdated":"24\/02\/2016 11:15:04 AM"}],"Parking":[{"Name":"Indoor","Spaces":"1"}],"TypeId":"300","OwnershipType":"Condominium\/Strata","AmmenitiesNearBy":"Golf Course"},"Business":{},"Land":{"LandscapeFeatures":"Landscaped"},"PostalCode":"T3E2A2","RelativeDetailsURL":"\/Residential\/Single-Family\/16431605\/102-1915-26-ST-SW-KillarneyGlengarry-Calgary-Alberta-T3E2A2-KillarneyGlengarry"},{"Id":"16473249","MlsNumber":"C4044250","PublicRemarks":"DON'T MISS OUT on this unique 2 bedroom unit in a PRIME LOCATION on 17th Ave! All amenities are steps away including restaurants, shopping, schools, public transportation (LRT+Bus), golf, and quick access to DOWNTOWN. This very well maintained BRIGHT and CLEAN unit features HARDWOOD FLOORS, NEWER light fixtures, IN-SUITE LAUNDRY, recent paint, an OPEN CONCEPT, and a spacious balcony to enjoy your summers and BBQs (QUIET side of complex). There are additional laundry facilities available on site and you get your own parking stall (F). The 2 bedrooms are a good size, perfect for any living scenario, and this unit has great INVESTMENT potential. Come see it today, PRICED TO SELL! **VISIT LISTING REALTOR'S WEBSITE FOR MORE INFO**","Building":{"BathroomTotal":"1","Bedrooms":"2 + 0","SizeInterior":"734 sqft","StoriesTotal":"1","Type":"Apartment"},"Individual":[{"IndividualID":1757352,"Name":"David A. Williams","Organization":{"OrganizationID":54517,"Name":"RE\/MAX HOUSE OF REAL ESTATE","Logo":"https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/54517.jpg","Address":{"AddressText":"#20, 2439 - 54 AVENUE S.W.|CALGARY, AB T3E1M4"},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"287-3880","AreaCode":"403","PhoneTypeId":"1"},{"PhoneType":"Fax","PhoneNumber":"287-3876","AreaCode":"403","PhoneTypeId":"4"}],"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"616-3553","AreaCode":"403","PhoneTypeId":"1"}],"Websites":[{"Website":"http:\/\/www.thinkcalgaryhomes.com","WebsiteTypeId":"1"}],"Emails":[{"ContactId":"389049845"}],"Photo":"https:\/\/cdn.realtor.ca\/individual\/lowres\/1183603.jpg","Position":"Associate","PermitFreetextEmail":true,"FirstName":"David","LastName":"Williams","CorporationDisplayTypeId":"0"}],"Property":{"Price":"$214,900","Type":"Single Family","Address":{"AddressText":"#304 2734 17 AV SW|Shaganappi, Calgary, Alberta T3E0A7","Longitude":"-114.126047","Latitude":"51.038022"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635882791968870000\/reb9\/highres\/0\/c4044250_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635882791968870000\/reb9\/medres\/0\/c4044250_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635882791968870000\/reb9\/lowres\/0\/c4044250_1.jpg","LastUpdated":"13\/01\/2016 10:53:16 AM"}],"Parking":[{"Name":"Stall"}],"TypeId":"300","OwnershipType":"Condominium\/Strata","AmmenitiesNearBy":"Shopping, Public Transit, Schools, Golf Course, Playground"},"Business":{},"Land":{},"PostalCode":"T3E0A7","RelativeDetailsURL":"\/Residential\/Single-Family\/16473249\/304-2734-17-AV-SW-Shaganappi-Calgary-Alberta-T3E0A7-Shaganappi"},{"Id":"16505120","MlsNumber":"C4045819","PublicRemarks":"Incredible renovation with high end finishing. Custom Cherry cabinets, stainless appliances, granite counters, engineered hardwood floors, slate tile, full height natural stone back splash. Knock down ceilings and brand new light fixtures. The bathrooms is just as nice with a ton of tile, vessel sink and double shower heads! The bedroom is massive(it used to be two) with double closets and nice windows. Open concept and very modern this corner unit has windows on two sides. Nice sized patio, easy access from the main floor. Exceptional location close to C-train and transit with great proximity to 17th ave. This building just underwent a massive renovation, with brand new exterior, windows and doors, roof, etc.","Building":{"BathroomTotal":"1","Bedrooms":"1 + 0","SizeInterior":"800 sqft","StoriesTotal":"1","Type":"Apartment"},"Individual":[{"IndividualID":1817951,"Name":"Drew Flemmer","Organization":{"OrganizationID":80024,"Name":"CENTURY 21 FOOTHILLS REAL ESTATE","Address":{"AddressText":"199, 31 SOUTHRIDGE DRIVE|OKOTOKS, AB T1S2N3"},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"995-7721","AreaCode":"403","PhoneTypeId":"1"},{"PhoneType":"Fax","PhoneNumber":"995-0721","AreaCode":"403","PhoneTypeId":"4"}],"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"999-5114","AreaCode":"403","PhoneTypeId":"1"}],"Emails":[{"ContactId":"389036575"}],"Position":"Associate","PermitFreetextEmail":true,"FirstName":"Drew","LastName":"Flemmer","CorporationDisplayTypeId":"0"}],"Property":{"Price":"$219,900","Type":"Single Family","Address":{"AddressText":"#103 1915 26 ST SW|Killarney\/Glengarry, Calgary, Alberta T3E2A2","Longitude":"-114.124158","Latitude":"51.037121"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635892312345070000\/reb9\/highres\/9\/c4045819_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635892312345070000\/reb9\/medres\/9\/c4045819_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635892312345070000\/reb9\/lowres\/9\/c4045819_1.jpg","LastUpdated":"24\/01\/2016 11:20:34 AM"}],"Parking":[{"Name":"Indoor","Spaces":"1"}],"TypeId":"300","OwnershipType":"Condominium\/Strata"},"Business":{},"Land":{},"PostalCode":"T3E2A2","RelativeDetailsURL":"\/Residential\/Single-Family\/16505120\/103-1915-26-ST-SW-KillarneyGlengarry-Calgary-Alberta-T3E2A2-KillarneyGlengarry"},{"Id":"16594827","MlsNumber":"X3415311","PublicRemarks":"More I N F O R M A T I O N Is Available Using A Full Web Browser On Realtor.Ca, Click 'View Listing On Realtor Website-Go To Listing' , On Mobile Device Browser Or App Click Multimedia Button **** EXTRAS **** Terrific Townhouse In Favourite Neighbourhood Of Shaganappi. Walking Lifestyle To Shops, Caf?s, Pubs, Fine Dining, Tennis Courts And Shaganappi Golf Course. Car-2-Go's Always Parked Nearby Or Take The C-Train Or Bus A Block Away","Building":{"BathroomTotal":"1","Bedrooms":"2","StoriesTotal":"2","Type":"Row \/ Townhouse"},"Individual":[{"IndividualID":1419859,"Name":"ASHER HOROWITZ","Organization":{"OrganizationID":89866,"Name":"REALTY TORONTO INC.","Logo":"https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/89866.jpg","Address":{},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"577-9888","AreaCode":"416","PhoneTypeId":"1"},{"PhoneType":"Fax","PhoneNumber":"317-5850","AreaCode":"647","PhoneTypeId":"4"}],"Emails":[{"ContactId":"377321139"}],"Websites":[{"Website":"http:\/\/www.realtytoronto.ca","WebsiteTypeId":"1"}],"Designation":"Brokerage","HasEmail":true,"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"577-9888","AreaCode":"416","Extension":"2","PhoneTypeId":"1"},{"PhoneType":"Toll Free","PhoneNumber":"577-9888","AreaCode":"855","PhoneTypeId":"5"}],"Websites":[{"Website":"http:\/\/www.realtytoronto.ca","WebsiteTypeId":"1"}],"Emails":[{"ContactId":"387699305"}],"Position":"Broker of record","PermitFreetextEmail":true,"FirstName":"ASHER","LastName":"HOROWITZ","CorporationDisplayTypeId":"0"}],"Property":{"Price":"$239,000","Type":"Single Family","Address":{"AddressText":"#2 - 2804 17 AVENUE SW|Calgary, Alberta T3E6K8","Longitude":"-114.12703","Latitude":"51.03802"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635909732915630000\/reb82\/highres\/1\/x3415311_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635909732915630000\/reb82\/medres\/1\/x3415311_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635909732915630000\/reb82\/lowres\/1\/x3415311_1.jpg","LastUpdated":"13\/02\/2016 3:14:51 PM"}],"TypeId":"300","OwnershipType":"Condominium\/Strata","AmmenitiesNearBy":"Park, Public Transit, Schools"},"Business":{},"Land":{},"AlternateURL":{"BrochureLink":"http:\/\/realtytoronto.ca\/listing\/2-2804-17-avenue-sw-calgary-alberta\/","DetailsLink":"http:\/\/realtytoronto.ca\/listing\/2-2804-17-avenue-sw-calgary-alberta\/"},"PostalCode":"T3E6K8","RelativeDetailsURL":"\/Residential\/Single-Family\/16594827\/2---2804-17-AVENUE-SW-Calgary-Alberta-T3E6K8"},{"Id":"16545199","MlsNumber":"C4047545","PublicRemarks":"PENTHOUSE CORNER UNIT with Downtown views!!! All the best of condo living is right here in this CONCRETE building for you to enjoy. Great location, minutes to Downtown, Marda Loop, The Killarney Pool, All Levels of Transit (new C-train station is walking distance) and the Beltline. The kitchen has been updated with maple cabinetry, stainless steel appliances, GRANITE counter tops, modern back splash and raised breakfast bar. 2 spacious bedrooms, master with walk trough closet, in suite laundry, pre-wired surround sound, large balcony with downtown city views, comfortable storage, & underground heated parking. Other updates include new flooring including new tile in Kitchen & Bathroom.","Building":{"BathroomTotal":"1","Bedrooms":"2 + 0","SizeInterior":"871 sqft","StoriesTotal":"1","Type":"Apartment"},"Individual":[{"IndividualID":1879314,"Name":"Daniel Weiner","Organization":{"OrganizationID":54519,"Name":"RE\/MAX REALTY PROFESSIONALS","Address":{"AddressText":"#10, 6020 - 1A STREET S.W.|CALGARY, AB T2H0G3"},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"259-4141","AreaCode":"403","PhoneTypeId":"1"},{"PhoneType":"Fax","PhoneNumber":"259-4305","AreaCode":"403","PhoneTypeId":"4"}],"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"259-4141","AreaCode":"403","PhoneTypeId":"1"}],"Websites":[{"Website":"http:\/\/www.dwsoldhomes.com","WebsiteTypeId":"1"}],"Emails":[{"ContactId":"389608909"}],"Photo":"https:\/\/cdn.realtor.ca\/individual\/lowres\/1205559.jpg","Position":"Associate","DesignationCodes":"CCS","PermitFreetextEmail":true,"FirstName":"Daniel","LastName":"Weiner","CorporationDisplayTypeId":"0"}],"Property":{"Price":"$259,900","Type":"Single Family","Address":{"AddressText":"#702 2909 17 AV SW|Killarney\/Glengarry, Calgary, Alberta T2E0B1","Longitude":"-114.129219","Latitude":"51.037437"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635903725149400000\/reb9\/highres\/5\/c4047545_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635903725149400000\/reb9\/medres\/5\/c4047545_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635903725149400000\/reb9\/lowres\/5\/c4047545_1.jpg","LastUpdated":"06\/02\/2016 4:21:54 PM"}],"Parking":[{"Name":"Indoor","Spaces":"1"},{"Name":"Parking Space(s)"}],"TypeId":"300","OwnershipType":"Condominium\/Strata","AmmenitiesNearBy":"Shopping, Public Transit, Schools, Golf Course"},"Business":{},"Land":{},"PostalCode":"T2E0B1","RelativeDetailsURL":"\/Residential\/Single-Family\/16545199\/702-2909-17-AV-SW-KillarneyGlengarry-Calgary-Alberta-T2E0B1-KillarneyGlengarry"},{"Id":"16725902","MlsNumber":"C4054872","PublicRemarks":"Very unique top floor corner penthouse unit. Spacious two storey floor plan with entry from 6th or 7t floor. Two bedroom, 1.5 baths. Plenty of insuite storage. Vaulted ceilings, skylight. All kitchen appliances(stove, refridgerator, microwave oven, built in dishwasher) plus washer & dryer included. Updated ceramic floor tile and laminate. Large west facing balcony with gorgeous mountain & city views.  Close proximity to the west LRT. Terrific location for amenities such as downtown, restaurants, public pool. The building is handicap accessible. Heated & secure underground parking. Rooftop patio accessible from 7th floor. Near elevator. Social room available for rent. Make this your next home. Thanks for showing.","Building":{"BathroomTotal":"2","Bedrooms":"2 + 0","SizeInterior":"1022 sqft","StoriesTotal":"2","Type":"Apartment"},"Individual":[{"IndividualID":1447312,"Name":"Vivian Bulych","Organization":{"OrganizationID":54578,"Name":"SATHER REAL ESTATE PRO BROKERS LTD.","Logo":"https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/54578.jpg","Address":{"AddressText":"#11 - 4412 MANILLA RD SE|CALGARY, AB T2G4B7"},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"265-8887","AreaCode":"403","PhoneTypeId":"1"},{"PhoneType":"Fax","PhoneNumber":"266-6610","AreaCode":"403","PhoneTypeId":"4"}],"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"863-3334","AreaCode":"403","PhoneTypeId":"1"}],"Emails":[{"ContactId":"389025043"}],"Photo":"https:\/\/cdn.realtor.ca\/individual\/lowres\/1094452.jpg","Position":"Associate","PermitFreetextEmail":true,"FirstName":"Vivian","LastName":"Bulych","CorporationDisplayTypeId":"0"}],"Property":{"Price":"$269,900","Type":"Single Family","Address":{"AddressText":"#608 1900 25A ST SW|Killarney\/Glengarry, Calgary, Alberta T3E1Y5","Longitude":"-114.121861","Latitude":"51.037545"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635946813808770000\/reb9\/highres\/2\/c4054872_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635946813808770000\/reb9\/medres\/2\/c4054872_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635946813808770000\/reb9\/lowres\/2\/c4054872_1.jpg","LastUpdated":"27\/03\/2016 1:16:20 PM"}],"Parking":[{"Name":"Underground"}],"TypeId":"300","OwnershipType":"Condominium\/Strata","AmmenitiesNearBy":"Shopping"},"Business":{},"Land":{"LandscapeFeatures":"Landscaped"},"PostalCode":"T3E1Y5","RelativeDetailsURL":"\/Residential\/Single-Family\/16725902\/608-1900-25A-ST-SW-KillarneyGlengarry-Calgary-Alberta-T3E1Y5-KillarneyGlengarry"},{"Id":"16627490","MlsNumber":"C4050648","PublicRemarks":"Possibly the BEST location in this centrally located complex. This very modern top floor corner unit invites maximum natural light with sunny southwest exposure and is furthest away from the noise of 17th Ave. traffic. Floor plan itself is open and will impress. The kitchen boasts a tasteful combination of dark cabinets, stainless steel appliances, and granite counter tops. A center island opens to the living and dining rooms making it perfect for entertaining. Two generous sized bedrooms are divided by a stunning four piece main bathroom. There is also a large in suite storage room, which also houses the washer\/dryer combination. Enjoy sunny days on the private west balcony. A warm and inviting condo that MUST be seen. Secured underground parking is icing on the cake. Mere steps to 17 Ave. and a short walk to the west LRT. Do yourself a favor and view this condo. It may well be your next home.","Building":{"BathroomTotal":"1","Bedrooms":"2 + 0","SizeInterior":"847 sqft","StoriesTotal":"1","Type":"Apartment"},"Individual":[{"IndividualID":1448960,"Name":"Christopher Marshall","Organization":{"OrganizationID":54517,"Name":"RE\/MAX HOUSE OF REAL ESTATE","Logo":"https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/54517.jpg","Address":{"AddressText":"#20, 2439 - 54 AVENUE S.W.|CALGARY, AB T3E1M4"},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"287-3880","AreaCode":"403","PhoneTypeId":"1"},{"PhoneType":"Fax","PhoneNumber":"287-3876","AreaCode":"403","PhoneTypeId":"4"}],"PermitFreetextEmail":true,"PermitShowListingLink":true},"Phones":[{"PhoneType":"Telephone","PhoneNumber":"287-3880","AreaCode":"403","PhoneTypeId":"1"}],"Websites":[{"Website":"http:\/\/www.calgaryrealestatesite.com","WebsiteTypeId":"1"},{"Website":"http:\/\/www.facebook.com\/ChrisMarshall365","WebsiteTypeId":"2"},{"Website":"http:\/\/www.linkedin.com\/CMarshallRealty","WebsiteTypeId":"3"},{"Website":"http:\/\/www.twitter.com\/CMarshallRealty","WebsiteTypeId":"4"}],"Emails":[{"ContactId":"389050221"}],"Photo":"https:\/\/cdn.realtor.ca\/individual\/lowres\/1119551.jpg","Position":"Associate Broker","DesignationCodes":"CCS","PermitFreetextEmail":true,"FirstName":"Christopher","LastName":"Marshall","CorporationDisplayTypeId":"0"}],"Property":{"Price":"$279,000","Type":"Single Family","Address":{"AddressText":"#309 1917 24A ST SW|Richmond, Calgary, Alberta T3E1V4","Longitude":"-114.119438","Latitude":"51.037218"},"Photo":[{"SequenceId":"1","HighResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635923114449330000\/reb9\/highres\/8\/c4050648_1.jpg","MedResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635923114449330000\/reb9\/medres\/8\/c4050648_1.jpg","LowResPath":"https:\/\/cdn.realtor.ca\/listing\/TS635923114449330000\/reb9\/lowres\/8\/c4050648_1.jpg","LastUpdated":"29\/02\/2016 2:57:24 AM"}],"Parking":[{"Name":"Indoor","Spaces":"1"},{"Name":"Underground"}],"TypeId":"300","OwnershipType":"Condominium\/Strata","AmmenitiesNearBy":"Shopping, Public Transit, Playground"},"Business":{},"Land":{"LandscapeFeatures":"Landscaped"},"PostalCode":"T3E1V4","RelativeDetailsURL":"\/Residential\/Single-Family\/16627490\/309-1917-24A-ST-SW-Richmond-Calgary-Alberta-T3E1V4-Richmond"}],"Pins":[{"key":"","propertyId":"16524192","count":1,"longitude":"-114.1222","latitude":"51.0375"},{"key":"","propertyId":"16646589","count":1,"longitude":"-114.1281","latitude":"51.038"},{"key":"","propertyId":"16431605","count":1,"longitude":"-114.124","latitude":"51.037"},{"key":"","propertyId":"16473249","count":1,"longitude":"-114.126","latitude":"51.038"},{"key":"","propertyId":"16505120","count":1,"longitude":"-114.1241","latitude":"51.0371"},{"key":"","propertyId":"16594827","count":1,"longitude":"-114.127","latitude":"51.038"},{"key":"","propertyId":"16545199","count":1,"longitude":"-114.1292","latitude":"51.0374"},{"key":"","propertyId":"16725902","count":1,"longitude":"-114.1218","latitude":"51.0375"},{"key":"","propertyId":"16627490","count":1,"longitude":"-114.1194","latitude":"51.0372"},{"key":"","propertyId":"16751948","count":1,"longitude":"-114.1313","latitude":"51.0364"},{"key":"","propertyId":"16491474","count":1,"longitude":"-114.1197","latitude":"51.0372"},{"key":"","propertyId":"16476741","count":1,"longitude":"-114.1337","latitude":"51.0373"},{"key":"","propertyId":"16521179","count":1,"longitude":"-114.1223","latitude":"51.0365"},{"key":"","propertyId":"16709647","count":1,"longitude":"-114.1314","latitude":"51.0363"},{"key":"","propertyId":"16762174","count":1,"longitude":"-114.1209","latitude":"51.0368"},{"key":"","propertyId":"16690543","count":1,"longitude":"-114.1235","latitude":"51.0372"},{"key":"","propertyId":"16587463","count":1,"longitude":"-114.1356","latitude":"51.0424"},{"key":"","propertyId":"16311922","count":1,"longitude":"-114.1362","latitude":"51.0423"},{"key":"","propertyId":"16027511","count":1,"longitude":"-114.1243","latitude":"51.038"},{"key":"","propertyId":"16646606","count":1,"longitude":"-114.1429","latitude":"51.0392"},{"key":"","propertyId":"16731020","count":1,"longitude":"-114.1361","latitude":"51.0417"},{"key":"","propertyId":"16646605","count":1,"longitude":"-114.1181","latitude":"51.0377"},{"key":"","propertyId":"16495654","count":1,"longitude":"-114.1184","latitude":"51.0375"},{"key":"","propertyId":"16747817","count":1,"longitude":"-114.1183","latitude":"51.0374"},{"key":"","propertyId":"16751105","count":1,"longitude":"-114.1223","latitude":"51.0372"},{"key":"","propertyId":"16689075","count":1,"longitude":"-114.1393","latitude":"51.0372"},{"key":"","propertyId":"16666978","count":1,"longitude":"-114.1355","latitude":"51.0423"},{"key":"","propertyId":"16740777","count":1,"longitude":"-114.1359","latitude":"51.0423"},{"key":"","propertyId":"16469790","count":1,"longitude":"-114.1428","latitude":"51.0423"},{"key":"","propertyId":"16596222","count":1,"longitude":"-114.1216","latitude":"51.0363"},{"key":"","propertyId":"16469803","count":1,"longitude":"-114.118","latitude":"51.0367"},{"key":"","propertyId":"16744219","count":1,"longitude":"-114.1292","latitude":"51.0365"},{"key":"","propertyId":"16669116","count":1,"longitude":"-114.1181","latitude":"51.0373"},{"key":"","propertyId":"16725947","count":1,"longitude":"-114.1234","latitude":"51.0365"},{"key":"","propertyId":"16696252","count":1,"longitude":"-114.1235","latitude":"51.0365"},{"key":"","propertyId":"16701183","count":1,"longitude":"-114.1315","latitude":"51.0373"},{"key":"","propertyId":"16679823","count":1,"longitude":"-114.1329","latitude":"51.0365"},{"key":"","propertyId":"16679016","count":1,"longitude":"-114.1208","latitude":"51.0364"},{"key":"","propertyId":"16565110","count":1,"longitude":"-114.1279","latitude":"51.0381"},{"key":"","propertyId":"16669134","count":1,"longitude":"-114.1193","latitude":"51.0382"},{"key":"","propertyId":"16495631","count":1,"longitude":"-114.1219","latitude":"51.0384"},{"key":"","propertyId":"16684494","count":1,"longitude":"-114.1359","latitude":"51.0371"},{"key":"","propertyId":"16745689","count":1,"longitude":"-114.1323","latitude":"51.0372"},{"key":"","propertyId":"16744899","count":1,"longitude":"-114.1323","latitude":"51.0372"},{"key":"","propertyId":"16589150","count":1,"longitude":"-114.1269","latitude":"51.0386"},{"key":"","propertyId":"16692450","count":1,"longitude":"-114.1252","latitude":"51.039"},{"key":"","propertyId":"16342230","count":1,"longitude":"-114.1328","latitude":"51.0405"},{"key":"","propertyId":"16658516","count":1,"longitude":"-114.1239","latitude":"51.0394"},{"key":"","propertyId":"16360518","count":1,"longitude":"-114.1338","latitude":"51.0388"},{"key":"","propertyId":"16589257","count":1,"longitude":"-114.1182","latitude":"51.0398"},{"key":"","propertyId":"16382215","count":1,"longitude":"-114.1218","latitude":"51.0389"},{"key":"","propertyId":"16737538","count":1,"longitude":"-114.1155","latitude":"51.0386"},{"key":"","propertyId":"16589972","count":1,"longitude":"-114.1168","latitude":"51.0395"},{"key":"","propertyId":"16705268","count":1,"longitude":"-114.1222","latitude":"51.0403"},{"key":"","propertyId":"16635834","count":1,"longitude":"-114.1278","latitude":"51.0386"},{"key":"","propertyId":"16652959","count":1,"longitude":"-114.1251","latitude":"51.0365"}]}
+{
+  "ErrorCode": {
+    "Description": "Success",
+    "Id": 200,
+    "LogId": ""
+  },
+  "Paging": {
+    "RecordsPerPage": 9,
+    "CurrentPage": 1,
+    "TotalRecords": 56,
+    "MaxRecords": 1500,
+    "TotalPages": 7,
+    "RecordsShowing": 56,
+    "Pins": 56
+  },
+  "Results": [
+    {
+      "Id": "16524192",
+      "MlsNumber": "C4046591",
+      "PublicRemarks": "Great value for 2 bedroom, bright condo in Richmond Park\/ Knob Hill.  Underground parking and secured elevator access.  Large living room and separate dining area.  In suite laundry and storage.  All appliances included.  Killarney Manor is close to schools, shopping, playgrounds and public transportation.  This unit features a West Facing Balcony! 7th floor features a roof top patio with incredible mountain views!",
+
+      "Building": {
+        "BathroomTotal": "1",
+        "Bedrooms": "2 + 0",
+        "SizeInterior": "827 sqft",
+        "StoriesTotal": "1",
+        "Type": "Apartment"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1469694,
+          "Name": "Alyssa J. Campos",
+          "Organization": {
+            "OrganizationID": 54575,
+            "Name": "RE\/MAX FIRST",
+            "Address": { "AddressText": "115, 8820 BLACKFOOT TRAIL S.E.|CALGARY, AB T2J3J1" },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "278-2900",
+                "AreaCode": "403",
+                "PhoneTypeId": "1"
+              },
+              {
+                "PhoneType": "Fax",
+                "PhoneNumber": "255-8606",
+                "AreaCode": "403",
+                "PhoneTypeId": "4"
+              }
+            ],
+            "Emails": [ { "ContactId": "376738701" } ],
+            "HasEmail": true,
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "990-8708",
+              "AreaCode": "403",
+              "PhoneTypeId": "1"
+            }
+          ],
+          "Websites": [
+            {
+              "Website": "http:\/\/www.alyssacampos.com",
+              "WebsiteTypeId": "1"
+            }
+          ],
+          "Emails": [ { "ContactId": "389024190" } ],
+          "Photo": "https:\/\/cdn.realtor.ca\/individual\/lowres\/1126607.jpg",
+          "Position": "Associate",
+          "PermitFreetextEmail": true,
+          "FirstName": "Alyssa",
+          "LastName": "Campos",
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$199,000",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#203 1900 25a  SW|Richmond, Calgary, Alberta t3e1y5",
+          "Longitude": "-114.122279",
+          "Latitude": "51.037563"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635897497721430000\/reb9\/highres\/1\/c4046591_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635897497721430000\/reb9\/medres\/1\/c4046591_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635897497721430000\/reb9\/lowres\/1\/c4046591_1.jpg",
+            "LastUpdated": "30\/01\/2016 11:22:52 AM"
+          }
+        ],
+        "Parking": [
+          {
+            "Name": "Carport",
+            "Spaces": "1"
+          }
+        ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata",
+        "AmmenitiesNearBy": "Shopping, Public Transit, Schools, Playground"
+      },
+      "Business": { },
+      "Land": { },
+      "PostalCode": "t3e1y5",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16524192\/203-1900-25a-SW-Richmond-Calgary-Alberta-t3e1y5-Richmond"
+    },
+    {
+      "Id": "16646589",
+      "MlsNumber": "C4051790",
+      "PublicRemarks": "**ATTENTION FIRST TIME BUYERS AND INVESTORS**   This immaculate condo in a CONCRETE BUILDING is located just steps away from the Shaganappi LRT Station, Westbrook Mall, bus routes, the river, parks and a golf course, and only minutes from downtown! The open kitchen offers real espresso stained MAPLE CABINETS, GRANITE countertops throughout, STAINLESS STEAL appliances, and a DOUBLE SINK. The cozy living room with a electric fireplace and built-in shelves is a great place to spend evenings. How about dark hand-scraped engineered HARDWOOD flooring, TILE, SOAKER TUB, soft line corners, plenty of lighting and your own IN-SUITE LAUNDRY! Assigned PARKING stall with a car plug-in for winter and your own STORAGE LOCKER complete the picture. Some of the new features include windows, roof, electrical, and boilers\/water heater. This building offers a HEALTHY RESERVE FUND and the PROACTIVE CONDO BOARD has done many updates over the years.",
+      "Building": {
+        "BathroomTotal": "1",
+        "Bedrooms": "1 + 0",
+        "SizeInterior": "500 sqft",
+        "StoriesTotal": "1",
+        "Type": "Apartment"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1449201,
+          "Name": "Robin D. Spiers",
+          "Organization": {
+            "OrganizationID": 92051,
+            "Name": "REAL ESTATE PROFESSIONALS INC.",
+            "Address": { "AddressText": "100, 5810 2 STREET S.W.|CALGARY, AB T2H0H2" },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "253-5305",
+                "AreaCode": "403",
+                "PhoneTypeId": "1"
+              },
+              {
+                "PhoneType": "Fax",
+                "PhoneNumber": "253-5392",
+                "AreaCode": "403",
+                "PhoneTypeId": "4"
+              }
+            ],
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "836-0849",
+              "AreaCode": "403",
+              "PhoneTypeId": "1"
+            }
+          ],
+          "Websites": [
+            {
+              "Website": "http:\/\/www.RobinSpiers.com",
+              "WebsiteTypeId": "1"
+            },
+            {
+              "Website": "http:\/\/www.facebook.com\/https:\/\/www.facebook.com\/RobinSpiersAssociates",
+              "WebsiteTypeId": "2"
+            },
+            {
+              "Website": "http:\/\/www.linkedin.com\/http:\/\/www.linkedin.com\/in\/robinspiers",
+              "WebsiteTypeId": "3"
+            },
+            {
+              "Website": "http:\/\/www.twitter.com\/https:\/\/twitter.com\/RobinSpiers",
+              "WebsiteTypeId": "4"
+            }
+          ],
+          "Emails": [ { "ContactId": "389128342" } ],
+          "Photo": "https:\/\/cdn.realtor.ca\/individual\/lowres\/1123517.jpg",
+          "Position": "Associate",
+          "PermitFreetextEmail": true,
+          "FirstName": "Robin",
+          "LastName": "Spiers",
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$199,900",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#8 2902 17 AV SW|Shaganappi, Calgary, Alberta T3E0A9",
+          "Longitude": "-114.128143",
+          "Latitude": "51.03809"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635927014243100000\/reb9\/highres\/0\/c4051790_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635927014243100000\/reb9\/medres\/0\/c4051790_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635927014243100000\/reb9\/lowres\/0\/c4051790_1.jpg",
+            "LastUpdated": "04\/03\/2016 3:17:04 PM"
+          }
+        ],
+        "Parking": [ { "Name": "Stall" } ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata",
+        "AmmenitiesNearBy": "Shopping, Public Transit, Golf Course, Playground"
+      },
+      "Business": { },
+      "Land": { },
+      "PostalCode": "T3E0A9",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16646589\/8-2902-17-AV-SW-Shaganappi-Calgary-Alberta-T3E0A9-Shaganappi"
+    },
+    {
+      "Id": "16431605",
+      "MlsNumber": "C4042393",
+      "PublicRemarks": "Immaculate and spacious open concept 1 bedroom + den (884 sq ft) in the sought after area of Killarney. Over sized storage room inside unit. Den has in-suite stacked laundry. Large private patio off the living room. Exterior has been extensively renovated this past summer with new patio door, window, railing and roof. Huge living room that features an entertainment wall for projector TV, custom hinged stereo cabinet 5.1 in-wall Bose speaker surround sound. Spacious open kitchen with loads of cupboard space, new appliances and reverse osmosis water filtration system. Wall safe in master bedroom closet, wired for flat screen TV and will fit a King size bed. HEAT, WATER + LARGE SECURE HEATED PARKING INCLUDED IN CONDO FEES. 1 minute walk to the nearest park for kids + pets, 7 minute walk to the nearest C-train station, 10 minute walk to Westbrook Mall (Wal-Mart and Safeway), 4 minute commute to the downtown core. A fantastic location for all sorts of shops, restaurants, pubs and night life along 17th Avenue.",
+      "Building": {
+        "BathroomTotal": "1",
+        "Bedrooms": "1 + 0",
+        "SizeInterior": "884 sqft",
+        "StoriesTotal": "1",
+        "Type": "Apartment"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1445808,
+          "Name": "Carl Mah",
+          "Organization": {
+            "OrganizationID": 54621,
+            "Name": "THE REAL ESTATE COMPANY LTD.",
+            "Logo": "https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/54621.jpg",
+            "Address": { "AddressText": "11, 5080 - 12A STREET S.E.|CALGARY, AB T2G5K9" },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "270-4060",
+                "AreaCode": "403",
+                "PhoneTypeId": "1"
+              }
+            ],
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "607-8875",
+              "AreaCode": "403",
+              "PhoneTypeId": "1"
+            }
+          ],
+          "Emails": [ { "ContactId": "389029217" } ],
+          "Position": "Associate",
+          "PermitFreetextEmail": true,
+          "FirstName": "Carl",
+          "LastName": "Mah",
+          "CccMember": true,
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$199,900",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#102 1915 26 ST SW|Killarney\/Glengarry, Calgary, Alberta T3E2A2",
+          "Longitude": "-114.124024",
+          "Latitude": "51.037066"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635919093040500000\/reb9\/highres\/3\/c4042393_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635919093040500000\/reb9\/medres\/3\/c4042393_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635919093040500000\/reb9\/lowres\/3\/c4042393_1.jpg",
+            "LastUpdated": "24\/02\/2016 11:15:04 AM"
+          }
+        ],
+        "Parking": [
+          {
+            "Name": "Indoor",
+            "Spaces": "1"
+          }
+        ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata",
+        "AmmenitiesNearBy": "Golf Course"
+      },
+      "Business": { },
+      "Land": { "LandscapeFeatures": "Landscaped" },
+      "PostalCode": "T3E2A2",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16431605\/102-1915-26-ST-SW-KillarneyGlengarry-Calgary-Alberta-T3E2A2-KillarneyGlengarry"
+    },
+    {
+      "Id": "16473249",
+      "MlsNumber": "C4044250",
+      "PublicRemarks": "DON'T MISS OUT on this unique 2 bedroom unit in a PRIME LOCATION on 17th Ave! All amenities are steps away including restaurants, shopping, schools, public transportation (LRT+Bus), golf, and quick access to DOWNTOWN. This very well maintained BRIGHT and CLEAN unit features HARDWOOD FLOORS, NEWER light fixtures, IN-SUITE LAUNDRY, recent paint, an OPEN CONCEPT, and a spacious balcony to enjoy your summers and BBQs (QUIET side of complex). There are additional laundry facilities available on site and you get your own parking stall (F). The 2 bedrooms are a good size, perfect for any living scenario, and this unit has great INVESTMENT potential. Come see it today, PRICED TO SELL! **VISIT LISTING REALTOR'S WEBSITE FOR MORE INFO**",
+      "Building": {
+        "BathroomTotal": "1",
+        "Bedrooms": "2 + 0",
+        "SizeInterior": "734 sqft",
+        "StoriesTotal": "1",
+        "Type": "Apartment"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1757352,
+          "Name": "David A. Williams",
+          "Organization": {
+            "OrganizationID": 54517,
+            "Name": "RE\/MAX HOUSE OF REAL ESTATE",
+            "Logo": "https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/54517.jpg",
+            "Address": { "AddressText": "#20, 2439 - 54 AVENUE S.W.|CALGARY, AB T3E1M4" },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "287-3880",
+                "AreaCode": "403",
+                "PhoneTypeId": "1"
+              },
+              {
+                "PhoneType": "Fax",
+                "PhoneNumber": "287-3876",
+                "AreaCode": "403",
+                "PhoneTypeId": "4"
+              }
+            ],
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "616-3553",
+              "AreaCode": "403",
+              "PhoneTypeId": "1"
+            }
+          ],
+          "Websites": [
+            {
+              "Website": "http:\/\/www.thinkcalgaryhomes.com",
+              "WebsiteTypeId": "1"
+            }
+          ],
+          "Emails": [ { "ContactId": "389049845" } ],
+          "Photo": "https:\/\/cdn.realtor.ca\/individual\/lowres\/1183603.jpg",
+          "Position": "Associate",
+          "PermitFreetextEmail": true,
+          "FirstName": "David",
+          "LastName": "Williams",
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$214,900",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#304 2734 17 AV SW|Shaganappi, Calgary, Alberta T3E0A7",
+          "Longitude": "-114.126047",
+          "Latitude": "51.038022"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635882791968870000\/reb9\/highres\/0\/c4044250_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635882791968870000\/reb9\/medres\/0\/c4044250_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635882791968870000\/reb9\/lowres\/0\/c4044250_1.jpg",
+            "LastUpdated": "13\/01\/2016 10:53:16 AM"
+          }
+        ],
+        "Parking": [ { "Name": "Stall" } ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata",
+        "AmmenitiesNearBy": "Shopping, Public Transit, Schools, Golf Course, Playground"
+      },
+      "Business": { },
+      "Land": { },
+      "PostalCode": "T3E0A7",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16473249\/304-2734-17-AV-SW-Shaganappi-Calgary-Alberta-T3E0A7-Shaganappi"
+    },
+    {
+      "Id": "16505120",
+      "MlsNumber": "C4045819",
+      "PublicRemarks": "Incredible renovation with high end finishing. Custom Cherry cabinets, stainless appliances, granite counters, engineered hardwood floors, slate tile, full height natural stone back splash. Knock down ceilings and brand new light fixtures. The bathrooms is just as nice with a ton of tile, vessel sink and double shower heads! The bedroom is massive(it used to be two) with double closets and nice windows. Open concept and very modern this corner unit has windows on two sides. Nice sized patio, easy access from the main floor. Exceptional location close to C-train and transit with great proximity to 17th ave. This building just underwent a massive renovation, with brand new exterior, windows and doors, roof, etc.",
+      "Building": {
+        "BathroomTotal": "1",
+        "Bedrooms": "1 + 0",
+        "SizeInterior": "800 sqft",
+        "StoriesTotal": "1",
+        "Type": "Apartment"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1817951,
+          "Name": "Drew Flemmer",
+          "Organization": {
+            "OrganizationID": 80024,
+            "Name": "CENTURY 21 FOOTHILLS REAL ESTATE",
+            "Address": { "AddressText": "199, 31 SOUTHRIDGE DRIVE|OKOTOKS, AB T1S2N3" },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "995-7721",
+                "AreaCode": "403",
+                "PhoneTypeId": "1"
+              },
+              {
+                "PhoneType": "Fax",
+                "PhoneNumber": "995-0721",
+                "AreaCode": "403",
+                "PhoneTypeId": "4"
+              }
+            ],
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "999-5114",
+              "AreaCode": "403",
+              "PhoneTypeId": "1"
+            }
+          ],
+          "Emails": [ { "ContactId": "389036575" } ],
+          "Position": "Associate",
+          "PermitFreetextEmail": true,
+          "FirstName": "Drew",
+          "LastName": "Flemmer",
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$219,900",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#103 1915 26 ST SW|Killarney\/Glengarry, Calgary, Alberta T3E2A2",
+          "Longitude": "-114.124158",
+          "Latitude": "51.037121"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635892312345070000\/reb9\/highres\/9\/c4045819_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635892312345070000\/reb9\/medres\/9\/c4045819_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635892312345070000\/reb9\/lowres\/9\/c4045819_1.jpg",
+            "LastUpdated": "24\/01\/2016 11:20:34 AM"
+          }
+        ],
+        "Parking": [
+          {
+            "Name": "Indoor",
+            "Spaces": "1"
+          }
+        ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata"
+      },
+      "Business": { },
+      "Land": { },
+      "PostalCode": "T3E2A2",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16505120\/103-1915-26-ST-SW-KillarneyGlengarry-Calgary-Alberta-T3E2A2-KillarneyGlengarry"
+    },
+    {
+      "Id": "16594827",
+      "MlsNumber": "X3415311",
+      "PublicRemarks": "More I N F O R M A T I O N Is Available Using A Full Web Browser On Realtor.Ca, Click 'View Listing On Realtor Website-Go To Listing' , On Mobile Device Browser Or App Click Multimedia Button **** EXTRAS **** Terrific Townhouse In Favourite Neighbourhood Of Shaganappi. Walking Lifestyle To Shops, Caf?s, Pubs, Fine Dining, Tennis Courts And Shaganappi Golf Course. Car-2-Go's Always Parked Nearby Or Take The C-Train Or Bus A Block Away",
+      "Building": {
+        "BathroomTotal": "1",
+        "Bedrooms": "2",
+        "StoriesTotal": "2",
+        "Type": "Row \/ Townhouse"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1419859,
+          "Name": "ASHER HOROWITZ",
+          "Organization": {
+            "OrganizationID": 89866,
+            "Name": "REALTY TORONTO INC.",
+            "Logo": "https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/89866.jpg",
+            "Address": { },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "577-9888",
+                "AreaCode": "416",
+                "PhoneTypeId": "1"
+              },
+              {
+                "PhoneType": "Fax",
+                "PhoneNumber": "317-5850",
+                "AreaCode": "647",
+                "PhoneTypeId": "4"
+              }
+            ],
+            "Emails": [ { "ContactId": "377321139" } ],
+            "Websites": [
+              {
+                "Website": "http:\/\/www.realtytoronto.ca",
+                "WebsiteTypeId": "1"
+              }
+            ],
+            "Designation": "Brokerage",
+            "HasEmail": true,
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "577-9888",
+              "AreaCode": "416",
+              "Extension": "2",
+              "PhoneTypeId": "1"
+            },
+            {
+              "PhoneType": "Toll Free",
+              "PhoneNumber": "577-9888",
+              "AreaCode": "855",
+              "PhoneTypeId": "5"
+            }
+          ],
+          "Websites": [
+            {
+              "Website": "http:\/\/www.realtytoronto.ca",
+              "WebsiteTypeId": "1"
+            }
+          ],
+          "Emails": [ { "ContactId": "387699305" } ],
+          "Position": "Broker of record",
+          "PermitFreetextEmail": true,
+          "FirstName": "ASHER",
+          "LastName": "HOROWITZ",
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$239,000",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#2 - 2804 17 AVENUE SW|Calgary, Alberta T3E6K8",
+          "Longitude": "-114.12703",
+          "Latitude": "51.03802"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635909732915630000\/reb82\/highres\/1\/x3415311_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635909732915630000\/reb82\/medres\/1\/x3415311_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635909732915630000\/reb82\/lowres\/1\/x3415311_1.jpg",
+            "LastUpdated": "13\/02\/2016 3:14:51 PM"
+          }
+        ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata",
+        "AmmenitiesNearBy": "Park, Public Transit, Schools"
+      },
+      "Business": { },
+      "Land": { },
+      "AlternateURL": {
+        "BrochureLink": "http:\/\/realtytoronto.ca\/listing\/2-2804-17-avenue-sw-calgary-alberta\/",
+        "DetailsLink": "http:\/\/realtytoronto.ca\/listing\/2-2804-17-avenue-sw-calgary-alberta\/"
+      },
+      "PostalCode": "T3E6K8",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16594827\/2---2804-17-AVENUE-SW-Calgary-Alberta-T3E6K8"
+    },
+    {
+      "Id": "16545199",
+      "MlsNumber": "C4047545",
+      "PublicRemarks": "PENTHOUSE CORNER UNIT with Downtown views!!! All the best of condo living is right here in this CONCRETE building for you to enjoy. Great location, minutes to Downtown, Marda Loop, The Killarney Pool, All Levels of Transit (new C-train station is walking distance) and the Beltline. The kitchen has been updated with maple cabinetry, stainless steel appliances, GRANITE counter tops, modern back splash and raised breakfast bar. 2 spacious bedrooms, master with walk trough closet, in suite laundry, pre-wired surround sound, large balcony with downtown city views, comfortable storage, & underground heated parking. Other updates include new flooring including new tile in Kitchen & Bathroom.",
+      "Building": {
+        "BathroomTotal": "1",
+        "Bedrooms": "2 + 0",
+        "SizeInterior": "871 sqft",
+        "StoriesTotal": "1",
+        "Type": "Apartment"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1879314,
+          "Name": "Daniel Weiner",
+          "Organization": {
+            "OrganizationID": 54519,
+            "Name": "RE\/MAX REALTY PROFESSIONALS",
+            "Address": { "AddressText": "#10, 6020 - 1A STREET S.W.|CALGARY, AB T2H0G3" },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "259-4141",
+                "AreaCode": "403",
+                "PhoneTypeId": "1"
+              },
+              {
+                "PhoneType": "Fax",
+                "PhoneNumber": "259-4305",
+                "AreaCode": "403",
+                "PhoneTypeId": "4"
+              }
+            ],
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "259-4141",
+              "AreaCode": "403",
+              "PhoneTypeId": "1"
+            }
+          ],
+          "Websites": [
+            {
+              "Website": "http:\/\/www.dwsoldhomes.com",
+              "WebsiteTypeId": "1"
+            }
+          ],
+          "Emails": [ { "ContactId": "389608909" } ],
+          "Photo": "https:\/\/cdn.realtor.ca\/individual\/lowres\/1205559.jpg",
+          "Position": "Associate",
+          "DesignationCodes": "CCS",
+          "PermitFreetextEmail": true,
+          "FirstName": "Daniel",
+          "LastName": "Weiner",
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$259,900",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#702 2909 17 AV SW|Killarney\/Glengarry, Calgary, Alberta T2E0B1",
+          "Longitude": "-114.129219",
+          "Latitude": "51.037437"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635903725149400000\/reb9\/highres\/5\/c4047545_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635903725149400000\/reb9\/medres\/5\/c4047545_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635903725149400000\/reb9\/lowres\/5\/c4047545_1.jpg",
+            "LastUpdated": "06\/02\/2016 4:21:54 PM"
+          }
+        ],
+        "Parking": [
+          {
+            "Name": "Indoor",
+            "Spaces": "1"
+          },
+          { "Name": "Parking Space(s)" }
+        ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata",
+        "AmmenitiesNearBy": "Shopping, Public Transit, Schools, Golf Course"
+      },
+      "Business": { },
+      "Land": { },
+      "PostalCode": "T2E0B1",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16545199\/702-2909-17-AV-SW-KillarneyGlengarry-Calgary-Alberta-T2E0B1-KillarneyGlengarry"
+    },
+    {
+      "Id": "16725902",
+      "MlsNumber": "C4054872",
+      "PublicRemarks": "Very unique top floor corner penthouse unit. Spacious two storey floor plan with entry from 6th or 7t floor. Two bedroom, 1.5 baths. Plenty of insuite storage. Vaulted ceilings, skylight. All kitchen appliances(stove, refridgerator, microwave oven, built in dishwasher) plus washer & dryer included. Updated ceramic floor tile and laminate. Large west facing balcony with gorgeous mountain & city views.  Close proximity to the west LRT. Terrific location for amenities such as downtown, restaurants, public pool. The building is handicap accessible. Heated & secure underground parking. Rooftop patio accessible from 7th floor. Near elevator. Social room available for rent. Make this your next home. Thanks for showing.",
+      "Building": {
+        "BathroomTotal": "2",
+        "Bedrooms": "2 + 0",
+        "SizeInterior": "1022 sqft",
+        "StoriesTotal": "2",
+        "Type": "Apartment"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1447312,
+          "Name": "Vivian Bulych",
+          "Organization": {
+            "OrganizationID": 54578,
+            "Name": "SATHER REAL ESTATE PRO BROKERS LTD.",
+            "Logo": "https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/54578.jpg",
+            "Address": { "AddressText": "#11 - 4412 MANILLA RD SE|CALGARY, AB T2G4B7" },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "265-8887",
+                "AreaCode": "403",
+                "PhoneTypeId": "1"
+              },
+              {
+                "PhoneType": "Fax",
+                "PhoneNumber": "266-6610",
+                "AreaCode": "403",
+                "PhoneTypeId": "4"
+              }
+            ],
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "863-3334",
+              "AreaCode": "403",
+              "PhoneTypeId": "1"
+            }
+          ],
+          "Emails": [ { "ContactId": "389025043" } ],
+          "Photo": "https:\/\/cdn.realtor.ca\/individual\/lowres\/1094452.jpg",
+          "Position": "Associate",
+          "PermitFreetextEmail": true,
+          "FirstName": "Vivian",
+          "LastName": "Bulych",
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$269,900",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#608 1900 25A ST SW|Killarney\/Glengarry, Calgary, Alberta T3E1Y5",
+          "Longitude": "-114.121861",
+          "Latitude": "51.037545"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635946813808770000\/reb9\/highres\/2\/c4054872_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635946813808770000\/reb9\/medres\/2\/c4054872_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635946813808770000\/reb9\/lowres\/2\/c4054872_1.jpg",
+            "LastUpdated": "27\/03\/2016 1:16:20 PM"
+          }
+        ],
+        "Parking": [ { "Name": "Underground" } ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata",
+        "AmmenitiesNearBy": "Shopping"
+      },
+      "Business": { },
+      "Land": { "LandscapeFeatures": "Landscaped" },
+      "PostalCode": "T3E1Y5",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16725902\/608-1900-25A-ST-SW-KillarneyGlengarry-Calgary-Alberta-T3E1Y5-KillarneyGlengarry"
+    },
+    {
+      "Id": "16627490",
+      "MlsNumber": "C4050648",
+      "PublicRemarks": "Possibly the BEST location in this centrally located complex. This very modern top floor corner unit invites maximum natural light with sunny southwest exposure and is furthest away from the noise of 17th Ave. traffic. Floor plan itself is open and will impress. The kitchen boasts a tasteful combination of dark cabinets, stainless steel appliances, and granite counter tops. A center island opens to the living and dining rooms making it perfect for entertaining. Two generous sized bedrooms are divided by a stunning four piece main bathroom. There is also a large in suite storage room, which also houses the washer\/dryer combination. Enjoy sunny days on the private west balcony. A warm and inviting condo that MUST be seen. Secured underground parking is icing on the cake. Mere steps to 17 Ave. and a short walk to the west LRT. Do yourself a favor and view this condo. It may well be your next home.",
+      "Building": {
+        "BathroomTotal": "1",
+        "Bedrooms": "2 + 0",
+        "SizeInterior": "847 sqft",
+        "StoriesTotal": "1",
+        "Type": "Apartment"
+      },
+      "Individual": [
+        {
+          "IndividualID": 1448960,
+          "Name": "Christopher Marshall",
+          "Organization": {
+            "OrganizationID": 54517,
+            "Name": "RE\/MAX HOUSE OF REAL ESTATE",
+            "Logo": "https:\/\/cdn.realtor.ca\/organization\/en-CA\/lowres\/54517.jpg",
+            "Address": { "AddressText": "#20, 2439 - 54 AVENUE S.W.|CALGARY, AB T3E1M4" },
+            "Phones": [
+              {
+                "PhoneType": "Telephone",
+                "PhoneNumber": "287-3880",
+                "AreaCode": "403",
+                "PhoneTypeId": "1"
+              },
+              {
+                "PhoneType": "Fax",
+                "PhoneNumber": "287-3876",
+                "AreaCode": "403",
+                "PhoneTypeId": "4"
+              }
+            ],
+            "PermitFreetextEmail": true,
+            "PermitShowListingLink": true
+          },
+          "Phones": [
+            {
+              "PhoneType": "Telephone",
+              "PhoneNumber": "287-3880",
+              "AreaCode": "403",
+              "PhoneTypeId": "1"
+            }
+          ],
+          "Websites": [
+            {
+              "Website": "http:\/\/www.calgaryrealestatesite.com",
+              "WebsiteTypeId": "1"
+            },
+            {
+              "Website": "http:\/\/www.facebook.com\/ChrisMarshall365",
+              "WebsiteTypeId": "2"
+            },
+            {
+              "Website": "http:\/\/www.linkedin.com\/CMarshallRealty",
+              "WebsiteTypeId": "3"
+            },
+            {
+              "Website": "http:\/\/www.twitter.com\/CMarshallRealty",
+              "WebsiteTypeId": "4"
+            }
+          ],
+          "Emails": [ { "ContactId": "389050221" } ],
+          "Photo": "https:\/\/cdn.realtor.ca\/individual\/lowres\/1119551.jpg",
+          "Position": "Associate Broker",
+          "DesignationCodes": "CCS",
+          "PermitFreetextEmail": true,
+          "FirstName": "Christopher",
+          "LastName": "Marshall",
+          "CorporationDisplayTypeId": "0"
+        }
+      ],
+      "Property": {
+        "Price": "$279,000",
+        "Type": "Single Family",
+        "Address": {
+          "AddressText": "#309 1917 24A ST SW|Richmond, Calgary, Alberta T3E1V4",
+          "Longitude": "-114.119438",
+          "Latitude": "51.037218"
+        },
+        "Photo": [
+          {
+            "SequenceId": "1",
+            "HighResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635923114449330000\/reb9\/highres\/8\/c4050648_1.jpg",
+            "MedResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635923114449330000\/reb9\/medres\/8\/c4050648_1.jpg",
+            "LowResPath": "https:\/\/cdn.realtor.ca\/listing\/TS635923114449330000\/reb9\/lowres\/8\/c4050648_1.jpg",
+            "LastUpdated": "29\/02\/2016 2:57:24 AM"
+          }
+        ],
+        "Parking": [
+          {
+            "Name": "Indoor",
+            "Spaces": "1"
+          },
+          { "Name": "Underground" }
+        ],
+        "TypeId": "300",
+        "OwnershipType": "Condominium\/Strata",
+        "AmmenitiesNearBy": "Shopping, Public Transit, Playground"
+      },
+      "Business": { },
+      "Land": { "LandscapeFeatures": "Landscaped" },
+      "PostalCode": "T3E1V4",
+      "RelativeDetailsURL": "\/Residential\/Single-Family\/16627490\/309-1917-24A-ST-SW-Richmond-Calgary-Alberta-T3E1V4-Richmond"
+    }
+  ],
+  "Pins": [
+    {
+      "key": "",
+      "propertyId": "16524192",
+      "count": 1,
+      "longitude": "-114.1222",
+      "latitude": "51.0375"
+    },
+    
+    {
+      "key": "",
+      "propertyId": "16646589",
+      "count": 1,
+      "longitude": "-114.1281",
+      "latitude": "51.038"
+    },
+    {
+      "key": "",
+      "propertyId": "16431605",
+      "count": 1,
+      "longitude": "-114.124",
+      "latitude": "51.037"
+    },
+    {
+      "key": "",
+      "propertyId": "16473249",
+      "count": 1,
+      "longitude": "-114.126",
+      "latitude": "51.038"
+    },
+    {
+      "key": "",
+      "propertyId": "16505120",
+      "count": 1,
+      "longitude": "-114.1241",
+      "latitude": "51.0371"
+    },
+    {
+      "key": "",
+      "propertyId": "16594827",
+      "count": 1,
+      "longitude": "-114.127",
+      "latitude": "51.038"
+    },
+    {
+      "key": "",
+      "propertyId": "16545199",
+      "count": 1,
+      "longitude": "-114.1292",
+      "latitude": "51.0374"
+    },
+    {
+      "key": "",
+      "propertyId": "16725902",
+      "count": 1,
+      "longitude": "-114.1218",
+      "latitude": "51.0375"
+    },
+    {
+      "key": "",
+      "propertyId": "16627490",
+      "count": 1,
+      "longitude": "-114.1194",
+      "latitude": "51.0372"
+    },
+    {
+      "key": "",
+      "propertyId": "16751948",
+      "count": 1,
+      "longitude": "-114.1313",
+      "latitude": "51.0364"
+    },
+    {
+      "key": "",
+      "propertyId": "16491474",
+      "count": 1,
+      "longitude": "-114.1197",
+      "latitude": "51.0372"
+    },
+    {
+      "key": "",
+      "propertyId": "16476741",
+      "count": 1,
+      "longitude": "-114.1337",
+      "latitude": "51.0373"
+    },
+    {
+      "key": "",
+      "propertyId": "16521179",
+      "count": 1,
+      "longitude": "-114.1223",
+      "latitude": "51.0365"
+    },
+    {
+      "key": "",
+      "propertyId": "16709647",
+      "count": 1,
+      "longitude": "-114.1314",
+      "latitude": "51.0363"
+    },
+    {
+      "key": "",
+      "propertyId": "16762174",
+      "count": 1,
+      "longitude": "-114.1209",
+      "latitude": "51.0368"
+    },
+    {
+      "key": "",
+      "propertyId": "16690543",
+      "count": 1,
+      "longitude": "-114.1235",
+      "latitude": "51.0372"
+    },
+    {
+      "key": "",
+      "propertyId": "16587463",
+      "count": 1,
+      "longitude": "-114.1356",
+      "latitude": "51.0424"
+    },
+    {
+      "key": "",
+      "propertyId": "16311922",
+      "count": 1,
+      "longitude": "-114.1362",
+      "latitude": "51.0423"
+    },
+    {
+      "key": "",
+      "propertyId": "16027511",
+      "count": 1,
+      "longitude": "-114.1243",
+      "latitude": "51.038"
+    },
+    {
+      "key": "",
+      "propertyId": "16646606",
+      "count": 1,
+      "longitude": "-114.1429",
+      "latitude": "51.0392"
+    },
+    {
+      "key": "",
+      "propertyId": "16731020",
+      "count": 1,
+      "longitude": "-114.1361",
+      "latitude": "51.0417"
+    },
+    {
+      "key": "",
+      "propertyId": "16646605",
+      "count": 1,
+      "longitude": "-114.1181",
+      "latitude": "51.0377"
+    },
+    {
+      "key": "",
+      "propertyId": "16495654",
+      "count": 1,
+      "longitude": "-114.1184",
+      "latitude": "51.0375"
+    },
+    {
+      "key": "",
+      "propertyId": "16747817",
+      "count": 1,
+      "longitude": "-114.1183",
+      "latitude": "51.0374"
+    },
+    {
+      "key": "",
+      "propertyId": "16751105",
+      "count": 1,
+      "longitude": "-114.1223",
+      "latitude": "51.0372"
+    },
+    {
+      "key": "",
+      "propertyId": "16689075",
+      "count": 1,
+      "longitude": "-114.1393",
+      "latitude": "51.0372"
+    },
+    {
+      "key": "",
+      "propertyId": "16666978",
+      "count": 1,
+      "longitude": "-114.1355",
+      "latitude": "51.0423"
+    },
+    {
+      "key": "",
+      "propertyId": "16740777",
+      "count": 1,
+      "longitude": "-114.1359",
+      "latitude": "51.0423"
+    },
+    {
+      "key": "",
+      "propertyId": "16469790",
+      "count": 1,
+      "longitude": "-114.1428",
+      "latitude": "51.0423"
+    },
+    {
+      "key": "",
+      "propertyId": "16596222",
+      "count": 1,
+      "longitude": "-114.1216",
+      "latitude": "51.0363"
+    },
+    {
+      "key": "",
+      "propertyId": "16469803",
+      "count": 1,
+      "longitude": "-114.118",
+      "latitude": "51.0367"
+    },
+    {
+      "key": "",
+      "propertyId": "16744219",
+      "count": 1,
+      "longitude": "-114.1292",
+      "latitude": "51.0365"
+    },
+    {
+      "key": "",
+      "propertyId": "16669116",
+      "count": 1,
+      "longitude": "-114.1181",
+      "latitude": "51.0373"
+    },
+    {
+      "key": "",
+      "propertyId": "16725947",
+      "count": 1,
+      "longitude": "-114.1234",
+      "latitude": "51.0365"
+    },
+    {
+      "key": "",
+      "propertyId": "16696252",
+      "count": 1,
+      "longitude": "-114.1235",
+      "latitude": "51.0365"
+    },
+    {
+      "key": "",
+      "propertyId": "16701183",
+      "count": 1,
+      "longitude": "-114.1315",
+      "latitude": "51.0373"
+    },
+    {
+      "key": "",
+      "propertyId": "16679823",
+      "count": 1,
+      "longitude": "-114.1329",
+      "latitude": "51.0365"
+    },
+    {
+      "key": "",
+      "propertyId": "16679016",
+      "count": 1,
+      "longitude": "-114.1208",
+      "latitude": "51.0364"
+    },
+    {
+      "key": "",
+      "propertyId": "16565110",
+      "count": 1,
+      "longitude": "-114.1279",
+      "latitude": "51.0381"
+    },
+    {
+      "key": "",
+      "propertyId": "16669134",
+      "count": 1,
+      "longitude": "-114.1193",
+      "latitude": "51.0382"
+    },
+    {
+      "key": "",
+      "propertyId": "16495631",
+      "count": 1,
+      "longitude": "-114.1219",
+      "latitude": "51.0384"
+    },
+    {
+      "key": "",
+      "propertyId": "16684494",
+      "count": 1,
+      "longitude": "-114.1359",
+      "latitude": "51.0371"
+    },
+    {
+      "key": "",
+      "propertyId": "16745689",
+      "count": 1,
+      "longitude": "-114.1323",
+      "latitude": "51.0372"
+    },
+    {
+      "key": "",
+      "propertyId": "16744899",
+      "count": 1,
+      "longitude": "-114.1323",
+      "latitude": "51.0372"
+    },
+    {
+      "key": "",
+      "propertyId": "16589150",
+      "count": 1,
+      "longitude": "-114.1269",
+      "latitude": "51.0386"
+    },
+    {
+      "key": "",
+      "propertyId": "16692450",
+      "count": 1,
+      "longitude": "-114.1252",
+      "latitude": "51.039"
+    },
+    {
+      "key": "",
+      "propertyId": "16342230",
+      "count": 1,
+      "longitude": "-114.1328",
+      "latitude": "51.0405"
+    },
+    {
+      "key": "",
+      "propertyId": "16658516",
+      "count": 1,
+      "longitude": "-114.1239",
+      "latitude": "51.0394"
+    },
+    {
+      "key": "",
+      "propertyId": "16360518",
+      "count": 1,
+      "longitude": "-114.1338",
+      "latitude": "51.0388"
+    },
+    {
+      "key": "",
+      "propertyId": "16589257",
+      "count": 1,
+      "longitude": "-114.1182",
+      "latitude": "51.0398"
+    },
+    {
+      "key": "",
+      "propertyId": "16382215",
+      "count": 1,
+      "longitude": "-114.1218",
+      "latitude": "51.0389"
+    },
+    {
+      "key": "",
+      "propertyId": "16737538",
+      "count": 1,
+      "longitude": "-114.1155",
+      "latitude": "51.0386"
+    },
+    {
+      "key": "",
+      "propertyId": "16589972",
+      "count": 1,
+      "longitude": "-114.1168",
+      "latitude": "51.0395"
+    },
+    {
+      "key": "",
+      "propertyId": "16705268",
+      "count": 1,
+      "longitude": "-114.1222",
+      "latitude": "51.0403"
+    },
+    {
+      "key": "",
+      "propertyId": "16635834",
+      "count": 1,
+      "longitude": "-114.1278",
+      "latitude": "51.0386"
+    },
+    {
+      "key": "",
+      "propertyId": "16652959",
+      "count": 1,
+      "longitude": "-114.1251",
+      "latitude": "51.0365"
+    }
+  ]}
