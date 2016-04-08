@@ -240,6 +240,11 @@ namespace R.Models
         public string latitude { get; set; }
     }
 
+    public class Pins {
+
+        public List<Pin> pins { get; set; }
+    }
+
     public class RootObject
     {
         public ErrorCode ErrorCode { get; set; }

@@ -53,12 +53,18 @@ namespace R.Models
         ///////////////////////////////////////////////
         public DbSet<Address2> Address2s { get; set; }
         
+        public DbSet<Photo> Photoes { get; set; }
+
+        public DbSet<Parking> Parkings { get; set; }
+
+
 
         public DbSet<Property> Properties { get; set; }
         
         public DbSet<Land> Lands { get; set; }
 
 
+        public DbSet<AlternateURL> AlternateURLs { get; set; }
 
         public DbSet<Pin> Pins { get; set; }
 
