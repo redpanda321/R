@@ -177,8 +177,9 @@ namespace R
                     //Related 
                     db.Results
                     .Include(r => r.Building).Include(r => r.Land).Include(r => r.RelativeDetailsURL)
-                    .Include(r=>r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking.Select(p => p.Name)).Include(r=>r.Property.Photo.Select(p=>p.SequenceId))
-                    .Include(r => r.Individual.Select(v => v.IndividualID));
+                    .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking.Select(p => p.Name)).Include(r => r.Property.Photo.Select(p => p.SequenceId))
+                    .Include(r => r.Individual.Select(v => v.IndividualID)).Include(r => r.Individual.Select(v => v.Organization))
+                  ;
 
                 }
 
