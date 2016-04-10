@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-
-using OpenQA.Selenium.Support.UI;
-
 using System.Threading;
 using System.Drawing;
 using System.Net;
+using System.IO;
+using System.Data.Entity;
+
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Support.UI;
+
 using RestSharp;
 using RestSharp.Deserializers;
 
 using Newtonsoft.Json;
-using System.IO;
-using R.Models;
 
-using System.Data.Entity;
+using R.Models;
 
 namespace R
 {
     public class Program
     {
-
         /// <summary>
         /// 
         /// </summary>
@@ -172,16 +171,38 @@ namespace R
                     string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
                     Results results =   JsonConvert.DeserializeObject<Results>(content);
                     Pins pins =  JsonConvert.DeserializeObject<Pins>(content);
+                    
+                    foreach (var rr in results.results)
+                    {
+
+                        //Related Objects
+                        var dbResult = db.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.RelativeDetailsURL)
+                         .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking.Select(p => p.Name))
+                         .Include(r => r.Property.Photo.Select(p => p.SequenceId))
+                         .Include(r => r.Individual.Select(v => v.IndividualID))
+                          .Include(r => r.Individual.Select(v => v.Organization))
+                         .Include(r => r.Individual.Select(v => v.Organization.Address))
+                         .Include(r => r.Individual.Select(v => v.Organization.Phones.Select(p => p.PhoneNumber)))
+                         .Include(r => r.Individual.Select(v => v.Organization.Emails.Select(e => e.ContactId)))
+                         .Include(r => r.Individual.Select(v => v.Organization.Websites.Select(w => w.Website)))
+                         .Include(r => r.Individual.Select(v => v.Phones.Select(p => p.PhoneNumber)))
+                         .Include(r => r.Individual.Select(v => v.Websites.Select(w => w.Website)))
+                         .Include(r => r.Individual.Select(v => v.Emails.Select(e => e.ContactId))).Single(r => r.Id == rr.Id );
+
+                        if (dbResult == null)
+                        {
+
+                            db.Results.Add(rr);
+                        }
+                        else {
 
 
-                    //Related 
-                    db.Results
-                    .Include(r => r.Building).Include(r => r.Land).Include(r => r.RelativeDetailsURL)
-                    .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking.Select(p => p.Name)).Include(r => r.Property.Photo.Select(p => p.SequenceId))
-                    .Include(r => r.Individual.Select(v => v.IndividualID)).Include(r => r.Individual.Select(v => v.Organization.Address))
-                    .Include(r => r.Individual.Select(v => v.Organization.Phones.Select(p => p.PhoneNumber)));
-                  ;
 
+                        }
+
+                    }
+
+                    
                 }
 
             }

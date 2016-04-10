@@ -24,7 +24,7 @@ namespace R.Models
 
         public string Province { get; set; }
 
-        public float Price { get; set; }
+        public float CurrentPrice { get; set; }
 
         public float Bedroom { get; set; }
 
