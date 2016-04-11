@@ -40,6 +40,16 @@ namespace R
         public static RestRequest request = new RestRequest();
 
         /// <summary>
+        /// 
+        /// </summary>
+        public static RContext  db = new RContext();
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Random  random = new Random();
+
+
+        /// <summary>
         /// Get Api Results(String Format)
         /// </summary>
         /// <param name="longitudeMin"></param>
@@ -90,7 +100,6 @@ namespace R
 
             return  client.Execute(request).Content;
 
-
         }
 
         /// <summary>
@@ -116,7 +125,7 @@ namespace R
         /// Get All Cookies
         /// </summary>
         /// <returns></returns>
-        public CookieContainer GetCookies() {
+        public static CookieContainer GetCookies() {
 
             IWebDriver driver = new FirefoxDriver();
             driver.Manage().Window.Position = new Point(-2000, 0);
@@ -142,13 +151,200 @@ namespace R
 
         }
 
+
+        public static void SaveResults(List<Result> results)
+        {
+            foreach (var rr in results)
+            {
+
+                //Related Objects
+                var dbResult = db.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.RelativeDetailsURL)
+                 .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking.Select(p => p.Name))
+                 .Include(r => r.Property.Photo.Select(p => p.SequenceId))
+                 .Include(r => r.Individual.Select(v => v.IndividualID))
+                  .Include(r => r.Individual.Select(v => v.Organization))
+                 .Include(r => r.Individual.Select(v => v.Organization.Address))
+                 .Include(r => r.Individual.Select(v => v.Organization.Phones.Select(p => p.PhoneNumber)))
+                 .Include(r => r.Individual.Select(v => v.Organization.Emails.Select(e => e.ContactId)))
+                 .Include(r => r.Individual.Select(v => v.Organization.Websites.Select(w => w.Website)))
+                 .Include(r => r.Individual.Select(v => v.Phones.Select(p => p.PhoneNumber)))
+                 .Include(r => r.Individual.Select(v => v.Websites.Select(w => w.Website)))
+                 .Include(r => r.Individual.Select(v => v.Emails.Select(e => e.ContactId))).Single(r => r.Id == rr.Id);
+
+                if (dbResult == null)
+                {
+                    db.Results.Add(rr);
+                }
+                else
+                {
+
+                    db.Entry(dbResult).CurrentValues.SetValues(rr);
+
+                    var dbBuilding = dbResult.Building;
+                    var dbLand = dbResult.Land;
+                    var dbRelativeDetailsURL = dbResult.RelativeDetailsURL;
+                    var dbProperty = dbResult.Property;
+                    var dbProAddress = dbResult.Property.Address;
+
+                    /*
+                    if (dbBuilding.Id == rr.Building.Id)
+                    {
+                        db.Entry(dbBuilding).CurrentValues.SetValues(rr.Building);
+                    }
+                    else {
+                        db.Buildings.Attach(rr.Building);
+                        dbBuilding = rr.Building;
+                    }
+                    */
+
+                    db.Entry(dbBuilding).CurrentValues.SetValues(rr.Building);
+                    db.Entry(dbLand).CurrentValues.SetValues(rr.Land);
+                    db.Entry(dbRelativeDetailsURL).CurrentValues.SetValues(rr.RelativeDetailsURL);
+                    db.Entry(dbProperty).CurrentValues.SetValues(rr.Property);
+                    db.Entry(dbProAddress).CurrentValues.SetValues(rr.Property.Address);
+
+                    foreach (var p in rr.Property.Parking.ToList())
+                    {
+
+                        var dbProParking = dbProperty.Parking.SingleOrDefault(pa => pa.Id == p.Id);
+                        if (dbProParking != null)
+                            db.Entry(dbProParking).CurrentValues.SetValues(p);
+                        else
+                            dbProperty.Parking.Add(p);
+                    }
+                    foreach (var p in rr.Property.Photo.ToList())
+                    {
+
+                        var dbPhoto = dbProperty.Photo.SingleOrDefault(ph => ph.Id == p.Id);
+                        if (dbPhoto != null)
+                            db.Entry(dbPhoto).CurrentValues.SetValues(p);
+                        else
+                            dbProperty.Photo.Add(p);
+                    }
+
+                    foreach (var i in rr.Individual.ToList())
+                    {
+                        var dbIndividual = dbResult.Individual.SingleOrDefault(In => In.Id == i.Id);
+                        if (dbIndividual != null)
+                        {
+                            db.Entry(dbIndividual).CurrentValues.SetValues(i);
+
+
+                            foreach (var p in i.Phones.ToList())
+                            {
+                                var dbIndividualPhone = dbIndividual.Phones.SingleOrDefault(ph => ph.Id == p.Id);
+                                if (dbIndividualPhone != null)
+                                {
+                                    db.Entry(dbIndividualPhone).CurrentValues.SetValues(p);
+                                }
+                                else
+                                {
+                                    dbIndividual.Phones.Add(p);
+                                }
+
+
+                            }
+
+                            foreach (var e in i.Emails.ToList())
+                            {
+                                var dbIndividualEmail = dbIndividual.Emails.SingleOrDefault(em => em.Id == e.Id);
+                                if (dbIndividualEmail != null)
+                                {
+                                    db.Entry(dbIndividualEmail).CurrentValues.SetValues(e);
+                                }
+                                else
+                                {
+                                    dbIndividual.Emails.Add(e);
+                                }
+
+                            }
+
+                            foreach (var w in i.Websites.ToList())
+                            {
+                                var dbIndividualWebsite = dbIndividual.Websites.SingleOrDefault(we => we.Id == w.Id);
+                                if (dbIndividualWebsite != null)
+                                {
+                                    db.Entry(dbIndividualWebsite).CurrentValues.SetValues(w);
+                                }
+                                else
+                                {
+                                    dbIndividual.Websites.Add(w);
+                                }
+
+
+                            }
+
+
+
+
+                            var dbOrganization = dbIndividual.Organization;
+                            db.Entry(dbOrganization).CurrentValues.SetValues(i.Organization);
+
+
+
+
+                            var dbOrganizationAddress = dbIndividual.Organization.Address;
+                            db.Entry(dbOrganizationAddress).CurrentValues.SetValues(i.Organization.Address);
+
+                            foreach (var p in i.Organization.Phones.ToList())
+                            {
+                                var dbOrganizationPhone = dbOrganization.Phones.SingleOrDefault(ph => ph.Id == p.Id);
+                                if (dbOrganizationPhone != null)
+                                {
+                                    db.Entry(dbOrganizationPhone).CurrentValues.SetValues(p);
+                                }
+                                else
+                                {
+                                    dbOrganization.Phones.Add(p);
+                                }
+                            }
+
+                            foreach (var e in i.Organization.Emails.ToList())
+                            {
+                                var dbOrganizationEmail = dbOrganization.Emails.SingleOrDefault(em => em.Id == e.Id);
+                                if (dbOrganizationEmail != null)
+                                {
+                                    db.Entry(dbOrganizationEmail).CurrentValues.SetValues(e);
+                                }
+                                else
+                                {
+                                    dbOrganization.Emails.Add(e);
+                                }
+                            }
+
+                            foreach (var w in i.Organization.Websites.ToList())
+                            {
+                                var dbOrganizationWebsite = dbOrganization.Websites.SingleOrDefault(we => we.Id == w.Id);
+                                if (dbOrganizationWebsite != null)
+                                {
+                                    db.Entry(dbOrganizationWebsite).CurrentValues.SetValues(w);
+                                }
+                                else
+                                {
+                                    dbOrganization.Websites.Add(w);
+                                }
+                            }
+
+
+                        }
+
+
+
+                    }
+
+                }
+
+            }
+
+
+
+
+        }
+
+
         public static void Main(string[] args)
         {
            
-            var db = new RContext();
-
-            var random = new Random();
-
             string longitudeMin = "-114.145241108551";
             string longitudeMax = "-114.1139558226013";
             string latitudeMin = "51.03625085626268";
@@ -167,40 +363,15 @@ namespace R
                     //Sleep 1~10 s
                     var span = random.Next(1000, 10000);
                     Thread.Sleep(span);
+                    
                     //Get Data
                     string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
                     Results results =   JsonConvert.DeserializeObject<Results>(content);
                     Pins pins =  JsonConvert.DeserializeObject<Pins>(content);
-                    
-                    foreach (var rr in results.results)
-                    {
 
-                        //Related Objects
-                        var dbResult = db.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.RelativeDetailsURL)
-                         .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking.Select(p => p.Name))
-                         .Include(r => r.Property.Photo.Select(p => p.SequenceId))
-                         .Include(r => r.Individual.Select(v => v.IndividualID))
-                          .Include(r => r.Individual.Select(v => v.Organization))
-                         .Include(r => r.Individual.Select(v => v.Organization.Address))
-                         .Include(r => r.Individual.Select(v => v.Organization.Phones.Select(p => p.PhoneNumber)))
-                         .Include(r => r.Individual.Select(v => v.Organization.Emails.Select(e => e.ContactId)))
-                         .Include(r => r.Individual.Select(v => v.Organization.Websites.Select(w => w.Website)))
-                         .Include(r => r.Individual.Select(v => v.Phones.Select(p => p.PhoneNumber)))
-                         .Include(r => r.Individual.Select(v => v.Websites.Select(w => w.Website)))
-                         .Include(r => r.Individual.Select(v => v.Emails.Select(e => e.ContactId))).Single(r => r.Id == rr.Id );
+                    //Save Data
+                    SaveResults(results.results);
 
-                        if (dbResult == null)
-                        {
-
-                            db.Results.Add(rr);
-                        }
-                        else {
-
-
-
-                        }
-
-                    }
 
                     
                 }

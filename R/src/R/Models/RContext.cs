@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace R.Models
 {
-    class RContext : DbContext
+  public  class RContext : DbContext
     {
 
         public RContext() : base("RDBConnectionString")
