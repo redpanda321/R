@@ -19,6 +19,7 @@ using RestSharp.Deserializers;
 using Newtonsoft.Json;
 
 using R.Models;
+using Newtonsoft.Json.Linq;
 
 namespace R
 {
@@ -116,9 +117,14 @@ namespace R
         public static int GetPagingNumber(string longitudeMin, string longitudeMax, string latitudeMin, string latitudeMax, string longitude, string latitude)
         {
 
-            Paging paging  =  JsonConvert.DeserializeObject<Paging>( GetProperty( longitudeMin,  longitudeMax,  latitudeMin,  latitudeMax,  longitude,  latitude, "1") );
+            string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, "1");
+            System.Console.WriteLine("content:" + content);
 
-            return paging.TotalPages;
+            JObject o = JObject.Parse(content);
+            int num = (int)o["Paging"]["TotalPages"];
+            System.Console.WriteLine("num:" + num);
+
+            return num;
 
         }
         /// <summary>
@@ -145,7 +151,7 @@ namespace R
                 cookieContainer.Add(cookie);
             }
 
-            driver.Quit();
+           // driver.Quit();
 
             return cookieContainer;
 
@@ -186,18 +192,18 @@ namespace R
                     var dbProperty = dbResult.Property;
                     var dbProAddress = dbResult.Property.Address;
 
-                    /*
-                    if (dbBuilding.Id == rr.Building.Id)
+                   
+                    if (dbBuilding != null)
                     {
                         db.Entry(dbBuilding).CurrentValues.SetValues(rr.Building);
-                    }
-                    else {
+                    }else
+                    {
                         db.Buildings.Attach(rr.Building);
-                        dbBuilding = rr.Building;
-                    }
-                    */
+                        dbResult.Building = rr.Building;
 
-                    db.Entry(dbBuilding).CurrentValues.SetValues(rr.Building);
+                    }
+
+
                     db.Entry(dbLand).CurrentValues.SetValues(rr.Land);
                     db.Entry(dbRelativeDetailsURL).CurrentValues.SetValues(rr.RelativeDetailsURL);
                     db.Entry(dbProperty).CurrentValues.SetValues(rr.Property);
@@ -206,39 +212,64 @@ namespace R
                     foreach (var p in rr.Property.Parking.ToList())
                     {
 
-                        var dbProParking = dbProperty.Parking.SingleOrDefault(pa => pa.Id == p.Id);
-                        if (dbProParking != null)
-                            db.Entry(dbProParking).CurrentValues.SetValues(p);
-                        else
+                        if (dbProperty.Parking.ToList() != null)
+                        {
+
+                            foreach (var dbProParking in dbProperty.Parking.ToList())
+                            {
+                                db.Entry(dbProParking).CurrentValues.SetValues(p);
+                            }
+
+                        }
+                        else {
+
+                            db.Parkings.Attach(p);
                             dbProperty.Parking.Add(p);
+                            
+
+                        }
                     }
+
                     foreach (var p in rr.Property.Photo.ToList())
                     {
 
-                        var dbPhoto = dbProperty.Photo.SingleOrDefault(ph => ph.Id == p.Id);
-                        if (dbPhoto != null)
-                            db.Entry(dbPhoto).CurrentValues.SetValues(p);
-                        else
+                        if(dbProperty.Photo.ToList() != null)
+                        { 
+                            foreach ( var dbPhoto in dbProperty.Photo.ToList())
+                            { 
+                                 db.Entry(dbPhoto).CurrentValues.SetValues(p);
+                            }
+
+                        }else
+                        {
+                            db.Photoes.Attach(p);
                             dbProperty.Photo.Add(p);
+                        }
                     }
 
                     foreach (var i in rr.Individual.ToList())
                     {
-                        var dbIndividual = dbResult.Individual.SingleOrDefault(In => In.Id == i.Id);
+                        var dbIndividual = dbResult.Individual.SingleOrDefault(In => In.IndividualID == i.IndividualID);
                         if (dbIndividual != null)
                         {
                             db.Entry(dbIndividual).CurrentValues.SetValues(i);
 
-
+                            
                             foreach (var p in i.Phones.ToList())
                             {
-                                var dbIndividualPhone = dbIndividual.Phones.SingleOrDefault(ph => ph.Id == p.Id);
-                                if (dbIndividualPhone != null)
-                                {
-                                    db.Entry(dbIndividualPhone).CurrentValues.SetValues(p);
+
+
+                                if(dbIndividual.Phones.ToList() != null)
+                                { 
+                                   foreach( var dbIndividualPhone in dbIndividual.Phones.ToList())
+                                   {
+
+                                        db.Entry(dbIndividualPhone).CurrentValues.SetValues(p);
+                                   }
                                 }
                                 else
                                 {
+                                    db.Phone2s.Attach(p);
                                     dbIndividual.Phones.Add(p);
                                 }
 
@@ -247,13 +278,17 @@ namespace R
 
                             foreach (var e in i.Emails.ToList())
                             {
-                                var dbIndividualEmail = dbIndividual.Emails.SingleOrDefault(em => em.Id == e.Id);
-                                if (dbIndividualEmail != null)
+                                if (dbIndividual.Emails.ToList() != null)
                                 {
-                                    db.Entry(dbIndividualEmail).CurrentValues.SetValues(e);
+                                    foreach (var dbIndividualEmail in dbIndividual.Emails.ToList())
+                                    {
+
+                                        db.Entry(dbIndividualEmail).CurrentValues.SetValues(e);
+                                    }
                                 }
                                 else
                                 {
+                                    db.Email2s.Attach(e);
                                     dbIndividual.Emails.Add(e);
                                 }
 
@@ -261,70 +296,101 @@ namespace R
 
                             foreach (var w in i.Websites.ToList())
                             {
-                                var dbIndividualWebsite = dbIndividual.Websites.SingleOrDefault(we => we.Id == w.Id);
-                                if (dbIndividualWebsite != null)
+                                if (dbIndividual.Websites.ToList() != null)
                                 {
-                                    db.Entry(dbIndividualWebsite).CurrentValues.SetValues(w);
+                                    foreach (var dbIndividualWebsite in dbIndividual.Websites.ToList())
+                                    {
+
+                                        db.Entry(dbIndividualWebsite).CurrentValues.SetValues(w);
+                                    }
                                 }
                                 else
                                 {
+                                    db.Website2s.Attach(w);
                                     dbIndividual.Websites.Add(w);
                                 }
 
 
                             }
-
-
-
+                            
 
                             var dbOrganization = dbIndividual.Organization;
-                            db.Entry(dbOrganization).CurrentValues.SetValues(i.Organization);
 
-
-
-
-                            var dbOrganizationAddress = dbIndividual.Organization.Address;
-                            db.Entry(dbOrganizationAddress).CurrentValues.SetValues(i.Organization.Address);
-
-                            foreach (var p in i.Organization.Phones.ToList())
+                            if (dbOrganization != null)
                             {
-                                var dbOrganizationPhone = dbOrganization.Phones.SingleOrDefault(ph => ph.Id == p.Id);
-                                if (dbOrganizationPhone != null)
+
+                                db.Entry(dbOrganization).CurrentValues.SetValues(i.Organization);
+                                
+
+                                var dbOrganizationAddress = dbIndividual.Organization.Address;
+                                if (dbOrganizationAddress != null)
                                 {
-                                    db.Entry(dbOrganizationPhone).CurrentValues.SetValues(p);
+                                    db.Entry(dbOrganizationAddress).CurrentValues.SetValues(i.Organization.Address);
                                 }
-                                else
+                                else {
+
+                                    db.Addresses.Attach(i.Organization.Address);
+                                    dbOrganization.Address = i.Organization.Address;
+
+                                }
+
+                                foreach (var p in i.Organization.Phones.ToList())
                                 {
-                                    dbOrganization.Phones.Add(p);
+
+                                    if( dbOrganization.Phones.ToList() != null)
+                                    {  
+                                      foreach( var dbOrganizationPhone in  dbOrganization.Phones.ToList())
+                                          db.Entry(dbOrganizationPhone).CurrentValues.SetValues(p);
+                                    }
+                                    else
+                                    {
+                                        db.Phones.Attach(p);
+                                        dbOrganization.Phones.Add(p);
+                                    }
                                 }
+
+                                foreach (var e in i.Organization.Emails.ToList())
+                                {
+                                    if (dbOrganization.Emails.ToList() != null)
+                                    {
+                                        foreach (var dbOrganizationEmail in dbOrganization.Emails.ToList())
+                                            db.Entry(dbOrganizationEmail).CurrentValues.SetValues(e);
+                                    }
+                                    else
+                                    {
+                                        db.Emails.Attach(e);
+                                        dbOrganization.Emails.Add(e);
+                                    }
+                                }
+
+                                foreach (var w in i.Organization.Websites.ToList())
+                                {
+                                    if (dbOrganization.Websites.ToList() != null)
+                                    {
+                                        foreach (var dbOrganizationWebsite in dbOrganization.Websites.ToList())
+                                            db.Entry(dbOrganizationWebsite).CurrentValues.SetValues(w);
+                                    }
+                                    else
+                                    {
+                                        db.webSite1s.Attach(w);
+                                        dbOrganization.Websites.Add(w);
+                                    }
+                                }
+
+                            }
+                            else {
+
+                                db.Organizations.Attach(i.Organization);
+                                dbIndividual.Organization = i.Organization;
+
                             }
 
-                            foreach (var e in i.Organization.Emails.ToList())
-                            {
-                                var dbOrganizationEmail = dbOrganization.Emails.SingleOrDefault(em => em.Id == e.Id);
-                                if (dbOrganizationEmail != null)
-                                {
-                                    db.Entry(dbOrganizationEmail).CurrentValues.SetValues(e);
-                                }
-                                else
-                                {
-                                    dbOrganization.Emails.Add(e);
-                                }
-                            }
+                        }
+                        else {
 
-                            foreach (var w in i.Organization.Websites.ToList())
-                            {
-                                var dbOrganizationWebsite = dbOrganization.Websites.SingleOrDefault(we => we.Id == w.Id);
-                                if (dbOrganizationWebsite != null)
-                                {
-                                    db.Entry(dbOrganizationWebsite).CurrentValues.SetValues(w);
-                                }
-                                else
-                                {
-                                    dbOrganization.Websites.Add(w);
-                                }
-                            }
 
+                            db.Individuals.Attach(i);
+                            dbResult.Individual.Add(i);
 
                         }
 
@@ -337,7 +403,7 @@ namespace R
             }
 
 
-
+            db.SaveChanges();
 
         }
 
@@ -351,9 +417,11 @@ namespace R
             string latitudeMax = "51.04243032849644";
             string longitude ="-114.13389";
             string latitude = "51.039";
-           
 
-            int num = GetPagingNumber(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude);
+
+           //client.CookieContainer = GetCookies();
+            
+           int num = GetPagingNumber(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude);
 
             if (num > 0)
             {
@@ -365,9 +433,9 @@ namespace R
                     Thread.Sleep(span);
                     
                     //Get Data
-                    string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
-                    Results results =   JsonConvert.DeserializeObject<Results>(content);
-                    Pins pins =  JsonConvert.DeserializeObject<Pins>(content);
+                     string   content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
+                     Results results =   JsonConvert.DeserializeObject<Results>(content);
+                     Pins  pins =  JsonConvert.DeserializeObject<Pins>(content);
 
                     //Save Data
                     SaveResults(results.results);
@@ -377,10 +445,6 @@ namespace R
                 }
 
             }
-
-
-
-
 
 
         }

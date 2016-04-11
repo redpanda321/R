@@ -19,7 +19,8 @@
   },
 
   "commands": {
-    "R": "R"
+    "R": "R",
+    "ef": "EntityFramework.Commands"
   },
 
   "frameworks": {

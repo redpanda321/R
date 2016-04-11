@@ -12,14 +12,14 @@ namespace R.Models
 {
   public  class RContext : DbContext
     {
-
         public RContext() : base("RDBConnectionString")
         {
             Database.SetInitializer<RContext>(new CreateDatabaseIfNotExists<RContext>());
 
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<RContext, R.Migrations.Configuration>("RDBConnectionString"));
-         
+
         }
+
 
 
         public DbSet<House> Houses { get; set; }
@@ -44,6 +44,8 @@ namespace R.Models
 
 
         //////////////////////////////////
+
+        public DbSet<Email2> Email2s { get; set; }
         public DbSet<Phone2> Phone2s { get; set; }
 
         public DbSet<Website2> Website2s { get; set; }
@@ -75,6 +77,7 @@ namespace R.Models
             base.OnModelCreating(modelBuilder);
 
         }
+
 
 
     }

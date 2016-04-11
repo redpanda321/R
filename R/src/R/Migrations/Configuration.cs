@@ -5,8 +5,7 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-
-    internal   sealed  class Configuration : DbMigrationsConfiguration<R.Models.RContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<R.Models.RContext>
     {
         public Configuration()
         {
