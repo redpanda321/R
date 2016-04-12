@@ -63,6 +63,8 @@ namespace R
         /// <returns></returns>
         public static string GetProperty(string longitudeMin,string longitudeMax,string latitudeMin,string latitudeMax,string longitude,string latitude, string currentPage) {
 
+            client = new RestClient(PROPERTYAPI);
+            request = new RestRequest();
 
             request.Method = Method.POST;
 
@@ -99,7 +101,11 @@ namespace R
             request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json charset=utf-8"; };
             client.AddHandler("application/json", new DynamicJsonDeserializer());
 
-            return  client.Execute(request).Content;
+            string content = client.Execute(request).Content;
+
+            System.Console.WriteLine("content:" + content);
+
+            return  content ;
 
         }
 
@@ -118,7 +124,7 @@ namespace R
         {
 
             string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, "1");
-            System.Console.WriteLine("content:" + content);
+           
 
             JObject o = JObject.Parse(content);
             int num = (int)o["Paging"]["TotalPages"];
