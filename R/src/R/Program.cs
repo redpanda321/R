@@ -26,27 +26,26 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace R
 {
-    public  class Program
+    public  class  Program
     {
-
-
-         public   Program()
+        
+        static Program()
         {
             var builder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
 
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<RContext, R.Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
 
-            RContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
+            ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
         }
 
-        public IConfigurationRoot Configuration { get; set; }
+        public static  IConfigurationRoot Configuration { get; set; }
 
-        public void ConfigureServices(IServiceCollection services)
+        public  void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<RContext>();
+            services.AddScoped<ApplicationDbContext>();
         }
 
         /// <summary>
@@ -67,7 +66,7 @@ namespace R
         /// <summary>
         /// 
         /// </summary>
-        public static RContext  db = new RContext();
+        public static ApplicationDbContext db = new ApplicationDbContext();
         /// <summary>
         /// 
         /// </summary>
@@ -190,22 +189,43 @@ namespace R
 
         public static void SaveResults(List<Result> results)
         {
+
+            ApplicationDbContext db = new ApplicationDbContext();
+
             foreach (var rr in results)
             {
 
                 //Related Objects
-                var dbResult = db.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.RelativeDetailsURL)
-                 .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking.Select(p => p.Name))
-                 .Include(r => r.Property.Photo.Select(p => p.SequenceId))
-                 .Include(r => r.Individual.Select(v => v.IndividualID))
-                  .Include(r => r.Individual.Select(v => v.Organization))
-                 .Include(r => r.Individual.Select(v => v.Organization.Address))
-                 .Include(r => r.Individual.Select(v => v.Organization.Phones.Select(p => p.PhoneNumber)))
-                 .Include(r => r.Individual.Select(v => v.Organization.Emails.Select(e => e.ContactId)))
-                 .Include(r => r.Individual.Select(v => v.Organization.Websites.Select(w => w.Website)))
-                 .Include(r => r.Individual.Select(v => v.Phones.Select(p => p.PhoneNumber)))
-                 .Include(r => r.Individual.Select(v => v.Websites.Select(w => w.Website)))
-                 .Include(r => r.Individual.Select(v => v.Emails.Select(e => e.ContactId))).Single(r => r.Id == rr.Id);
+               
+                Result dbResult = new Result();
+
+                try
+                {
+
+                    
+                dbResult = db.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.AlternateURL)
+                .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking)
+                .Include(r => r.Property.Photo)
+                .Include(r => r.Individual)
+                 .Include(r => r.Individual.Select(v => v.Organization))
+                .Include(r => r.Individual.Select(v => v.Organization.Address))
+                .Include(r => r.Individual.Select(v => v.Organization.Phones))
+                .Include(r => r.Individual.Select(v => v.Organization.Emails))
+                .Include(r => r.Individual.Select(v => v.Organization.Websites))
+                .Include(r => r.Individual.Select(v => v.Phones))
+                .Include(r => r.Individual.Select(v => v.Websites))
+                .Include(r => r.Individual.Select(v => v.Emails)).SingleOrDefault(r => r.Id == rr.Id);
+                
+
+
+                }
+                catch (Exception e) {
+
+
+                    System.Console.WriteLine(e.ToString());
+                }
+
+
 
                 if (dbResult == null)
                 {
@@ -218,13 +238,15 @@ namespace R
 
                     var dbBuilding = dbResult.Building;
                     var dbLand = dbResult.Land;
-                    var dbRelativeDetailsURL = dbResult.RelativeDetailsURL;
+                    var dbAlternateURL = dbResult.AlternateURL;
                     var dbProperty = dbResult.Property;
                     var dbProAddress = dbResult.Property.Address;
 
                    
                     if (dbBuilding != null)
                     {
+                        rr.Building.Id = dbBuilding.Id;
+
                         db.Entry(dbBuilding).CurrentValues.SetValues(rr.Building);
                     }else
                     {
@@ -233,11 +255,58 @@ namespace R
 
                     }
 
+                    if (dbLand != null)
+                    {
+                        rr.Land.Id = dbLand.Id;
+                        db.Entry(dbLand).CurrentValues.SetValues(rr.Land);
+                    }
+                    else {
 
-                    db.Entry(dbLand).CurrentValues.SetValues(rr.Land);
-                    db.Entry(dbRelativeDetailsURL).CurrentValues.SetValues(rr.RelativeDetailsURL);
-                    db.Entry(dbProperty).CurrentValues.SetValues(rr.Property);
-                    db.Entry(dbProAddress).CurrentValues.SetValues(rr.Property.Address);
+                        db.Lands.Attach(rr.Land);
+                        dbResult.Land = rr.Land;
+
+                    }
+
+                    if (dbAlternateURL != null)
+                    {
+                        rr.AlternateURL.Id = dbAlternateURL.Id;
+                        db.Entry(dbAlternateURL).CurrentValues.SetValues(rr.AlternateURL);
+                    }
+                    else {
+
+                        db.AlternateURLs.Attach(rr.AlternateURL);
+                        dbResult.AlternateURL = rr.AlternateURL;
+                    }
+
+                    if (dbProperty != null)
+                    {
+
+                        rr.Property.Id = dbProperty.Id;
+                        db.Entry(dbProperty).CurrentValues.SetValues(rr.Property);
+
+                    }
+                    else {
+                        db.Properties.Attach(rr.Property);
+                        dbResult.Property = rr.Property;
+
+
+                    }
+
+
+                    if (dbProAddress != null)
+                    {
+                        rr.Property.Address.Id = dbProAddress.Id;
+                        db.Entry(dbProAddress).CurrentValues.SetValues(rr.Property.Address);
+                    }
+                    else {
+
+                        db.Address2s.Attach(rr.Property.Address);
+                        dbResult.Property.Address = rr.Property.Address;
+
+                    }
+
+
+
 
                     foreach (var p in rr.Property.Parking.ToList())
                     {
@@ -247,6 +316,8 @@ namespace R
 
                             foreach (var dbProParking in dbProperty.Parking.ToList())
                             {
+                                p.Id = dbProParking.Id;
+
                                 db.Entry(dbProParking).CurrentValues.SetValues(p);
                             }
 
@@ -266,8 +337,9 @@ namespace R
                         if(dbProperty.Photo.ToList() != null)
                         { 
                             foreach ( var dbPhoto in dbProperty.Photo.ToList())
-                            { 
-                                 db.Entry(dbPhoto).CurrentValues.SetValues(p);
+                            {
+                                p.Id = dbPhoto.Id;             
+                                db.Entry(dbPhoto).CurrentValues.SetValues(p);
                             }
 
                         }else
@@ -282,6 +354,8 @@ namespace R
                         var dbIndividual = dbResult.Individual.SingleOrDefault(In => In.IndividualID == i.IndividualID);
                         if (dbIndividual != null)
                         {
+
+                            i.Id = dbIndividual.Id;
                             db.Entry(dbIndividual).CurrentValues.SetValues(i);
 
                             
@@ -293,6 +367,7 @@ namespace R
                                 { 
                                    foreach( var dbIndividualPhone in dbIndividual.Phones.ToList())
                                    {
+                                        p.Id = dbIndividualPhone.Id;
 
                                         db.Entry(dbIndividualPhone).CurrentValues.SetValues(p);
                                    }
@@ -312,7 +387,7 @@ namespace R
                                 {
                                     foreach (var dbIndividualEmail in dbIndividual.Emails.ToList())
                                     {
-
+                                        e.Id = dbIndividualEmail.Id;
                                         db.Entry(dbIndividualEmail).CurrentValues.SetValues(e);
                                     }
                                 }
@@ -330,7 +405,7 @@ namespace R
                                 {
                                     foreach (var dbIndividualWebsite in dbIndividual.Websites.ToList())
                                     {
-
+                                        w.Id = dbIndividualWebsite.Id;
                                         db.Entry(dbIndividualWebsite).CurrentValues.SetValues(w);
                                     }
                                 }
@@ -348,6 +423,7 @@ namespace R
 
                             if (dbOrganization != null)
                             {
+                                i.Organization.Id = dbOrganization.Id;
 
                                 db.Entry(dbOrganization).CurrentValues.SetValues(i.Organization);
                                 
@@ -355,6 +431,8 @@ namespace R
                                 var dbOrganizationAddress = dbIndividual.Organization.Address;
                                 if (dbOrganizationAddress != null)
                                 {
+                                    i.Organization.Address.Id = dbOrganizationAddress.Id;
+
                                     db.Entry(dbOrganizationAddress).CurrentValues.SetValues(i.Organization.Address);
                                 }
                                 else {
@@ -370,7 +448,10 @@ namespace R
                                     if( dbOrganization.Phones.ToList() != null)
                                     {  
                                       foreach( var dbOrganizationPhone in  dbOrganization.Phones.ToList())
-                                          db.Entry(dbOrganizationPhone).CurrentValues.SetValues(p);
+                                        {
+                                            p.Id = dbOrganizationPhone.Id; 
+                                            db.Entry(dbOrganizationPhone).CurrentValues.SetValues(p);
+                                        }
                                     }
                                     else
                                     {
@@ -384,8 +465,11 @@ namespace R
                                     if (dbOrganization.Emails.ToList() != null)
                                     {
                                         foreach (var dbOrganizationEmail in dbOrganization.Emails.ToList())
+                                        {
+                                            e.Id = dbOrganizationEmail.Id;
                                             db.Entry(dbOrganizationEmail).CurrentValues.SetValues(e);
-                                    }
+                                        }
+                                        }
                                     else
                                     {
                                         db.Emails.Attach(e);
@@ -398,7 +482,11 @@ namespace R
                                     if (dbOrganization.Websites.ToList() != null)
                                     {
                                         foreach (var dbOrganizationWebsite in dbOrganization.Websites.ToList())
+                                        {
+                                            w.Id = dbOrganizationWebsite.Id;
                                             db.Entry(dbOrganizationWebsite).CurrentValues.SetValues(w);
+
+                                        }
                                     }
                                     else
                                     {
@@ -476,6 +564,8 @@ namespace R
 
             }
 
+
+            
 
         }
     }

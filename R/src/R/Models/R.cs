@@ -74,7 +74,9 @@ namespace R.Models
 
     public class Paging
     {
-      
+
+        public int Id { get; set; }
+
         public int RecordsPerPage { get; set; }
         public int CurrentPage { get; set; }
         public int TotalRecords { get; set; }
@@ -86,7 +88,8 @@ namespace R.Models
 
     public class Building
     {
-        
+
+        public int Id { get; set; }
         public string BathroomTotal { get; set; }
         public string Bedrooms { get; set; }
         public string SizeInterior { get; set; }
@@ -96,13 +99,14 @@ namespace R.Models
 
     public class Address
     {
-        
+        public int Id { get; set; }
         public string AddressText { get; set; }
     }
 
     public class Phone
     {
-        
+        public int Id { get; set; }
+
         public string PhoneType { get; set; }
         public string PhoneNumber { get; set; }
         public string AreaCode { get; set; }
@@ -111,19 +115,21 @@ namespace R.Models
 
     public class Email
     {
+        public int Id { get; set; }
         public string ContactId { get; set; }
     }
 
     public class Website1
     {
-        
+        public int Id { get; set; }
         public string Website { get; set; }
         public string WebsiteTypeId { get; set; }
     }
 
     public class Organization
     {
-     
+        public int Id { get; set; }
+
         public int OrganizationID { get; set; }
         public string Name { get; set; }
         public Address Address { get; set; }
@@ -139,7 +145,8 @@ namespace R.Models
 
     public class Phone2
     {
-   
+        public int Id { get; set; }
+
         public string PhoneType { get; set; }
         public string PhoneNumber { get; set; }
         public string AreaCode { get; set; }
@@ -149,19 +156,21 @@ namespace R.Models
 
     public class Website2
     {
-      
+        public int Id { get; set; }
         public string Website { get; set; }
         public string WebsiteTypeId { get; set; }
     }
 
     public class Email2
     {
+        public int Id { get; set; }
         public string ContactId { get; set; }
     }
 
     public class Individual
     {
-     
+
+        public int Id { get; set; }
         public int IndividualID { get; set; }
         public string Name { get; set; }
         public Organization Organization { get; set; }
@@ -180,7 +189,8 @@ namespace R.Models
 
     public class Address2
     {
- 
+
+        public int Id { get; set; }
         public string AddressText { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
@@ -188,7 +198,7 @@ namespace R.Models
 
     public class Photo
     {
-        
+        public int Id { get; set; }
         public string SequenceId { get; set; }
         public string HighResPath { get; set; }
         public string MedResPath { get; set; }
@@ -198,13 +208,14 @@ namespace R.Models
 
     public class Parking
     {
-       
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Spaces { get; set; }
     }
 
     public class Property
     {
+        public int Id { get; set; }
         public string Price { get; set; }
         public string Type { get; set; }
         public Address2 Address { get; set; }
@@ -217,17 +228,18 @@ namespace R.Models
 
     public class Business
     {
+        public int Id { get; set; }
     }
 
     public class Land
     {
-       
+        public int Id { get; set; }
         public string LandscapeFeatures { get; set; }
     }
 
     public class AlternateURL
     {
-       
+        public int Id { get; set; }
         public string BrochureLink { get; set; }
         public string DetailsLink { get; set; }
     }
@@ -244,18 +256,22 @@ namespace R.Models
         public string Id { get; set; }
         public string MlsNumber { get; set; }
         public string PublicRemarks { get; set; }
+
+        public string PostalCode { get; set; }
+        public string RelativeDetailsURL { get; set; }
+
         public Building Building { get; set; }
         public List<Individual> Individual { get; set; }
         public Property Property { get; set; }
         public Business Business { get; set; }
         public Land Land { get; set; }
-        public string PostalCode { get; set; }
-        public string RelativeDetailsURL { get; set; }
+       
         public AlternateURL AlternateURL { get; set; }
     }
 
     public class Pin
     {
+        public int Id { get; set; }
         public string key { get; set; }
         public string propertyId { get; set; }
         public int count { get; set; }

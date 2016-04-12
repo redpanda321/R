@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>R</name>
+    </assembly>
+    <members>
+        <member name="F:R.Program.PROPERTYAPI">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:R.Program.client">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:R.Program.request">
+            <summary>
+            RestRe
+            </summary>
+        </member>
+        <member name="F:R.Program.db">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:R.Program.random">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:R.Program.GetProperty(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Get Api Results(String Format)
+            </summary>
+            <param name="longitudeMin"></param>
+            <param name="longitudeMax"></param>
+            <param name="latitudeMin"></param>
+            <param name="latitudeMax"></param>
+            <param name="longitude"></param>
+            <param name="latitude"></param>
+            <param name="currentPage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R.Program.GetPagingNumber(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Get Pages Number
+            </summary>
+            <param name="longitudeMin"></param>
+            <param name="longitudeMax"></param>
+            <param name="latitudeMin"></param>
+            <param name="latitudeMax"></param>
+            <param name="longitude"></param>
+            <param name="latitude"></param>
+            <param name="currentPage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:R.Program.GetCookies">
+            <summary>
+            Get All Cookies
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
