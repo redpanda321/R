@@ -17,14 +17,38 @@ using RestSharp;
 using RestSharp.Deserializers;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 using R.Models;
-using Newtonsoft.Json.Linq;
+using Microsoft.Framework.Runtime;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace R
 {
-    public class Program
+    public  class Program
     {
+
+
+         public   Program()
+        {
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json");
+
+            Configuration = builder.Build();
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<RContext, R.Migrations.Configuration>());
+
+            RContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
+        }
+
+        public IConfigurationRoot Configuration { get; set; }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddScoped<RContext>();
+        }
+
         /// <summary>
         /// 
         /// </summary>

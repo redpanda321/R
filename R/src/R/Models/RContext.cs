@@ -12,7 +12,12 @@ namespace R.Models
 {
   public  class RContext : DbContext
     {
-        public RContext() : base("RDBConnectionString")
+
+        public static string ConnectionString { get; set; } =
+            "Server=(localdb)\\mssqllocaldb;Database=R;Trusted_Connection=True;MultipleActiveResultSets=true";
+
+
+        public RContext() : base(ConnectionString)
         {
             Database.SetInitializer<RContext>(new CreateDatabaseIfNotExists<RContext>());
 
