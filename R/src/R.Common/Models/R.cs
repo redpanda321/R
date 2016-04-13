@@ -6,52 +6,16 @@ using System.Threading.Tasks;
 
 namespace R.Models
 {
-    public class House {
-
-        public int Id { get; set; }
-
-        public string ImageUrl { get; set; }
-
-        public string Url { get; set; }
-
-        public string Address { get; set; }
-
-        public string Community { get; set; }
-
-        public string PostCode { get; set; }
-        
-        public string City { get; set; }
-
-        public string Province { get; set; }
-
-        public float CurrentPrice { get; set; }
-
-        public float Bedroom { get; set; }
-
-        public float Bedroom1 { get; set; }
-
-        public float Bedroom2 { get; set; }
-
-        public float Bashroom { get; set; }
-
-        public string Type { get; set; }
-
-        public string MlsNumber { get; set; }
-
-
-    }
-
-
-    public class HousePrice {
+    
+    public class ResultHistory {
 
        public int Id { get; set; }
 
        public string Date { get; set; }
 
-       public int HouseId { get; set; }  
+       public string ResultId { get; set; }  
 
-
-       public string MlsNumber { get; set; }
+       public float Price { get; set; }
     }
 
 
@@ -290,6 +254,34 @@ namespace R.Models
         public Paging Paging { get; set; }
         public List<Result> Results { get; set; }
         public List<Pin> Pins { get; set; }
+    }
+
+
+    public class Position {
+
+        public Position() {
+
+
+             LongitudeMin = "-115.90212547926488";
+             LongitudeMax = "-110.82094872145238";
+             LatitudeMin = "50.051219586625";
+             LatitudeMax = "51.523515704948416";
+             Longitude = "-113.914628";
+             Latitude =  "50.897983";
+
+
+        }
+
+
+        public String LongitudeMin { get; set; }
+        public String LongitudeMax { get; set; }
+        public String LatitudeMin { get; set; }
+        public String LatitudeMax { get; set; }
+        public String Longitude { get; set; }
+        public String Latitude { get; set; }
+
+
+
     }
 
 

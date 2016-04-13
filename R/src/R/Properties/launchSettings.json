@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "R": {
+      "commandName": "R",
+      "commandLineArgs": "--debug "
+    }
+  }
+}

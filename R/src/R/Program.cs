@@ -29,8 +29,7 @@ using Microsoft.Extensions.PlatformAbstractions;
 namespace R
 {
     public  class  Program
-    {
-        
+    {   
         static Program()
         {
             var builder = new ConfigurationBuilder()
@@ -48,8 +47,7 @@ namespace R
         }
 
         public static  IConfigurationRoot Configuration { get; set; }
-        
-
+     
         /// <summary>
         /// 
         /// </summary>
@@ -73,8 +71,7 @@ namespace R
         /// 
         /// </summary>
         public static Random  random = new Random();
-
-
+        
         /// <summary>
         /// Get Api Results(String Format)
         /// </summary>
@@ -188,7 +185,6 @@ namespace R
 
         }
 
-
         public static void SaveResults(List<Result> results)
         {
 
@@ -202,9 +198,36 @@ namespace R
             {
 
 
+                //Result history
+                try
+                {
+                    ResultHistory resultHistory = new ResultHistory();
+                    resultHistory.Date = DateTime.Now.ToString();
+                    resultHistory.ResultId = rr.Id;
+
+                    string price1 = rr.Property.Price.Replace('$', ' ');
+                    if (rr.Property.Price.IndexOf(',') >= 0)
+                    {
+                        string[] price = price1.Split(',');
+                        price1 = price[0] + price[1];
+                    }
+
+
+                        resultHistory.Price = Convert.ToSingle(price1);
+                    db.ResultHistories.Add(resultHistory);
+
+                }
+                catch (Exception e)
+                {
+
+                    System.Console.WriteLine(e.ToString());
+                 
+
+                }
                 //Related Objects
-               
+
                 Result dbResult = new Result();
+               
 
                 try
                 {
@@ -596,50 +619,110 @@ namespace R
             db.SaveChanges();
 
         }
+        
+        /// <summary>
+        /// Craweler
+        /// </summary>
+        public static void ThingsTodo() {
 
 
-        public static void Main(string[] args)
-        {
-           
+            //s
+            /*
             string longitudeMin = "-114.145241108551";
             string longitudeMax = "-114.1139558226013";
             string latitudeMin = "51.03625085626268";
             string latitudeMax = "51.04243032849644";
-            string longitude ="-114.13389";
+            string longitude = "-114.13389";
             string latitude = "51.039";
+            */
 
+            /*
+             //all  
+            String longitudeMin=”-115.90212547926488”;
+            String longitudeMax=”-110.82094872145238”;
+            String latitudeMin=”50.051219586625”;
+            String latitudeMax=”51.523515704948416”;
+            String longitude=”-113.914628”;
+            String latitude=”50.897983”;
 
-           //client.CookieContainer = GetCookies();
+            */
+
             
-           int num = GetPagingNumber(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude);
+            //C
+            
+            String longitudeMin = Configuration["Geo:Position:LongitudeMin"];
+            String longitudeMax = Configuration["Geo:Position:LongitudeMax"];
+            String latitudeMin = Configuration["Geo:Position:LatitudeMin"];
+            String latitudeMax = Configuration["Geo:Position:LatitudeMax"];
+            String longitude = Configuration["Geo:Position:Longitude"];
+            String latitude = Configuration["Geo:Position:Latitude"];
+            
+            //client.CookieContainer = GetCookies();
+
+            int num = GetPagingNumber(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude);
 
             if (num > 0)
             {
                 for (int i = 1; i <= num; i++)
                 {
 
-                    //Sleep 1~10 s
-                    var span = random.Next(1000, 10000);
+                    //Sleep 1~5 s
+                    var span = random.Next(1000, 5000);
                     Thread.Sleep(span);
-                    
+
                     //Get Data
-                     string   content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
-                     Results results =   JsonConvert.DeserializeObject<Results>(content);
-                     Pins  pins =  JsonConvert.DeserializeObject<Pins>(content);
+                    string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
+                    Results results = JsonConvert.DeserializeObject<Results>(content);
+                    Pins pins = JsonConvert.DeserializeObject<Pins>(content);
 
                     //Save Data
-                    if(results.results != null && results.results.Count >  0)
-                       SaveResults(results.results);
+                    if (results.results != null && results.results.Count > 0)
+                        SaveResults(results.results);
 
 
-                    
+
                 }
 
             }
 
 
-            
+        }
 
+        public static void Main(string[] args)
+        {
+
+           // ThingsTodo();
+           
+            var DailyTime = Configuration["Task:Timer"];
+            var timeParts = DailyTime.Split(new char[1] { ':' });
+
+
+            while(true)
+            { 
+                var dateNow = DateTime.Now;
+                var date = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, int.Parse(timeParts[0]), int.Parse(timeParts[1]), int.Parse(timeParts[2]));
+
+                TimeSpan ts;
+                if (date > dateNow)
+                {
+                    ts = date - dateNow;
+                }
+                else {
+
+                    date = date.AddDays(1);
+                    ts = date - dateNow;
+                }
+
+                System.Console.WriteLine("dateNow:" + dateNow.ToString());
+                System.Console.WriteLine("date:" + date.ToString());
+                System.Console.WriteLine("Ts:" + ts.ToString());
+
+                Task.Delay(ts).Wait();
+                ThingsTodo();
+
+
+            }
+            
         }
     }
 }

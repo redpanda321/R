@@ -29,9 +29,7 @@ namespace R.Models
 
 
 
-        public DbSet<House> Houses { get; set; }
-
-        public DbSet<HousePrice> HousePrices { get; set; }
+        public DbSet<ResultHistory> ResultHistories { get; set; }
 
 
         public DbSet<Address2> Address2s { get; set; }
