@@ -118,6 +118,10 @@ namespace R
             request.AddParameter("Longitude", longitude);
             request.AddParameter("Latitude", latitude);
             request.AddParameter("CurrentPage", currentPage);
+            request.AddParameter("ZoomLevel", "11");
+
+
+             
 
 
             request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json charset=utf-8"; };
@@ -126,6 +130,8 @@ namespace R
             string content = client.Execute(request).Content;
 
             System.Console.WriteLine("content:" + content);
+
+            System.Console.WriteLine("currentPage:" + currentPage);
 
             return  content ;
 
@@ -149,7 +155,17 @@ namespace R
            
 
             JObject o = JObject.Parse(content);
-            int num = (int)o["Paging"]["TotalPages"];
+            int total = (int)o["Paging"]["TotalRecords"];
+
+            int n1 = total / 9;
+            int n2 = 0;
+            if (total % 9 != 0)
+                n2 = 1;
+
+            int num = n1 + n2;
+
+
+
             System.Console.WriteLine("num:" + num);
 
             return num;
@@ -182,6 +198,62 @@ namespace R
            // driver.Quit();
 
             return cookieContainer;
+
+        }
+
+
+
+        public static void SavePins(List<Pin> pins)
+        {
+
+            if (pins == null) return;
+            if (pins.Count <= 0) return;
+
+            ApplicationDbContext db = new ApplicationDbContext();
+
+
+           
+            foreach (var p in pins) {
+
+
+                try {
+
+                    if( p != null)
+                    { 
+
+                    Pin dbPin = new Pin();
+
+                    dbPin = db.Pins.FirstOrDefault(dp => dp.key == p.key);
+
+                    if (dbPin == null)
+                    {
+
+                        db.Pins.Add(p);
+
+                    }
+                    else {
+
+                            db.Entry(dbPin).Entity.latitude = p.latitude;
+                            db.Entry(dbPin).Entity.longitude = p.longitude;
+                            db.Entry(dbPin).Entity.propertyId = p.propertyId;
+
+                          //  db.Entry(dbPin).CurrentValues.SetValues(p);
+                            
+                      }
+                    }
+
+
+                } catch (Exception e) {
+
+
+                    System.Console.WriteLine(e);
+                }
+
+            }
+
+
+            db.SaveChanges();
+
 
         }
 
@@ -625,7 +697,7 @@ namespace R
         /// </summary>
         public static void ThingsTodo() {
 
-
+            #region  data
             //s
             /*
             string longitudeMin = "-114.145241108551";
@@ -638,6 +710,29 @@ namespace R
 
             /*
              //all  
+            String longitudeMax=180
+            String latitudeMin=-67.91660022479132
+            String latitudeMax=82.48055792406726
+            String longitude=-113.914628
+            String latitude=50.897983
+
+            
+             "Position": {
+
+              "LongitudeMax": "180",
+              "LongitudeMin": "-67.91660022479132",
+              "LatitudeMax": "82.48055792406726",
+              "LatitudeMin": "50.051219586625",
+              "Longitude": "-113.914628",
+              "Latitude": "50.897983"
+            }
+
+            
+            */
+
+
+            /*
+           
             String longitudeMin=”-115.90212547926488”;
             String longitudeMax=”-110.82094872145238”;
             String latitudeMin=”50.051219586625”;
@@ -645,18 +740,28 @@ namespace R
             String longitude=”-113.914628”;
             String latitude=”50.897983”;
 
-            */
+            
 
-            
-            //C
-            
+            "Position": {
+
+            "LongitudeMin": "-115.90212547926488",
+            "LongitudeMax": "-110.82094872145238",
+            "LatitudeMin": "50.051219586625",
+            "LatitudeMax": "51.523515704948416",
+            "Longitude": "-113.914628",
+            "Latitude": "50.897983"
+            }
+
+  */
+            #endregion
+
             String longitudeMin = Configuration["Geo:Position:LongitudeMin"];
             String longitudeMax = Configuration["Geo:Position:LongitudeMax"];
             String latitudeMin = Configuration["Geo:Position:LatitudeMin"];
             String latitudeMax = Configuration["Geo:Position:LatitudeMax"];
             String longitude = Configuration["Geo:Position:Longitude"];
             String latitude = Configuration["Geo:Position:Latitude"];
-            
+
             //client.CookieContainer = GetCookies();
 
             int num = GetPagingNumber(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude);
@@ -676,53 +781,56 @@ namespace R
                     Pins pins = JsonConvert.DeserializeObject<Pins>(content);
 
                     //Save Data
+                    SavePins(pins.pins);
+
+
                     if (results.results != null && results.results.Count > 0)
                         SaveResults(results.results);
 
-
+                    
 
                 }
 
             }
 
 
-        }
+            }
 
-        public static void Main(string[] args)
-        {
+            public static void Main(string[] args)
+            {
 
-           // ThingsTodo();
-           
+            // ThingsTodo();
+
             var DailyTime = Configuration["Task:Timer"];
             var timeParts = DailyTime.Split(new char[1] { ':' });
 
 
-            while(true)
-            { 
-                var dateNow = DateTime.Now;
-                var date = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, int.Parse(timeParts[0]), int.Parse(timeParts[1]), int.Parse(timeParts[2]));
+                while(true)
+                { 
+                    var dateNow = DateTime.Now;
+                    var date = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, int.Parse(timeParts[0]), int.Parse(timeParts[1]), int.Parse(timeParts[2]));
 
-                TimeSpan ts;
-                if (date > dateNow)
-                {
-                    ts = date - dateNow;
+                    TimeSpan ts;
+                    if (date > dateNow)
+                    {
+                        ts = date - dateNow;
+                    }
+                    else {
+
+                        date = date.AddDays(1);
+                        ts = date - dateNow;
+                    }
+
+                    System.Console.WriteLine("dateNow:" + dateNow.ToString());
+                    System.Console.WriteLine("date:" + date.ToString());
+                    System.Console.WriteLine("Ts:" + ts.ToString());
+
+                    Task.Delay(ts).Wait();
+                    ThingsTodo();
+
+
                 }
-                else {
-
-                    date = date.AddDays(1);
-                    ts = date - dateNow;
-                }
-
-                System.Console.WriteLine("dateNow:" + dateNow.ToString());
-                System.Console.WriteLine("date:" + date.ToString());
-                System.Console.WriteLine("Ts:" + ts.ToString());
-
-                Task.Delay(ts).Wait();
-                ThingsTodo();
-
 
             }
-            
-        }
-    }
-}
+            }
+            }
