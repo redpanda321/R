@@ -28,8 +28,8 @@ using Microsoft.Extensions.PlatformAbstractions;
 
 namespace R
 {
-    public  class  Program
-    {   
+    public class Program
+    {
         static Program()
         {
             var builder = new ConfigurationBuilder()
@@ -43,35 +43,20 @@ namespace R
             Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
 
-           
+
         }
 
-        public static  IConfigurationRoot Configuration { get; set; }
-     
+        public static IConfigurationRoot Configuration { get; set; }
+
+        public static System.Threading.Thread[] threads = new Thread[1024];
+
         /// <summary>
         /// 
         /// </summary>
         public static string PROPERTYAPI = "https://www.realtor.ca/api/Listing.svc/PropertySearch_Post";
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        public static RestClient client = new RestClient(PROPERTYAPI);
 
-        /// <summary>
-        /// RestRe
-        /// </summary>
-        public static RestRequest request = new RestRequest();
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public static ApplicationDbContext db = new ApplicationDbContext();
-        /// <summary>
-        /// 
-        /// </summary>
-        public static Random  random = new Random();
-        
+
         /// <summary>
         /// Get Api Results(String Format)
         /// </summary>
@@ -83,57 +68,75 @@ namespace R
         /// <param name="latitude"></param>
         /// <param name="currentPage"></param>
         /// <returns></returns>
-        public static string GetProperty(string longitudeMin,string longitudeMax,string latitudeMin,string latitudeMax,string longitude,string latitude, string currentPage) {
+        public static string GetProperty(string longitudeMin, string longitudeMax, string latitudeMin, string latitudeMax, string longitude, string latitude, string currentPage)
+        {
 
-            client = new RestClient(PROPERTYAPI);
-            request = new RestRequest();
+            string content = "";
 
-            request.Method = Method.POST;
+            try
+            {
 
-            request.AddHeader("Host", "www.realtor.ca");
-            request.AddHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0");
-            request.AddHeader("Accept", "*/*"); //application/json
-            request.AddHeader("Accept-Language", "en-US,en;q=0.5");
-            request.AddHeader("Accept-Encoding", "gzip, deflate, br");
-            request.AddHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-            request.AddHeader("Referer", "https://www.realtor.ca");
+                var client = new RestClient(PROPERTYAPI);
+                var request = new RestRequest();
 
+                request.Method = Method.POST;
 
-            request.AddParameter("CultureId", "1");
-            request.AddParameter("ApplicationId", "1");
-            request.AddParameter("RecordsPerPage", "9");
-            request.AddParameter("MaximumResults", "9");
-            request.AddParameter("PropertySearchTypeId", "1");
-            request.AddParameter("TransactionTypeId", "2");
-            request.AddParameter("StoreyRange", "0-0");
-            request.AddParameter("BedRange", "0-0");
-            request.AddParameter("BathRange", "0-0");
-            request.AddParameter("LongitudeMin", longitudeMin);
-            request.AddParameter("LongitudeMax", longitudeMax);
-            request.AddParameter("LatitudeMin", latitudeMin);
-            request.AddParameter("LatitudeMax", latitudeMax);
-            request.AddParameter("SortOrder", "A");
-            request.AddParameter("SortBy", "1");
-            request.AddParameter("viewState", "g");
-            request.AddParameter("Longitude", longitude);
-            request.AddParameter("Latitude", latitude);
-            request.AddParameter("CurrentPage", currentPage);
-            request.AddParameter("ZoomLevel", "11");
+                request.AddHeader("Host", "www.realtor.ca");
+                request.AddHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0");
+                request.AddHeader("Accept", "*/*"); //application/json
+                request.AddHeader("Accept-Language", "en-US,en;q=0.5");
+                request.AddHeader("Accept-Encoding", "gzip, deflate, br");
+                request.AddHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+                request.AddHeader("Referer", "https://www.realtor.ca");
 
 
-             
+                request.AddParameter("CultureId", "1");
+                request.AddParameter("ApplicationId", "1");
+                request.AddParameter("RecordsPerPage", "9");
+                request.AddParameter("MaximumResults", "9");
+                request.AddParameter("PropertySearchTypeId", "1");
+                request.AddParameter("TransactionTypeId", "2");
+                request.AddParameter("StoreyRange", "0-0");
+                request.AddParameter("BedRange", "0-0");
+                request.AddParameter("BathRange", "0-0");
+                request.AddParameter("LongitudeMin", longitudeMin);
+                request.AddParameter("LongitudeMax", longitudeMax);
+                request.AddParameter("LatitudeMin", latitudeMin);
+                request.AddParameter("LatitudeMax", latitudeMax);
+                request.AddParameter("SortOrder", "A");
+                request.AddParameter("SortBy", "1");
+                request.AddParameter("viewState", "g");
+                request.AddParameter("Longitude", longitude);
+                request.AddParameter("Latitude", latitude);
+                request.AddParameter("CurrentPage", currentPage);
+                request.AddParameter("ZoomLevel", "11");
 
 
-            request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json charset=utf-8"; };
-            client.AddHandler("application/json", new DynamicJsonDeserializer());
 
-            string content = client.Execute(request).Content;
 
-            System.Console.WriteLine("content:" + content);
 
-            System.Console.WriteLine("currentPage:" + currentPage);
+                request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json charset=utf-8"; };
+                client.AddHandler("application/json", new DynamicJsonDeserializer());
 
-            return  content ;
+                content = client.Execute(request).Content;
+
+
+                System.Console.WriteLine("content:" + content);
+
+                System.Console.WriteLine("currentPage:" + currentPage);
+
+
+
+               
+
+            }
+            catch (Exception e) {
+
+                System.Console.WriteLine(e.ToString());
+            }
+
+
+            return content;
 
         }
 
@@ -152,7 +155,7 @@ namespace R
         {
 
             string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, "1");
-           
+
 
             JObject o = JObject.Parse(content);
             int total = (int)o["Paging"]["TotalRecords"];
@@ -175,7 +178,8 @@ namespace R
         /// Get All Cookies
         /// </summary>
         /// <returns></returns>
-        public static CookieContainer GetCookies() {
+        public static CookieContainer GetCookies()
+        {
 
             IWebDriver driver = new FirefoxDriver();
             driver.Manage().Window.Position = new Point(-2000, 0);
@@ -183,25 +187,23 @@ namespace R
             driver.Navigate().GoToUrl("https://www.realtor.ca");
             driver.Navigate().GoToUrl("https://www.realtor.ca/Residential/Map.aspx#CultureId=1&ApplicationId=1&RecordsPerPage=9&MaximumResults=9&PropertySearchTypeId=1&TransactionTypeId=2&StoreyRange=0-0&BedRange=0-0&BathRange=0-0&LongitudeMin=-114.13666876853941&LongitudeMax=-114.12212046684263&LatitudeMin=51.03741800312255&LatitudeMax=51.04181646583393&SortOrder=A&SortBy=1&viewState=g&Longitude=-114.13389&Latitude=51.039&CurrentPage=1");
             System.Console.WriteLine("title is :" + driver.Title);
-            
+
             List<OpenQA.Selenium.Cookie> cookies = driver.Manage().Cookies.AllCookies.ToList();
             CookieContainer cookieContainer = new CookieContainer();
             foreach (var c in cookies)
             {
                 System.Console.WriteLine("name:{0} value:{1}", c.Name, c.Value);
-                System.Net.Cookie cookie = new System.Net.Cookie(c.Name,c.Value,c.Path,c.Domain);
+                System.Net.Cookie cookie = new System.Net.Cookie(c.Name, c.Value, c.Path, c.Domain);
                 //if(c.Expiry.Value != null)
                 // cookie.Expires = c.Expiry.Value;
                 cookieContainer.Add(cookie);
             }
 
-           // driver.Quit();
+            // driver.Quit();
 
             return cookieContainer;
 
         }
-
-
 
         public static void SavePins(List<Pin> pins)
         {
@@ -212,38 +214,43 @@ namespace R
             ApplicationDbContext db = new ApplicationDbContext();
 
 
-           
-            foreach (var p in pins) {
+
+            foreach (var p in pins)
+            {
 
 
-                try {
+                try
+                {
 
-                    if( p != null)
-                    { 
-
-                    Pin dbPin = new Pin();
-
-                    dbPin = db.Pins.FirstOrDefault(dp => dp.key == p.key);
-
-                    if (dbPin == null)
+                    if (p != null)
                     {
 
-                        db.Pins.Add(p);
+                        Pin dbPin = new Pin();
 
-                    }
-                    else {
+                        dbPin = db.Pins.FirstOrDefault(dp => dp.key == p.key);
+
+                        if (dbPin == null)
+                        {
+
+                            db.Pins.Add(p);
+
+                        }
+                        else
+                        {
 
                             db.Entry(dbPin).Entity.latitude = p.latitude;
                             db.Entry(dbPin).Entity.longitude = p.longitude;
                             db.Entry(dbPin).Entity.propertyId = p.propertyId;
 
-                          //  db.Entry(dbPin).CurrentValues.SetValues(p);
-                            
-                      }
+                            //  db.Entry(dbPin).CurrentValues.SetValues(p);
+
+                        }
                     }
 
 
-                } catch (Exception e) {
+                }
+                catch (Exception e)
+                {
 
 
                     System.Console.WriteLine(e);
@@ -285,7 +292,7 @@ namespace R
                     }
 
 
-                        resultHistory.Price = Convert.ToSingle(price1);
+                    resultHistory.Price = Convert.ToSingle(price1);
                     db.ResultHistories.Add(resultHistory);
 
                 }
@@ -293,35 +300,36 @@ namespace R
                 {
 
                     System.Console.WriteLine(e.ToString());
-                 
+
 
                 }
                 //Related Objects
 
                 Result dbResult = new Result();
-               
+
 
                 try
                 {
 
-                    
-                dbResult = db.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.AlternateURL)
-                .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking)
-                .Include(r => r.Property.Photo)
-                .Include(r => r.Individual)
-                 .Include(r => r.Individual.Select(v => v.Organization))
-                .Include(r => r.Individual.Select(v => v.Organization.Address))
-                .Include(r => r.Individual.Select(v => v.Organization.Phones))
-                .Include(r => r.Individual.Select(v => v.Organization.Emails))
-                .Include(r => r.Individual.Select(v => v.Organization.Websites))
-                .Include(r => r.Individual.Select(v => v.Phones))
-                .Include(r => r.Individual.Select(v => v.Websites))
-                .Include(r => r.Individual.Select(v => v.Emails)).SingleOrDefault(r => r.Id == rr.Id);
-                
+
+                    dbResult = db.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.AlternateURL)
+                    .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking)
+                    .Include(r => r.Property.Photo)
+                    .Include(r => r.Individual)
+                     .Include(r => r.Individual.Select(v => v.Organization))
+                    .Include(r => r.Individual.Select(v => v.Organization.Address))
+                    .Include(r => r.Individual.Select(v => v.Organization.Phones))
+                    .Include(r => r.Individual.Select(v => v.Organization.Emails))
+                    .Include(r => r.Individual.Select(v => v.Organization.Websites))
+                    .Include(r => r.Individual.Select(v => v.Phones))
+                    .Include(r => r.Individual.Select(v => v.Websites))
+                    .Include(r => r.Individual.Select(v => v.Emails)).SingleOrDefault(r => r.Id == rr.Id);
+
 
 
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
 
 
                     System.Console.WriteLine(e.ToString());
@@ -338,7 +346,7 @@ namespace R
                     try
                     {
 
-                        
+
                         db.Entry(dbResult).CurrentValues.SetValues(rr);
 
                         var dbBuilding = dbResult.Building;
@@ -348,8 +356,8 @@ namespace R
                         var dbProAddress = dbResult.Property.Address;
 
 
-                        if(rr.Building != null)
-                        { 
+                        if (rr.Building != null)
+                        {
                             if (dbBuilding != null)
                             {
                                 rr.Building.Id = dbBuilding.Id;
@@ -364,8 +372,8 @@ namespace R
                             }
                         }
 
-                        if(rr.Land != null)
-                        { 
+                        if (rr.Land != null)
+                        {
                             if (dbLand != null)
                             {
                                 rr.Land.Id = dbLand.Id;
@@ -381,8 +389,8 @@ namespace R
                         }
 
 
-                        if(rr.AlternateURL != null)
-                        { 
+                        if (rr.AlternateURL != null)
+                        {
                             if (dbAlternateURL != null)
                             {
                                 rr.AlternateURL.Id = dbAlternateURL.Id;
@@ -396,12 +404,12 @@ namespace R
                                     dbResult.AlternateURL = rr.AlternateURL;
                                 }
                                 catch { }
-                             }
+                            }
                         }
 
 
-                        if(rr.Property != null)
-                        { 
+                        if (rr.Property != null)
+                        {
                             if (dbProperty != null)
                             {
 
@@ -417,8 +425,8 @@ namespace R
                         }
 
 
-                        if(rr.Property.Address !=null)
-                        { 
+                        if (rr.Property.Address != null)
+                        {
                             if (dbProAddress != null)
                             {
                                 rr.Property.Address.Id = dbProAddress.Id;
@@ -460,8 +468,8 @@ namespace R
                             }
                         }
 
-                        if(rr.Property.Photo != null && rr.Property.Photo.Count >0)
-                        { 
+                        if (rr.Property.Photo != null && rr.Property.Photo.Count > 0)
+                        {
                             foreach (var p in rr.Property.Photo.ToList())
                             {
 
@@ -482,8 +490,8 @@ namespace R
                             }
                         }
 
-                        if(rr.Individual !=null && rr.Individual.Count > 0)
-                        { 
+                        if (rr.Individual != null && rr.Individual.Count > 0)
+                        {
                             foreach (var i in rr.Individual.ToList())
                             {
                                 var dbIndividual = dbResult.Individual.SingleOrDefault(In => In.IndividualID == i.IndividualID);
@@ -493,8 +501,8 @@ namespace R
                                     i.Id = dbIndividual.Id;
                                     db.Entry(dbIndividual).CurrentValues.SetValues(i);
 
-                                    if(i.Phones !=null && i.Phones.Count >0)
-                                    { 
+                                    if (i.Phones != null && i.Phones.Count > 0)
+                                    {
                                         foreach (var p in i.Phones.ToList())
                                         {
 
@@ -540,8 +548,8 @@ namespace R
                                         }
                                     }
 
-                                    if(i.Websites != null &&  i.Websites.Count > 1)
-                                    { 
+                                    if (i.Websites != null && i.Websites.Count > 1)
+                                    {
                                         foreach (var w in i.Websites.ToList())
                                         {
                                             if (dbIndividual.Websites.ToList() != null)
@@ -563,8 +571,8 @@ namespace R
                                     }
 
                                     var dbOrganization = dbIndividual.Organization;
-                                    if(i.Organization != null)
-                                    { 
+                                    if (i.Organization != null)
+                                    {
                                         if (dbOrganization != null)
                                         {
                                             i.Organization.Id = dbOrganization.Id;
@@ -574,8 +582,8 @@ namespace R
 
                                             var dbOrganizationAddress = dbIndividual.Organization.Address;
 
-                                            if(i.Organization.Address != null)
-                                            { 
+                                            if (i.Organization.Address != null)
+                                            {
                                                 if (dbOrganizationAddress != null)
                                                 {
                                                     i.Organization.Address.Id = dbOrganizationAddress.Id;
@@ -591,9 +599,9 @@ namespace R
                                                 }
                                             }
 
-                                            if(i.Organization.Phones != null && i.Organization.Phones.Count> 0)
-                                            { 
-                                                    foreach (var p in i.Organization.Phones.ToList())
+                                            if (i.Organization.Phones != null && i.Organization.Phones.Count > 0)
+                                            {
+                                                foreach (var p in i.Organization.Phones.ToList())
                                                 {
 
                                                     if (dbOrganization.Phones.ToList() != null)
@@ -613,7 +621,7 @@ namespace R
                                             }
 
                                             if (i.Organization.Emails != null && i.Organization.Emails.Count > 0)
-                                            { 
+                                            {
                                                 foreach (var e in i.Organization.Emails.ToList())
                                                 {
                                                     if (dbOrganization.Emails.ToList() != null)
@@ -691,11 +699,65 @@ namespace R
             db.SaveChanges();
 
         }
-        
+
+
+        public static void ProcessThing(string longitudeMin, string longitudeMax, string latitudeMin, string latitudeMax, string longitude, string latitude, int from, int to)
+        {
+
+
+            if (from > 0 & to > 0)
+            {
+
+                if (to > from)
+                {
+
+
+                    for (int i = from; i <= to; i++)
+                    {
+
+
+
+                        //Sleep 1~5 s
+
+
+                       // Random random = new Random();
+                       // var span = random.Next(1000, 5000);
+                       // Thread.Sleep(span);
+
+                        //Get Data
+                        string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
+                        Results results = JsonConvert.DeserializeObject<Results>(content);
+                        Pins pins = JsonConvert.DeserializeObject<Pins>(content);
+
+                        //Save Data
+                        if (pins.pins != null && pins.pins.Count > 0)
+                            SavePins(pins.pins);
+
+
+                        if (results.results != null && results.results.Count > 0)
+                            SaveResults(results.results);
+
+
+
+
+                    }
+
+
+                }
+
+            }
+
+
+        }
+
+
+
+
         /// <summary>
         /// Craweler
         /// </summary>
-        public static void ThingsTodo() {
+        public static void ThingsTodo()
+        {
 
             #region  data
             //s
@@ -764,73 +826,153 @@ namespace R
 
             //client.CookieContainer = GetCookies();
 
+            int factor = Convert.ToInt32(Configuration["Task:Factor"]);
+
             int num = GetPagingNumber(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude);
 
-            if (num > 0)
+            int n = 0;
+            int m = 0;
+
+            Dictionary<int, int> dic = new Dictionary<int, int>();
+
+
+            if (num > 0 & factor > 0)
             {
-                for (int i = 1; i <= num; i++)
+                n = num / factor;
+                m = num % factor;
+
+                if (n == 0 || ((n == 1) & (m == 0)))
                 {
 
-                    //Sleep 1~5 s
-                    var span = random.Next(1000, 5000);
-                    Thread.Sleep(span);
-
-                    //Get Data
-                    string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
-                    Results results = JsonConvert.DeserializeObject<Results>(content);
-                    Pins pins = JsonConvert.DeserializeObject<Pins>(content);
-
-                    //Save Data
-                    SavePins(pins.pins);
-
-
-                    if (results.results != null && results.results.Count > 0)
-                        SaveResults(results.results);
-
-                    
+                    threads = new Thread[1];
+                    threads[0] = new Thread(() => ProcessThing(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, 1, num));
+                    threads[0].IsBackground = true;
+                    threads[0].Start();
 
                 }
+                else if ((n == 1) & (m > 0))
+                {
+
+                    threads = new Thread[2];
+                    dic.Add(1, factor);
+                    dic.Add(factor+1, num);
+
+
+                    for (int i = 0; i < dic.Count; i++)
+                    {
+                        var entry = dic.ElementAt(i);
+                        threads[i] = new Thread(() => ProcessThing(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, entry.Key, entry.Value));
+                        threads[i].IsBackground = true;
+                        threads[i].Start();
+                    }
+
+
+
+                }
+                else if (n > 1)
+                {
+
+                    
+                    threads = new Thread[n + 1];
+                    dic.Add(1, factor);
+
+                    for (int i = 2; i <= n; i++)
+                    {
+
+                        dic.Add(1 + (i - 1) * factor, i * factor);
+
+                    }
+
+                    if (m > 0)
+                    dic.Add(n * factor + 1, num);
+
+                    
+                    for (int j = 0; j < dic.Count; j++)
+                    {
+                        var entry = dic.ElementAt(j);
+                        threads[j] = new Thread(() => ProcessThing(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, entry.Key, entry.Value));
+                        threads[j].IsBackground = true;
+                        threads[j].Start();
+                    }
+                    
+                }
+
+
 
             }
 
 
-            }
+            bool live = true ;
 
-            public static void Main(string[] args)
+            do
             {
 
-            // ThingsTodo();
+                live = false ;
+
+                for (int k = 0; k < threads.Count(); k++)
+                {
+
+                    if (threads[k].IsAlive)
+                        live = true;                
+                }
+
+                Thread.Sleep(1);
+
+            } while (live);
+
+
+        }
+
+
+        public static void ThingsTodoTask()
+        {
+
 
             var DailyTime = Configuration["Task:Timer"];
             var timeParts = DailyTime.Split(new char[1] { ':' });
 
 
-                while(true)
-                { 
-                    var dateNow = DateTime.Now;
-                    var date = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, int.Parse(timeParts[0]), int.Parse(timeParts[1]), int.Parse(timeParts[2]));
+            while (true)
+            {
+                var dateNow = DateTime.Now;
+                var date = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, int.Parse(timeParts[0]), int.Parse(timeParts[1]), int.Parse(timeParts[2]));
 
-                    TimeSpan ts;
-                    if (date > dateNow)
-                    {
-                        ts = date - dateNow;
-                    }
-                    else {
+                TimeSpan ts;
+                if (date > dateNow)
+                {
+                    ts = date - dateNow;
+                }
+                else
+                {
 
-                        date = date.AddDays(1);
-                        ts = date - dateNow;
-                    }
-
-                    System.Console.WriteLine("dateNow:" + dateNow.ToString());
-                    System.Console.WriteLine("date:" + date.ToString());
-                    System.Console.WriteLine("Ts:" + ts.ToString());
-
-                    Task.Delay(ts).Wait();
-                    ThingsTodo();
-
-
+                    date = date.AddDays(1);
+                    ts = date - dateNow;
                 }
 
+                System.Console.WriteLine("dateNow:" + dateNow.ToString());
+                System.Console.WriteLine("date:" + date.ToString());
+                System.Console.WriteLine("Ts:" + ts.ToString());
+
+                Task.Delay(ts).Wait();
+                ThingsTodo();
+
+
             }
-            }
-            }
+
+        }
+
+
+
+
+
+
+        public static void Main(string[] args)
+        {
+
+           // ThingsTodo();
+
+           ThingsTodoTask();
+
+        }
+    }
+}
