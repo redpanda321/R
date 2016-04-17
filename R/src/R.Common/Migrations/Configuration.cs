@@ -5,5 +5,10 @@ namespace R.Migrations
 {
 	public class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
 	{
+        public Configuration() {
+
+
+            AutomaticMigrationsEnabled = true;
+        }
 	}
 }

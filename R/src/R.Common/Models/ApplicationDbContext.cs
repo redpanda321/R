@@ -15,8 +15,10 @@ namespace R.Models
 
         public static string ConnectionString { get; set; } =
           // "Server=(localdb)\\mssqllocaldb; AttachDBFilename=|DataDirectory|\\R.mdf;Trusted_Connection=True;MultipleActiveResultSets=true";
-              "Server=(localdb)\\mssqllocaldb;Database=R;Trusted_Connection=True;MultipleActiveResultSets=true";
-          // "Server =xx.xx.xx.xx;uid=sa;pwd=yourpass;Database=R;MultipleActiveResultSets=true";
+            "Server=(localdb)\\mssqllocaldb;Database=R;Trusted_Connection=True;MultipleActiveResultSets=true";
+         // "Server=x.x.x.x;uid=xx;pwd=xxx;Database=R;MultipleActiveResultSets=true";
+
+
 
         public ApplicationDbContext() : base(ConnectionString)
         {
