@@ -238,9 +238,12 @@ namespace R
                         else
                         {
 
+                            /*
+
                             db.Entry(dbPin).Entity.latitude = p.latitude;
                             db.Entry(dbPin).Entity.longitude = p.longitude;
                             db.Entry(dbPin).Entity.propertyId = p.propertyId;
+                            */
 
                             //  db.Entry(dbPin).CurrentValues.SetValues(p);
 
@@ -750,13 +753,19 @@ namespace R
                         Pins pins = JsonConvert.DeserializeObject<Pins>(content);
 
                         //Save Data
-                        if (pins.pins != null && pins.pins.Count > 0)
-                            SavePins(pins.pins);
+                        try
+                        {
+                            if (pins.pins != null & pins.pins.Count > 0)
+                                SavePins(pins.pins);
+                        }
+                        catch { }
 
-
-                        if (results.results != null && results.results.Count > 0)
-                            SaveResults(results.results);
-
+                        try
+                        {
+                            if (results.results != null & results.results.Count > 0)
+                                SaveResults(results.results);
+                        }
+                        catch { }
 
 
 
@@ -769,10 +778,7 @@ namespace R
 
 
         }
-
-
-
-
+        
         /// <summary>
         /// Craweler
         /// </summary>
@@ -982,17 +988,19 @@ namespace R
         }
 
 
-
-
-
-
         public static void Main(string[] args)
         {
 
-           // ThingsTodo();
 
-           ThingsTodoTask();
 
+            if( Configuration["Task:True"] == "false")
+            { 
+               ThingsTodo();
+
+            }else if (Configuration["Task:True"] == "true")
+             {  
+               ThingsTodoTask();
+            }
         }
     }
 }

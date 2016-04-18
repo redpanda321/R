@@ -1,0 +1,5 @@
+﻿
+
+
+select count(*) from resulthistories;
+

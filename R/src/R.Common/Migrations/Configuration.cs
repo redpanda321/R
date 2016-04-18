@@ -9,6 +9,8 @@ namespace R.Migrations
 
 
             AutomaticMigrationsEnabled = true;
+
+            AutomaticMigrationDataLossAllowed = true;
         }
 	}
 }
