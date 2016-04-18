@@ -282,7 +282,7 @@ namespace R
                 try
                 {
                     ResultHistory resultHistory = new ResultHistory();
-                    resultHistory.Date = DateTime.Now.ToString();
+                    resultHistory.ResultDateTime = DateTime.Now;
                     resultHistory.ResultId = rr.Id;
 
                     string price1 = rr.Property.Price.Replace('$', ' ');

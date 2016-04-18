@@ -11,7 +11,7 @@ namespace R.Models
 
        public int Id { get; set; }
 
-       public string Date { get; set; }
+       public DateTime ResultDateTime { get; set; }
 
        public string ResultId { get; set; }  
 
