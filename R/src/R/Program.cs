@@ -820,15 +820,12 @@ namespace R
 
 
             /*
-           
             String longitudeMin=”-115.90212547926488”;
             String longitudeMax=”-110.82094872145238”;
             String latitudeMin=”50.051219586625”;
             String latitudeMax=”51.523515704948416”;
             String longitude=”-113.914628”;
             String latitude=”50.897983”;
-
-            
 
             "Position": {
 
@@ -839,8 +836,7 @@ namespace R
             "Longitude": "-113.914628",
             "Latitude": "50.897983"
             }
-
-  */
+            */
             #endregion
 
             String longitudeMin = Configuration["Geo:Position:LongitudeMin"];

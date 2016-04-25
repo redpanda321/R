@@ -186,6 +186,54 @@
           "lib/net451/Migrator.EF6.dll": {}
         }
       },
+      "mongocsharpdriver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+        }
+      },
+      "MongoDB.Bson/2.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        }
+      },
+      "MongoDB.Driver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        }
+      },
+      "MongoDB.Driver.Core/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -203,6 +251,9 @@
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
+      },
+      "redis-64/3.0.501": {
+        "type": "package"
       },
       "RestSharp/105.2.3": {
         "type": "package",
@@ -238,6 +289,108 @@
         },
         "runtime": {
           "lib/net40/WebDriver.dll": {}
+        }
+      },
+      "ServiceStack.Common/4.0.56": {
+        "type": "package",
+        "dependencies": {
+          "ServiceStack.Interfaces": "4.0.56",
+          "ServiceStack.Text": "4.0.56"
+        },
+        "compile": {
+          "lib/net40/ServiceStack.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Common.dll": {}
+        }
+      },
+      "ServiceStack.Interfaces/4.0.56": {
+        "type": "package",
+        "compile": {
+          "lib/portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10/ServiceStack.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10/ServiceStack.Interfaces.dll": {}
+        }
+      },
+      "ServiceStack.Redis/4.0.56": {
+        "type": "package",
+        "dependencies": {
+          "ServiceStack.Common": "4.0.56"
+        },
+        "compile": {
+          "lib/net40/ServiceStack.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Redis.dll": {}
+        }
+      },
+      "ServiceStack.Text/4.0.56": {
+        "type": "package",
+        "compile": {
+          "lib/net40/ServiceStack.Text.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Text.dll": {}
+        }
+      },
+      "SharpRepository.CacheRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        }
+      },
+      "SharpRepository.EfRepository/1.4.7.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "5.0.0",
+          "SharpRepository.Repository": "1.4.7.2"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.EfRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.EfRepository.dll": {}
+        }
+      },
+      "SharpRepository.InMemoryRepository/1.4.7.2": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7.2"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
+        }
+      },
+      "SharpRepository.MongoDbRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "mongocsharpdriver": "1.11.0",
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
+        }
+      },
+      "SharpRepository.Repository/1.4.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/SharpRepository.Repository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.Repository.dll": {}
         }
       }
     },
@@ -425,6 +578,54 @@
           "lib/net451/Migrator.EF6.dll": {}
         }
       },
+      "mongocsharpdriver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+        }
+      },
+      "MongoDB.Bson/2.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        }
+      },
+      "MongoDB.Driver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        }
+      },
+      "MongoDB.Driver.Core/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -442,6 +643,9 @@
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
+      },
+      "redis-64/3.0.501": {
+        "type": "package"
       },
       "RestSharp/105.2.3": {
         "type": "package",
@@ -477,6 +681,108 @@
         },
         "runtime": {
           "lib/net40/WebDriver.dll": {}
+        }
+      },
+      "ServiceStack.Common/4.0.56": {
+        "type": "package",
+        "dependencies": {
+          "ServiceStack.Interfaces": "4.0.56",
+          "ServiceStack.Text": "4.0.56"
+        },
+        "compile": {
+          "lib/net40/ServiceStack.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Common.dll": {}
+        }
+      },
+      "ServiceStack.Interfaces/4.0.56": {
+        "type": "package",
+        "compile": {
+          "lib/portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10/ServiceStack.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10/ServiceStack.Interfaces.dll": {}
+        }
+      },
+      "ServiceStack.Redis/4.0.56": {
+        "type": "package",
+        "dependencies": {
+          "ServiceStack.Common": "4.0.56"
+        },
+        "compile": {
+          "lib/net40/ServiceStack.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Redis.dll": {}
+        }
+      },
+      "ServiceStack.Text/4.0.56": {
+        "type": "package",
+        "compile": {
+          "lib/net40/ServiceStack.Text.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Text.dll": {}
+        }
+      },
+      "SharpRepository.CacheRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        }
+      },
+      "SharpRepository.EfRepository/1.4.7.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "5.0.0",
+          "SharpRepository.Repository": "1.4.7.2"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.EfRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.EfRepository.dll": {}
+        }
+      },
+      "SharpRepository.InMemoryRepository/1.4.7.2": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7.2"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
+        }
+      },
+      "SharpRepository.MongoDbRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "mongocsharpdriver": "1.11.0",
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
+        }
+      },
+      "SharpRepository.Repository/1.4.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/SharpRepository.Repository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.Repository.dll": {}
         }
       }
     },
@@ -664,6 +970,54 @@
           "lib/net451/Migrator.EF6.dll": {}
         }
       },
+      "mongocsharpdriver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+        }
+      },
+      "MongoDB.Bson/2.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Bson.dll": {}
+        }
+      },
+      "MongoDB.Driver/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver.Core": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.dll": {}
+        }
+      },
+      "MongoDB.Driver.Core/2.2.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.2.3"
+        },
+        "compile": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MongoDB.Driver.Core.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -681,6 +1035,9 @@
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
+      },
+      "redis-64/3.0.501": {
+        "type": "package"
       },
       "RestSharp/105.2.3": {
         "type": "package",
@@ -716,6 +1073,108 @@
         },
         "runtime": {
           "lib/net40/WebDriver.dll": {}
+        }
+      },
+      "ServiceStack.Common/4.0.56": {
+        "type": "package",
+        "dependencies": {
+          "ServiceStack.Interfaces": "4.0.56",
+          "ServiceStack.Text": "4.0.56"
+        },
+        "compile": {
+          "lib/net40/ServiceStack.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Common.dll": {}
+        }
+      },
+      "ServiceStack.Interfaces/4.0.56": {
+        "type": "package",
+        "compile": {
+          "lib/portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10/ServiceStack.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10/ServiceStack.Interfaces.dll": {}
+        }
+      },
+      "ServiceStack.Redis/4.0.56": {
+        "type": "package",
+        "dependencies": {
+          "ServiceStack.Common": "4.0.56"
+        },
+        "compile": {
+          "lib/net40/ServiceStack.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Redis.dll": {}
+        }
+      },
+      "ServiceStack.Text/4.0.56": {
+        "type": "package",
+        "compile": {
+          "lib/net40/ServiceStack.Text.dll": {}
+        },
+        "runtime": {
+          "lib/net40/ServiceStack.Text.dll": {}
+        }
+      },
+      "SharpRepository.CacheRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        }
+      },
+      "SharpRepository.EfRepository/1.4.7.2": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "5.0.0",
+          "SharpRepository.Repository": "1.4.7.2"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.EfRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.EfRepository.dll": {}
+        }
+      },
+      "SharpRepository.InMemoryRepository/1.4.7.2": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7.2"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
+        }
+      },
+      "SharpRepository.MongoDbRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "mongocsharpdriver": "1.11.0",
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
+        }
+      },
+      "SharpRepository.Repository/1.4.7.2": {
+        "type": "package",
+        "compile": {
+          "lib/net40/SharpRepository.Repository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.Repository.dll": {}
         }
       }
     }
@@ -910,6 +1369,53 @@
         "Migrator.EF6.nuspec"
       ]
     },
+    "mongocsharpdriver/2.2.3": {
+      "type": "package",
+      "sha512": "ZIRU7V6kbU4Ntx/kFMd7ZJaRQZSxB2mtxqd716Q7n9/1Jmg3mfDP3zqRS9eQZFPvNGObQ9o88B2SlIWSGRj4BQ==",
+      "files": [
+        "lib/net45/MongoDB.Driver.Legacy.dll",
+        "lib/net45/MongoDB.Driver.Legacy.XML",
+        "License.rtf",
+        "mongocsharpdriver.2.2.3.nupkg",
+        "mongocsharpdriver.2.2.3.nupkg.sha512",
+        "mongocsharpdriver.nuspec"
+      ]
+    },
+    "MongoDB.Bson/2.2.3": {
+      "type": "package",
+      "sha512": "AwxyD8qYgy1GQkxQV2uMzymm19QwaNNAER6gf/w8f2dDjcboEve1kv9GEz7mtn2K8p6hYQjhgnvGc+xeh0KLmg==",
+      "files": [
+        "lib/net45/MongoDB.Bson.dll",
+        "lib/net45/MongoDB.Bson.XML",
+        "License.rtf",
+        "MongoDB.Bson.2.2.3.nupkg",
+        "MongoDB.Bson.2.2.3.nupkg.sha512",
+        "MongoDB.Bson.nuspec"
+      ]
+    },
+    "MongoDB.Driver/2.2.3": {
+      "type": "package",
+      "sha512": "ZgRSAv+vxCCYnL/V4mChGNnx8rBnnpDO2S8Fex+G3IrVWRRgJb3rEFOEoyuyR5C5qtOHGVMlGRSSngQwbgV2Dw==",
+      "files": [
+        "lib/net45/MongoDB.Driver.dll",
+        "lib/net45/MongoDB.Driver.XML",
+        "License.rtf",
+        "MongoDB.Driver.2.2.3.nupkg",
+        "MongoDB.Driver.2.2.3.nupkg.sha512",
+        "MongoDB.Driver.nuspec"
+      ]
+    },
+    "MongoDB.Driver.Core/2.2.3": {
+      "type": "package",
+      "sha512": "o9/7behJkN5TEG9KvRHM6HUdnsXgLl31pKRQwiCi4xgd7gAleI3sagBcujh7x40gl1NL/u4+uMPRZFpGAaGEQw==",
+      "files": [
+        "lib/net45/MongoDB.Driver.Core.dll",
+        "License.rtf",
+        "MongoDB.Driver.Core.2.2.3.nupkg",
+        "MongoDB.Driver.Core.2.2.3.nupkg.sha512",
+        "MongoDB.Driver.Core.nuspec"
+      ]
+    },
     "Newtonsoft.Json/8.0.3": {
       "type": "package",
       "sha512": "KGsYQdS2zLH+H8x2cZaSI7e+YZ4SFIbyy1YJQYl6GYBWjf5o4H1A68nxyq+WTyVSOJQ4GqS/DiPE+UseUizgMg==",
@@ -930,6 +1436,30 @@
         "Newtonsoft.Json.8.0.3.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "redis-64/3.0.501": {
+      "type": "package",
+      "sha512": "5TFWlqTkN2dQhWpef11shkC/RkOBxtJxYhfN1nwUV7ncwQ9MoDvAfhwYNxVgCbQO05IpdIxww8ngdsgWIimd5g==",
+      "files": [
+        "redis-64.3.0.501.nupkg",
+        "redis-64.3.0.501.nupkg.sha512",
+        "redis-64.nuspec",
+        "tools/Redis on Windows Release Notes.docx",
+        "tools/Redis on Windows.docx",
+        "tools/redis.windows.conf",
+        "tools/redis.windows-service.conf",
+        "tools/redis-benchmark.exe",
+        "tools/redis-benchmark.pdb",
+        "tools/redis-check-aof.exe",
+        "tools/redis-check-aof.pdb",
+        "tools/redis-check-dump.exe",
+        "tools/redis-check-dump.pdb",
+        "tools/redis-cli.exe",
+        "tools/redis-cli.pdb",
+        "tools/redis-server.exe",
+        "tools/redis-server.pdb",
+        "tools/Windows Service Documentation.docx"
       ]
     },
     "RestSharp/105.2.3": {
@@ -993,6 +1523,114 @@
         "Selenium.WebDriver.2.53.0.nupkg.sha512",
         "Selenium.WebDriver.nuspec"
       ]
+    },
+    "ServiceStack.Common/4.0.56": {
+      "type": "package",
+      "sha512": "ca3hmgADVM0HDH7uex/JbHE5gLmUNOUE2lu2Yf1I5t6DFtXn1/Chr7PhwSvlFAzoh4TzC8Rl0wkOVlSh/ZCzTA==",
+      "files": [
+        "lib/net40/ServiceStack.Common.dll",
+        "lib/net40/ServiceStack.Common.xml",
+        "ServiceStack.Common.4.0.56.nupkg",
+        "ServiceStack.Common.4.0.56.nupkg.sha512",
+        "ServiceStack.Common.nuspec"
+      ]
+    },
+    "ServiceStack.Interfaces/4.0.56": {
+      "type": "package",
+      "sha512": "CqRs+u3mMIMrQrFvxmH8LCfYQfcVXz/B5KCaoO0sSji58hHoDTB/iECUWiUScbWWuAUbCq+5k+N4tLSBU1TRMw==",
+      "files": [
+        "lib/portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10/ServiceStack.Interfaces.dll",
+        "ServiceStack.Interfaces.4.0.56.nupkg",
+        "ServiceStack.Interfaces.4.0.56.nupkg.sha512",
+        "ServiceStack.Interfaces.nuspec"
+      ]
+    },
+    "ServiceStack.Redis/4.0.56": {
+      "type": "package",
+      "sha512": "RcxC1vLYXL2vjfQ0nIYo3wETJGilzrxaXf/cqSsaDwtZeagdl559ZsnIjXukw0WfWT1wlcZ+5rHnxIiNshqrGg==",
+      "files": [
+        "lib/net40/ServiceStack.Redis.dll",
+        "lib/net40/ServiceStack.Redis.XML",
+        "ServiceStack.Redis.4.0.56.nupkg",
+        "ServiceStack.Redis.4.0.56.nupkg.sha512",
+        "ServiceStack.Redis.nuspec"
+      ]
+    },
+    "ServiceStack.Text/4.0.56": {
+      "type": "package",
+      "sha512": "SeUzXAxJm+kmvxi8kh47jzDmoxv90pXa98EDh/S/MJN1CzhBPb1KTMyLitzwmXTHPoSjul61v3HW3h0wBo+rYg==",
+      "files": [
+        "lib/net40/ServiceStack.Text.dll",
+        "lib/net40/ServiceStack.Text.xml",
+        "lib/portable-net45+win8+monotouch+monoandroid+xamarin.ios10/ServiceStack.Text.dll",
+        "lib/sl5/ServiceStack.Text.dll",
+        "lib/sl5/ServiceStack.Text.xml",
+        "ServiceStack.Text.4.0.56.nupkg",
+        "ServiceStack.Text.4.0.56.nupkg.sha512",
+        "ServiceStack.Text.nuspec"
+      ]
+    },
+    "SharpRepository.CacheRepository/1.4.7": {
+      "type": "package",
+      "sha512": "UOeJmbAwa2T3XV1twuSsTNG3UDfY6gL0/aUEY0TWIizqHjtJvhEVAmTkTrrdtwMo2dLT5h/Sg64ktBdYVCVscw==",
+      "files": [
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.CacheRepository.dll",
+        "SharpRepository.CacheRepository.1.4.7.nupkg",
+        "SharpRepository.CacheRepository.1.4.7.nupkg.sha512",
+        "SharpRepository.CacheRepository.nuspec",
+        "tools/Install.ps1"
+      ]
+    },
+    "SharpRepository.EfRepository/1.4.7.2": {
+      "type": "package",
+      "sha512": "jEAQPE9/ebi6mksrM0bEm0eWUSoJBglqUe15m/r9rhWT8tgGIfm8P5bOLngv/OvYPOL79QeSJFzJOF6crDyXFQ==",
+      "files": [
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.EfRepository.dll",
+        "SharpRepository.EfRepository.1.4.7.2.nupkg",
+        "SharpRepository.EfRepository.1.4.7.2.nupkg.sha512",
+        "SharpRepository.EfRepository.nuspec",
+        "tools/Install.ps1"
+      ]
+    },
+    "SharpRepository.InMemoryRepository/1.4.7.2": {
+      "type": "package",
+      "sha512": "wRdhilPeJwBPIZmLtRyPVl4xBqXXfKCKY2Yl735f4wiNIIBPjzchifU2MiRq6XJGSw1UucV/MRFQ6pataqqM5g==",
+      "files": [
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.InMemoryRepository.dll",
+        "SharpRepository.InMemoryRepository.1.4.7.2.nupkg",
+        "SharpRepository.InMemoryRepository.1.4.7.2.nupkg.sha512",
+        "SharpRepository.InMemoryRepository.nuspec",
+        "tools/Install.ps1"
+      ]
+    },
+    "SharpRepository.MongoDbRepository/1.4.7": {
+      "type": "package",
+      "sha512": "qo5Wd4fJ2cf0fL65uj1LA4YDmVSLnayxNAO/KL2Cv1AdfFTSfyzLCTRlo9B+9Cs+bSH2etfY5lZiHpI59fEBKw==",
+      "files": [
+        "lib/net40/SharpRepository.MongoDbRepository.dll",
+        "SharpRepository.MongoDbRepository.1.4.7.nupkg",
+        "SharpRepository.MongoDbRepository.1.4.7.nupkg.sha512",
+        "SharpRepository.MongoDbRepository.nuspec"
+      ]
+    },
+    "SharpRepository.Repository/1.4.7.2": {
+      "type": "package",
+      "sha512": "PaFpd733iKMBSpPT+ovzwuuw4MShjFEz0/TsCYMzn0BU72bRV/9NiDKj8LfyWOakYAY1JKOzepJr6FXwa+kcCA==",
+      "files": [
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.Repository.dll",
+        "SharpRepository.Repository.1.4.7.2.nupkg",
+        "SharpRepository.Repository.1.4.7.2.nupkg.sha512",
+        "SharpRepository.Repository.nuspec",
+        "tools/Install.ps1"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -1008,7 +1646,14 @@
       "Microsoft.Extensions.Configuration >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Configuration.Json >= 1.0.0-rc1-final",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 1.0.0-rc1-final",
-      "R.Common >= 1.0.0-*"
+      "R.Common >= 1.0.0-*",
+      "SharpRepository.CacheRepository >= 1.4.7",
+      "SharpRepository.MongoDbRepository >= 1.4.7",
+      "SharpRepository.InMemoryRepository >= 1.4.7.2",
+      "SharpRepository.EfRepository >= 1.4.7.2",
+      "redis-64 >= 3.0.501",
+      "ServiceStack.Redis >= 4.0.56",
+      "mongocsharpdriver >= 2.2.3"
     ],
     "DNX,Version=v4.5.1": []
   }
