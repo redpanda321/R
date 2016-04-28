@@ -248,6 +248,8 @@
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "EntityFramework": "6.1.3",
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver": "2.2.3",
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
@@ -640,6 +642,8 @@
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "EntityFramework": "6.1.3",
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver": "2.2.3",
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
@@ -1032,6 +1036,8 @@
         "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "EntityFramework": "6.1.3",
+          "MongoDB.Bson": "2.2.3",
+          "MongoDB.Driver": "2.2.3",
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
@@ -1653,7 +1659,8 @@
       "SharpRepository.EfRepository >= 1.4.7.2",
       "redis-64 >= 3.0.501",
       "ServiceStack.Redis >= 4.0.56",
-      "mongocsharpdriver >= 2.2.3"
+      "mongocsharpdriver >= 2.2.3",
+      "MongoDB.Bson >= 2.2.3"
     ],
     "DNX,Version=v4.5.1": []
   }

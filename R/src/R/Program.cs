@@ -25,6 +25,7 @@ using Microsoft.Framework.Runtime;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
+using MongoDB.Driver;
 
 namespace R
 {
@@ -37,12 +38,10 @@ namespace R
 
             Configuration = builder.Build();
 
-
             ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
 
             Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
-
 
         }
 
@@ -51,11 +50,9 @@ namespace R
         public static System.Threading.Thread[] threads = new Thread[1024];
 
         /// <summary>
-        /// 
+        /// Restful API
         /// </summary>
         public static string PROPERTYAPI = "https://www.realtor.ca/api/Listing.svc/PropertySearch_Post";
-
-
 
         /// <summary>
         /// Get Api Results(String Format)
@@ -70,12 +67,10 @@ namespace R
         /// <returns></returns>
         public static string GetProperty(string longitudeMin, string longitudeMax, string latitudeMin, string latitudeMax, string longitude, string latitude, string currentPage)
         {
-
             string content = "";
 
             try
             {
-
                 var client = new RestClient(PROPERTYAPI);
                 var request = new RestRequest();
 
@@ -88,7 +83,6 @@ namespace R
                 request.AddHeader("Accept-Encoding", "gzip, deflate, br");
                 request.AddHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
                 request.AddHeader("Referer", "https://www.realtor.ca");
-
 
                 request.AddParameter("CultureId", "1");
                 request.AddParameter("ApplicationId", "1");
@@ -111,23 +105,13 @@ namespace R
                 request.AddParameter("CurrentPage", currentPage);
                 request.AddParameter("ZoomLevel", "11");
 
-
-
-
-
                 request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json charset=utf-8"; };
                 client.AddHandler("application/json", new DynamicJsonDeserializer());
 
                 content = client.Execute(request).Content;
 
-
                 System.Console.WriteLine("content:" + content);
-
                 System.Console.WriteLine("currentPage:" + currentPage);
-
-
-
-               
 
             }
             catch (Exception e) {
@@ -135,10 +119,9 @@ namespace R
                 System.Console.WriteLine(e.ToString());
             }
 
-
             return content;
-
         }
+
 
         /// <summary>
         /// Get Pages Number
@@ -149,14 +132,12 @@ namespace R
         /// <param name="latitudeMax"></param>
         /// <param name="longitude"></param>
         /// <param name="latitude"></param>
-        /// <param name="currentPage"></param>
         /// <returns></returns>
         public static int GetPagingNumber(string longitudeMin, string longitudeMax, string latitudeMin, string latitudeMax, string longitude, string latitude)
         {
 
             string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, "1");
-
-
+            
             JObject o = JObject.Parse(content);
             int total = (int)o["Paging"]["TotalRecords"];
 
@@ -167,12 +148,9 @@ namespace R
 
             int num = n1 + n2;
 
-
-
             System.Console.WriteLine("num:" + num);
 
             return num;
-
         }
         /// <summary>
         /// Get All Cookies
@@ -211,9 +189,14 @@ namespace R
             if (pins == null) return;
             if (pins.Count <= 0) return;
 
+
+            var server = new MongoClient(Configuration["data:MongoDbConnection:ConnectionString"]).GetServer();
+
+             
+
+
+            /*
             ApplicationDbContext db = new ApplicationDbContext();
-
-
 
             foreach (var p in pins)
             {
@@ -237,15 +220,11 @@ namespace R
                         }
                         else
                         {
-
-                            /*
-
-                            db.Entry(dbPin).Entity.latitude = p.latitude;
-                            db.Entry(dbPin).Entity.longitude = p.longitude;
-                            db.Entry(dbPin).Entity.propertyId = p.propertyId;
-                            */
-
-                            //  db.Entry(dbPin).CurrentValues.SetValues(p);
+                        
+                          //  db.Entry(dbPin).Entity.latitude = p.latitude;
+                          //  db.Entry(dbPin).Entity.longitude = p.longitude;
+                          //  db.Entry(dbPin).Entity.propertyId = p.propertyId;
+                          //  db.Entry(dbPin).CurrentValues.SetValues(p);
 
                         }
                     }
@@ -263,7 +242,7 @@ namespace R
 
 
             db.SaveChanges();
-
+          */
 
         }
 
@@ -272,6 +251,8 @@ namespace R
 
             if (results == null) return;
             if (results.Count <= 0) return;
+
+
 
 
             ApplicationDbContext db = new ApplicationDbContext();

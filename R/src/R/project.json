@@ -29,7 +29,8 @@
     "SharpRepository.EfRepository": "1.4.7.2",
     "redis-64": "3.0.501",
     "ServiceStack.Redis": "4.0.56",
-    "mongocsharpdriver": "2.2.3"
+    "mongocsharpdriver": "2.2.3",
+    "MongoDB.Bson": "2.2.3"
   },
 
   "commands": {

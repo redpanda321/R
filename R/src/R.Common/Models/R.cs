@@ -4,12 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MongoDB;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
+
 namespace R.Models
 {
     
     public class ResultHistory {
 
-       public int Id { get; set; }
+        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
 
        public DateTime ResultDateTime { get; set; }
 
@@ -22,9 +29,10 @@ namespace R.Models
 
     public class ErrorCode
     {
-      
-        public string Description { get; set; }
+
         public int Id { get; set; }
+        public string Description { get; set; }
+       
         public string LogId { get; set; }
     }
 
@@ -217,6 +225,8 @@ namespace R.Models
 
     public class Result
     {
+        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         public string MlsNumber { get; set; }
         public string PublicRemarks { get; set; }
@@ -235,7 +245,9 @@ namespace R.Models
 
     public class Pin
     {
-        public int Id { get; set; }
+        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
         public string key { get; set; }
         public string propertyId { get; set; }
         public int count { get; set; }
