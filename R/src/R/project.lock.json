@@ -186,28 +186,32 @@
           "lib/net451/Migrator.EF6.dll": {}
         }
       },
-      "mongocsharpdriver/2.2.3": {
+      "mongocsharpdriver/1.11.0": {
         "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
         "compile": {
-          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+          "lib/net35/MongoDB.Bson.dll": {},
+          "lib/net35/MongoDB.Driver.dll": {}
         },
         "runtime": {
-          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+          "lib/net35/MongoDB.Bson.dll": {},
+          "lib/net35/MongoDB.Driver.dll": {}
         }
       },
-      "MongoDB.Bson/2.2.3": {
+      "MongoDB.Abstracts/1.0.0.2": {
         "type": "package",
+        "dependencies": {
+          "MongoDB.Driver": "2.2.3"
+        },
         "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "lib/net45/MongoDB.Abstracts.dll": {}
         },
         "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "lib/net45/MongoDB.Abstracts.dll": {}
         }
+      },
+      "MongoDB.Bson/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
       },
       "MongoDB.Driver/2.2.3": {
         "type": "package",
@@ -249,7 +253,6 @@
         "dependencies": {
           "EntityFramework": "6.1.3",
           "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver": "2.2.3",
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
@@ -348,31 +351,6 @@
           "lib/net40/SharpRepository.CacheRepository.dll": {}
         }
       },
-      "SharpRepository.EfRepository/1.4.7.2": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "5.0.0",
-          "SharpRepository.Repository": "1.4.7.2"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.EfRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.EfRepository.dll": {}
-        }
-      },
-      "SharpRepository.InMemoryRepository/1.4.7.2": {
-        "type": "package",
-        "dependencies": {
-          "SharpRepository.Repository": "1.4.7.2"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
-        }
-      },
       "SharpRepository.MongoDbRepository/1.4.7": {
         "type": "package",
         "dependencies": {
@@ -386,7 +364,7 @@
           "lib/net40/SharpRepository.MongoDbRepository.dll": {}
         }
       },
-      "SharpRepository.Repository/1.4.7.2": {
+      "SharpRepository.Repository/1.4.7": {
         "type": "package",
         "compile": {
           "lib/net40/SharpRepository.Repository.dll": {}
@@ -580,28 +558,32 @@
           "lib/net451/Migrator.EF6.dll": {}
         }
       },
-      "mongocsharpdriver/2.2.3": {
+      "mongocsharpdriver/1.11.0": {
         "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
         "compile": {
-          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+          "lib/net35/MongoDB.Bson.dll": {},
+          "lib/net35/MongoDB.Driver.dll": {}
         },
         "runtime": {
-          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+          "lib/net35/MongoDB.Bson.dll": {},
+          "lib/net35/MongoDB.Driver.dll": {}
         }
       },
-      "MongoDB.Bson/2.2.3": {
+      "MongoDB.Abstracts/1.0.0.2": {
         "type": "package",
+        "dependencies": {
+          "MongoDB.Driver": "2.2.3"
+        },
         "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "lib/net45/MongoDB.Abstracts.dll": {}
         },
         "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "lib/net45/MongoDB.Abstracts.dll": {}
         }
+      },
+      "MongoDB.Bson/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
       },
       "MongoDB.Driver/2.2.3": {
         "type": "package",
@@ -643,7 +625,6 @@
         "dependencies": {
           "EntityFramework": "6.1.3",
           "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver": "2.2.3",
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
@@ -742,31 +723,6 @@
           "lib/net40/SharpRepository.CacheRepository.dll": {}
         }
       },
-      "SharpRepository.EfRepository/1.4.7.2": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "5.0.0",
-          "SharpRepository.Repository": "1.4.7.2"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.EfRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.EfRepository.dll": {}
-        }
-      },
-      "SharpRepository.InMemoryRepository/1.4.7.2": {
-        "type": "package",
-        "dependencies": {
-          "SharpRepository.Repository": "1.4.7.2"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
-        }
-      },
       "SharpRepository.MongoDbRepository/1.4.7": {
         "type": "package",
         "dependencies": {
@@ -780,7 +736,7 @@
           "lib/net40/SharpRepository.MongoDbRepository.dll": {}
         }
       },
-      "SharpRepository.Repository/1.4.7.2": {
+      "SharpRepository.Repository/1.4.7": {
         "type": "package",
         "compile": {
           "lib/net40/SharpRepository.Repository.dll": {}
@@ -974,28 +930,32 @@
           "lib/net451/Migrator.EF6.dll": {}
         }
       },
-      "mongocsharpdriver/2.2.3": {
+      "mongocsharpdriver/1.11.0": {
         "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
         "compile": {
-          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+          "lib/net35/MongoDB.Bson.dll": {},
+          "lib/net35/MongoDB.Driver.dll": {}
         },
         "runtime": {
-          "lib/net45/MongoDB.Driver.Legacy.dll": {}
+          "lib/net35/MongoDB.Bson.dll": {},
+          "lib/net35/MongoDB.Driver.dll": {}
         }
       },
-      "MongoDB.Bson/2.2.3": {
+      "MongoDB.Abstracts/1.0.0.2": {
         "type": "package",
+        "dependencies": {
+          "MongoDB.Driver": "2.2.3"
+        },
         "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "lib/net45/MongoDB.Abstracts.dll": {}
         },
         "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
+          "lib/net45/MongoDB.Abstracts.dll": {}
         }
+      },
+      "MongoDB.Bson/1.0.0": {
+        "type": "project",
+        "framework": "DNX,Version=v4.5.1"
       },
       "MongoDB.Driver/2.2.3": {
         "type": "package",
@@ -1037,7 +997,6 @@
         "dependencies": {
           "EntityFramework": "6.1.3",
           "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver": "2.2.3",
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3"
         }
@@ -1136,31 +1095,6 @@
           "lib/net40/SharpRepository.CacheRepository.dll": {}
         }
       },
-      "SharpRepository.EfRepository/1.4.7.2": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "5.0.0",
-          "SharpRepository.Repository": "1.4.7.2"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.EfRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.EfRepository.dll": {}
-        }
-      },
-      "SharpRepository.InMemoryRepository/1.4.7.2": {
-        "type": "package",
-        "dependencies": {
-          "SharpRepository.Repository": "1.4.7.2"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.InMemoryRepository.dll": {}
-        }
-      },
       "SharpRepository.MongoDbRepository/1.4.7": {
         "type": "package",
         "dependencies": {
@@ -1174,7 +1108,7 @@
           "lib/net40/SharpRepository.MongoDbRepository.dll": {}
         }
       },
-      "SharpRepository.Repository/1.4.7.2": {
+      "SharpRepository.Repository/1.4.7": {
         "type": "package",
         "compile": {
           "lib/net40/SharpRepository.Repository.dll": {}
@@ -1186,6 +1120,10 @@
     }
   },
   "libraries": {
+    "MongoDB.Bson/1.0.0": {
+      "type": "project",
+      "path": "../../wrap/MongoDB.Bson/project.json"
+    },
     "R.Common/1.0.0": {
       "type": "project",
       "path": "../R.Common/project.json"
@@ -1375,28 +1313,29 @@
         "Migrator.EF6.nuspec"
       ]
     },
-    "mongocsharpdriver/2.2.3": {
+    "mongocsharpdriver/1.11.0": {
       "type": "package",
-      "sha512": "ZIRU7V6kbU4Ntx/kFMd7ZJaRQZSxB2mtxqd716Q7n9/1Jmg3mfDP3zqRS9eQZFPvNGObQ9o88B2SlIWSGRj4BQ==",
+      "sha512": "0FBUKnTd/WwVW8BhML7nL0+oNaDl1eieP5jDLolmSfb3Hk7x0ke4yMAapILWy8G+286T77QqzM2XpaPFaAAyRg==",
       "files": [
-        "lib/net45/MongoDB.Driver.Legacy.dll",
-        "lib/net45/MongoDB.Driver.Legacy.XML",
+        "lib/net35/MongoDB.Bson.dll",
+        "lib/net35/MongoDB.Bson.XML",
+        "lib/net35/MongoDB.Driver.dll",
+        "lib/net35/MongoDB.Driver.XML",
         "License.rtf",
-        "mongocsharpdriver.2.2.3.nupkg",
-        "mongocsharpdriver.2.2.3.nupkg.sha512",
+        "mongocsharpdriver.1.11.0.nupkg",
+        "mongocsharpdriver.1.11.0.nupkg.sha512",
         "mongocsharpdriver.nuspec"
       ]
     },
-    "MongoDB.Bson/2.2.3": {
+    "MongoDB.Abstracts/1.0.0.2": {
       "type": "package",
-      "sha512": "AwxyD8qYgy1GQkxQV2uMzymm19QwaNNAER6gf/w8f2dDjcboEve1kv9GEz7mtn2K8p6hYQjhgnvGc+xeh0KLmg==",
+      "sha512": "rBVDm/wR5k4z0LrL5GjybkDiInuNFX76GshRwljpt8b7+e7PU2R51cWJZikP6fSTroZmuUnbOhCVDK5v/Fvg3w==",
       "files": [
-        "lib/net45/MongoDB.Bson.dll",
-        "lib/net45/MongoDB.Bson.XML",
-        "License.rtf",
-        "MongoDB.Bson.2.2.3.nupkg",
-        "MongoDB.Bson.2.2.3.nupkg.sha512",
-        "MongoDB.Bson.nuspec"
+        "lib/net45/MongoDB.Abstracts.dll",
+        "lib/net45/MongoDB.Abstracts.xml",
+        "MongoDB.Abstracts.1.0.0.2.nupkg",
+        "MongoDB.Abstracts.1.0.0.2.nupkg.sha512",
+        "MongoDB.Abstracts.nuspec"
       ]
     },
     "MongoDB.Driver/2.2.3": {
@@ -1589,32 +1528,6 @@
         "tools/Install.ps1"
       ]
     },
-    "SharpRepository.EfRepository/1.4.7.2": {
-      "type": "package",
-      "sha512": "jEAQPE9/ebi6mksrM0bEm0eWUSoJBglqUe15m/r9rhWT8tgGIfm8P5bOLngv/OvYPOL79QeSJFzJOF6crDyXFQ==",
-      "files": [
-        "content/app.config.transform",
-        "content/web.config.transform",
-        "lib/net40/SharpRepository.EfRepository.dll",
-        "SharpRepository.EfRepository.1.4.7.2.nupkg",
-        "SharpRepository.EfRepository.1.4.7.2.nupkg.sha512",
-        "SharpRepository.EfRepository.nuspec",
-        "tools/Install.ps1"
-      ]
-    },
-    "SharpRepository.InMemoryRepository/1.4.7.2": {
-      "type": "package",
-      "sha512": "wRdhilPeJwBPIZmLtRyPVl4xBqXXfKCKY2Yl735f4wiNIIBPjzchifU2MiRq6XJGSw1UucV/MRFQ6pataqqM5g==",
-      "files": [
-        "content/app.config.transform",
-        "content/web.config.transform",
-        "lib/net40/SharpRepository.InMemoryRepository.dll",
-        "SharpRepository.InMemoryRepository.1.4.7.2.nupkg",
-        "SharpRepository.InMemoryRepository.1.4.7.2.nupkg.sha512",
-        "SharpRepository.InMemoryRepository.nuspec",
-        "tools/Install.ps1"
-      ]
-    },
     "SharpRepository.MongoDbRepository/1.4.7": {
       "type": "package",
       "sha512": "qo5Wd4fJ2cf0fL65uj1LA4YDmVSLnayxNAO/KL2Cv1AdfFTSfyzLCTRlo9B+9Cs+bSH2etfY5lZiHpI59fEBKw==",
@@ -1625,15 +1538,15 @@
         "SharpRepository.MongoDbRepository.nuspec"
       ]
     },
-    "SharpRepository.Repository/1.4.7.2": {
+    "SharpRepository.Repository/1.4.7": {
       "type": "package",
-      "sha512": "PaFpd733iKMBSpPT+ovzwuuw4MShjFEz0/TsCYMzn0BU72bRV/9NiDKj8LfyWOakYAY1JKOzepJr6FXwa+kcCA==",
+      "sha512": "TsuFLmZQso+cus8vkR08ukoHb/SkWdmxp7MFR6EIrJ6GRCKXBmw4SQomPiWZ08ZlPmgaKSdB5+mazln0Torzng==",
       "files": [
         "content/app.config.transform",
         "content/web.config.transform",
         "lib/net40/SharpRepository.Repository.dll",
-        "SharpRepository.Repository.1.4.7.2.nupkg",
-        "SharpRepository.Repository.1.4.7.2.nupkg.sha512",
+        "SharpRepository.Repository.1.4.7.nupkg",
+        "SharpRepository.Repository.1.4.7.nupkg.sha512",
         "SharpRepository.Repository.nuspec",
         "tools/Install.ps1"
       ]
@@ -1655,12 +1568,10 @@
       "R.Common >= 1.0.0-*",
       "SharpRepository.CacheRepository >= 1.4.7",
       "SharpRepository.MongoDbRepository >= 1.4.7",
-      "SharpRepository.InMemoryRepository >= 1.4.7.2",
-      "SharpRepository.EfRepository >= 1.4.7.2",
       "redis-64 >= 3.0.501",
       "ServiceStack.Redis >= 4.0.56",
-      "mongocsharpdriver >= 2.2.3",
-      "MongoDB.Bson >= 2.2.3"
+      "MongoDB.Driver >= 2.2.3",
+      "MongoDB.Abstracts >= 1.0.0.2"
     ],
     "DNX,Version=v4.5.1": []
   }

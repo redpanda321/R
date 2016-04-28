@@ -26,6 +26,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
 using MongoDB.Driver;
+using SharpRepository.MongoDbRepository;
 
 namespace R
 {
@@ -38,10 +39,10 @@ namespace R
 
             Configuration = builder.Build();
 
-            ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
+          //  ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
 
-            Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
+          //  Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
+          //  Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
 
         }
 
@@ -189,8 +190,49 @@ namespace R
             if (pins == null) return;
             if (pins.Count <= 0) return;
 
+            try
+            {
+                var repo = new MongoDbRepository<Pin,string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
 
-            var server = new MongoClient(Configuration["data:MongoDbConnection:ConnectionString"]).GetServer();
+
+                foreach (var p in pins)
+                {
+
+
+
+                    if (p != null)
+                    {
+
+                        Pin dbPin = new Pin();
+                        dbPin = repo.Find(x => x.key == p.key);
+                        if (dbPin == null)
+                        {
+                            repo.Add(p);
+
+                        }
+                        else
+                        {
+
+                            repo.Update(p);
+                        }
+
+                    }
+
+
+                }
+
+             }catch(Exception e) {
+
+                System.Console.WriteLine(e.ToString());   
+
+
+             }
+
+
+
+      
+
+
 
              
 
@@ -252,8 +294,75 @@ namespace R
             if (results == null) return;
             if (results.Count <= 0) return;
 
+            var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
+            var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
 
 
+            foreach (var r in results)
+            {
+
+                try {
+
+                    ResultHistory resultHistory = new ResultHistory();
+                    resultHistory.ResultDateTime = DateTime.Now;
+                    resultHistory.ResultId = r.Id;
+                    string price1 = r.Property.Price.Replace('$', ' ');
+                    if (r.Property.Price.IndexOf(',') >= 0)
+                    {
+                        string[] price = price1.Split(',');
+                        price1 = price[0] + price[1];
+                    }
+                    resultHistory.Price = Convert.ToSingle(price1);
+                    repo1.Add(resultHistory);
+
+
+                } catch { }
+
+
+
+
+
+
+
+                try
+                {
+
+                    if (r != null)
+                    {
+
+                        Result dbResult = new Result();
+                        dbResult = repo.Find(x => x.Id == r.Id);
+                        if (dbResult == null)
+                        {
+                            repo.Add(r);
+
+                        }
+                        else
+                        {
+
+                            repo.Update(r);
+                        }
+
+                    }
+
+
+
+
+                }
+                catch
+                {
+
+
+
+                }
+
+
+
+            }
+
+
+
+            /*
 
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -289,6 +398,8 @@ namespace R
 
                 }
                 #endregion result history
+
+
                 //Related Objects
 
                 Result dbResult = new Result();
@@ -332,7 +443,7 @@ namespace R
 
                     #region  dbResult
 
-                    /*
+                    
                   try
                   {
 
@@ -691,7 +802,7 @@ namespace R
                       System.Console.WriteLine(e.ToString());
 
                   }
-                  */
+                
                  
                     #endregion dbResult
 
@@ -701,6 +812,8 @@ namespace R
 
 
             db.SaveChanges();
+
+        */
 
         }
 
@@ -739,7 +852,9 @@ namespace R
                             if (pins.pins != null & pins.pins.Count > 0)
                                 SavePins(pins.pins);
                         }
-                        catch { }
+                        catch(Exception e) {
+                            System.Console.WriteLine(e.ToString());
+                        }
 
                         try
                         {

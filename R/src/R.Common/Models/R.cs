@@ -12,19 +12,7 @@ using MongoDB.Bson.Serialization.IdGenerators;
 namespace R.Models
 {
     
-    public class ResultHistory {
-
-        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-
-       public DateTime ResultDateTime { get; set; }
-
-       public string ResultId { get; set; }  
-
-       public float Price { get; set; }
-    }
-
+  
 
 
     public class ErrorCode
@@ -222,6 +210,21 @@ namespace R.Models
         public List<Result> results { get; set; }
 
     }
+
+    public class ResultHistory
+    {
+
+        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
+
+        public DateTime ResultDateTime { get; set; }
+
+        public string ResultId { get; set; }
+
+        public float Price { get; set; }
+    }
+
 
     public class Result
     {

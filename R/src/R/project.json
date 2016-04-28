@@ -25,12 +25,11 @@
     "R.Common": "1.0.0-*",
     "SharpRepository.CacheRepository": "1.4.7",
     "SharpRepository.MongoDbRepository": "1.4.7",
-    "SharpRepository.InMemoryRepository": "1.4.7.2",
-    "SharpRepository.EfRepository": "1.4.7.2",
     "redis-64": "3.0.501",
     "ServiceStack.Redis": "4.0.56",
-    "mongocsharpdriver": "2.2.3",
-    "MongoDB.Bson": "2.2.3"
+    "MongoDB.Driver": "2.2.3",
+    "MongoDB.Abstracts": "1.0.0.2"
+   
   },
 
   "commands": {
@@ -39,7 +38,10 @@
   },
 
   "frameworks": {
-    "dnx451": { }
+    "dnx451": {
+      "dependencies": {
+      }
+    }
 
   }
 }

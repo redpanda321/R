@@ -17,39 +17,8 @@
           "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
+      "MongoDB.Bson/1.0.0": {
+        "type": "project"
       },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
@@ -85,39 +54,8 @@
           "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
+      "MongoDB.Bson/1.0.0": {
+        "type": "project"
       },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
@@ -153,39 +91,8 @@
           "lib/net45/EntityFramework.SqlServer.dll": {}
         }
       },
-      "MongoDB.Bson/2.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Bson.dll": {}
-        }
-      },
-      "MongoDB.Driver/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3",
-          "MongoDB.Driver.Core": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.2.3": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.2.3"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
+      "MongoDB.Bson/1.0.0": {
+        "type": "project"
       },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
@@ -208,6 +115,10 @@
     }
   },
   "libraries": {
+    "MongoDB.Bson/1.0.0": {
+      "type": "project",
+      "path": "../../wrap/MongoDB.Bson/project.json"
+    },
     "EntityFramework/6.1.3": {
       "type": "package",
       "serviceable": true,
@@ -234,41 +145,6 @@
         "tools/init.ps1",
         "tools/install.ps1",
         "tools/migrate.exe"
-      ]
-    },
-    "MongoDB.Bson/2.2.3": {
-      "type": "package",
-      "sha512": "AwxyD8qYgy1GQkxQV2uMzymm19QwaNNAER6gf/w8f2dDjcboEve1kv9GEz7mtn2K8p6hYQjhgnvGc+xeh0KLmg==",
-      "files": [
-        "lib/net45/MongoDB.Bson.dll",
-        "lib/net45/MongoDB.Bson.XML",
-        "License.rtf",
-        "MongoDB.Bson.2.2.3.nupkg",
-        "MongoDB.Bson.2.2.3.nupkg.sha512",
-        "MongoDB.Bson.nuspec"
-      ]
-    },
-    "MongoDB.Driver/2.2.3": {
-      "type": "package",
-      "sha512": "ZgRSAv+vxCCYnL/V4mChGNnx8rBnnpDO2S8Fex+G3IrVWRRgJb3rEFOEoyuyR5C5qtOHGVMlGRSSngQwbgV2Dw==",
-      "files": [
-        "lib/net45/MongoDB.Driver.dll",
-        "lib/net45/MongoDB.Driver.XML",
-        "License.rtf",
-        "MongoDB.Driver.2.2.3.nupkg",
-        "MongoDB.Driver.2.2.3.nupkg.sha512",
-        "MongoDB.Driver.nuspec"
-      ]
-    },
-    "MongoDB.Driver.Core/2.2.3": {
-      "type": "package",
-      "sha512": "o9/7behJkN5TEG9KvRHM6HUdnsXgLl31pKRQwiCi4xgd7gAleI3sagBcujh7x40gl1NL/u4+uMPRZFpGAaGEQw==",
-      "files": [
-        "lib/net45/MongoDB.Driver.Core.dll",
-        "License.rtf",
-        "MongoDB.Driver.Core.2.2.3.nupkg",
-        "MongoDB.Driver.Core.2.2.3.nupkg.sha512",
-        "MongoDB.Driver.Core.nuspec"
       ]
     },
     "Newtonsoft.Json/8.0.3": {
@@ -333,10 +209,9 @@
   "projectFileDependencyGroups": {
     "": [
       "EntityFramework >= 6.1.3",
-      "MongoDB.Bson >= 2.2.3",
-      "MongoDB.Driver >= 2.2.3",
       "Newtonsoft.Json >= 8.0.3",
-      "RestSharp >= 105.2.3"
+      "RestSharp >= 105.2.3",
+      "MongoDB.Bson >= 2.2.3"
     ],
     ".NETFramework,Version=v4.5.1": []
   }
