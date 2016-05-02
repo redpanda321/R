@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45": {
+      "wrappedProject": "../../MongoDB.Driver.Core/MongoDB.Driver.Core.csproj",
+      "bin": {
+        "assembly": "../../MongoDB.Driver.Core/obj/{configuration}/MongoDB.Driver.Core.dll",
+        "pdb": "../../MongoDB.Driver.Core/obj/{configuration}/MongoDB.Driver.Core.pdb"
+      },
+      "dependencies": {
+        "AsyncUsageAnalyzers": "1.0.0-alpha003",
+        "MongoDB.Bson": "1.0.0-*"
+      }
+    }
+  }
+}

@@ -12,7 +12,6 @@
 
   "dependencies": {
     "EntityFramework": "6.1.3",
-    "Migrator.EF6": "1.2.0",
     "Newtonsoft.Json": "8.0.3",
     "RestSharp": "105.2.3",
     "Selenium.Support": "2.53.0",
@@ -27,9 +26,9 @@
     "SharpRepository.MongoDbRepository": "1.4.7",
     "redis-64": "3.0.501",
     "ServiceStack.Redis": "4.0.56",
-    "MongoDB.Driver": "2.2.3",
-    "MongoDB.Abstracts": "1.0.0.2"
-   
+    "Migrator.EF6": "1.2.0"
+ 
+
   },
 
   "commands": {

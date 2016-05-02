@@ -45,7 +45,6 @@ namespace R
           //  Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
 
         }
-
         public static IConfigurationRoot Configuration { get; set; }
 
         public static System.Threading.Thread[] threads = new Thread[1024];
@@ -108,7 +107,6 @@ namespace R
 
                 request.OnBeforeDeserialization = resp => { resp.ContentType = "application/json charset=utf-8"; };
                 client.AddHandler("application/json", new DynamicJsonDeserializer());
-
                 content = client.Execute(request).Content;
 
                 System.Console.WriteLine("content:" + content);
@@ -122,7 +120,6 @@ namespace R
 
             return content;
         }
-
 
         /// <summary>
         /// Get Pages Number
@@ -229,14 +226,6 @@ namespace R
              }
 
 
-
-      
-
-
-
-             
-
-
             /*
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -287,7 +276,6 @@ namespace R
           */
 
         }
-
         public static void SaveResults(List<Result> results)
         {
 
@@ -817,7 +805,6 @@ namespace R
 
         }
 
-
         public static void ProcessThing(string longitudeMin, string longitudeMax, string latitudeMin, string latitudeMax, string longitude, string latitude, int from, int to)
         {
 
@@ -1041,7 +1028,6 @@ namespace R
 
         }
 
-
         public static void ThingsTodoTask()
         {
 
@@ -1078,7 +1064,6 @@ namespace R
             }
 
         }
-
 
         public static void Main(string[] args)
         {

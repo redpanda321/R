@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45": {
+      "wrappedProject": "../../MongoDB.Bson/MongoDB.Bson.csproj",
+      "bin": {
+        "assembly": "../../MongoDB.Bson/obj/{configuration}/MongoDB.Bson.dll",
+        "pdb": "../../MongoDB.Bson/obj/{configuration}/MongoDB.Bson.pdb"
+      },
+      "dependencies": {
+        "AsyncUsageAnalyzers": "1.0.0-alpha003"
+      }
+    }
+  }
+}
