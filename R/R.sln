@@ -23,8 +23,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R.Android", "src\R.Android\R.Android.csproj", "{6C39668A-39A1-42B2-8B98-D95CB5D0782C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Driver", "src\ThirdParty\src\mongo-csharp-driver-2.2.3\src\MongoDB.Driver\MongoDB.Driver.csproj", "{AE5166CD-76B0-4911-BD80-CED9521F37A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6} = {0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}
+		{DA56482A-5D8F-41E0-85E6-1F22B310F91B} = {DA56482A-5D8F-41E0-85E6-1F22B310F91B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Driver.Core", "src\ThirdParty\src\mongo-csharp-driver-2.2.3\src\MongoDB.Driver.Core\MongoDB.Driver.Core.csproj", "{DA56482A-5D8F-41E0-85E6-1F22B310F91B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6} = {0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Bson", "src\ThirdParty\src\mongo-csharp-driver-2.2.3\src\MongoDB.Bson\MongoDB.Bson.csproj", "{0E9A3A2A-49CD-4F6C-847C-DC79B4B65CE6}"
 EndProject

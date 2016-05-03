@@ -190,7 +190,10 @@ namespace R
             try
             {
                 var repo = new MongoDbRepository<Pin,string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
-
+             
+                // var server = new MongoClient(Configuration["Data:MongoDbConnection:ConnectionString"]).GetServer();
+               // var db = server.GetDatabase("R");
+               // var dbPins = db.GetCollection<Pin>("Pins");
 
                 foreach (var p in pins)
                 {
@@ -201,7 +204,8 @@ namespace R
                     {
 
                         Pin dbPin = new Pin();
-                        dbPin = repo.Find(x => x.key == p.key);
+                       
+                        dbPin = repo.Find(x=>x.key == p.key);
                         if (dbPin == null)
                         {
                             repo.Add(p);
@@ -225,7 +229,7 @@ namespace R
 
              }
 
-
+            #region EF6
             /*
             ApplicationDbContext db = new ApplicationDbContext();
 
@@ -274,6 +278,7 @@ namespace R
 
             db.SaveChanges();
           */
+            #endregion EF6
 
         }
         public static void SaveResults(List<Result> results)
@@ -304,12 +309,11 @@ namespace R
                     repo1.Add(resultHistory);
 
 
-                } catch { }
+                } catch(Exception e) {
 
+                    System.Console.WriteLine(e.ToString());
 
-
-
-
+                }
 
 
                 try
@@ -318,8 +322,9 @@ namespace R
                     if (r != null)
                     {
 
+                        
                         Result dbResult = new Result();
-                        dbResult = repo.Find(x => x.Id == r.Id);
+                        dbResult = repo.Find(x => x.MlsNumber ==  r.MlsNumber );
                         if (dbResult == null)
                         {
                             repo.Add(r);
@@ -334,13 +339,11 @@ namespace R
                     }
 
 
-
-
                 }
-                catch
+                catch (Exception e)
                 {
 
-
+                    System.Console.WriteLine(e.ToString());
 
                 }
 
@@ -348,7 +351,7 @@ namespace R
 
             }
 
-
+            #region EF6
 
             /*
 
@@ -802,6 +805,7 @@ namespace R
             db.SaveChanges();
 
         */
+            #endregion EF6
 
         }
 
@@ -822,18 +826,17 @@ namespace R
 
 
                         //Sleep 1~5 s
-
-
                        // Random random = new Random();
                        // var span = random.Next(1000, 5000);
                        // Thread.Sleep(span);
 
-                        //Get Data
+
+                        //Get data
                         string content = GetProperty(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude, i.ToString());
                         Results results = JsonConvert.DeserializeObject<Results>(content);
                         Pins pins = JsonConvert.DeserializeObject<Pins>(content);
 
-                        //Save Data
+                        //Save pins data
                         try
                         {
                             if (pins.pins != null & pins.pins.Count > 0)
@@ -842,6 +845,8 @@ namespace R
                         catch(Exception e) {
                             System.Console.WriteLine(e.ToString());
                         }
+
+                        //Save results data
 
                         try
                         {

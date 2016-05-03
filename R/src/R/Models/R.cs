@@ -8,17 +8,19 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson.Serialization.IdGenerators;
 using MongoDB.Bson.Serialization;
+using System.Security.Cryptography;
+using static MongoDB.Driver.WriteConcern;
 
 namespace R.Models
 {
-    
- 
+
+
     public class ErrorCode
     {
 
         public int Id { get; set; }
         public string Description { get; set; }
-       
+
         public string LogId { get; set; }
     }
 
@@ -204,7 +206,7 @@ namespace R.Models
 
 
     public class Results {
-        
+
         public List<Result> results { get; set; }
 
     }
@@ -212,9 +214,11 @@ namespace R.Models
     public class ResultHistory
     {
 
-        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
-        [BsonRepresentation(BsonType.ObjectId)]
+
+       // [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+       // [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+        
 
         public DateTime ResultDateTime { get; set; }
 
@@ -226,9 +230,11 @@ namespace R.Models
 
     public class Result
     {
-        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+
+       //[BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+       //[BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; } 
+        
         public string MlsNumber { get; set; }
         public string PublicRemarks { get; set; }
 
@@ -246,9 +252,12 @@ namespace R.Models
 
     public class Pin
     {
-        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
-        [BsonRepresentation(BsonType.ObjectId)]
+
+
+       //[BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+       //[BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
+        
         public string key { get; set; }
         public string propertyId { get; set; }
         public int count { get; set; }
