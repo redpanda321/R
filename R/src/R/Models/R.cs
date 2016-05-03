@@ -215,7 +215,7 @@ namespace R.Models
     {
 
 
-       // [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
        // [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         
@@ -231,8 +231,8 @@ namespace R.Models
     public class Result
     {
 
-       //[BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
-       //[BsonRepresentation(BsonType.ObjectId)]
+       [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+       // [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; } 
         
         public string MlsNumber { get; set; }
@@ -254,7 +254,7 @@ namespace R.Models
     {
 
 
-       //[BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
+       [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
        //[BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
         
