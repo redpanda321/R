@@ -289,53 +289,62 @@ namespace R
 
             var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
             var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
-
+         
 
             foreach (var r in results)
             {
 
+                ResultHistory resultHistory = new ResultHistory();
+                Result dbResult = new Result();
+         
                 try {
 
-                    ResultHistory resultHistory = new ResultHistory();
-                    resultHistory.ResultDateTime = DateTime.Now;
-                    resultHistory.ResultId = r.Id;
-                    string price1 = r.Property.Price.Replace('$', ' ');
-                    if (r.Property.Price.IndexOf(',') >= 0)
-                    {
-                        string[] price = price1.Split(',');
-                        price1 = price[0] + price[1];
-                    }
-                    resultHistory.Price = Convert.ToSingle(price1);
-                    repo1.Add(resultHistory);
-
-
-                } catch(Exception e) {
-
-                    System.Console.WriteLine(e.ToString());
-
-                }
-
-
-                try
-                {
 
                     if (r != null)
                     {
 
+
+
+
+                        //Result
+
+                        string price1 = r.Property.Price.Replace('$', ' ');
+                        if (r.Property.Price.IndexOf(',') >= 0)
+                        {
+                            string[] price = price1.Split(',');
+                            price1 = "";
+                            for (int i = 0; i < price.Count(); i++)
+                            {
+
+                                price1 = price1 + price[i];
+
+                            }
+
+                        }
                         
-                        Result dbResult = new Result();
-                        dbResult = repo.Find(x => x.MlsNumber ==  r.MlsNumber );
+                        r.Property.Price = price1;
+
+                        dbResult = repo.Find(x => x.MlsNumber == r.MlsNumber);
                         if (dbResult == null)
                         {
                             repo.Add(r);
-                           
 
                         }
                         else
                         {
-
                             repo.Update(r);
                         }
+
+
+                        //ResultHistory
+                        resultHistory.ResultDateTime = DateTime.Now;
+                        resultHistory.ResultId = r.Id;
+                        resultHistory.Result = r;
+                        resultHistory.Price = Convert.ToSingle(price1);
+
+                        repo1.Add(resultHistory);
+                     
+                        
 
                     }
 

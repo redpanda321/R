@@ -205,6 +205,8 @@ namespace R.Models
     }
 
 
+    
+
     public class Results {
 
         public List<Result> results { get; set; }
@@ -225,6 +227,10 @@ namespace R.Models
         public string ResultId { get; set; }
 
         public float Price { get; set; }
+
+
+        public Result Result { get; set; }
+
     }
 
 
@@ -234,7 +240,8 @@ namespace R.Models
        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
        // [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; } 
-        
+
+   
         public string MlsNumber { get; set; }
         public string PublicRemarks { get; set; }
 
