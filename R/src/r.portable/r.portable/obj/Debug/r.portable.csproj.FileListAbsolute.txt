@@ -1,0 +1,10 @@
+C:\temp\demo\R\R\src\r.portable\r.portable\bin\Debug\r.portable.dll
+C:\temp\demo\R\R\src\r.portable\r.portable\bin\Debug\r.portable.pdb
+C:\temp\demo\R\R\src\r.portable\r.portable\bin\Debug\Xamarin.Forms.Core.dll
+C:\temp\demo\R\R\src\r.portable\r.portable\bin\Debug\Xamarin.Forms.Platform.dll
+C:\temp\demo\R\R\src\r.portable\r.portable\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\temp\demo\R\R\src\r.portable\r.portable\bin\Debug\Xamarin.Forms.Core.xml
+C:\temp\demo\R\R\src\r.portable\r.portable\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\temp\demo\R\R\src\r.portable\r.portable\obj\Debug\r.portable.dll
+C:\temp\demo\R\R\src\r.portable\r.portable\obj\Debug\r.portable.pdb
+C:\temp\demo\R\R\src\r.portable\r.portable\obj\Debug\r.portable.csprojResolveAssemblyReference.cache

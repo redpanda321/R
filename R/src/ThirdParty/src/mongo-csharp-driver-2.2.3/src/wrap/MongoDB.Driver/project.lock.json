@@ -1,0 +1,96 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "AsyncUsageAnalyzers/1.0.0-alpha003": {
+        "type": "package"
+      },
+      "MongoDB.Bson/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "AsyncUsageAnalyzers": "1.0.0-alpha003"
+        }
+      },
+      "MongoDB.Driver.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "AsyncUsageAnalyzers": "1.0.0-alpha003",
+          "MongoDB.Bson": "1.0.0"
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win7-x86": {
+      "AsyncUsageAnalyzers/1.0.0-alpha003": {
+        "type": "package"
+      },
+      "MongoDB.Bson/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "AsyncUsageAnalyzers": "1.0.0-alpha003"
+        }
+      },
+      "MongoDB.Driver.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "AsyncUsageAnalyzers": "1.0.0-alpha003",
+          "MongoDB.Bson": "1.0.0"
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win7-x64": {
+      "AsyncUsageAnalyzers/1.0.0-alpha003": {
+        "type": "package"
+      },
+      "MongoDB.Bson/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "AsyncUsageAnalyzers": "1.0.0-alpha003"
+        }
+      },
+      "MongoDB.Driver.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "AsyncUsageAnalyzers": "1.0.0-alpha003",
+          "MongoDB.Bson": "1.0.0"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MongoDB.Bson/1.0.0": {
+      "type": "project",
+      "path": "../MongoDB.Bson/project.json"
+    },
+    "MongoDB.Driver.Core/1.0.0": {
+      "type": "project",
+      "path": "../MongoDB.Driver.Core/project.json"
+    },
+    "AsyncUsageAnalyzers/1.0.0-alpha003": {
+      "type": "package",
+      "sha512": "rj0BLCPLI0QF6/fDswekUtavjj2g6uA4vsASOZ0g6N/w77XQTQgzSqhiJ/6Py6R5HhdpQ3HfkjUpR+KSvWq3nQ==",
+      "files": [
+        "analyzers/dotnet/AsyncUsageAnalyzers.dll",
+        "AsyncUsageAnalyzers.1.0.0-alpha003.nupkg",
+        "AsyncUsageAnalyzers.1.0.0-alpha003.nupkg.sha512",
+        "AsyncUsageAnalyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v4.5": [
+      "AsyncUsageAnalyzers >= 1.0.0-alpha003",
+      "MongoDB.Bson >= 1.0.0-*",
+      "MongoDB.Driver.Core >= 1.0.0-*"
+    ]
+  }
+}
