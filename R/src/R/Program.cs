@@ -222,6 +222,8 @@ namespace R
 
                 }
 
+                repo.Dispose();
+
              }catch(Exception e) {
 
                 System.Console.WriteLine(e.ToString());   
@@ -343,8 +345,7 @@ namespace R
                         resultHistory.Price = Convert.ToSingle(price1);
 
                         repo1.Add(resultHistory);
-                     
-                        
+
 
                     }
 
@@ -360,6 +361,12 @@ namespace R
 
 
             }
+
+
+
+            repo.Dispose();
+            repo1.Dispose();
+            
 
             #region EF6
 
