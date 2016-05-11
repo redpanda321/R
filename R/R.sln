@@ -19,6 +19,9 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "R.Common", "src\R.Common\R.Common.xproj", "{A7804348-67EF-40F1-837C-AF070F12DA54}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "R.Web", "src\R.Web\R.Web.xproj", "{661F571A-AE82-43A0-9ABD-D6684314A78D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AE5166CD-76B0-4911-BD80-CED9521F37A1} = {AE5166CD-76B0-4911-BD80-CED9521F37A1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Driver", "src\ThirdParty\src\mongo-csharp-driver-2.2.3\src\MongoDB.Driver\MongoDB.Driver.csproj", "{AE5166CD-76B0-4911-BD80-CED9521F37A1}"
 	ProjectSection(ProjectDependencies) = postProject

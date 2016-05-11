@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet5-R.Web-52f666b0-7860-4e0a-87aa-3fe3622fd84e",
   "version": "1.0.0-*",
   "compilationOptions": {
@@ -6,9 +6,12 @@
   },
 
   "dependencies": {
+
     "EntityFramework.Commands": "7.0.0-rc1-final",
     "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+
     "Microsoft.ApplicationInsights.AspNet": "1.0.0-rc1",
+    
     "Microsoft.AspNet.Authentication.Cookies": "1.0.0-rc1-final",
     "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-rc1-final",
     "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
@@ -18,14 +21,18 @@
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
     "Microsoft.AspNet.Tooling.Razor": "1.0.0-rc1-final",
+    
     "Microsoft.Extensions.CodeGenerators.Mvc": "1.0.0-rc1-final",
-    "Microsoft.Extensions.Configuration.FileProviderExtensions" : "1.0.0-rc1-final",
+    "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1-final"
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1-final",
+    
+    "AspNet.Identity.MongoDB": "2.0.8",
+    "WebSocketSharp": "1.0.3-rc10"
   },
 
   "commands": {
@@ -34,8 +41,12 @@
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
+    "dnx451": {
+      "dependencies": {
+        "MongoDB.Driver": "2.0.0-beta1"
+      }
+    }
+
   },
 
   "exclude": [
