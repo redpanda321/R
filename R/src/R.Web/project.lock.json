@@ -1910,11 +1910,11 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
-      "MongoDB.Driver/2.0.0-beta1": {
+      "MongoDB.Driver/2.0.0": {
         "type": "package",
         "dependencies": {
-          "MongoDB.Bson": "2.0.0-beta1",
-          "MongoDB.Driver.Core": "2.0.0-beta1"
+          "MongoDB.Bson": "2.0.0",
+          "MongoDB.Driver.Core": "2.0.0"
         },
         "compile": {
           "lib/net45/MongoDB.Driver.dll": {}
@@ -1923,10 +1923,10 @@
           "lib/net45/MongoDB.Driver.dll": {}
         }
       },
-      "MongoDB.Driver.Core/2.0.0-beta1": {
+      "MongoDB.Driver.Core/2.0.0": {
         "type": "package",
         "dependencies": {
-          "MongoDB.Bson": "2.0.0-beta1"
+          "MongoDB.Bson": "2.0.0"
         },
         "compile": {
           "lib/net45/MongoDB.Driver.Core.dll": {}
@@ -4085,11 +4085,11 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
-      "MongoDB.Driver/2.0.0-beta1": {
+      "MongoDB.Driver/2.0.0": {
         "type": "package",
         "dependencies": {
-          "MongoDB.Bson": "2.0.0-beta1",
-          "MongoDB.Driver.Core": "2.0.0-beta1"
+          "MongoDB.Bson": "2.0.0",
+          "MongoDB.Driver.Core": "2.0.0"
         },
         "compile": {
           "lib/net45/MongoDB.Driver.dll": {}
@@ -4098,10 +4098,10 @@
           "lib/net45/MongoDB.Driver.dll": {}
         }
       },
-      "MongoDB.Driver.Core/2.0.0-beta1": {
+      "MongoDB.Driver.Core/2.0.0": {
         "type": "package",
         "dependencies": {
-          "MongoDB.Bson": "2.0.0-beta1"
+          "MongoDB.Bson": "2.0.0"
         },
         "compile": {
           "lib/net45/MongoDB.Driver.Core.dll": {}
@@ -6260,11 +6260,11 @@
         "type": "project",
         "framework": "DNX,Version=v4.5.1"
       },
-      "MongoDB.Driver/2.0.0-beta1": {
+      "MongoDB.Driver/2.0.0": {
         "type": "package",
         "dependencies": {
-          "MongoDB.Bson": "2.0.0-beta1",
-          "MongoDB.Driver.Core": "2.0.0-beta1"
+          "MongoDB.Bson": "2.0.0",
+          "MongoDB.Driver.Core": "2.0.0"
         },
         "compile": {
           "lib/net45/MongoDB.Driver.dll": {}
@@ -6273,10 +6273,10 @@
           "lib/net45/MongoDB.Driver.dll": {}
         }
       },
-      "MongoDB.Driver.Core/2.0.0-beta1": {
+      "MongoDB.Driver.Core/2.0.0": {
         "type": "package",
         "dependencies": {
-          "MongoDB.Bson": "2.0.0-beta1"
+          "MongoDB.Bson": "2.0.0"
         },
         "compile": {
           "lib/net45/MongoDB.Driver.Core.dll": {}
@@ -8024,26 +8024,26 @@
         "Microsoft.VisualStudio.Web.BrowserLink.Loader.nuspec"
       ]
     },
-    "MongoDB.Driver/2.0.0-beta1": {
+    "MongoDB.Driver/2.0.0": {
       "type": "package",
-      "sha512": "tIIAzvgOjYgDQccsLJaFCDXhrMY5n6qTNHNNXfu/xMngdj/CUn7Bu7U9o3eJ+aHllrFAdbHYeIgilSy/1+y8hQ==",
+      "sha512": "MloX+kZsJsrDqtCRZShRRwcVbSUdj7II98gl7aXcXfCKXEFMWn3931o39YTMv6nwN/Z0MxkVJ0r68Vr1nO3pbw==",
       "files": [
         "lib/net45/MongoDB.Driver.dll",
         "lib/net45/MongoDB.Driver.XML",
         "License.rtf",
-        "MongoDB.Driver.2.0.0-beta1.nupkg",
-        "MongoDB.Driver.2.0.0-beta1.nupkg.sha512",
+        "MongoDB.Driver.2.0.0.nupkg",
+        "MongoDB.Driver.2.0.0.nupkg.sha512",
         "MongoDB.Driver.nuspec"
       ]
     },
-    "MongoDB.Driver.Core/2.0.0-beta1": {
+    "MongoDB.Driver.Core/2.0.0": {
       "type": "package",
-      "sha512": "R9eRCeXfu//ldtzkQrjIqv967r+6TbtcE5nMfmFHwUS/WCIT/1mS+fqAbYYEIgDfgOQ8cG9cYCVWzfi19Vixow==",
+      "sha512": "mMU89OUiwuSsDW7A2vYEt2VNOpbrD0IR0dtnGyGlIj8IENjIDZG9uXRkIMipW9fl8XBRl8eKWss4AQvTPXtaKg==",
       "files": [
         "lib/net45/MongoDB.Driver.Core.dll",
         "License.rtf",
-        "MongoDB.Driver.Core.2.0.0-beta1.nupkg",
-        "MongoDB.Driver.Core.2.0.0-beta1.nupkg.sha512",
+        "MongoDB.Driver.Core.2.0.0.nupkg",
+        "MongoDB.Driver.Core.2.0.0.nupkg.sha512",
         "MongoDB.Driver.Core.nuspec"
       ]
     },
@@ -8899,8 +8899,6 @@
       "AspNet.Identity.MongoDB >= 2.0.8",
       "WebSocketSharp >= 1.0.3-rc10"
     ],
-    "DNX,Version=v4.5.1": [
-      "MongoDB.Driver >= 2.0.0-beta1"
-    ]
+    "DNX,Version=v4.5.1": []
   }
 }

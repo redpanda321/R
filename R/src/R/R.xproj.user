@@ -3,5 +3,6 @@
   <PropertyGroup>
     <ActiveDebugProfile>R</ActiveDebugProfile>
     <NameOfLastUsedPublishProfile>R</NameOfLastUsedPublishProfile>
+    <ShowAllFiles>true</ShowAllFiles>
   </PropertyGroup>
 </Project>

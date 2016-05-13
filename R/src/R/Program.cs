@@ -20,11 +20,10 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 using R.Models;
-using Microsoft.Framework.Runtime;
+
 
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.PlatformAbstractions;
+
 using MongoDB.Driver;
 using SharpRepository.MongoDbRepository;
 
