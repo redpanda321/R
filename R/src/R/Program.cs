@@ -954,6 +954,13 @@ namespace R
 
             int factor = Convert.ToInt32(Configuration["Task:Factor"]);
 
+            //Random random = new Random();
+            //factor = random.Next(260, 360);
+               
+
+
+
+
             int num = GetPagingNumber(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude);
 
             int n = 0;
