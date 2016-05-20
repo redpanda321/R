@@ -51,7 +51,7 @@ namespace R
         /// <summary>
         /// Restful API
         /// </summary>
-        public static string PROPERTYAPI = "https://www.realtor.ca/api/Listing.svc/PropertySearch_Post";
+        public static string PROPERTYAPI = "https://64.26.131.68/api/Listing.svc/PropertySearch_Post";
 
         /// <summary>
         /// Get Api Results(String Format)
@@ -71,6 +71,9 @@ namespace R
             try
             {
                 var client = new RestClient(PROPERTYAPI);
+
+               //  client.Proxy =  new WebProxy("http://127.0.0.1:8580");
+
                 var request = new RestRequest();
 
                 request.Method = Method.POST;
@@ -957,10 +960,7 @@ namespace R
             //Random random = new Random();
             //factor = random.Next(260, 360);
                
-
-
-
-
+            
             int num = GetPagingNumber(longitudeMin, longitudeMax, latitudeMin, latitudeMax, longitude, latitude);
 
             int n = 0;

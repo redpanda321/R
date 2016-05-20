@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using R.Web.Models;
 using R.Web.Services;
+using R.Web.Behavior;
 
 
 using WebSocketSharp;
@@ -118,6 +119,12 @@ namespace R.Web
         // Entry point for the application.
         public static void Main(string[] args)
         {
+
+            //WebSocket 
+            var wssv = new WebSocketServer(8888);
+            wssv.AddWebSocketService<ResultBehavior>("/Result");
+            wssv.Start();
+
 
              WebApplication.Run<Startup>(args);
 

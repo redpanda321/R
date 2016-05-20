@@ -19,10 +19,5 @@
     <DnxInvisibleContent Include=".bowerrc" />
     <DnxInvisibleContent Include="package.json" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ThirdParty\src\mongo-csharp-driver-2.2.3\src\MongoDB.Bson\MongoDB.Bson.csproj" />
-    <ProjectReference Include="..\ThirdParty\src\mongo-csharp-driver-2.2.3\src\MongoDB.Driver.Core\MongoDB.Driver.Core.csproj" />
-    <ProjectReference Include="..\ThirdParty\src\mongo-csharp-driver-2.2.3\src\MongoDB.Driver\MongoDB.Driver.csproj" />
-  </ItemGroup>
   <Import Project="$(VSToolsPath)\DNX\Microsoft.DNX.targets" Condition="'$(VSToolsPath)' != ''" />
 </Project>

@@ -3,19 +3,6 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
-      "AspNet.Identity.MongoDB/2.0.8": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Identity.Core": "2.2.1",
-          "MongoDB.Driver": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/AspNet.Identity.MongoDB.dll": {}
-        },
-        "runtime": {
-          "lib/net45/AspNet.Identity.MongoDB.dll": {}
-        }
-      },
       "EntityFramework.Commands/7.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -653,15 +640,6 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Identity.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.Core/2.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
         }
       },
       "Microsoft.AspNet.Identity.EntityFramework/3.0.0-rc1-final": {
@@ -1906,35 +1884,6 @@
           "lib/dnx451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
-      "MongoDB.Bson/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1"
-      },
-      "MongoDB.Driver/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.0.0",
-          "MongoDB.Driver.Core": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -2175,19 +2124,6 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
-      "AspNet.Identity.MongoDB/2.0.8": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Identity.Core": "2.2.1",
-          "MongoDB.Driver": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/AspNet.Identity.MongoDB.dll": {}
-        },
-        "runtime": {
-          "lib/net45/AspNet.Identity.MongoDB.dll": {}
-        }
-      },
       "EntityFramework.Commands/7.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -2825,15 +2761,6 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Identity.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.Core/2.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
         }
       },
       "Microsoft.AspNet.Identity.EntityFramework/3.0.0-rc1-final": {
@@ -4081,35 +4008,6 @@
           "lib/dnx451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
-      "MongoDB.Bson/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1"
-      },
-      "MongoDB.Driver/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.0.0",
-          "MongoDB.Driver.Core": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -4350,19 +4248,6 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
-      "AspNet.Identity.MongoDB/2.0.8": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNet.Identity.Core": "2.2.1",
-          "MongoDB.Driver": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/AspNet.Identity.MongoDB.dll": {}
-        },
-        "runtime": {
-          "lib/net45/AspNet.Identity.MongoDB.dll": {}
-        }
-      },
       "EntityFramework.Commands/7.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -5000,15 +4885,6 @@
         },
         "runtime": {
           "lib/net451/Microsoft.AspNet.Identity.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.Core/2.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
         }
       },
       "Microsoft.AspNet.Identity.EntityFramework/3.0.0-rc1-final": {
@@ -6256,35 +6132,6 @@
           "lib/dnx451/Microsoft.VisualStudio.Web.BrowserLink.Loader.dll": {}
         }
       },
-      "MongoDB.Bson/1.0.0": {
-        "type": "project",
-        "framework": "DNX,Version=v4.5.1"
-      },
-      "MongoDB.Driver/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.0.0",
-          "MongoDB.Driver.Core": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.dll": {}
-        }
-      },
-      "MongoDB.Driver.Core/2.0.0": {
-        "type": "package",
-        "dependencies": {
-          "MongoDB.Bson": "2.0.0"
-        },
-        "compile": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MongoDB.Driver.Core.dll": {}
-        }
-      },
       "Newtonsoft.Json/6.0.6": {
         "type": "package",
         "compile": {
@@ -6526,20 +6373,6 @@
     }
   },
   "libraries": {
-    "MongoDB.Bson/1.0.0": {
-      "type": "project",
-      "path": "../../wrap/MongoDB.Bson/project.json"
-    },
-    "AspNet.Identity.MongoDB/2.0.8": {
-      "type": "package",
-      "sha512": "3mNYCF0ZWEelniwGcuxPfVtAAEKzXKE5sSGTWLS2r1hfaWNw9dX4Cf85C1F85rqMsjKdrabG0yIzwEDUVMt+vA==",
-      "files": [
-        "AspNet.Identity.MongoDB.2.0.8.nupkg",
-        "AspNet.Identity.MongoDB.2.0.8.nupkg.sha512",
-        "AspNet.Identity.MongoDB.nuspec",
-        "lib/net45/AspNet.Identity.MongoDB.dll"
-      ]
-    },
     "EntityFramework.Commands/7.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -7006,18 +6839,6 @@
         "Microsoft.AspNet.Identity.3.0.0-rc1-final.nupkg",
         "Microsoft.AspNet.Identity.3.0.0-rc1-final.nupkg.sha512",
         "Microsoft.AspNet.Identity.nuspec"
-      ]
-    },
-    "Microsoft.AspNet.Identity.Core/2.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "jjurNglpmcv0SLBd4Fmar8ZoJ2yqfTf6iuP3p8wVH7Nvanfo8l3qTBzq3qRQz2BQlb6iXJiDWPjcnIImVz512g==",
-      "files": [
-        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
-        "lib/net45/Microsoft.AspNet.Identity.Core.xml",
-        "Microsoft.AspNet.Identity.Core.2.2.1.nupkg",
-        "Microsoft.AspNet.Identity.Core.2.2.1.nupkg.sha512",
-        "Microsoft.AspNet.Identity.Core.nuspec"
       ]
     },
     "Microsoft.AspNet.Identity.EntityFramework/3.0.0-rc1-final": {
@@ -8024,29 +7845,6 @@
         "Microsoft.VisualStudio.Web.BrowserLink.Loader.nuspec"
       ]
     },
-    "MongoDB.Driver/2.0.0": {
-      "type": "package",
-      "sha512": "MloX+kZsJsrDqtCRZShRRwcVbSUdj7II98gl7aXcXfCKXEFMWn3931o39YTMv6nwN/Z0MxkVJ0r68Vr1nO3pbw==",
-      "files": [
-        "lib/net45/MongoDB.Driver.dll",
-        "lib/net45/MongoDB.Driver.XML",
-        "License.rtf",
-        "MongoDB.Driver.2.0.0.nupkg",
-        "MongoDB.Driver.2.0.0.nupkg.sha512",
-        "MongoDB.Driver.nuspec"
-      ]
-    },
-    "MongoDB.Driver.Core/2.0.0": {
-      "type": "package",
-      "sha512": "mMU89OUiwuSsDW7A2vYEt2VNOpbrD0IR0dtnGyGlIj8IENjIDZG9uXRkIMipW9fl8XBRl8eKWss4AQvTPXtaKg==",
-      "files": [
-        "lib/net45/MongoDB.Driver.Core.dll",
-        "License.rtf",
-        "MongoDB.Driver.Core.2.0.0.nupkg",
-        "MongoDB.Driver.Core.2.0.0.nupkg.sha512",
-        "MongoDB.Driver.Core.nuspec"
-      ]
-    },
     "Newtonsoft.Json/6.0.6": {
       "type": "package",
       "sha512": "w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q==",
@@ -8896,7 +8694,6 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc1-final",
-      "AspNet.Identity.MongoDB >= 2.0.8",
       "WebSocketSharp >= 1.0.3-rc10"
     ],
     "DNX,Version=v4.5.1": []
