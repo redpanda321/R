@@ -212,6 +212,32 @@
           "lib/net40/WebDriver.dll": {}
         }
       },
+      "SharpRepository.CacheRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        }
+      },
+      "SharpRepository.Caching.Redis/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.5",
+          "SharpRepository.Repository": "1.4.6",
+          "StackExchange.Redis": "1.0.333"
+        },
+        "compile": {
+          "lib/net45/SharpRepository.Caching.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpRepository.Caching.Redis.dll": {}
+        }
+      },
       "SharpRepository.MongoDbRepository/1.4.7": {
         "type": "package",
         "dependencies": {
@@ -232,6 +258,15 @@
         },
         "runtime": {
           "lib/net40/SharpRepository.Repository.dll": {}
+        }
+      },
+      "StackExchange.Redis/1.0.333": {
+        "type": "package",
+        "compile": {
+          "lib/net45/StackExchange.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/StackExchange.Redis.dll": {}
         }
       }
     },
@@ -445,6 +480,32 @@
           "lib/net40/WebDriver.dll": {}
         }
       },
+      "SharpRepository.CacheRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        }
+      },
+      "SharpRepository.Caching.Redis/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.5",
+          "SharpRepository.Repository": "1.4.6",
+          "StackExchange.Redis": "1.0.333"
+        },
+        "compile": {
+          "lib/net45/SharpRepository.Caching.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpRepository.Caching.Redis.dll": {}
+        }
+      },
       "SharpRepository.MongoDbRepository/1.4.7": {
         "type": "package",
         "dependencies": {
@@ -465,6 +526,15 @@
         },
         "runtime": {
           "lib/net40/SharpRepository.Repository.dll": {}
+        }
+      },
+      "StackExchange.Redis/1.0.333": {
+        "type": "package",
+        "compile": {
+          "lib/net45/StackExchange.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/StackExchange.Redis.dll": {}
         }
       }
     },
@@ -678,6 +748,32 @@
           "lib/net40/WebDriver.dll": {}
         }
       },
+      "SharpRepository.CacheRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        }
+      },
+      "SharpRepository.Caching.Redis/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.5",
+          "SharpRepository.Repository": "1.4.6",
+          "StackExchange.Redis": "1.0.333"
+        },
+        "compile": {
+          "lib/net45/SharpRepository.Caching.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpRepository.Caching.Redis.dll": {}
+        }
+      },
       "SharpRepository.MongoDbRepository/1.4.7": {
         "type": "package",
         "dependencies": {
@@ -698,6 +794,15 @@
         },
         "runtime": {
           "lib/net40/SharpRepository.Repository.dll": {}
+        }
+      },
+      "StackExchange.Redis/1.0.333": {
+        "type": "package",
+        "compile": {
+          "lib/net45/StackExchange.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/StackExchange.Redis.dll": {}
         }
       }
     }
@@ -956,6 +1061,32 @@
         "Selenium.WebDriver.nuspec"
       ]
     },
+    "SharpRepository.CacheRepository/1.4.7": {
+      "type": "package",
+      "sha512": "UOeJmbAwa2T3XV1twuSsTNG3UDfY6gL0/aUEY0TWIizqHjtJvhEVAmTkTrrdtwMo2dLT5h/Sg64ktBdYVCVscw==",
+      "files": [
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.CacheRepository.dll",
+        "SharpRepository.CacheRepository.1.4.7.nupkg",
+        "SharpRepository.CacheRepository.1.4.7.nupkg.sha512",
+        "SharpRepository.CacheRepository.nuspec",
+        "tools/Install.ps1"
+      ]
+    },
+    "SharpRepository.Caching.Redis/1.4.7": {
+      "type": "package",
+      "sha512": "vnbVJA9lMvaRW+4H1ytuffWuGdjSBFoLxtiRDv8tIA+Pd4qD87iEf9tEsmCNGZeQ+sQBN1Sl1xV2B77Knyl9MA==",
+      "files": [
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net45/SharpRepository.Caching.Redis.dll",
+        "SharpRepository.Caching.Redis.1.4.7.nupkg",
+        "SharpRepository.Caching.Redis.1.4.7.nupkg.sha512",
+        "SharpRepository.Caching.Redis.nuspec",
+        "tools/Install.ps1"
+      ]
+    },
     "SharpRepository.MongoDbRepository/1.4.7": {
       "type": "package",
       "sha512": "qo5Wd4fJ2cf0fL65uj1LA4YDmVSLnayxNAO/KL2Cv1AdfFTSfyzLCTRlo9B+9Cs+bSH2etfY5lZiHpI59fEBKw==",
@@ -978,6 +1109,22 @@
         "SharpRepository.Repository.nuspec",
         "tools/Install.ps1"
       ]
+    },
+    "StackExchange.Redis/1.0.333": {
+      "type": "package",
+      "sha512": "nljDzL6LVvzpYV7YPikIl/yd3pwTExT1ghpICEf2G5SsK/OrM8IVeGcsOE6U/0X0h+a9tdMlZ1qDEmcX1P1xkw==",
+      "files": [
+        "lib/net40/StackExchange.Redis.dll",
+        "lib/net40/StackExchange.Redis.dll.config",
+        "lib/net40/StackExchange.Redis.pdb",
+        "lib/net40/StackExchange.Redis.xml",
+        "lib/net45/StackExchange.Redis.dll",
+        "lib/net45/StackExchange.Redis.pdb",
+        "lib/net45/StackExchange.Redis.xml",
+        "StackExchange.Redis.1.0.333.nupkg",
+        "StackExchange.Redis.1.0.333.nupkg.sha512",
+        "StackExchange.Redis.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -990,7 +1137,9 @@
       "Selenium.WebDriver >= 2.53.0",
       "Microsoft.Extensions.Configuration >= 1.0.0-rc1-final",
       "Microsoft.Extensions.Configuration.Json >= 1.0.0-rc1-final",
-      "SharpRepository.MongoDbRepository >= 1.4.7"
+      "SharpRepository.MongoDbRepository >= 1.4.7",
+      "SharpRepository.CacheRepository >= 1.4.7",
+      "SharpRepository.Caching.Redis >= 1.4.7"
     ],
     "DNX,Version=v4.5.1": []
   }

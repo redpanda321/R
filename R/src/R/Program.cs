@@ -26,6 +26,9 @@ using Microsoft.Extensions.Configuration;
 
 using MongoDB.Driver;
 using SharpRepository.MongoDbRepository;
+using MongoDB.Bson;
+using SharpRepository.Repository.Caching;
+using SharpRepository.Caching.Redis;
 
 namespace R
 {
@@ -191,11 +194,9 @@ namespace R
 
             try
             {
-                var repo = new MongoDbRepository<Pin,string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
-             
-                // var server = new MongoClient(Configuration["Data:MongoDbConnection:ConnectionString"]).GetServer();
-               // var db = server.GetDatabase("R");
-               // var dbPins = db.GetCollection<Pin>("Pins");
+                //var repo = new MongoDbRepository<Pin,string>(Configuration["Data:MongoDbConnection:ConnectionString"],new StandardCachingStrategy<Pin, string>(new RedisCachingProvider("127.0.0.1",6379)));
+                var repo = new MongoDbRepository<Pin, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Pin, string>());
+
 
                 foreach (var p in pins)
                 {
@@ -226,7 +227,19 @@ namespace R
 
                 repo.Dispose();
 
-             }catch(Exception e) {
+
+                var server = new MongoClient(Configuration["Data:MongoDbConnection:ConnectionString"]).GetServer();
+                var db = server.GetDatabase("Pin");
+                var dbPins = db.GetCollection<Pin>("Pin");
+                BsonDocument keys = new BsonDocument();
+                keys.Add("key", 1);
+                IMongoIndexKeys indexKeys = new IndexKeysDocument(keys);
+                IndexOptionsDocument indexOptions = new IndexOptionsDocument();
+                dbPins.CreateIndex(indexKeys,indexOptions);
+
+
+            }
+            catch (Exception e) {
 
                 System.Console.WriteLine(e.ToString());   
 
@@ -291,9 +304,12 @@ namespace R
             if (results == null) return;
             if (results.Count <= 0) return;
 
-            var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
-            var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"]);
-         
+            // var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"],new StandardCachingStrategy<ResultHistory,string>( new RedisCachingProvider("127.0.0.1",6379,false)));
+            // var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>(new RedisCachingProvider("127.0.0.1",6379,false)));
+
+            var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<ResultHistory, string>());
+            var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>());
+
 
             foreach (var r in results)
             {
@@ -306,8 +322,6 @@ namespace R
 
                     if (r != null)
                     {
-
-
 
 
                         //Result
@@ -364,11 +378,29 @@ namespace R
 
             }
 
-
-
             repo.Dispose();
             repo1.Dispose();
-            
+
+
+            var server = new MongoClient(Configuration["Data:MongoDbConnection:ConnectionString"]).GetServer();
+            var db = server.GetDatabase("Result");
+            var dbResults = db.GetCollection<Result>("Result");
+
+            var db1 = server.GetDatabase("ResultHistory");
+            var dbResultHistory = db.GetCollection<ResultHistory>("ResultHistory");
+
+
+
+            BsonDocument keys = new BsonDocument();
+            keys.Add("MlsNumber", 1);
+            IMongoIndexKeys indexKeys = new IndexKeysDocument(keys);
+            IndexOptionsDocument indexOptions = new IndexOptionsDocument();
+
+
+            dbResults.CreateIndex(indexKeys, indexOptions);
+            dbResultHistory.CreateIndex(indexKeys, indexOptions);
+
+
 
             #region EF6
 
@@ -858,8 +890,8 @@ namespace R
                         //Save pins data
                         try
                         {
-                            if (pins.pins != null & pins.pins.Count > 0)
-                                SavePins(pins.pins);
+                          //  if (pins.pins != null & pins.pins.Count > 0)
+                          //      SavePins(pins.pins);
                         }
                         catch(Exception e) {
                             System.Console.WriteLine(e.ToString());

@@ -17,11 +17,11 @@ namespace r.mobile
     {
 
 
-        Map map;
+       public Map map { get; set; }
 
-        IGeolocator locator;
+       public IGeolocator locator { get; set; }
         
-        Plugin.Geolocator.Abstractions.Position position;
+       public Plugin.Geolocator.Abstractions.Position position { get; set; }
 
 
         public MapPage() {
@@ -37,13 +37,7 @@ namespace r.mobile
             };
 
             //////////////////////////////////////////////////////////////
-           
-            
-
-
-
-
-
+    
             //////////////////////////////////////////////////////////////    
             var stack = new StackLayout { Spacing = 0 };
 
