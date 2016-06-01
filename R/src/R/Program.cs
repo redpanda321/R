@@ -387,7 +387,7 @@ namespace R
             var dbResults = db.GetCollection<Result>("Result");
 
             var db1 = server.GetDatabase("ResultHistory");
-            var dbResultHistory = db.GetCollection<ResultHistory>("ResultHistory");
+            var dbResultHistory = db1.GetCollection<ResultHistory>("ResultHistory");
 
 
 
@@ -396,8 +396,12 @@ namespace R
             IMongoIndexKeys indexKeys = new IndexKeysDocument(keys);
             IndexOptionsDocument indexOptions = new IndexOptionsDocument();
 
-
             dbResults.CreateIndex(indexKeys, indexOptions);
+
+            keys.Clear();
+            keys.Add("Result.MlsNumber", 1);
+            indexKeys = new IndexKeysDocument(keys);
+            
             dbResultHistory.CreateIndex(indexKeys, indexOptions);
 
 
