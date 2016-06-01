@@ -194,8 +194,8 @@ namespace R
 
             try
             {
-                //var repo = new MongoDbRepository<Pin,string>(Configuration["Data:MongoDbConnection:ConnectionString"],new StandardCachingStrategy<Pin, string>(new RedisCachingProvider("127.0.0.1",6379)));
-                var repo = new MongoDbRepository<Pin, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Pin, string>());
+                var repo = new MongoDbRepository<Pin,string>(Configuration["Data:MongoDbConnection:ConnectionString"],new StandardCachingStrategy<Pin, string>(new RedisCachingProvider("127.0.0.1",6379,false)));
+               // var repo = new MongoDbRepository<Pin, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Pin, string>());
 
 
                 foreach (var p in pins)
@@ -304,11 +304,11 @@ namespace R
             if (results == null) return;
             if (results.Count <= 0) return;
 
-            // var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"],new StandardCachingStrategy<ResultHistory,string>( new RedisCachingProvider("127.0.0.1",6379,false)));
-            // var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>(new RedisCachingProvider("127.0.0.1",6379,false)));
+             var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"],new StandardCachingStrategy<ResultHistory,string>( new RedisCachingProvider("127.0.0.1",6379,false)));
+             var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>(new RedisCachingProvider("127.0.0.1",6379,false)));
 
-            var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<ResultHistory, string>());
-            var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>());
+          //  var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<ResultHistory, string>());
+          //  var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>());
 
 
             foreach (var r in results)
