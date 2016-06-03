@@ -342,28 +342,45 @@ namespace R
                         
                         r.Property.Price = price1;
 
-                        dbResult = repo.Find(x => x.MlsNumber == r.MlsNumber);
-                        if (dbResult == null)
-                        {
-                            repo.Add(r);
 
-                        }
-                        else
+                        try
                         {
-                            repo.Update(r);
-                        }
 
+                            dbResult = repo.Find(x => x.MlsNumber == r.MlsNumber);
+                            if (dbResult == null)
+                            {
+                                repo.Add(r);
+
+                            }
+                            else
+                            {
+                                repo.Update(r);
+                            }
+                        }
+                        catch(Exception e) {
+
+                            System.Console.WriteLine(e.ToString());
+                        }
 
                         //ResultHistory
-                        resultHistory.ResultDateTime = DateTime.Now;
-                        resultHistory.ResultId = r.Id;
-                        resultHistory.Result = r;
-                        resultHistory.Price = Convert.ToSingle(price1);
 
-                        repo1.Add(resultHistory);
+                        try
+                        {
 
+                            resultHistory.ResultDateTime = DateTime.Now;
+                            resultHistory.ResultId = r.Id;
+                            resultHistory.Result = r;
+                            resultHistory.Price = Convert.ToSingle(price1);
 
+                            repo1.Add(resultHistory);
+
+                        }
+                        catch (Exception e) {
+
+                            System.Console.WriteLine(e.ToString());
+                        }
                     }
+                    
 
 
                 }
