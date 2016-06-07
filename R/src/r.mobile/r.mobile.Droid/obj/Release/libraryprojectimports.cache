@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <Jars></Jars>
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.CurrentActivity\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.Geolocator\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.Permissions\library_project_imports\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.CurrentActivity\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.Geolocator\library_project_imports\assets</ResolvedAssetDirectory>
+    <ResolvedAssetDirectory>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.Permissions\library_project_imports\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.CurrentActivity.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.Geolocator.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\temp\demo\R\R\src\r.mobile\r.mobile.Droid\obj\Release\__library_projects__\Plugin.Permissions.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
+</Paths>
