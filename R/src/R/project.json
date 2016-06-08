@@ -21,7 +21,8 @@
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
     "SharpRepository.MongoDbRepository": "1.4.7",
     "SharpRepository.CacheRepository": "1.4.7",
-    "SharpRepository.Caching.Redis": "1.4.7"
+    "SharpRepository.Caching.Redis": "1.4.7",
+    "dnx-clr-win-x64": "1.0.0-rc1-update2"
   },
 
   "commands": {

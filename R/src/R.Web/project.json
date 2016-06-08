@@ -1,14 +1,12 @@
 ﻿{
-  "userSecretsId": "aspnet-R.Web-0ddaeb0f-7f13-491d-b2b2-0b109213bfbb",
+  "userSecretsId": "aspnet-R.Web-718f68bf-80ff-420e-9ec7-0ff12bf670a1",
 
   "dependencies": {
-    
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-final",
-    "Microsoft.AspNetCore.Hosting":"1.0.0-rc2-final",
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview1-final",
       "type": "build"
@@ -16,7 +14,6 @@
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.StaticFiles": "1.0.0-rc2-final",
-   
     "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc2-final",
     "Microsoft.EntityFrameworkCore.Tools": {
       "version": "1.0.0-preview1-final",
@@ -36,7 +33,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview1-final",
       "type": "build"
-    }
+    },
+    "WebSocketSharp": "1.0.3-rc10"
   },
 
   "tools": {
@@ -66,6 +64,7 @@
         "portable-net45+win8"
       ]
     }
+    
   },
 
   "frameworks": {
@@ -74,8 +73,7 @@
 
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true,
-     "debugType": "portable"
+    "preserveCompilationContext": true
   },
 
   "publishOptions": {

@@ -3,27 +3,30 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "dnx-clr-win-x64/1.0.0-rc1-update2": {
+        "type": "package"
+      },
       "EntityFramework/6.1.3": {
         "type": "package",
         "frameworkAssemblies": [
           "System.ComponentModel.DataAnnotations"
         ],
         "compile": {
-          "lib/net45/EntityFramework.dll": {},
-          "lib/net45/EntityFramework.SqlServer.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
         },
         "runtime": {
-          "lib/net45/EntityFramework.dll": {},
-          "lib/net45/EntityFramework.SqlServer.dll": {}
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
         }
       },
       "Microsoft.Extensions.CommandLineUtils.Sources/1.0.0-rc1-final": {
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
-          "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
           "lib/net451/Microsoft.Extensions.CommandLineUtils.Sources.dll": {}
@@ -39,9 +42,9 @@
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
-          "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
           "lib/net451/Microsoft.Extensions.Configuration.dll": {}
@@ -57,9 +60,9 @@
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
-          "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
           "lib/net451/Microsoft.Extensions.Configuration.Abstractions.dll": {}
@@ -75,9 +78,9 @@
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
-          "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
           "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
@@ -95,9 +98,9 @@
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
-          "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
           "lib/net451/Microsoft.Extensions.Configuration.Json.dll": {}
@@ -110,9 +113,9 @@
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
-          "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
           "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
@@ -125,9 +128,9 @@
         "type": "package",
         "frameworkAssemblies": [
           "Microsoft.CSharp",
-          "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
           "lib/net451/Microsoft.Extensions.Primitives.dll": {}
@@ -145,9 +148,9 @@
         },
         "frameworkAssemblies": [
           "Microsoft.CSharp",
-          "mscorlib",
           "System",
-          "System.Core"
+          "System.Core",
+          "mscorlib"
         ],
         "compile": {
           "lib/net451/Migrator.EF6.dll": {}
@@ -241,544 +244,8 @@
       "SharpRepository.MongoDbRepository/1.4.7": {
         "type": "package",
         "dependencies": {
-          "mongocsharpdriver": "1.11.0",
-          "SharpRepository.Repository": "1.4.7"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
-        }
-      },
-      "SharpRepository.Repository/1.4.7": {
-        "type": "package",
-        "compile": {
-          "lib/net40/SharpRepository.Repository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.Repository.dll": {}
-        }
-      },
-      "StackExchange.Redis/1.0.333": {
-        "type": "package",
-        "compile": {
-          "lib/net45/StackExchange.Redis.dll": {}
-        },
-        "runtime": {
-          "lib/net45/StackExchange.Redis.dll": {}
-        }
-      }
-    },
-    "DNX,Version=v4.5.1/win7-x86": {
-      "EntityFramework/6.1.3": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.ComponentModel.DataAnnotations"
-        ],
-        "compile": {
-          "lib/net45/EntityFramework.dll": {},
-          "lib/net45/EntityFramework.SqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net45/EntityFramework.dll": {},
-          "lib/net45/EntityFramework.SqlServer.dll": {}
-        }
-      },
-      "Microsoft.Extensions.CommandLineUtils.Sources/1.0.0-rc1-final": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.CommandLineUtils.Sources.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.CommandLineUtils.Sources.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Abstractions/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.Abstractions.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.FileExtensions/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Json/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
-          "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0-rc1-final",
-          "Newtonsoft.Json": "6.0.6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.Json.dll": {}
-        }
-      },
-      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/1.0.0-rc1-final": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Primitives.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Primitives.dll": {}
-        }
-      },
-      "Migrator.EF6/1.2.0": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "6.1.3",
-          "Microsoft.Extensions.CommandLineUtils.Sources": "1.0.0-rc1-final",
-          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Migrator.EF6.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Migrator.EF6.dll": {}
-        }
-      },
-      "mongocsharpdriver/1.11.0": {
-        "type": "package",
-        "compile": {
-          "lib/net35/MongoDB.Bson.dll": {},
-          "lib/net35/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net35/MongoDB.Bson.dll": {},
-          "lib/net35/MongoDB.Driver.dll": {}
-        }
-      },
-      "Newtonsoft.Json/8.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
-      "RestSharp/105.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net451/RestSharp.dll": {}
-        },
-        "runtime": {
-          "lib/net451/RestSharp.dll": {}
-        }
-      },
-      "Selenium.Support/2.53.0": {
-        "type": "package",
-        "dependencies": {
-          "Selenium.WebDriver": "2.53.0"
-        },
-        "frameworkAssemblies": [
-          "System.Drawing"
-        ],
-        "compile": {
-          "lib/net40/WebDriver.Support.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebDriver.Support.dll": {}
-        }
-      },
-      "Selenium.WebDriver/2.53.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Drawing"
-        ],
-        "compile": {
-          "lib/net40/WebDriver.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebDriver.dll": {}
-        }
-      },
-      "SharpRepository.CacheRepository/1.4.7": {
-        "type": "package",
-        "dependencies": {
-          "SharpRepository.Repository": "1.4.7"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.CacheRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.CacheRepository.dll": {}
-        }
-      },
-      "SharpRepository.Caching.Redis/1.4.7": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "6.0.5",
-          "SharpRepository.Repository": "1.4.6",
-          "StackExchange.Redis": "1.0.333"
-        },
-        "compile": {
-          "lib/net45/SharpRepository.Caching.Redis.dll": {}
-        },
-        "runtime": {
-          "lib/net45/SharpRepository.Caching.Redis.dll": {}
-        }
-      },
-      "SharpRepository.MongoDbRepository/1.4.7": {
-        "type": "package",
-        "dependencies": {
-          "mongocsharpdriver": "1.11.0",
-          "SharpRepository.Repository": "1.4.7"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
-        }
-      },
-      "SharpRepository.Repository/1.4.7": {
-        "type": "package",
-        "compile": {
-          "lib/net40/SharpRepository.Repository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.Repository.dll": {}
-        }
-      },
-      "StackExchange.Redis/1.0.333": {
-        "type": "package",
-        "compile": {
-          "lib/net45/StackExchange.Redis.dll": {}
-        },
-        "runtime": {
-          "lib/net45/StackExchange.Redis.dll": {}
-        }
-      }
-    },
-    "DNX,Version=v4.5.1/win7-x64": {
-      "EntityFramework/6.1.3": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.ComponentModel.DataAnnotations"
-        ],
-        "compile": {
-          "lib/net45/EntityFramework.dll": {},
-          "lib/net45/EntityFramework.SqlServer.dll": {}
-        },
-        "runtime": {
-          "lib/net45/EntityFramework.dll": {},
-          "lib/net45/EntityFramework.SqlServer.dll": {}
-        }
-      },
-      "Microsoft.Extensions.CommandLineUtils.Sources/1.0.0-rc1-final": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.CommandLineUtils.Sources.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.CommandLineUtils.Sources.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Abstractions/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.Abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.Abstractions.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.FileExtensions/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Configuration.Json/1.0.0-rc1-final": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "1.0.0-rc1-final",
-          "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0-rc1-final",
-          "Newtonsoft.Json": "6.0.6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Configuration.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Configuration.Json.dll": {}
-        }
-      },
-      "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll": {}
-        }
-      },
-      "Microsoft.Extensions.Primitives/1.0.0-rc1-final": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Microsoft.Extensions.Primitives.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Extensions.Primitives.dll": {}
-        }
-      },
-      "Migrator.EF6/1.2.0": {
-        "type": "package",
-        "dependencies": {
-          "EntityFramework": "6.1.3",
-          "Microsoft.Extensions.CommandLineUtils.Sources": "1.0.0-rc1-final",
-          "Microsoft.Extensions.PlatformAbstractions": "1.0.0-rc1-final"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/net451/Migrator.EF6.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Migrator.EF6.dll": {}
-        }
-      },
-      "mongocsharpdriver/1.11.0": {
-        "type": "package",
-        "compile": {
-          "lib/net35/MongoDB.Bson.dll": {},
-          "lib/net35/MongoDB.Driver.dll": {}
-        },
-        "runtime": {
-          "lib/net35/MongoDB.Bson.dll": {},
-          "lib/net35/MongoDB.Driver.dll": {}
-        }
-      },
-      "Newtonsoft.Json/8.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      },
-      "RestSharp/105.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/net451/RestSharp.dll": {}
-        },
-        "runtime": {
-          "lib/net451/RestSharp.dll": {}
-        }
-      },
-      "Selenium.Support/2.53.0": {
-        "type": "package",
-        "dependencies": {
-          "Selenium.WebDriver": "2.53.0"
-        },
-        "frameworkAssemblies": [
-          "System.Drawing"
-        ],
-        "compile": {
-          "lib/net40/WebDriver.Support.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebDriver.Support.dll": {}
-        }
-      },
-      "Selenium.WebDriver/2.53.0": {
-        "type": "package",
-        "frameworkAssemblies": [
-          "System.Drawing"
-        ],
-        "compile": {
-          "lib/net40/WebDriver.dll": {}
-        },
-        "runtime": {
-          "lib/net40/WebDriver.dll": {}
-        }
-      },
-      "SharpRepository.CacheRepository/1.4.7": {
-        "type": "package",
-        "dependencies": {
-          "SharpRepository.Repository": "1.4.7"
-        },
-        "compile": {
-          "lib/net40/SharpRepository.CacheRepository.dll": {}
-        },
-        "runtime": {
-          "lib/net40/SharpRepository.CacheRepository.dll": {}
-        }
-      },
-      "SharpRepository.Caching.Redis/1.4.7": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "6.0.5",
-          "SharpRepository.Repository": "1.4.6",
-          "StackExchange.Redis": "1.0.333"
-        },
-        "compile": {
-          "lib/net45/SharpRepository.Caching.Redis.dll": {}
-        },
-        "runtime": {
-          "lib/net45/SharpRepository.Caching.Redis.dll": {}
-        }
-      },
-      "SharpRepository.MongoDbRepository/1.4.7": {
-        "type": "package",
-        "dependencies": {
-          "mongocsharpdriver": "1.11.0",
-          "SharpRepository.Repository": "1.4.7"
+          "SharpRepository.Repository": "1.4.7",
+          "mongocsharpdriver": "1.11.0"
         },
         "compile": {
           "lib/net40/SharpRepository.MongoDbRepository.dll": {}
@@ -808,45 +275,85 @@
     }
   },
   "libraries": {
-    "EntityFramework/6.1.3": {
+    "dnx-clr-win-x64/1.0.0-rc1-update2": {
+      "sha512": "NKDH8G/I/yFoalBYZVzzD4lKZcm5VIUyyuxsNnlDVk+V8kZwR0wKqjhWAxGJEOvjwErm6Fjp+WHQ3X9tt0u8EQ==",
       "type": "package",
-      "serviceable": true,
-      "sha512": "2xzFHAF3VVdmTR3//MygtQpwfbDjeaq+nQwCcokLzen7MKHOojPaxNPQPa4diHY1QtcR7zlHAJHNRqPB7W2Syw==",
       "files": [
-        "content/App.config.transform",
-        "content/Web.config.transform",
+        "bin/Microsoft.CodeAnalysis.CSharp.dll",
+        "bin/Microsoft.CodeAnalysis.dll",
+        "bin/Microsoft.Dnx.ApplicationHost.dll",
+        "bin/Microsoft.Dnx.Compilation.Abstractions.dll",
+        "bin/Microsoft.Dnx.Compilation.CSharp.Abstractions.dll",
+        "bin/Microsoft.Dnx.Compilation.CSharp.Common.dll",
+        "bin/Microsoft.Dnx.Compilation.CSharp.dll",
+        "bin/Microsoft.Dnx.Compilation.DesignTime.dll",
+        "bin/Microsoft.Dnx.Compilation.dll",
+        "bin/Microsoft.Dnx.DesignTimeHost.Abstractions.dll",
+        "bin/Microsoft.Dnx.Host.Clr.dll",
+        "bin/Microsoft.Dnx.Host.Mono.dll",
+        "bin/Microsoft.Dnx.Host.dll",
+        "bin/Microsoft.Dnx.Loader.dll",
+        "bin/Microsoft.Dnx.Runtime.Internals.dll",
+        "bin/Microsoft.Dnx.Runtime.dll",
+        "bin/Microsoft.Dnx.dll",
+        "bin/Microsoft.Extensions.PlatformAbstractions.dll",
+        "bin/System.Collections.Immutable.dll",
+        "bin/System.Reflection.Metadata.dll",
+        "bin/dnu.cmd",
+        "bin/dnx.clr.dll",
+        "bin/dnx.exe",
+        "bin/dnx.onecore.dll",
+        "bin/dnx.win32.dll",
+        "bin/lib/Microsoft.Dnx.DesignTimeHost/Microsoft.Dnx.DesignTimeHost.Abstractions.dll",
+        "bin/lib/Microsoft.Dnx.DesignTimeHost/Microsoft.Dnx.DesignTimeHost.dll",
+        "bin/lib/Microsoft.Dnx.DesignTimeHost/Newtonsoft.Json.dll",
+        "bin/lib/Microsoft.Dnx.Project/Microsoft.Dnx.Project.dll",
+        "bin/lib/Microsoft.Dnx.Tooling/Microsoft.Dnx.Project.dll",
+        "bin/lib/Microsoft.Dnx.Tooling/Microsoft.Dnx.Tooling.dll",
+        "bin/lib/Microsoft.Dnx.Tooling/Newtonsoft.Json.dll",
+        "dnx-clr-win-x64.1.0.0-rc1-update2.nupkg",
+        "dnx-clr-win-x64.1.0.0-rc1-update2.nupkg.sha512",
+        "dnx-clr-win-x64.nuspec"
+      ]
+    },
+    "EntityFramework/6.1.3": {
+      "sha512": "2xzFHAF3VVdmTR3//MygtQpwfbDjeaq+nQwCcokLzen7MKHOojPaxNPQPa4diHY1QtcR7zlHAJHNRqPB7W2Syw==",
+      "type": "package",
+      "files": [
         "EntityFramework.6.1.3.nupkg",
         "EntityFramework.6.1.3.nupkg.sha512",
         "EntityFramework.nuspec",
-        "lib/net40/EntityFramework.dll",
+        "content/App.config.transform",
+        "content/Web.config.transform",
         "lib/net40/EntityFramework.SqlServer.dll",
         "lib/net40/EntityFramework.SqlServer.xml",
+        "lib/net40/EntityFramework.dll",
         "lib/net40/EntityFramework.xml",
-        "lib/net45/EntityFramework.dll",
         "lib/net45/EntityFramework.SqlServer.dll",
         "lib/net45/EntityFramework.SqlServer.xml",
+        "lib/net45/EntityFramework.dll",
         "lib/net45/EntityFramework.xml",
-        "tools/about_EntityFramework.help.txt",
-        "tools/EntityFramework.PowerShell.dll",
         "tools/EntityFramework.PowerShell.Utility.dll",
+        "tools/EntityFramework.PowerShell.dll",
         "tools/EntityFramework.psd1",
         "tools/EntityFramework.psm1",
+        "tools/about_EntityFramework.help.txt",
         "tools/init.ps1",
         "tools/install.ps1",
         "tools/migrate.exe"
       ]
     },
     "Microsoft.Extensions.CommandLineUtils.Sources/1.0.0-rc1-final": {
-      "type": "package",
       "sha512": "YfcfZsnzrNPXS53d8G+adiGRKMtAbF9ztcW4qIQmGyJlhEW64DlwiZMbY3wJuk1fGvwFtxhQvdj9w3ykFScyhA==",
+      "type": "package",
       "files": [
+        "Microsoft.Extensions.CommandLineUtils.Sources.1.0.0-rc1-final.nupkg",
+        "Microsoft.Extensions.CommandLineUtils.Sources.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.CommandLineUtils.Sources.nuspec",
         "lib/dotnet5.4/Microsoft.Extensions.CommandLineUtils.Sources.dll",
         "lib/dotnet5.4/Microsoft.Extensions.CommandLineUtils.Sources.xml",
         "lib/net451/Microsoft.Extensions.CommandLineUtils.Sources.dll",
         "lib/net451/Microsoft.Extensions.CommandLineUtils.Sources.xml",
-        "Microsoft.Extensions.CommandLineUtils.Sources.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.CommandLineUtils.Sources.1.0.0-rc1-final.nupkg.sha512",
-        "Microsoft.Extensions.CommandLineUtils.Sources.nuspec",
         "shared/AnsiConsole.cs",
         "shared/CommandArgument.cs",
         "shared/CommandLineApplication.cs",
@@ -856,131 +363,128 @@
       ]
     },
     "Microsoft.Extensions.Configuration/1.0.0-rc1-final": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "2ayWzqMVGWjr8o8bOSnIsyQbi9sLz9Ya8+YM+9tM/ivSnLHuN7TNHNfJv4jTyRZvoOafdh5Ivlc/OdmsZPXlQQ==",
+      "type": "package",
       "files": [
+        "Microsoft.Extensions.Configuration.1.0.0-rc1-final.nupkg",
+        "Microsoft.Extensions.Configuration.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.nuspec",
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.dll",
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.xml",
         "lib/net451/Microsoft.Extensions.Configuration.dll",
         "lib/net451/Microsoft.Extensions.Configuration.xml",
         "lib/netcore50/Microsoft.Extensions.Configuration.dll",
-        "lib/netcore50/Microsoft.Extensions.Configuration.xml",
-        "Microsoft.Extensions.Configuration.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.Configuration.1.0.0-rc1-final.nupkg.sha512",
-        "Microsoft.Extensions.Configuration.nuspec"
+        "lib/netcore50/Microsoft.Extensions.Configuration.xml"
       ]
     },
     "Microsoft.Extensions.Configuration.Abstractions/1.0.0-rc1-final": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "xA7ObOlIswcx2qakv69kz0pnBizFJrmwxRxJyjPOHWfevF4W+OdolZsbKOc12kY7y5upqhAvNGWTblffMvADHA==",
+      "type": "package",
       "files": [
+        "Microsoft.Extensions.Configuration.Abstractions.1.0.0-rc1-final.nupkg",
+        "Microsoft.Extensions.Configuration.Abstractions.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.Abstractions.nuspec",
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.Abstractions.dll",
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.Abstractions.xml",
         "lib/net451/Microsoft.Extensions.Configuration.Abstractions.dll",
         "lib/net451/Microsoft.Extensions.Configuration.Abstractions.xml",
         "lib/netcore50/Microsoft.Extensions.Configuration.Abstractions.dll",
-        "lib/netcore50/Microsoft.Extensions.Configuration.Abstractions.xml",
-        "Microsoft.Extensions.Configuration.Abstractions.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.Configuration.Abstractions.1.0.0-rc1-final.nupkg.sha512",
-        "Microsoft.Extensions.Configuration.Abstractions.nuspec"
+        "lib/netcore50/Microsoft.Extensions.Configuration.Abstractions.xml"
       ]
     },
     "Microsoft.Extensions.Configuration.FileExtensions/1.0.0-rc1-final": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "w2x8nqrp2YUgNBJuZ3SUmexBtjaoZFzCQtObRTjrE4GWceFEmaLZtXFvs4n9IgRQkOqqCza7Fv7NXnD9m2emjQ==",
+      "type": "package",
       "files": [
+        "Microsoft.Extensions.Configuration.FileExtensions.1.0.0-rc1-final.nupkg",
+        "Microsoft.Extensions.Configuration.FileExtensions.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.FileExtensions.nuspec",
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.FileExtensions.dll",
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.FileExtensions.xml",
         "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.dll",
         "lib/net451/Microsoft.Extensions.Configuration.FileExtensions.xml",
         "lib/netcore50/Microsoft.Extensions.Configuration.FileExtensions.dll",
-        "lib/netcore50/Microsoft.Extensions.Configuration.FileExtensions.xml",
-        "Microsoft.Extensions.Configuration.FileExtensions.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.Configuration.FileExtensions.1.0.0-rc1-final.nupkg.sha512",
-        "Microsoft.Extensions.Configuration.FileExtensions.nuspec"
+        "lib/netcore50/Microsoft.Extensions.Configuration.FileExtensions.xml"
       ]
     },
     "Microsoft.Extensions.Configuration.Json/1.0.0-rc1-final": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "9v+RpswnXEpAP5mx8J1w1yZZT2pPtMBTnOAauNh2c9ju5Dhq3ljxvbm0S9j6o5F/EFSLlbfN/brxTJN3qa/upw==",
+      "type": "package",
       "files": [
+        "Microsoft.Extensions.Configuration.Json.1.0.0-rc1-final.nupkg",
+        "Microsoft.Extensions.Configuration.Json.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.Json.nuspec",
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.Json.dll",
         "lib/dotnet5.4/Microsoft.Extensions.Configuration.Json.xml",
         "lib/net451/Microsoft.Extensions.Configuration.Json.dll",
         "lib/net451/Microsoft.Extensions.Configuration.Json.xml",
         "lib/netcore50/Microsoft.Extensions.Configuration.Json.dll",
-        "lib/netcore50/Microsoft.Extensions.Configuration.Json.xml",
-        "Microsoft.Extensions.Configuration.Json.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.Configuration.Json.1.0.0-rc1-final.nupkg.sha512",
-        "Microsoft.Extensions.Configuration.Json.nuspec"
+        "lib/netcore50/Microsoft.Extensions.Configuration.Json.xml"
       ]
     },
     "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc1-final": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "26HS4c6MBisN+D7XUr8HObOI/JJvSJQYQR//Bfw/hi9UqhqK3lFpNKjOuYHI+gTxYdXT46HqZiz4D+k7d+ob3A==",
+      "type": "package",
       "files": [
+        "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc1-final.nupkg",
+        "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.PlatformAbstractions.nuspec",
         "lib/dotnet5.4/Microsoft.Extensions.PlatformAbstractions.dll",
         "lib/dotnet5.4/Microsoft.Extensions.PlatformAbstractions.xml",
         "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll",
-        "lib/net451/Microsoft.Extensions.PlatformAbstractions.xml",
-        "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc1-final.nupkg.sha512",
-        "Microsoft.Extensions.PlatformAbstractions.nuspec"
+        "lib/net451/Microsoft.Extensions.PlatformAbstractions.xml"
       ]
     },
     "Microsoft.Extensions.Primitives/1.0.0-rc1-final": {
-      "type": "package",
-      "serviceable": true,
       "sha512": "oHWqBARJveyM7LctuqQqvsTC58hxoq0gGnHr6Qsxie71LIkZpfE21IklhSLOsqmv4QIpes/G6k1vZbAQ+cC/nw==",
+      "type": "package",
       "files": [
+        "Microsoft.Extensions.Primitives.1.0.0-rc1-final.nupkg",
+        "Microsoft.Extensions.Primitives.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.Primitives.nuspec",
         "lib/dotnet5.4/Microsoft.Extensions.Primitives.dll",
         "lib/dotnet5.4/Microsoft.Extensions.Primitives.xml",
         "lib/net451/Microsoft.Extensions.Primitives.dll",
         "lib/net451/Microsoft.Extensions.Primitives.xml",
         "lib/netcore50/Microsoft.Extensions.Primitives.dll",
-        "lib/netcore50/Microsoft.Extensions.Primitives.xml",
-        "Microsoft.Extensions.Primitives.1.0.0-rc1-final.nupkg",
-        "Microsoft.Extensions.Primitives.1.0.0-rc1-final.nupkg.sha512",
-        "Microsoft.Extensions.Primitives.nuspec"
+        "lib/netcore50/Microsoft.Extensions.Primitives.xml"
       ]
     },
     "Migrator.EF6/1.2.0": {
-      "type": "package",
       "sha512": "qAgOlX8l2BYgv+lHsT9Iwxoaqlpjk3ovBE1EELiRMEm+jozk6CM/iSkbNG0e8vzAA1ugzYzix0Mw/KfnxYGfHA==",
+      "type": "package",
       "files": [
+        "Migrator.EF6.1.2.0.nupkg",
+        "Migrator.EF6.1.2.0.nupkg.sha512",
+        "Migrator.EF6.nuspec",
         "app/Migrator.EF6",
         "app/Migrator.EF6.cmd",
         "app/project.json",
         "lib/net451/Migrator.EF6.dll",
-        "lib/net451/Migrator.EF6.xml",
-        "Migrator.EF6.1.2.0.nupkg",
-        "Migrator.EF6.1.2.0.nupkg.sha512",
-        "Migrator.EF6.nuspec"
+        "lib/net451/Migrator.EF6.xml"
       ]
     },
     "mongocsharpdriver/1.11.0": {
-      "type": "package",
       "sha512": "0FBUKnTd/WwVW8BhML7nL0+oNaDl1eieP5jDLolmSfb3Hk7x0ke4yMAapILWy8G+286T77QqzM2XpaPFaAAyRg==",
+      "type": "package",
       "files": [
-        "lib/net35/MongoDB.Bson.dll",
-        "lib/net35/MongoDB.Bson.XML",
-        "lib/net35/MongoDB.Driver.dll",
-        "lib/net35/MongoDB.Driver.XML",
         "License.rtf",
+        "lib/net35/MongoDB.Bson.XML",
+        "lib/net35/MongoDB.Bson.dll",
+        "lib/net35/MongoDB.Driver.XML",
+        "lib/net35/MongoDB.Driver.dll",
         "mongocsharpdriver.1.11.0.nupkg",
         "mongocsharpdriver.1.11.0.nupkg.sha512",
         "mongocsharpdriver.nuspec"
       ]
     },
     "Newtonsoft.Json/8.0.3": {
-      "type": "package",
       "sha512": "KGsYQdS2zLH+H8x2cZaSI7e+YZ4SFIbyy1YJQYl6GYBWjf5o4H1A68nxyq+WTyVSOJQ4GqS/DiPE+UseUizgMg==",
+      "type": "package",
       "files": [
+        "Newtonsoft.Json.8.0.3.nupkg",
+        "Newtonsoft.Json.8.0.3.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -993,22 +497,26 @@
         "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
-        "Newtonsoft.Json.8.0.3.nupkg",
-        "Newtonsoft.Json.8.0.3.nupkg.sha512",
-        "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
       ]
     },
     "RestSharp/105.2.3": {
-      "type": "package",
       "sha512": "50LkciOclb7Lza9QXqR9reKeUoPlDQiFD4iBdOmd6twOBmTtqEFIOXQgdDdsTHQg4HcGh6EvrM6gN1X72vkJLA==",
+      "type": "package",
       "files": [
+        "RestSharp.105.2.3.nupkg",
+        "RestSharp.105.2.3.nupkg.sha512",
+        "RestSharp.nuspec",
         "lib/MonoAndroid10/RestSharp.dll",
         "lib/MonoAndroid10/RestSharp.xml",
         "lib/MonoTouch10/RestSharp.dll",
         "lib/MonoTouch10/RestSharp.xml",
+        "lib/Xamarin.iOS10/RestSharp.dll",
+        "lib/Xamarin.iOS10/RestSharp.xml",
         "lib/net35/RestSharp.dll",
         "lib/net35/RestSharp.xml",
+        "lib/net4-client/RestSharp.dll",
+        "lib/net4-client/RestSharp.xml",
         "lib/net4/RestSharp.dll",
         "lib/net4/RestSharp.xml",
         "lib/net45/RestSharp.dll",
@@ -1019,128 +527,124 @@
         "lib/net452/RestSharp.xml",
         "lib/net46/RestSharp.dll",
         "lib/net46/RestSharp.xml",
-        "lib/net4-client/RestSharp.dll",
-        "lib/net4-client/RestSharp.xml",
         "lib/sl5/RestSharp.dll",
         "lib/sl5/RestSharp.xml",
         "lib/windowsphone8/RestSharp.dll",
         "lib/windowsphone8/RestSharp.xml",
         "lib/windowsphone81/RestSharp.dll",
         "lib/windowsphone81/RestSharp.xml",
-        "lib/Xamarin.iOS10/RestSharp.dll",
-        "lib/Xamarin.iOS10/RestSharp.xml",
-        "readme.txt",
-        "RestSharp.105.2.3.nupkg",
-        "RestSharp.105.2.3.nupkg.sha512",
-        "RestSharp.nuspec"
+        "readme.txt"
       ]
     },
     "Selenium.Support/2.53.0": {
-      "type": "package",
       "sha512": "grzbNA1RME3/HzVNt635iS92HSCZCX+074yQ2Ei92NAxucu+NvHgBBbATRNz2zCOc7rUIst/Hot0UqT9oUbc3g==",
+      "type": "package",
       "files": [
+        "Selenium.Support.2.53.0.nupkg",
+        "Selenium.Support.2.53.0.nupkg.sha512",
+        "Selenium.Support.nuspec",
         "lib/net35/WebDriver.Support.dll",
         "lib/net35/WebDriver.Support.xml",
         "lib/net40/WebDriver.Support.dll",
-        "lib/net40/WebDriver.Support.xml",
-        "Selenium.Support.2.53.0.nupkg",
-        "Selenium.Support.2.53.0.nupkg.sha512",
-        "Selenium.Support.nuspec"
+        "lib/net40/WebDriver.Support.xml"
       ]
     },
     "Selenium.WebDriver/2.53.0": {
-      "type": "package",
       "sha512": "V/j3ZucpSByuL8FgQuSUnd+lUoVpBWK9nP864o9fyORh44N3am2Osv0WzEGQ2GnXhBtGxPbwuQMJSBLIg+1eFg==",
+      "type": "package",
       "files": [
+        "Selenium.WebDriver.2.53.0.nupkg",
+        "Selenium.WebDriver.2.53.0.nupkg.sha512",
+        "Selenium.WebDriver.nuspec",
         "lib/net35/WebDriver.dll",
         "lib/net35/WebDriver.xml",
         "lib/net40/WebDriver.dll",
-        "lib/net40/WebDriver.xml",
-        "Selenium.WebDriver.2.53.0.nupkg",
-        "Selenium.WebDriver.2.53.0.nupkg.sha512",
-        "Selenium.WebDriver.nuspec"
+        "lib/net40/WebDriver.xml"
       ]
     },
     "SharpRepository.CacheRepository/1.4.7": {
-      "type": "package",
       "sha512": "UOeJmbAwa2T3XV1twuSsTNG3UDfY6gL0/aUEY0TWIizqHjtJvhEVAmTkTrrdtwMo2dLT5h/Sg64ktBdYVCVscw==",
+      "type": "package",
       "files": [
-        "content/app.config.transform",
-        "content/web.config.transform",
-        "lib/net40/SharpRepository.CacheRepository.dll",
         "SharpRepository.CacheRepository.1.4.7.nupkg",
         "SharpRepository.CacheRepository.1.4.7.nupkg.sha512",
         "SharpRepository.CacheRepository.nuspec",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.CacheRepository.dll",
         "tools/Install.ps1"
       ]
     },
     "SharpRepository.Caching.Redis/1.4.7": {
-      "type": "package",
       "sha512": "vnbVJA9lMvaRW+4H1ytuffWuGdjSBFoLxtiRDv8tIA+Pd4qD87iEf9tEsmCNGZeQ+sQBN1Sl1xV2B77Knyl9MA==",
+      "type": "package",
       "files": [
-        "content/app.config.transform",
-        "content/web.config.transform",
-        "lib/net45/SharpRepository.Caching.Redis.dll",
         "SharpRepository.Caching.Redis.1.4.7.nupkg",
         "SharpRepository.Caching.Redis.1.4.7.nupkg.sha512",
         "SharpRepository.Caching.Redis.nuspec",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net45/SharpRepository.Caching.Redis.dll",
         "tools/Install.ps1"
       ]
     },
     "SharpRepository.MongoDbRepository/1.4.7": {
-      "type": "package",
       "sha512": "qo5Wd4fJ2cf0fL65uj1LA4YDmVSLnayxNAO/KL2Cv1AdfFTSfyzLCTRlo9B+9Cs+bSH2etfY5lZiHpI59fEBKw==",
+      "type": "package",
       "files": [
-        "lib/net40/SharpRepository.MongoDbRepository.dll",
         "SharpRepository.MongoDbRepository.1.4.7.nupkg",
         "SharpRepository.MongoDbRepository.1.4.7.nupkg.sha512",
-        "SharpRepository.MongoDbRepository.nuspec"
+        "SharpRepository.MongoDbRepository.nuspec",
+        "lib/net40/SharpRepository.MongoDbRepository.dll"
       ]
     },
     "SharpRepository.Repository/1.4.7": {
-      "type": "package",
       "sha512": "TsuFLmZQso+cus8vkR08ukoHb/SkWdmxp7MFR6EIrJ6GRCKXBmw4SQomPiWZ08ZlPmgaKSdB5+mazln0Torzng==",
+      "type": "package",
       "files": [
-        "content/app.config.transform",
-        "content/web.config.transform",
-        "lib/net40/SharpRepository.Repository.dll",
         "SharpRepository.Repository.1.4.7.nupkg",
         "SharpRepository.Repository.1.4.7.nupkg.sha512",
         "SharpRepository.Repository.nuspec",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.Repository.dll",
         "tools/Install.ps1"
       ]
     },
     "StackExchange.Redis/1.0.333": {
-      "type": "package",
       "sha512": "nljDzL6LVvzpYV7YPikIl/yd3pwTExT1ghpICEf2G5SsK/OrM8IVeGcsOE6U/0X0h+a9tdMlZ1qDEmcX1P1xkw==",
+      "type": "package",
       "files": [
+        "StackExchange.Redis.1.0.333.nupkg",
+        "StackExchange.Redis.1.0.333.nupkg.sha512",
+        "StackExchange.Redis.nuspec",
         "lib/net40/StackExchange.Redis.dll",
         "lib/net40/StackExchange.Redis.dll.config",
         "lib/net40/StackExchange.Redis.pdb",
         "lib/net40/StackExchange.Redis.xml",
         "lib/net45/StackExchange.Redis.dll",
         "lib/net45/StackExchange.Redis.pdb",
-        "lib/net45/StackExchange.Redis.xml",
-        "StackExchange.Redis.1.0.333.nupkg",
-        "StackExchange.Redis.1.0.333.nupkg.sha512",
-        "StackExchange.Redis.nuspec"
+        "lib/net45/StackExchange.Redis.xml"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "": [
       "EntityFramework >= 6.1.3",
+      "Microsoft.Extensions.Configuration >= 1.0.0-rc1-final",
+      "Microsoft.Extensions.Configuration.Json >= 1.0.0-rc1-final",
       "Migrator.EF6 >= 1.2.0",
       "Newtonsoft.Json >= 8.0.3",
       "RestSharp >= 105.2.3",
       "Selenium.Support >= 2.53.0",
       "Selenium.WebDriver >= 2.53.0",
-      "Microsoft.Extensions.Configuration >= 1.0.0-rc1-final",
-      "Microsoft.Extensions.Configuration.Json >= 1.0.0-rc1-final",
-      "SharpRepository.MongoDbRepository >= 1.4.7",
       "SharpRepository.CacheRepository >= 1.4.7",
-      "SharpRepository.Caching.Redis >= 1.4.7"
+      "SharpRepository.Caching.Redis >= 1.4.7",
+      "SharpRepository.MongoDbRepository >= 1.4.7",
+      "dnx-clr-win-x64 >= 1.0.0-rc1-update2"
     ],
     "DNX,Version=v4.5.1": []
-  }
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }
