@@ -1,6 +1,8 @@
 ﻿{
-  "userSecretsId": "aspnet-R.Web-718f68bf-80ff-420e-9ec7-0ff12bf670a1",
-
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
   "dependencies": {
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
@@ -26,7 +28,7 @@
     "Microsoft.Extensions.Logging": "1.0.0-rc2-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-final",
     "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-final",
-   
+    
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc2-final",
     "Microsoft.VisualStudio.Web.CodeGeneration.Tools": {
       "version": "1.0.0-preview1-final",
@@ -38,7 +40,21 @@
     },
     "WebSocketSharp": "1.0.3-rc10"
   },
-
+  "frameworks": {
+    "net451": { }
+  },
+  "publishOptions": {
+    "include": [
+      "wwwroot",
+      "Views",
+      "appsettings.json",
+      "web.config"
+    ]
+  },
+  "scripts": {
+    "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ],
+    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+  },
   "tools": {
     "Microsoft.AspNetCore.Razor.Tools": {
       "version": "1.0.0-preview1-final",
@@ -66,29 +82,7 @@
         "portable-net45+win8"
       ]
     }
-    
-  },
 
-  "frameworks": {
-    "net451": { }
   },
-
-  "buildOptions": {
-    "emitEntryPoint": true,
-    "preserveCompilationContext": true
-  },
-
-  "publishOptions": {
-    "include": [
-      "wwwroot",
-      "Views",
-      "appsettings.json",
-      "web.config"
-    ]
-  },
-
-  "scripts": {
-    "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ],
-    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
-  }
+  "userSecretsId": "aspnet-R.Web-718f68bf-80ff-420e-9ec7-0ff12bf670a1"
 }
