@@ -19,7 +19,7 @@ using RestSharp.Deserializers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-using R.Models;
+using R.Common.Models;
 
 
 using Microsoft.Extensions.Configuration;

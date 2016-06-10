@@ -1,19 +1,19 @@
 {
-  "version": "1.0.0-*",
-  "description": "R.Common Class Library",
   "authors": [ "tliu" ],
-  "tags": [ "" ],
-  "projectUrl": "",
-  "licenseUrl": "",
-
-
   "dependencies": {
-   
+
+    "Newtonsoft.Json": "8.0.3",
+    "RestSharp": "105.2.3",
+    "SharpRepository.CacheRepository": "1.4.7",
+    "SharpRepository.Caching.Redis": "1.4.7",
+    "SharpRepository.MongoDbRepository": "1.4.7"
   },
-  "frameworks":{
+  "description": "R.Common Class Library",
+  "frameworks": {
     "dnx451": {
       "dependencies": {
       }
     }
-  }
+  },
+  "version": "1.0.0-*"
 }
