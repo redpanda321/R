@@ -13,3 +13,9 @@
 /R/src/r.mobile/r.mobile.iOS/obj
 /R/src/r.mobile/r.mobile.Windows/obj
 /R/src/r.mobile/r.mobile/bin
+/R/src/R/obj
+/R/src/R.Common/obj
+/R/src/R.Common/bin
+/R/src/r.mobile/r.mobile.Droid/bin
+/R/src/R.Web/bin
+/R/src/R.Web/obj
