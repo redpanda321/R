@@ -1509,6 +1509,17 @@
           "lib/net451/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
         }
       },
+      "mongocsharpdriver/1.11.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/MongoDB.Bson.dll": {},
+          "lib/net35/MongoDB.Driver.dll": {}
+        },
+        "runtime": {
+          "lib/net35/MongoDB.Bson.dll": {},
+          "lib/net35/MongoDB.Driver.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -1731,6 +1742,72 @@
         },
         "runtime": {
           "lib/net45/Remotion.Linq.dll": {}
+        }
+      },
+      "RestSharp/105.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net451/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net451/RestSharp.dll": {}
+        }
+      },
+      "SharpRepository.CacheRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.CacheRepository.dll": {}
+        }
+      },
+      "SharpRepository.Caching.Redis/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.5",
+          "SharpRepository.Repository": "1.4.6",
+          "StackExchange.Redis": "1.0.333"
+        },
+        "compile": {
+          "lib/net45/SharpRepository.Caching.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/SharpRepository.Caching.Redis.dll": {}
+        }
+      },
+      "SharpRepository.MongoDbRepository/1.4.7": {
+        "type": "package",
+        "dependencies": {
+          "SharpRepository.Repository": "1.4.7",
+          "mongocsharpdriver": "1.11.0"
+        },
+        "compile": {
+          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.MongoDbRepository.dll": {}
+        }
+      },
+      "SharpRepository.Repository/1.4.7": {
+        "type": "package",
+        "compile": {
+          "lib/net40/SharpRepository.Repository.dll": {}
+        },
+        "runtime": {
+          "lib/net40/SharpRepository.Repository.dll": {}
+        }
+      },
+      "StackExchange.Redis/1.0.333": {
+        "type": "package",
+        "compile": {
+          "lib/net45/StackExchange.Redis.dll": {}
+        },
+        "runtime": {
+          "lib/net45/StackExchange.Redis.dll": {}
         }
       },
       "System.Buffers/4.0.0-rc2-24027": {
@@ -2015,6 +2092,23 @@
         },
         "runtime": {
           "lib/websocket-sharp.dll": {}
+        }
+      },
+      "R.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5.1",
+        "dependencies": {
+          "Newtonsoft.Json": "8.0.3",
+          "RestSharp": "105.2.3",
+          "SharpRepository.CacheRepository": "1.4.7",
+          "SharpRepository.Caching.Redis": "1.4.7",
+          "SharpRepository.MongoDbRepository": "1.4.7"
+        },
+        "compile": {
+          "net451/R.Common.dll": {}
+        },
+        "runtime": {
+          "net451/R.Common.dll": {}
         }
       }
     }
@@ -3368,6 +3462,19 @@
         "lib/netstandard1.5/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.xml"
       ]
     },
+    "mongocsharpdriver/1.11.0": {
+      "sha512": "0FBUKnTd/WwVW8BhML7nL0+oNaDl1eieP5jDLolmSfb3Hk7x0ke4yMAapILWy8G+286T77QqzM2XpaPFaAAyRg==",
+      "type": "package",
+      "files": [
+        "License.rtf",
+        "lib/net35/MongoDB.Bson.XML",
+        "lib/net35/MongoDB.Bson.dll",
+        "lib/net35/MongoDB.Driver.XML",
+        "lib/net35/MongoDB.Driver.dll",
+        "mongocsharpdriver.1.11.0.nupkg.sha512",
+        "mongocsharpdriver.nuspec"
+      ]
+    },
     "Newtonsoft.Json/8.0.3": {
       "sha512": "KGsYQdS2zLH+H8x2cZaSI7e+YZ4SFIbyy1YJQYl6GYBWjf5o4H1A68nxyq+WTyVSOJQ4GqS/DiPE+UseUizgMg==",
       "type": "package",
@@ -3571,6 +3678,101 @@
         "lib/net45/Remotion.Linq.dll",
         "lib/portable-net45+win+wpa81+wp80/Remotion.Linq.dll",
         "lib/portable-net45+win+wpa81+wp80/Remotion.Linq.xml"
+      ]
+    },
+    "RestSharp/105.2.3": {
+      "sha512": "50LkciOclb7Lza9QXqR9reKeUoPlDQiFD4iBdOmd6twOBmTtqEFIOXQgdDdsTHQg4HcGh6EvrM6gN1X72vkJLA==",
+      "type": "package",
+      "files": [
+        "RestSharp.105.2.3.nupkg.sha512",
+        "RestSharp.nuspec",
+        "lib/MonoAndroid10/RestSharp.dll",
+        "lib/MonoAndroid10/RestSharp.xml",
+        "lib/MonoTouch10/RestSharp.dll",
+        "lib/MonoTouch10/RestSharp.xml",
+        "lib/Xamarin.iOS10/RestSharp.dll",
+        "lib/Xamarin.iOS10/RestSharp.xml",
+        "lib/net35/RestSharp.dll",
+        "lib/net35/RestSharp.xml",
+        "lib/net4-client/RestSharp.dll",
+        "lib/net4-client/RestSharp.xml",
+        "lib/net4/RestSharp.dll",
+        "lib/net4/RestSharp.xml",
+        "lib/net45/RestSharp.dll",
+        "lib/net45/RestSharp.xml",
+        "lib/net451/RestSharp.dll",
+        "lib/net451/RestSharp.xml",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/net46/RestSharp.dll",
+        "lib/net46/RestSharp.xml",
+        "lib/sl5/RestSharp.dll",
+        "lib/sl5/RestSharp.xml",
+        "lib/windowsphone8/RestSharp.dll",
+        "lib/windowsphone8/RestSharp.xml",
+        "lib/windowsphone81/RestSharp.dll",
+        "lib/windowsphone81/RestSharp.xml",
+        "readme.txt"
+      ]
+    },
+    "SharpRepository.CacheRepository/1.4.7": {
+      "sha512": "UOeJmbAwa2T3XV1twuSsTNG3UDfY6gL0/aUEY0TWIizqHjtJvhEVAmTkTrrdtwMo2dLT5h/Sg64ktBdYVCVscw==",
+      "type": "package",
+      "files": [
+        "SharpRepository.CacheRepository.1.4.7.nupkg.sha512",
+        "SharpRepository.CacheRepository.nuspec",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.CacheRepository.dll",
+        "tools/Install.ps1"
+      ]
+    },
+    "SharpRepository.Caching.Redis/1.4.7": {
+      "sha512": "vnbVJA9lMvaRW+4H1ytuffWuGdjSBFoLxtiRDv8tIA+Pd4qD87iEf9tEsmCNGZeQ+sQBN1Sl1xV2B77Knyl9MA==",
+      "type": "package",
+      "files": [
+        "SharpRepository.Caching.Redis.1.4.7.nupkg.sha512",
+        "SharpRepository.Caching.Redis.nuspec",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net45/SharpRepository.Caching.Redis.dll",
+        "tools/Install.ps1"
+      ]
+    },
+    "SharpRepository.MongoDbRepository/1.4.7": {
+      "sha512": "qo5Wd4fJ2cf0fL65uj1LA4YDmVSLnayxNAO/KL2Cv1AdfFTSfyzLCTRlo9B+9Cs+bSH2etfY5lZiHpI59fEBKw==",
+      "type": "package",
+      "files": [
+        "SharpRepository.MongoDbRepository.1.4.7.nupkg.sha512",
+        "SharpRepository.MongoDbRepository.nuspec",
+        "lib/net40/SharpRepository.MongoDbRepository.dll"
+      ]
+    },
+    "SharpRepository.Repository/1.4.7": {
+      "sha512": "TsuFLmZQso+cus8vkR08ukoHb/SkWdmxp7MFR6EIrJ6GRCKXBmw4SQomPiWZ08ZlPmgaKSdB5+mazln0Torzng==",
+      "type": "package",
+      "files": [
+        "SharpRepository.Repository.1.4.7.nupkg.sha512",
+        "SharpRepository.Repository.nuspec",
+        "content/app.config.transform",
+        "content/web.config.transform",
+        "lib/net40/SharpRepository.Repository.dll",
+        "tools/Install.ps1"
+      ]
+    },
+    "StackExchange.Redis/1.0.333": {
+      "sha512": "nljDzL6LVvzpYV7YPikIl/yd3pwTExT1ghpICEf2G5SsK/OrM8IVeGcsOE6U/0X0h+a9tdMlZ1qDEmcX1P1xkw==",
+      "type": "package",
+      "files": [
+        "StackExchange.Redis.1.0.333.nupkg.sha512",
+        "StackExchange.Redis.nuspec",
+        "lib/net40/StackExchange.Redis.dll",
+        "lib/net40/StackExchange.Redis.dll.config",
+        "lib/net40/StackExchange.Redis.pdb",
+        "lib/net40/StackExchange.Redis.xml",
+        "lib/net45/StackExchange.Redis.dll",
+        "lib/net45/StackExchange.Redis.pdb",
+        "lib/net45/StackExchange.Redis.xml"
       ]
     },
     "System.Buffers/4.0.0-rc2-24027": {
@@ -5133,6 +5335,11 @@
         "lib/websocket-sharp.dll",
         "lib/websocket-sharp.xml"
       ]
+    },
+    "R.Common/1.0.0": {
+      "type": "project",
+      "path": "../R.Common/project.json",
+      "msbuildProject": "../R.Common/R.Common.xproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5158,6 +5365,7 @@
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc2-final",
       "Microsoft.VisualStudio.Web.CodeGeneration.Tools >= 1.0.0-preview1-final",
       "Microsoft.VisualStudio.Web.CodeGenerators.Mvc >= 1.0.0-preview1-final",
+      "R.Common >= 1.0.0-*",
       "WebSocketSharp >= 1.0.3-rc10"
     ],
     ".NETFramework,Version=v4.5.1": []

@@ -2,7 +2,7 @@
   "locked": false,
   "version": 2,
   "targets": {
-    "DNX,Version=v4.5.1": {
+    ".NETFramework,Version=v4.5.1": {
       "mongocsharpdriver/1.11.0": {
         "type": "package",
         "compile": {
@@ -87,6 +87,15 @@
         },
         "runtime": {
           "lib/net45/StackExchange.Redis.dll": {}
+        }
+      },
+      "WebSocketSharp/1.0.3-rc10": {
+        "type": "package",
+        "compile": {
+          "lib/websocket-sharp.dll": {}
+        },
+        "runtime": {
+          "lib/websocket-sharp.dll": {}
         }
       }
     }
@@ -220,6 +229,16 @@
         "lib/net45/StackExchange.Redis.pdb",
         "lib/net45/StackExchange.Redis.xml"
       ]
+    },
+    "WebSocketSharp/1.0.3-rc10": {
+      "sha512": "DfB3JFsTfP/pajfSsMLe8MkLyRPieuLMbg79tASsgmbH28S3ZR2Zn70Vjsiq13yeTuLTFgQv/fDJ0pqMhvI7oQ==",
+      "type": "package",
+      "files": [
+        "WebSocketSharp.1.0.3-rc10.nupkg.sha512",
+        "WebSocketSharp.nuspec",
+        "lib/websocket-sharp.dll",
+        "lib/websocket-sharp.xml"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -228,9 +247,10 @@
       "RestSharp >= 105.2.3",
       "SharpRepository.CacheRepository >= 1.4.7",
       "SharpRepository.Caching.Redis >= 1.4.7",
-      "SharpRepository.MongoDbRepository >= 1.4.7"
+      "SharpRepository.MongoDbRepository >= 1.4.7",
+      "WebSocketSharp >= 1.0.3-rc10"
     ],
-    "DNX,Version=v4.5.1": []
+    ".NETFramework,Version=v4.5.1": []
   },
   "tools": {},
   "projectFileToolGroups": {}

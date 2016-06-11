@@ -23,7 +23,7 @@
   },
   "description": "R Console Application",
   "frameworks": {
-    "dnx451": {
+    "net451": {
       "dependencies": {
 
       }
