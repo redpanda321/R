@@ -45,7 +45,7 @@ namespace r.mobile
             
             
             // The root page of your application
-            MainPage = new ContentPage
+            var testPage = new ContentPage
             {
                 Content = new StackLayout
                 {
@@ -60,6 +60,17 @@ namespace r.mobile
                     }
                 }
             };
+
+            //tab pages
+            var tabs = new TabbedPage();
+            tabs.Children.Add(testPage);
+            tabs.Children.Add(new MapPage());
+
+            //main page
+            MainPage = tabs;
+
+
+
         }
 
         protected override void OnStart()
