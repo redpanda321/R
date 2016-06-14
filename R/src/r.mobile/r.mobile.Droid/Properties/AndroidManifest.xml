@@ -8,6 +8,7 @@
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<application android:label="R" android:icon="@drawable/icon"></application>
+	<application android:label="R" android:icon="@drawable/icon">
 	<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCt3Zr81jmFQVZ227XLwjHqQ-5xOAqZzQ4" />
+	</application> 
 </manifest>

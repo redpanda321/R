@@ -37,11 +37,54 @@ namespace r.mobile
             };
 
             //////////////////////////////////////////////////////////////
-    
+
+            var reLocate = new Button { Text = "Re-center" };
+            reLocate.Clicked += async (sender, e) =>
+            {
+
+
+                locator = CrossGeolocator.Current;
+                locator.DesiredAccuracy = 50;
+
+
+                 position = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+                if (position == null)
+                {
+                   
+                    return;
+                }
+                var pos = new Xamarin.Forms.Maps.Position(position.Latitude, position.Longitude);
+
+                map.MoveToRegion(MapSpan.FromCenterAndRadius(pos, Distance.FromMiles(3)));
+
+                var pin = new Pin
+                {
+
+                    Type = PinType.Place,
+                    Position = pos,
+                    Label = "Current Place"
+
+                };
+
+                 map.Pins.Add(pin);
+
+            };
+
+
+            var segments = new StackLayout
+            {
+                Spacing = 30,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                Orientation = StackOrientation.Horizontal,
+                Children = { reLocate} 
+            };
+
+
             //////////////////////////////////////////////////////////////    
             var stack = new StackLayout { Spacing = 0 };
 
             stack.Children.Add(map);
+            stack.Children.Add(segments);
             Content = stack;
 
 

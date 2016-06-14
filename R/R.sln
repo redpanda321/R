@@ -24,6 +24,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "r.mobile", "src\r.mobile\r.mobile\r.mobile.csproj", "{75A6F0DF-A273-4E7E-A721-4714F5AECE32}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "R.Web", "src\R.Web\R.Web.xproj", "{9EBB9E63-FEB7-47F4-8220-568D749790BC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7804348-67EF-40F1-837C-AF070F12DA54} = {A7804348-67EF-40F1-837C-AF070F12DA54}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
