@@ -27,7 +27,7 @@ namespace R.Web
                     Console.WriteLine("- {0}", path);
             }
 
-
+            // MVC
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

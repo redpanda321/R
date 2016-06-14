@@ -63,9 +63,9 @@ namespace r.mobile
 
             //tab pages
             var tabs = new TabbedPage();
-            tabs.Children.Add(testPage);
+           
             tabs.Children.Add(new MapPage());
-
+            tabs.Children.Add(testPage);
             //main page
             MainPage = tabs;
 
