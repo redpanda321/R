@@ -29,6 +29,7 @@ namespace r.mobile
                 labelGPS.Text = "Getting GPS";
 
                 var position = await locator.GetPositionAsync(timeoutMilliseconds: 10000);
+                                    
                 if (position == null)
                 {
                     labelGPS.Text = "null gps :(";

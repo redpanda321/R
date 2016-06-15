@@ -10,6 +10,7 @@ using Xamarin.Forms.Maps;
 
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
+using TK.CustomMap;
 
 namespace r.mobile
 {
@@ -27,16 +28,21 @@ namespace r.mobile
         public MapPage() {
 
 
-            map = new Map
+            map = new MyMap
+
             {
                 IsShowingUser = true,
                 HeightRequest = 100,
                 WidthRequest = 960,
-                VerticalOptions = LayoutOptions.FillAndExpand
+                VerticalOptions = LayoutOptions.FillAndExpand,
+               
 
             };
 
-            //////////////////////////////////////////////////////////////
+           
+           
+
+            ///reLocate button
 
             var reLocate = new Button { Text = "Re-center" };
             reLocate.Clicked += async (sender, e) =>
@@ -68,9 +74,10 @@ namespace r.mobile
 
                  map.Pins.Add(pin);
 
+                
             };
 
-
+            //segments StackLayout
             var segments = new StackLayout
             {
                 Spacing = 30,
@@ -80,7 +87,7 @@ namespace r.mobile
             };
 
 
-            //////////////////////////////////////////////////////////////    
+            //main stackLayout    
             var stack = new StackLayout { Spacing = 0 };
 
             stack.Children.Add(map);
@@ -91,7 +98,10 @@ namespace r.mobile
         }
 
 
-
+        /// <summary>
+        /// Get Current Position
+        /// </summary>
+        /// <returns></returns>
         public async Task<Plugin.Geolocator.Abstractions.Position> GetCurrentPosition()
         {
 
