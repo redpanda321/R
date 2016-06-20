@@ -17,17 +17,16 @@ namespace r.mobile
     class MapPage:ContentPage
     {
        public MyMap m_Map { get; set; }
-
-
+        
        public TKCustomMapPin m_CurMapPin { get; set; }
-
-    
+        
        public TKCustomMapPin m_CenterMapPin { get; set; }
-         
-
+        
        public IGeolocator m_GeoLocator { get; set; }
         
        public Plugin.Geolocator.Abstractions.Position m_GeoPosition { get; set; }
+
+       public Xamarin.Forms.Maps.Position m_XPosition { get; set; }
 
        public StackLayout m_MainStackLayout { get; set; }
 
@@ -50,24 +49,30 @@ namespace r.mobile
             m_Map.UserLocationChanged += M_Map_UserLocationChanged;
 
 
+            this.Appearing += MapPage_Appearing;
             
-            //Current Location
-            m_GeoLocator  = CrossGeolocator.Current;
-
-            if (m_GeoLocator.IsListening != true)
-                m_GeoLocator.StartListeningAsync(1000, 0);
-
-
-            m_GeoPosition =  m_GeoLocator.GetPositionAsync(5000).Result;
-
-            m_CenterMapPin = new TKCustomMapPin { Position = new Xamarin.Forms.Maps.Position(m_GeoPosition.Latitude, m_GeoPosition.Longitude) };
-            m_Map.SelectedPin = m_CenterMapPin;
-
             //main stackLayout    
             m_MainStackLayout = new StackLayout { Spacing = 0 };
             m_MainStackLayout.Children.Add(m_Map);
             Content = m_MainStackLayout;
             
+        }
+
+        private async void MapPage_Appearing(object sender, EventArgs e)
+        {
+            //GeoLocator
+            m_GeoLocator = CrossGeolocator.Current;
+
+            m_GeoPosition = await m_GeoLocator.GetPositionAsync(5000);
+
+            Xamarin.Forms.Maps.Position XPosition = new Xamarin.Forms.Maps.Position(m_GeoPosition.Latitude, m_GeoPosition.Longitude);
+                
+            m_CenterMapPin = new TKCustomMapPin { Position = XPosition  };
+            m_Map.SelectedPin = m_CenterMapPin;
+
+            m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(XPosition, Distance.FromKilometers(3)));
+
+
         }
 
         private void M_Map_UserLocationChanged(object sender, TKGenericEventArgs<Xamarin.Forms.Maps.Position> e)
@@ -76,7 +81,7 @@ namespace r.mobile
             var position = new Xamarin.Forms.Maps.Position(e.Value.Latitude, e.Value.Longitude);
 
 
-            m_CurMapPin = new TKCustomMapPin
+            m_CenterMapPin = new TKCustomMapPin
             {
 
                 Position = position,
@@ -84,19 +89,14 @@ namespace r.mobile
             };
 
 
-            m_Map.SelectedPin = m_CurMapPin;
+            m_Map.SelectedPin = m_CenterMapPin;
+
+            m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(3)));
+
 
         }
 
-        /// <summary>
-        /// Get Current Position
-        /// </summary>
-        /// <returns></returns>
-        public async Task<Plugin.Geolocator.Abstractions.Position> GetCurrentPosition()
-        {
-           var  position = await m_GeoLocator.GetPositionAsync(timeoutMilliseconds: 10000);
-            return position;
-        }
+       
 
         /// <summary>
         /// Process Map Clicked Event
@@ -117,10 +117,14 @@ namespace r.mobile
 
 
             m_Map.SelectedPin = m_CurMapPin;
+
+
+            m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(3)));
+
         }
 
 
-        
+
 
     }
 }
