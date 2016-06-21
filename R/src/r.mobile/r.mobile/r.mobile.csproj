@@ -37,16 +37,96 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="MapPage.cs" />
+    <Compile Include="Models\R.cs" />
     <Compile Include="MyMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Tool.cs" />
+    <Compile Include="websocket-sharp\ByteOrder.cs" />
+    <Compile Include="websocket-sharp\CloseEventArgs.cs" />
+    <Compile Include="websocket-sharp\CloseStatusCode.cs" />
+    <Compile Include="websocket-sharp\CompressionMethod.cs" />
+    <Compile Include="websocket-sharp\ErrorEventArgs.cs" />
+    <Compile Include="websocket-sharp\Ext.cs" />
+    <Compile Include="websocket-sharp\Fin.cs" />
+    <Compile Include="websocket-sharp\HttpBase.cs" />
+    <Compile Include="websocket-sharp\HttpRequest.cs" />
+    <Compile Include="websocket-sharp\HttpResponse.cs" />
+    <Compile Include="websocket-sharp\LogData.cs" />
+    <Compile Include="websocket-sharp\Logger.cs" />
+    <Compile Include="websocket-sharp\LogLevel.cs" />
+    <Compile Include="websocket-sharp\Mask.cs" />
+    <Compile Include="websocket-sharp\MessageEventArgs.cs" />
+    <Compile Include="websocket-sharp\Net\AuthenticationBase.cs" />
+    <Compile Include="websocket-sharp\Net\AuthenticationChallenge.cs" />
+    <Compile Include="websocket-sharp\Net\AuthenticationResponse.cs" />
+    <Compile Include="websocket-sharp\Net\AuthenticationSchemes.cs" />
+    <Compile Include="websocket-sharp\Net\Chunk.cs" />
+    <Compile Include="websocket-sharp\Net\ChunkedRequestStream.cs" />
+    <Compile Include="websocket-sharp\Net\ChunkStream.cs" />
+    <Compile Include="websocket-sharp\Net\ClientSslConfiguration.cs" />
+    <Compile Include="websocket-sharp\Net\Cookie.cs" />
+    <Compile Include="websocket-sharp\Net\CookieCollection.cs" />
+    <Compile Include="websocket-sharp\Net\CookieException.cs" />
+    <Compile Include="websocket-sharp\Net\EndPointListener.cs" />
+    <Compile Include="websocket-sharp\Net\EndPointManager.cs" />
+    <Compile Include="websocket-sharp\Net\HttpBasicIdentity.cs" />
+    <Compile Include="websocket-sharp\Net\HttpConnection.cs" />
+    <Compile Include="websocket-sharp\Net\HttpDigestIdentity.cs" />
+    <Compile Include="websocket-sharp\Net\HttpHeaderInfo.cs" />
+    <Compile Include="websocket-sharp\Net\HttpHeaderType.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListener.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerAsyncResult.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerContext.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerException.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerPrefix.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerPrefixCollection.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerRequest.cs" />
+    <Compile Include="websocket-sharp\Net\HttpListenerResponse.cs" />
+    <Compile Include="websocket-sharp\Net\HttpRequestHeader.cs" />
+    <Compile Include="websocket-sharp\Net\HttpResponseHeader.cs" />
+    <Compile Include="websocket-sharp\Net\HttpStatusCode.cs" />
+    <Compile Include="websocket-sharp\Net\HttpStreamAsyncResult.cs" />
+    <Compile Include="websocket-sharp\Net\HttpUtility.cs" />
+    <Compile Include="websocket-sharp\Net\HttpVersion.cs" />
+    <Compile Include="websocket-sharp\Net\InputChunkState.cs" />
+    <Compile Include="websocket-sharp\Net\InputState.cs" />
+    <Compile Include="websocket-sharp\Net\LineState.cs" />
+    <Compile Include="websocket-sharp\Net\NetworkCredential.cs" />
+    <Compile Include="websocket-sharp\Net\QueryStringCollection.cs" />
+    <Compile Include="websocket-sharp\Net\ReadBufferState.cs" />
+    <Compile Include="websocket-sharp\Net\RequestStream.cs" />
+    <Compile Include="websocket-sharp\Net\ResponseStream.cs" />
+    <Compile Include="websocket-sharp\Net\ServerSslConfiguration.cs" />
+    <Compile Include="websocket-sharp\Net\SslConfiguration.cs" />
+    <Compile Include="websocket-sharp\Net\WebHeaderCollection.cs" />
+    <Compile Include="websocket-sharp\Net\WebSockets\HttpListenerWebSocketContext.cs" />
+    <Compile Include="websocket-sharp\Net\WebSockets\TcpListenerWebSocketContext.cs" />
+    <Compile Include="websocket-sharp\Net\WebSockets\WebSocketContext.cs" />
+    <Compile Include="websocket-sharp\Opcode.cs" />
+    <Compile Include="websocket-sharp\PayloadData.cs" />
+    <Compile Include="websocket-sharp\Rsv.cs" />
+    <Compile Include="websocket-sharp\Server\HttpRequestEventArgs.cs" />
+    <Compile Include="websocket-sharp\Server\HttpServer.cs" />
+    <Compile Include="websocket-sharp\Server\IWebSocketSession.cs" />
+    <Compile Include="websocket-sharp\Server\ServerState.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketBehavior.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketServer.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketServiceHost.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketServiceHost`1.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketServiceManager.cs" />
+    <Compile Include="websocket-sharp\Server\WebSocketSessionManager.cs" />
+    <Compile Include="websocket-sharp\WebSocket.cs" />
+    <Compile Include="websocket-sharp\WebSocketException.cs" />
+    <Compile Include="websocket-sharp\WebSocketFrame.cs" />
+    <Compile Include="websocket-sharp\WebSocketState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\modernhttpclient.2.4.2\lib\Portable-Net45+WinRT45+WP8+WPA81\ModernHttpClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1-beta1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Plugin.Geolocator, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL">
@@ -70,38 +150,39 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Forms.2.3.0.38-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+      <HintPath>..\..\..\packages\Xamarin.Forms.2.3.0.49\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Maps, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Forms.Maps.2.3.0.38-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
+      <HintPath>..\..\..\packages\Xamarin.Forms.Maps.2.3.0.49\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Maps.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Forms.2.3.0.38-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+      <HintPath>..\..\..\packages\Xamarin.Forms.2.3.0.49\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Forms.2.3.0.38-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+      <HintPath>..\..\..\packages\Xamarin.Forms.2.3.0.49\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="websocket-sharp\websocket-sharp.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\..\..\packages\Xamarin.Forms.2.3.0.38-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.2.3.0.38-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\packages\Xamarin.Forms.2.3.0.38-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Xamarin.Forms.2.3.0.38-pre2\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\Xamarin.Forms.2.3.0.49\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Xamarin.Forms.2.3.0.49\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
   </Target>
-  <Import Project="..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
-    <Error Condition="!Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
-    <Error Condition="Exists('..\..\..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
-  </Target>
+  <Import Project="..\..\..\packages\Xamarin.Forms.2.3.0.49\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.2.3.0.49\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

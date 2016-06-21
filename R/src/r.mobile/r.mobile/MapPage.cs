@@ -11,31 +11,38 @@ using Xamarin.Forms.Maps;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using TK.CustomMap;
+using WebSocketSharp;
+using Newtonsoft.Json;
+using r.mobile.Models;
 
 namespace r.mobile
 {
     class MapPage:ContentPage
     {
+
+      //map
        public MyMap m_Map { get; set; }
         
        public TKCustomMapPin m_CurMapPin { get; set; }
         
        public TKCustomMapPin m_CenterMapPin { get; set; }
-        
-       public IGeolocator m_GeoLocator { get; set; }
-        
-       public Plugin.Geolocator.Abstractions.Position m_GeoPosition { get; set; }
 
        public Xamarin.Forms.Maps.Position m_XPosition { get; set; }
 
+       //Geo
+       public IGeolocator m_GeoLocator { get; set; }
+        
+       public Plugin.Geolocator.Abstractions.Position m_GeoPosition { get; set; }
+       //UI
        public StackLayout m_MainStackLayout { get; set; }
+       //WebSocket
+       public WebSocket m_WebSocketResult { get; set; }
 
        
        public MapPage() {
 
             //Map
             m_Map = new MyMap
-
             {
                 IsShowingUser = true,
                 HeightRequest = 100,
@@ -44,18 +51,24 @@ namespace r.mobile
             };
             
             m_Map.MapClicked += M_Map_MapClicked;
-
-
             m_Map.UserLocationChanged += M_Map_UserLocationChanged;
-
-
             this.Appearing += MapPage_Appearing;
-            
-            //main stackLayout    
+            //UI   
             m_MainStackLayout = new StackLayout { Spacing = 0 };
             m_MainStackLayout.Children.Add(m_Map);
             Content = m_MainStackLayout;
-            
+            //WebSocket
+            m_WebSocketResult = new WebSocket("ws://127.0.0.1:5115/Result");
+           
+
+
+        }
+
+        private void M_WebSocket_OnMessage(object sender, MessageEventArgs e)
+        {
+
+          Results results =  JsonConvert.DeserializeObject<Results>(e.Data);
+
         }
 
         private async void MapPage_Appearing(object sender, EventArgs e)
@@ -72,9 +85,27 @@ namespace r.mobile
 
             m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(XPosition, Distance.FromKilometers(3)));
 
+            //WebSocket
+            m_WebSocketResult.OnMessage += M_WebSocket_OnMessage;
+            m_WebSocketResult.Connect();
+
+            r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(XPosition.Latitude, XPosition.Longitude, 3);
+             m_WebSocketResult.Send(JsonConvert.SerializeObject(jPosition));
+
+
+
 
         }
 
+        private void M_WebSocketResult_OnOpen(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void M_Map_UserLocationChanged(object sender, TKGenericEventArgs<Xamarin.Forms.Maps.Position> e)
         {
 
@@ -95,14 +126,12 @@ namespace r.mobile
 
 
         }
-
-       
-
         /// <summary>
         /// Process Map Clicked Event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        ///      
         private void M_Map_MapClicked(object sender, TKGenericEventArgs<Xamarin.Forms.Maps.Position> e)
         {
             var position = new Xamarin.Forms.Maps.Position(e.Value.Latitude, e.Value.Longitude);
@@ -122,8 +151,6 @@ namespace r.mobile
             m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(3)));
 
         }
-
-
 
 
     }
