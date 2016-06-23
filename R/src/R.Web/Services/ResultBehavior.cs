@@ -18,6 +18,9 @@ namespace R.Web.Services
             base.OnMessage(e);
 
             Console.WriteLine("Result:"+e.Data);
+
+      
+
         }
 
     }
