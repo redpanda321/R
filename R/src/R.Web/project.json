@@ -4,7 +4,7 @@
     "preserveCompilationContext": true
   },
   "dependencies": {
-    "Libuv": "1.9.0-rc2-20896",
+    
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Diagnostics.Abstractions": "1.0.0-rc2-final",
@@ -38,9 +38,8 @@
       "version": "1.0.0-preview1-final",
       "type": "build"
     },
-
     "R.Common": "1.0.0-*",
-
+    
     "WebSocketSharp": "1.0.3-rc10"
   },
   "frameworks": {

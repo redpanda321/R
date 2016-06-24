@@ -410,6 +410,8 @@ namespace R
 
             BsonDocument keys = new BsonDocument();
             keys.Add("MlsNumber", 1);
+            keys.Add("Property.Address.Longitude", 1);
+            keys.Add("Property.Address.Lantitude", 1);
             IMongoIndexKeys indexKeys = new IndexKeysDocument(keys);
             IndexOptionsDocument indexOptions = new IndexOptionsDocument();
 
@@ -876,7 +878,7 @@ namespace R
 
             db.SaveChanges();
 
-        */
+           */
             #endregion EF6
 
         }
