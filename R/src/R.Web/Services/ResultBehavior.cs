@@ -65,6 +65,12 @@ namespace R.Web.Services
                 }
 
 
+                if (m_Results != null) {
+
+                    Send(  JsonConvert.SerializeObject(m_Results));
+                }
+
+
             }
             catch(Exception exception) {
 

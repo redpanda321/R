@@ -40,7 +40,7 @@ namespace r.mobile
        //WebSocket
        public Websockets.IWebSocketConnection m_WebSocketResult { get; set; }
        //Data
-       public Results m_Results { get; set; }
+       public List<Result> m_Results { get; set; }
        
        public MapPage() {
 
@@ -66,12 +66,19 @@ namespace r.mobile
            
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
         private void M_WebSocketResult_OnMessage(string obj)
         {
-           m_Results =  JsonConvert.DeserializeObject<Results>(obj);
+           m_Results =  JsonConvert.DeserializeObject<List<Result>>(obj);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void MapPage_Appearing(object sender, EventArgs e)
         {
             //GeoLocator
