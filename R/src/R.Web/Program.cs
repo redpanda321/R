@@ -36,9 +36,6 @@ namespace R.Web
                 .Build();
 
             host.Run();
-
-           
-
         }
     }
 }

@@ -380,7 +380,7 @@
       },
       "R.Common/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.5.1",
+        "framework": "Unsupported,Version=v0.0",
         "dependencies": {
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3",
@@ -388,12 +388,6 @@
           "SharpRepository.Caching.Redis": "1.4.7",
           "SharpRepository.MongoDbRepository": "1.4.7",
           "WebSocketSharp": "1.0.3-rc10"
-        },
-        "compile": {
-          "net451/R.Common.dll": {}
-        },
-        "runtime": {
-          "net451/R.Common.dll": {}
         }
       }
     }

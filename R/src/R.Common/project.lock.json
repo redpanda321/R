@@ -2,7 +2,7 @@
   "locked": false,
   "version": 2,
   "targets": {
-    ".NETFramework,Version=v4.5.1": {
+    ".NETFramework,Version=v4.5.2": {
       "mongocsharpdriver/1.11.0": {
         "type": "package",
         "compile": {
@@ -26,10 +26,10 @@
       "RestSharp/105.2.3": {
         "type": "package",
         "compile": {
-          "lib/net451/RestSharp.dll": {}
+          "lib/net452/RestSharp.dll": {}
         },
         "runtime": {
-          "lib/net451/RestSharp.dll": {}
+          "lib/net452/RestSharp.dll": {}
         }
       },
       "SharpRepository.CacheRepository/1.4.7": {
@@ -250,7 +250,7 @@
       "SharpRepository.MongoDbRepository >= 1.4.7",
       "WebSocketSharp >= 1.0.3-rc10"
     ],
-    ".NETFramework,Version=v4.5.1": []
+    ".NETFramework,Version=v4.5.2": []
   },
   "tools": {},
   "projectFileToolGroups": {}

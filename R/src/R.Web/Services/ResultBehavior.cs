@@ -36,6 +36,7 @@ namespace R.Web.Services
             var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
             builder.AddEnvironmentVariables();
             m_Configuration = builder.Build();
+                              
 
             //MongoDBRepository
             m_MongoDbRepositoryResult = new MongoDbRepository<Result, string>(m_Configuration["ConnectionStrings:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>(new RedisCachingProvider(m_Configuration["ConnectionStrings:RedisConnection:ConnectionString"], 6379, false)));

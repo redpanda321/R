@@ -10,7 +10,7 @@
   },
   "description": "R.Common Class Library",
   "frameworks": {
-    "net451": {
+    "net452": {
       "dependencies": {
       }
     }
