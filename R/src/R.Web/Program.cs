@@ -30,6 +30,7 @@ namespace R.Web
             // MVC
 
 
+            
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
@@ -38,6 +39,11 @@ namespace R.Web
                 .Build();
 
             host.Run();
+
+            //End
+            Console.WriteLine("\nPress Enter key to stop the server...");
+            Console.ReadLine();
+
         }
     }
 }
