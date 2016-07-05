@@ -16,8 +16,8 @@ namespace R.Web
         {
 
             //WebSocket Server
-            var wssv = new WebSocketServer(5115);
-            wssv.AddWebSocketService<ResultBehavior>("/Result");
+            var wssv = new WebSocketServer("ws://127.0.0.1:5115");
+            wssv.AddWebSocketService<ResultBehavior>("/ResultBehavior");
             wssv.Start();
 
             if (wssv.IsListening)

@@ -101,7 +101,7 @@ namespace r.mobile
             
             m_WebSocketResult.OnMessage += M_WebSocketResult_OnMessage;
 
-            m_WebSocketResult.Open("ws://127.0.0.1:5115/Result");
+            m_WebSocketResult.Open("ws://127.0.0.1:5115/ResultBehavior");
 
             r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(XPosition.Latitude, XPosition.Longitude, 3);
 
