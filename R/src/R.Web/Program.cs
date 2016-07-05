@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+
 using WebSocketSharp.Server;
 using R.Web.Services;
 
@@ -13,7 +14,6 @@ namespace R.Web
     {
         public static void Main(string[] args)
         {
-
 
             //WebSocket Server
             var wssv = new WebSocketServer(5115);
@@ -28,6 +28,8 @@ namespace R.Web
             }
 
             // MVC
+
+
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

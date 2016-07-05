@@ -1,6 +1,5 @@
 ﻿{
   "dependencies": {
-    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {
@@ -17,8 +16,7 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
-    "R.Common": "1.0.0-*",
-    "WebSocketSharp": "1.0.3-rc11"
+    "R.Common": "1.0.0-*"
   },
 
   "tools": {
@@ -28,12 +26,20 @@
   },
 
   "frameworks": {
-    "net452": { }
+    "net452": {
+     
+    }
   },
 
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true
+  },
+
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.Server": true
+    }
   },
 
   "publishOptions": {

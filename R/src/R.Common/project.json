@@ -7,6 +7,7 @@
     "SharpRepository.Caching.Redis": "1.4.7",
     "SharpRepository.MongoDbRepository": "1.4.7",
     "WebSocketSharp": "1.0.3-rc10"
+
   },
   "description": "R.Common Class Library",
   "frameworks": {

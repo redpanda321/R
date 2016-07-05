@@ -36,8 +36,8 @@ namespace R
     {
         static Program()
         {
-            var builder = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json");
+
+            var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).AddEnvironmentVariables();
 
             Configuration = builder.Build();
 

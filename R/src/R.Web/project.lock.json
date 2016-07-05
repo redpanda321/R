@@ -43,82 +43,6 @@
           }
         }
       },
-      "Microsoft.ApplicationInsights/2.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.ApplicationInsights.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.ApplicationInsights.dll": {}
-        }
-      },
-      "Microsoft.ApplicationInsights.Agent.Intercept/1.2.1": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Microsoft.AI.Agent.Intercept.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AI.Agent.Intercept.dll": {}
-        }
-      },
-      "Microsoft.ApplicationInsights.AspNetCore/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.ApplicationInsights": "2.1.0",
-          "Microsoft.ApplicationInsights.DependencyCollector": "2.1.0",
-          "Microsoft.ApplicationInsights.PerfCounterCollector": "2.1.0",
-          "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel": "2.1.0",
-          "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
-          "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
-          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
-          "Microsoft.Extensions.Configuration": "1.0.0",
-          "Microsoft.Extensions.DiagnosticAdapter": "1.0.0",
-          "Microsoft.Extensions.Logging.Abstractions": "1.0.0"
-        },
-        "compile": {
-          "lib/net451/Microsoft.ApplicationInsights.AspNetCore.dll": {}
-        },
-        "runtime": {
-          "lib/net451/Microsoft.ApplicationInsights.AspNetCore.dll": {}
-        }
-      },
-      "Microsoft.ApplicationInsights.DependencyCollector/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.ApplicationInsights": "[2.1.0]",
-          "Microsoft.ApplicationInsights.Agent.Intercept": "1.2.1"
-        },
-        "compile": {
-          "lib/net45/Microsoft.AI.DependencyCollector.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AI.DependencyCollector.dll": {}
-        }
-      },
-      "Microsoft.ApplicationInsights.PerfCounterCollector/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.ApplicationInsights": "[2.1.0]"
-        },
-        "compile": {
-          "lib/net45/Microsoft.AI.PerfCounterCollector.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AI.PerfCounterCollector.dll": {}
-        }
-      },
-      "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.ApplicationInsights": "[2.1.0]"
-        },
-        "compile": {
-          "lib/net45/Microsoft.AI.ServerTelemetryChannel.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AI.ServerTelemetryChannel.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Antiforgery/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1001,25 +925,6 @@
           "lib/net451/Microsoft.Extensions.DependencyModel.dll": {}
         }
       },
-      "Microsoft.Extensions.DiagnosticAdapter/1.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
-          "System.Collections.Concurrent": "4.0.12",
-          "System.ComponentModel": "4.0.1",
-          "System.Diagnostics.DiagnosticSource": "4.0.0",
-          "System.Reflection.Emit": "4.0.1",
-          "System.Reflection.Emit.Lightweight": "4.0.1",
-          "System.Reflection.Extensions": "4.0.1",
-          "System.Runtime.Extensions": "4.1.0"
-        },
-        "compile": {
-          "lib/netstandard1.1/Microsoft.Extensions.DiagnosticAdapter.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/Microsoft.Extensions.DiagnosticAdapter.dll": {}
-        }
-      },
       "Microsoft.Extensions.FileProviders.Abstractions/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1763,24 +1668,6 @@
           "lib/net45/_._": {}
         }
       },
-      "System.Reflection.Emit/4.0.1": {
-        "type": "package",
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
-      "System.Reflection.Emit.Lightweight/4.0.1": {
-        "type": "package",
-        "compile": {
-          "ref/net45/_._": {}
-        },
-        "runtime": {
-          "lib/net45/_._": {}
-        }
-      },
       "System.Reflection.Extensions/4.0.1": {
         "type": "package",
         "compile": {
@@ -1942,7 +1829,7 @@
           "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll": {}
         }
       },
-      "WebSocketSharp/1.0.3-rc11": {
+      "WebSocketSharp/1.0.3-rc10": {
         "type": "package",
         "compile": {
           "lib/websocket-sharp.dll": {}
@@ -1988,94 +1875,6 @@
         "runtimes/win7-arm/native/libuv.dll",
         "runtimes/win7-x64/native/libuv.dll",
         "runtimes/win7-x86/native/libuv.dll"
-      ]
-    },
-    "Microsoft.ApplicationInsights/2.1.0": {
-      "sha512": "mviO8PLQd3r22Pmv8JfjYzTCQ9ByhkU9wdC4fwd6WmAARwAMgMw9HEbHeYS3r+8pB3w+fZMi7p4LKijzgNybRQ==",
-      "type": "package",
-      "path": "Microsoft.ApplicationInsights/2.1.0",
-      "files": [
-        "Microsoft.ApplicationInsights.2.1.0.nupkg.sha512",
-        "Microsoft.ApplicationInsights.nuspec",
-        "lib/dotnet5.4/Microsoft.ApplicationInsights.XML",
-        "lib/dotnet5.4/Microsoft.ApplicationInsights.dll",
-        "lib/net40/Microsoft.ApplicationInsights.XML",
-        "lib/net40/Microsoft.ApplicationInsights.dll",
-        "lib/net45/Microsoft.ApplicationInsights.XML",
-        "lib/net45/Microsoft.ApplicationInsights.dll",
-        "lib/net46/Microsoft.ApplicationInsights.XML",
-        "lib/net46/Microsoft.ApplicationInsights.dll",
-        "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll",
-        "lib/uap10.0/Microsoft.ApplicationInsights.dll",
-        "lib/wp8/Microsoft.ApplicationInsights.dll"
-      ]
-    },
-    "Microsoft.ApplicationInsights.Agent.Intercept/1.2.1": {
-      "sha512": "nuqnTp+xechqRPBUi7sr4gxhyr+gJwMaxvSrhB4NyK1TbnT3yk1P5giSnaqQVvuIRHAdl9uD7lt2GRx/P/nlrA==",
-      "type": "package",
-      "path": "Microsoft.ApplicationInsights.Agent.Intercept/1.2.1",
-      "files": [
-        "Microsoft.ApplicationInsights.Agent.Intercept.1.2.1.nupkg.sha512",
-        "Microsoft.ApplicationInsights.Agent.Intercept.nuspec",
-        "lib/net40/Microsoft.AI.Agent.Intercept.dll",
-        "lib/net45/Microsoft.AI.Agent.Intercept.dll"
-      ]
-    },
-    "Microsoft.ApplicationInsights.AspNetCore/1.0.0": {
-      "sha512": "t1O4hbatuHU4BJnuBZ4zmx6fNoTryyZO/NwxwqmMUbuHyvil3elkOZvX3pJWlUTOk6/wyRXItGKBiW4uDET6Kw==",
-      "type": "package",
-      "path": "Microsoft.ApplicationInsights.AspNetCore/1.0.0",
-      "files": [
-        "Microsoft.ApplicationInsights.AspNetCore.1.0.0.nupkg.sha512",
-        "Microsoft.ApplicationInsights.AspNetCore.nuspec",
-        "lib/net451/Microsoft.ApplicationInsights.AspNetCore.dll",
-        "lib/netstandard1.6/Microsoft.ApplicationInsights.AspNetCore.dll"
-      ]
-    },
-    "Microsoft.ApplicationInsights.DependencyCollector/2.1.0": {
-      "sha512": "WwZGU7P4D1VcF1+9CpUkveDAb2lCxzXnlPf0q9rtovSCHrGUa38JI7yldytTLhR4djN0y2TDFbuJP2EYsXgmnw==",
-      "type": "package",
-      "path": "Microsoft.ApplicationInsights.DependencyCollector/2.1.0",
-      "files": [
-        "Microsoft.ApplicationInsights.DependencyCollector.2.1.0.nupkg.sha512",
-        "Microsoft.ApplicationInsights.DependencyCollector.nuspec",
-        "content/ApplicationInsights.config.install.xdt",
-        "content/ApplicationInsights.config.transform",
-        "content/ApplicationInsights.config.uninstall.xdt",
-        "lib/net40/Microsoft.AI.DependencyCollector.XML",
-        "lib/net40/Microsoft.AI.DependencyCollector.dll",
-        "lib/net45/Microsoft.AI.DependencyCollector.XML",
-        "lib/net45/Microsoft.AI.DependencyCollector.dll"
-      ]
-    },
-    "Microsoft.ApplicationInsights.PerfCounterCollector/2.1.0": {
-      "sha512": "UXZkWyBbvkUMU2CRUxGNqryqakxTppV/f60a2qolrNllalzLgXvNojFNHi+1C7gm1hJ82KgftCnOISsgWNwScQ==",
-      "type": "package",
-      "path": "Microsoft.ApplicationInsights.PerfCounterCollector/2.1.0",
-      "files": [
-        "Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0.nupkg.sha512",
-        "Microsoft.ApplicationInsights.PerfCounterCollector.nuspec",
-        "content/ApplicationInsights.config.install.xdt",
-        "content/ApplicationInsights.config.transform",
-        "content/ApplicationInsights.config.uninstall.xdt",
-        "lib/net40/Microsoft.AI.PerfCounterCollector.dll",
-        "lib/net45/Microsoft.AI.PerfCounterCollector.dll"
-      ]
-    },
-    "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/2.1.0": {
-      "sha512": "cxvFUPc83qaPjvcr0cAT8EElPVvg+hSzCmCxSPEXRt5PnPGTafv/ra4sw8na/D3fQHmnMLuj1R0mMZiOLnSw9A==",
-      "type": "package",
-      "path": "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel/2.1.0",
-      "files": [
-        "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0.nupkg.sha512",
-        "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.nuspec",
-        "content/ApplicationInsights.config.install.xdt",
-        "content/ApplicationInsights.config.transform",
-        "content/ApplicationInsights.config.uninstall.xdt",
-        "lib/net40/Microsoft.AI.ServerTelemetryChannel.XML",
-        "lib/net40/Microsoft.AI.ServerTelemetryChannel.dll",
-        "lib/net45/Microsoft.AI.ServerTelemetryChannel.XML",
-        "lib/net45/Microsoft.AI.ServerTelemetryChannel.dll"
       ]
     },
     "Microsoft.AspNetCore.Antiforgery/1.0.0": {
@@ -2612,7 +2411,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Common/1.3.0": {
-      "sha512": "V09G35cs0CT1C4Dr1IEOh8IGfnWALEVAOO5JXsqagxXwmYR012TlorQ+vx2eXxfZRKs3gAS/r92gN9kRBLba5A==",
+      "sha512": "zYo3yXN5I/IeRpWg2gXli5D4R49PlkzDuJd00J9sY5FpfRrgj2gJwdTjdihbUg+fJKt0TTXwiIU7U+61PbdN6A==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.Common/1.3.0",
       "files": [
@@ -2628,7 +2427,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.CSharp/1.3.0": {
-      "sha512": "BgWDIAbSFsHuGeLSn/rljLi51nXqkSo4DZ0qEIrHyPVasrhxEVq7aV8KKZ3HEfSFB+GIhBmOogE+mlOLYg19eg==",
+      "sha512": "pWFU4tQagKiLtC0xIcadBsuiok9JBoiJ/x0UUMOEEBgKM6/f0RCVv1PowuZgPNGeA40h+BqPq7BL2IV39FgtPw==",
       "type": "package",
       "path": "Microsoft.CodeAnalysis.CSharp/1.3.0",
       "files": [
@@ -2873,17 +2672,6 @@
         "Microsoft.Extensions.DependencyModel.nuspec",
         "lib/net451/Microsoft.Extensions.DependencyModel.dll",
         "lib/netstandard1.6/Microsoft.Extensions.DependencyModel.dll"
-      ]
-    },
-    "Microsoft.Extensions.DiagnosticAdapter/1.0.0": {
-      "sha512": "GGI4Pp9DpRBFlAXDcZRz5e+R+TqLFBWzToTDXqxPjQiRq6DwPvDYuKD10rlJD4QxxeX8fcjakTlKO1RfC+DmFg==",
-      "type": "package",
-      "path": "Microsoft.Extensions.DiagnosticAdapter/1.0.0",
-      "files": [
-        "Microsoft.Extensions.DiagnosticAdapter.1.0.0.nupkg.sha512",
-        "Microsoft.Extensions.DiagnosticAdapter.nuspec",
-        "lib/netstandard1.1/Microsoft.Extensions.DiagnosticAdapter.dll",
-        "lib/netstandard1.1/Microsoft.Extensions.DiagnosticAdapter.xml"
       ]
     },
     "Microsoft.Extensions.FileProviders.Abstractions/1.0.0": {
@@ -4304,67 +4092,6 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "System.Reflection.Emit/4.0.1": {
-      "sha512": "P2wqAj72fFjpP6wb9nSfDqNBMab+2ovzSDzUZK7MVIm54tBJEPr9jWfSjjoTpPwj1LeKcmX3vr0ttyjSSFM47g==",
-      "type": "package",
-      "path": "System.Reflection.Emit/4.0.1",
-      "files": [
-        "System.Reflection.Emit.4.0.1.nupkg.sha512",
-        "System.Reflection.Emit.nuspec",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/net45/_._",
-        "lib/netcore50/System.Reflection.Emit.dll",
-        "lib/netstandard1.3/System.Reflection.Emit.dll",
-        "lib/xamarinmac20/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/net45/_._",
-        "ref/netstandard1.1/System.Reflection.Emit.dll",
-        "ref/netstandard1.1/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/de/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/es/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/fr/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/it/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/ja/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/ko/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/ru/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/zh-hans/System.Reflection.Emit.xml",
-        "ref/netstandard1.1/zh-hant/System.Reflection.Emit.xml",
-        "ref/xamarinmac20/_._"
-      ]
-    },
-    "System.Reflection.Emit.Lightweight/4.0.1": {
-      "sha512": "sSzHHXueZ5Uh0OLpUQprhr+ZYJrLPA2Cmr4gn0wj9+FftNKXx8RIMKvO9qnjk2ebPYUjZ+F2ulGdPOsvj+MEjA==",
-      "type": "package",
-      "path": "System.Reflection.Emit.Lightweight/4.0.1",
-      "files": [
-        "System.Reflection.Emit.Lightweight.4.0.1.nupkg.sha512",
-        "System.Reflection.Emit.Lightweight.nuspec",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/net45/_._",
-        "lib/netcore50/System.Reflection.Emit.Lightweight.dll",
-        "lib/netstandard1.3/System.Reflection.Emit.Lightweight.dll",
-        "lib/portable-net45+wp8/_._",
-        "lib/wp80/_._",
-        "ref/net45/_._",
-        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.dll",
-        "ref/netstandard1.0/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/de/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/es/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/fr/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/it/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/ja/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/ko/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/ru/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/zh-hans/System.Reflection.Emit.Lightweight.xml",
-        "ref/netstandard1.0/zh-hant/System.Reflection.Emit.Lightweight.xml",
-        "ref/portable-net45+wp8/_._",
-        "ref/wp80/_._",
-        "runtimes/aot/lib/netcore50/_._"
-      ]
-    },
     "System.Reflection.Extensions/4.0.1": {
       "sha512": "GYrtRsZcMuHF3sbmRHfMYpvxZoIN2bQGrYGerUiWLEkqdEUQZhH3TRSaC/oI4wO0II1RKBPlpIa1TOMxIcOOzQ==",
       "type": "package",
@@ -5145,12 +4872,12 @@
         "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml"
       ]
     },
-    "WebSocketSharp/1.0.3-rc11": {
-      "sha512": "7VCF7f7zVMOvLGD8LeGS4DVXc8lOcB6kXnUMeTxigu+PMiU+6wW5Olq2gYrDU8vDRKOwFY+5RyBaLyzb8skEzA==",
+    "WebSocketSharp/1.0.3-rc10": {
+      "sha512": "DfB3JFsTfP/pajfSsMLe8MkLyRPieuLMbg79tASsgmbH28S3ZR2Zn70Vjsiq13yeTuLTFgQv/fDJ0pqMhvI7oQ==",
       "type": "package",
-      "path": "WebSocketSharp/1.0.3-rc11",
+      "path": "WebSocketSharp/1.0.3-rc10",
       "files": [
-        "WebSocketSharp.1.0.3-rc11.nupkg.sha512",
+        "WebSocketSharp.1.0.3-rc10.nupkg.sha512",
         "WebSocketSharp.nuspec",
         "lib/websocket-sharp.dll",
         "lib/websocket-sharp.xml"
@@ -5164,7 +4891,6 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.ApplicationInsights.AspNetCore >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics >= 1.0.0",
       "Microsoft.AspNetCore.Mvc >= 1.0.0",
       "Microsoft.AspNetCore.Razor.Tools >= 1.0.0-preview2-final",
@@ -5178,8 +4904,7 @@
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0",
-      "R.Common >= 1.0.0-*",
-      "WebSocketSharp >= 1.0.3-rc11"
+      "R.Common >= 1.0.0-*"
     ],
     ".NETFramework,Version=v4.5.2": []
   },

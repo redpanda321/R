@@ -55,7 +55,11 @@ namespace r.mobile
             
             m_Map.MapClicked += M_Map_MapClicked;
             m_Map.UserLocationChanged += M_Map_UserLocationChanged;
+
+            //Page
+
             this.Appearing += MapPage_Appearing;
+           
             //UI   
             m_MainStackLayout = new StackLayout { Spacing = 0 };
             m_MainStackLayout.Children.Add(m_Map);
