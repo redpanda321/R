@@ -15,7 +15,7 @@ using TK.CustomMap;
 using Newtonsoft.Json;
 using r.mobile.Models;
 
-
+using WebSocketSharp;
 
 namespace r.mobile
 {
@@ -37,10 +37,13 @@ namespace r.mobile
        public Plugin.Geolocator.Abstractions.Position m_GeoPosition { get; set; }
        //UI
        public StackLayout m_MainStackLayout { get; set; }
-       //WebSocket
-       public Websockets.IWebSocketConnection m_WebSocketResult { get; set; }
-       //Data
-       public List<Result> m_Results { get; set; }
+        //WebSocket
+        // public Websockets.IWebSocketConnection m_WebSocketResult { get; set; }
+        public WebSocketSharp.WebSocket m_WebSocketResult { get; set; }
+
+
+        //Data
+        public List<Result> m_Results { get; set; }
        
        public MapPage() {
 
@@ -65,19 +68,13 @@ namespace r.mobile
             m_MainStackLayout.Children.Add(m_Map);
             Content = m_MainStackLayout;
             //WebSocket
-            m_WebSocketResult = Websockets.WebSocketFactory.Create();
-
+            //m_WebSocketResult = Websockets.WebSocketFactory.Create();
            
 
+
+
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="obj"></param>
-        private void M_WebSocketResult_OnMessage(string obj)
-        {
-           m_Results =  JsonConvert.DeserializeObject<List<Result>>(obj);
-        }
+        
         /// <summary>
         /// 
         /// </summary>
@@ -98,13 +95,16 @@ namespace r.mobile
             m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(XPosition, Distance.FromKilometers(3)));
 
             //WebSocket
-            
+
+            m_WebSocketResult = new WebSocketSharp.WebSocket("ws://192.168.1.121:51151/ResultBehavior");
+
             m_WebSocketResult.OnMessage += M_WebSocketResult_OnMessage;
 
-            m_WebSocketResult.Open("ws://127.0.0.1:5115/ResultBehavior");
+            
 
             r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(XPosition.Latitude, XPosition.Longitude, 3);
 
+            m_WebSocketResult.Connect();
             m_WebSocketResult.Send(JsonConvert.SerializeObject(jPosition));
 
 
@@ -112,7 +112,12 @@ namespace r.mobile
 
         }
 
-       
+        private void M_WebSocketResult_OnMessage(object sender, MessageEventArgs e)
+        {
+            m_Results = JsonConvert.DeserializeObject<List<Result>>(e.Data);
+        }
+
+
         /// <summary>
         /// 
         /// </summary>

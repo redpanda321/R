@@ -16,7 +16,7 @@ namespace R.Web
         {
 
             //WebSocket Server
-            var wssv = new WebSocketServer("ws://127.0.0.1:5115");
+            var wssv = new WebSocketServer("ws://192.168.1.121:51151");
             wssv.AddWebSocketService<ResultBehavior>("/ResultBehavior");
             wssv.Start();
 
@@ -27,11 +27,12 @@ namespace R.Web
                     Console.WriteLine("- {0}", path);
             }
 
+            //Console
+             Console.WriteLine("\nPress Enter key to stop the server...");
+             Console.ReadLine();
+
             // MVC
-
-
-            
-            var host = new WebHostBuilder()
+           var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
@@ -40,9 +41,7 @@ namespace R.Web
 
             host.Run();
 
-            //End
-            Console.WriteLine("\nPress Enter key to stop the server...");
-            Console.ReadLine();
+           
 
         }
     }
