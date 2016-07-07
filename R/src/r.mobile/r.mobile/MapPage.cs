@@ -67,14 +67,15 @@ namespace r.mobile
             m_MainStackLayout = new StackLayout { Spacing = 0 };
             m_MainStackLayout.Children.Add(m_Map);
             Content = m_MainStackLayout;
+            
             //WebSocket
             //m_WebSocketResult = Websockets.WebSocketFactory.Create();
-           
-
+            m_WebSocketResult = new WebSocketSharp.WebSocket("ws://192.168.1.121:51151/ResultBehavior");
+            m_WebSocketResult.OnMessage += M_WebSocketResult_OnMessage;
 
 
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -95,13 +96,7 @@ namespace r.mobile
             m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(XPosition, Distance.FromKilometers(3)));
 
             //WebSocket
-
-            m_WebSocketResult = new WebSocketSharp.WebSocket("ws://192.168.1.121:51151/ResultBehavior");
-
-            m_WebSocketResult.OnMessage += M_WebSocketResult_OnMessage;
-
             
-
             r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(XPosition.Latitude, XPosition.Longitude, 3);
 
             m_WebSocketResult.Connect();

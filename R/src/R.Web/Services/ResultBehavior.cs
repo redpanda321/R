@@ -31,21 +31,28 @@ namespace R.Web.Services
 
         public ResultBehavior()
         {
-  
+            try { 
            //Configuration
-            var builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
-            builder.AddEnvironmentVariables();
-            m_Configuration = builder.Build();
-                              
+            var builder = new ConfigurationBuilder().SetBasePath(System.IO.Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
+            m_Configuration = builder.Build();
+
+
+               
             //MongoDBRepository
             m_MongoDbRepositoryResult = new MongoDbRepository<Result, string>(m_Configuration["ConnectionStrings:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>(new RedisCachingProvider(m_Configuration["ConnectionStrings:RedisConnection:ConnectionString"], 6379, false)));
 
+            } catch(Exception exception) {
+
+                Console.WriteLine(exception.ToString());
+
+            }
 
 
-        }
 
-        protected override void OnMessage(MessageEventArgs e)
+}
+
+protected override void OnMessage(MessageEventArgs e)
         {
             base.OnMessage(e);
 
@@ -57,10 +64,10 @@ namespace R.Web.Services
                 if (p != null)
                 {
 
-                 m_Results =   m_MongoDbRepositoryResult.FindAll( x => Convert.ToSingle(x.Property.Address.Latitude) <= Convert.ToSingle(p.LatitudeMax)
-                                                      &&  Convert.ToSingle(x.Property.Address.Latitude) >= Convert.ToSingle(p.LatitudeMin)
-                                                      &&　 Convert.ToSingle(x.Property.Address.Longitude) <= Convert.ToSingle(p.LongitudeMax)
-                                                      &&  Convert.ToSingle(x.Property.Address.Longitude) >= Convert.ToSingle(p.LongitudeMin)
+                 m_Results =   m_MongoDbRepositoryResult.FindAll( x => Convert.ToDouble(x.Property.Address.Latitude) <= Convert.ToDouble(p.LatitudeMax)
+                                                      &&  Convert.ToDouble(x.Property.Address.Latitude) >= Convert.ToDouble(p.LatitudeMin)
+                                                      &&　 Convert.ToDouble(x.Property.Address.Longitude) <= Convert.ToDouble(p.LongitudeMax)
+                                                      &&  Convert.ToDouble(x.Property.Address.Longitude) >= Convert.ToDouble(p.LongitudeMin)
                                                       ).ToList();
 
                 }
