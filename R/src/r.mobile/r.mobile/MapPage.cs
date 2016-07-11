@@ -69,7 +69,7 @@ namespace r.mobile
             Content = m_MainStackLayout;
             
             //WebSocket
-            //m_WebSocketResult = Websockets.WebSocketFactory.Create();
+           
             m_WebSocketResult = new WebSocketSharp.WebSocket("ws://192.168.1.121:51151/ResultBehavior");
             m_WebSocketResult.OnMessage += M_WebSocketResult_OnMessage;
 

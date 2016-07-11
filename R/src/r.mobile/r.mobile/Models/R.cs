@@ -144,8 +144,8 @@ namespace r.mobile.Models
 
         public int Id { get; set; }
         public string AddressText { get; set; }
-        public string Longitude { get; set; }
-        public string Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
     }
 
     public class Photo
@@ -251,8 +251,8 @@ namespace r.mobile.Models
         public string key { get; set; }
         public string propertyId { get; set; }
         public int count { get; set; }
-        public string longitude { get; set; }
-        public string latitude { get; set; }
+        public double longitude { get; set; }
+        public double latitude { get; set; }
     }
 
     public class Pins {
@@ -271,25 +271,21 @@ namespace r.mobile.Models
     public class Position {
          public Position() {
             
-             LongitudeMin = "-115.90212547926488";
-             LongitudeMax = "-110.82094872145238";
-             LatitudeMin = "50.051219586625";
-             LatitudeMax = "51.523515704948416";
-             Longitude = "-113.914628";
-             Latitude =  "50.897983";
-
+             LongitudeMin = -115.90212547926488;
+             LongitudeMax = -110.82094872145238;
+             LatitudeMin = 50.051219586625;
+             LatitudeMax = 51.523515704948416;
+             Longitude = -113.914628;
+             Latitude =  50.897983;
 
         }
-
-
-        public String LongitudeMin { get; set; }
-        public String LongitudeMax { get; set; }
-        public String LatitudeMin { get; set; }
-        public String LatitudeMax { get; set; }
-        public String Longitude { get; set; }
-        public String Latitude { get; set; }
-
-
+        
+        public double LongitudeMin { get; set; }
+        public double LongitudeMax { get; set; }
+        public double LatitudeMin { get; set; }
+        public double LatitudeMax { get; set; }
+        public double Longitude { get; set; }
+        public double Latitude { get; set; }
 
     }
 

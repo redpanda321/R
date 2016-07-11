@@ -61,14 +61,17 @@ protected override void OnMessage(MessageEventArgs e)
                 Console.WriteLine("Result:" + e.Data);
                 Position p = JsonConvert.DeserializeObject<Position>(e.Data);
 
+
+           
+
+
                 if (p != null)
                 {
 
-                 m_Results =   m_MongoDbRepositoryResult.FindAll( x => Convert.ToDouble(x.Property.Address.Latitude) <= Convert.ToDouble(p.LatitudeMax)
-                                                      &&  Convert.ToDouble(x.Property.Address.Latitude) >= Convert.ToDouble(p.LatitudeMin)
-                                                      &&　 Convert.ToDouble(x.Property.Address.Longitude) <= Convert.ToDouble(p.LongitudeMax)
-                                                      &&  Convert.ToDouble(x.Property.Address.Longitude) >= Convert.ToDouble(p.LongitudeMin)
-                                                      ).ToList();
+                 m_Results =   m_MongoDbRepositoryResult.FindAll( x =>x.Property.Address.Latitude <= p.LatitudeMax
+                                                      &&  x.Property.Address.Latitude >= p.LatitudeMin
+                                                      &&　x.Property.Address.Longitude <= p.LongitudeMax
+                                                      &&  x.Property.Address.Longitude >= p.LongitudeMin ).ToList();
 
                 }
 

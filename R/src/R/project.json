@@ -6,7 +6,7 @@
   },
   "buildOptions": {
     "emitEntryPoint": true,
-    "xmlDoc": true
+    "xmlDoc": false
   },
   "dependencies": {
     "EntityFramework": "6.1.3",

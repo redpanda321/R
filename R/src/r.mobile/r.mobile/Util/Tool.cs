@@ -20,13 +20,13 @@ namespace r.mobile.Util
             var position = new r.mobile.Models.Position();
 
 
-            String longitudeMin = ( longitude - distance/(111 * Math.Cos(latitude)) ).ToString() ;
-            String longitudeMax = (longitude + distance / (111 * Math.Cos(latitude))).ToString();
-            String latitudeMin = (latitude - distance/111).ToString();
-            String latitudeMax = (latitude + distance / 111).ToString();
+            double longitudeMin = ( longitude - distance/(111 * Math.Cos(latitude)) ) ;
+            double longitudeMax = (longitude + distance / (111 * Math.Cos(latitude)));
+            double latitudeMin = (latitude - distance/111);
+            double latitudeMax = (latitude + distance / 111);
 
-            position.Longitude = longitude.ToString();
-            position.Latitude = latitude.ToString();
+            position.Longitude = longitude;
+            position.Latitude = latitude;
             position.LongitudeMin = longitudeMin;
             position.LongitudeMax = longitudeMax;
             position.LatitudeMin = latitudeMin;
