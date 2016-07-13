@@ -39,10 +39,8 @@ namespace r.mobile
        public StackLayout m_MainStackLayout { get; set; }
        
        //WebSocket
-       // public Websockets.IWebSocketConnection m_WebSocketResult { get; set; }
        public WebSocketSharp.WebSocket m_WebSocketResult { get; set; }
-
-
+        
        //Data
        public List<Result> m_Results { get; set; }
        
@@ -111,9 +109,24 @@ namespace r.mobile
 
             foreach (var x  in m_Results ) {
 
+                var position = new Xamarin.Forms.Maps.Position(x.Property.Address.Latitude, x.Property.Address.Longitude);
 
+                Xamarin.Forms.Maps.Pin pin = new Xamarin.Forms.Maps.Pin
+                {
 
+                    Position = position,
+                    Label = "Price:" + x.Property.Price + "" +
+                               "Bathrooms:" + x.Building.BathroomTotal + " " +
+                               "Bedrooms:" + x.Building.Bedrooms + " " +
+                               "SizeInterior:" + x.Building.SizeInterior + " " +
+                               "StoriesTotal:" + x.Building.StoriesTotal + " " +
+                               "Type:" + x.Building.Type,
+            
 
+                    Address = x.RelativeDetailsURL                      
+                };
+
+                m_Map.Pins.Add(pin);
             }
 
         }
