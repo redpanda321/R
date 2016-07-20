@@ -57,6 +57,12 @@ namespace r.mobile
             
             m_Map.MapClicked += M_Map_MapClicked;
             m_Map.UserLocationChanged += M_Map_UserLocationChanged;
+
+            m_Map.MapLongPress += M_Map_MapLongPress;
+
+            m_Map.SizeChanged += M_Map_SizeChanged;
+
+           
             
             //Page
 
@@ -73,6 +79,53 @@ namespace r.mobile
             m_WebSocketResult.OnMessage += M_WebSocketResult_OnMessage;
 
 
+        }
+
+        private async void M_Map_SizeChanged(object sender, EventArgs e)
+        {
+
+            //GeoLocator
+            m_GeoLocator = CrossGeolocator.Current;
+
+            m_GeoPosition = await m_GeoLocator.GetPositionAsync(5000);
+
+            Xamarin.Forms.Maps.Position xPosition = new Xamarin.Forms.Maps.Position(m_GeoPosition.Latitude, m_GeoPosition.Longitude);
+
+            m_CenterMapPin = new TKCustomMapPin { Position = xPosition };
+            m_Map.SelectedPin = m_CenterMapPin;
+
+            m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(xPosition, Distance.FromKilometers(3)));
+
+            //WebSocket
+
+            r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
+
+            m_WebSocketResult.Connect();
+            m_WebSocketResult.Send(JsonConvert.SerializeObject(jPosition));
+
+
+        }
+
+        private async void M_Map_MapLongPress(object sender, TKGenericEventArgs<Xamarin.Forms.Maps.Position> e)
+        {
+            //GeoLocator
+            m_GeoLocator = CrossGeolocator.Current;
+
+            m_GeoPosition = await m_GeoLocator.GetPositionAsync(5000);
+
+            Xamarin.Forms.Maps.Position xPosition = new Xamarin.Forms.Maps.Position(m_GeoPosition.Latitude, m_GeoPosition.Longitude);
+
+            m_CenterMapPin = new TKCustomMapPin { Position = xPosition };
+            m_Map.SelectedPin = m_CenterMapPin;
+
+            m_Map.MoveToRegion(MapSpan.FromCenterAndRadius(xPosition, Distance.FromKilometers(3)));
+
+            //WebSocket
+
+            r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
+
+            m_WebSocketResult.Connect();
+            m_WebSocketResult.Send(JsonConvert.SerializeObject(jPosition));
         }
 
         /// <summary>
