@@ -72,7 +72,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="websocket-sharp">
-      <HintPath>..\..\ThirdParty\src\websocket-sharp\websocket-sharp\bin\Debug\websocket-sharp.dll</HintPath>
+      <HintPath>..\..\ThirdParty\src\websocket-sharp\bin\Debug\websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Xamarin.Forms.2.3.0.49\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
