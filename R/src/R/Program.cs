@@ -42,10 +42,10 @@ namespace R
 
             Configuration = builder.Build();
 
-          //  ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
+           ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
 
-          //  Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
-          //  Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
+            Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
 
         }
         public static IConfigurationRoot Configuration { get; set; }
@@ -305,7 +305,466 @@ namespace R
             if (results == null) return;
             if (results.Count <= 0) return;
 
-             var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"],new StandardCachingStrategy<ResultHistory,string>( new RedisCachingProvider(Configuration["Data:RedisConnection:ConnectionString"], 6379,false)));
+            #region EF6
+
+
+            ApplicationDbContext dbx = new ApplicationDbContext();
+
+            foreach (var rr in results)
+            {
+
+
+                //Result history
+                #region result history
+                try
+                {
+                    ResultHistory resultHistory = new ResultHistory();
+                    resultHistory.ResultDateTime = DateTime.Now;
+                    resultHistory.ResultId = rr.Id;
+
+                    string price1 = rr.Property.Price.Replace('$', ' ');
+                    if (rr.Property.Price.IndexOf(',') >= 0)
+                    {
+                        string[] price = price1.Split(',');
+                        price1 = price[0] + price[1];
+                    }
+
+
+                    resultHistory.Price = Convert.ToSingle(price1);
+                    dbx.ResultHistories.Add(resultHistory);
+
+                }
+                catch (Exception e)
+                {
+
+                    System.Console.WriteLine(e.ToString());
+
+
+                }
+                #endregion result history
+
+
+                //Related Objects
+
+                Result dbResult = new Result();
+
+
+                try
+                {
+
+
+                    dbResult = dbx.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.AlternateURL)
+                    .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking)
+                    .Include(r => r.Property.Photo)
+                    .Include(r => r.Individual)
+                     .Include(r => r.Individual.Select(v => v.Organization))
+                    .Include(r => r.Individual.Select(v => v.Organization.Address))
+                    .Include(r => r.Individual.Select(v => v.Organization.Phones))
+                    .Include(r => r.Individual.Select(v => v.Organization.Emails))
+                    .Include(r => r.Individual.Select(v => v.Organization.Websites))
+                    .Include(r => r.Individual.Select(v => v.Phones))
+                    .Include(r => r.Individual.Select(v => v.Websites))
+                    .Include(r => r.Individual.Select(v => v.Emails)).SingleOrDefault(r => r.Id == rr.Id);
+
+
+
+                }
+                catch (Exception e)
+                {
+
+
+                    System.Console.WriteLine(e.ToString());
+                }
+
+
+
+                if (dbResult == null)
+                {
+                    dbx.Results.Add(rr);
+                }
+                else
+                {
+
+                    #region  dbResult
+
+
+                    try
+                    {
+
+
+                        dbx.Entry(dbResult).CurrentValues.SetValues(rr);
+
+                        var dbBuilding = dbResult.Building;
+                        var dbLand = dbResult.Land;
+                        var dbAlternateURL = dbResult.AlternateURL;
+                        var dbProperty = dbResult.Property;
+                        var dbProAddress = dbResult.Property.Address;
+
+
+                        if (rr.Building != null)
+                        {
+                            if (dbBuilding != null)
+                            {
+
+                                dbx.Entry(dbBuilding).Entity.BathroomTotal = rr.Building.BathroomTotal;
+                            }
+                            else
+                            {
+                                dbx.Buildings.Attach(rr.Building);
+                                dbResult.Building = rr.Building;
+
+                            }
+                        }
+
+                        if (rr.Land != null)
+                        {
+                            if (dbLand != null)
+                            {
+
+
+                                dbx.Entry(dbLand).Entity.LandscapeFeatures = rr.Land.LandscapeFeatures;
+                            }
+                            else
+                            {
+
+                                dbx.Lands.Attach(rr.Land);
+                                dbResult.Land = rr.Land;
+
+                            }
+                        }
+
+
+                        if (rr.AlternateURL != null)
+                        {
+                            if (dbAlternateURL != null)
+                            {
+
+
+                                dbx.Entry(dbAlternateURL).Entity.BrochureLink = rr.AlternateURL.BrochureLink;
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    dbx.AlternateURLs.Attach(rr.AlternateURL);
+                                    dbResult.AlternateURL = rr.AlternateURL;
+                                }
+                                catch { }
+                            }
+                        }
+
+
+                        if (rr.Property != null)
+                        {
+                            if (dbProperty != null)
+                            {
+
+
+                                dbx.Entry(dbProperty).Entity.Price = rr.Property.Price;
+
+                            }
+                            else
+                            {
+                                dbx.Properties.Attach(rr.Property);
+                                dbResult.Property = rr.Property;
+                            }
+                        }
+
+
+                        if (rr.Property.Address != null)
+                        {
+                            if (dbProAddress != null)
+                            {
+
+
+                                dbx.Entry(dbProAddress).Entity.AddressText = rr.Property.Address.AddressText;
+                            }
+                            else
+                            {
+
+                                dbx.Address2s.Attach(rr.Property.Address);
+                                dbResult.Property.Address = rr.Property.Address;
+                            }
+                        }
+
+
+                        if (rr.Property.Parking != null && rr.Property.Parking.Count > 0)
+                        {
+                            foreach (var p in rr.Property.Parking.ToList())
+                            {
+
+                                if (dbProperty.Parking.ToList() != null)
+                                {
+
+                                    foreach (var dbProParking in dbProperty.Parking.ToList())
+                                    {
+
+
+
+                                        dbx.Entry(dbProParking).Entity.Spaces = p.Spaces;
+                                    }
+
+                                }
+                                else
+                                {
+
+                                    dbx.Parkings.Attach(p);
+                                    dbProperty.Parking.Add(p);
+
+
+                                }
+                            }
+                        }
+
+                        if (rr.Property.Photo != null && rr.Property.Photo.Count > 0)
+                        {
+                            foreach (var p in rr.Property.Photo.ToList())
+                            {
+
+                                if (dbProperty.Photo.ToList() != null)
+                                {
+                                    foreach (var dbPhoto in dbProperty.Photo.ToList())
+                                    {
+
+
+                                        dbx.Entry(dbPhoto).Entity.HighResPath = p.HighResPath;
+                                    }
+
+                                }
+                                else
+                                {
+                                    dbx.Photoes.Attach(p);
+                                    dbProperty.Photo.Add(p);
+                                }
+                            }
+                        }
+
+                        if (rr.Individual != null && rr.Individual.Count > 0)
+                        {
+                            foreach (var i in rr.Individual.ToList())
+                            {
+                                var dbIndividual = dbResult.Individual.SingleOrDefault(In => In.IndividualID == i.IndividualID);
+                                if (dbIndividual != null)
+                                {
+
+
+                                    dbx.Entry(dbIndividual).Entity.LastName = i.LastName;
+
+                                    if (i.Phones != null && i.Phones.Count > 0)
+                                    {
+                                        foreach (var p in i.Phones.ToList())
+                                        {
+
+
+                                            if (dbIndividual.Phones.ToList() != null)
+                                            {
+                                                foreach (var dbIndividualPhone in dbIndividual.Phones.ToList())
+                                                {
+
+                                                    dbx.Entry(dbIndividualPhone).Entity.PhoneNumber = p.PhoneNumber;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                dbx.Phone2s.Attach(p);
+                                                dbIndividual.Phones.Add(p);
+                                            }
+
+
+                                        }
+                                    }
+
+
+                                    if (i.Emails != null && i.Emails.Count > 0)
+                                    {
+                                        foreach (var e in i.Emails.ToList())
+                                        {
+                                            if (dbIndividual.Emails.ToList() != null)
+                                            {
+                                                foreach (var dbIndividualEmail in dbIndividual.Emails.ToList())
+                                                {
+
+
+                                                    dbx.Entry(dbIndividualEmail).Entity.ContactId = e.ContactId;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                dbx.Email2s.Attach(e);
+                                                dbIndividual.Emails.Add(e);
+                                            }
+
+                                        }
+                                    }
+
+                                    if (i.Websites != null && i.Websites.Count > 1)
+                                    {
+                                        foreach (var w in i.Websites.ToList())
+                                        {
+                                            if (dbIndividual.Websites.ToList() != null)
+                                            {
+                                                foreach (var dbIndividualWebsite in dbIndividual.Websites.ToList())
+                                                {
+
+
+                                                    dbx.Entry(dbIndividualWebsite).Entity.Website = w.Website;
+                                                }
+                                            }
+                                            else
+                                            {
+                                                dbx.Website2s.Attach(w);
+                                                dbIndividual.Websites.Add(w);
+                                            }
+
+
+                                        }
+                                    }
+
+                                    var dbOrganization = dbIndividual.Organization;
+                                    if (i.Organization != null)
+                                    {
+                                        if (dbOrganization != null)
+                                        {
+
+
+
+                                            dbx.Entry(dbOrganization).Entity.Name = i.Name;
+
+
+                                            var dbOrganizationAddress = dbIndividual.Organization.Address;
+
+                                            if (i.Organization.Address != null)
+                                            {
+                                                if (dbOrganizationAddress != null)
+                                                {
+
+
+
+                                                    dbx.Entry(dbOrganizationAddress).Entity.AddressText = i.Organization.Address.AddressText;
+                                                }
+                                                else
+                                                {
+
+                                                    dbx.Addresses.Attach(i.Organization.Address);
+                                                    dbOrganization.Address = i.Organization.Address;
+
+                                                }
+                                            }
+
+                                            if (i.Organization.Phones != null && i.Organization.Phones.Count > 0)
+                                            {
+                                                foreach (var p in i.Organization.Phones.ToList())
+                                                {
+
+                                                    if (dbOrganization.Phones.ToList() != null)
+                                                    {
+                                                        foreach (var dbOrganizationPhone in dbOrganization.Phones.ToList())
+                                                        {
+
+
+                                                            dbx.Entry(dbOrganizationPhone).Entity.PhoneNumber = p.PhoneNumber;
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        dbx.Phones.Attach(p);
+                                                        dbOrganization.Phones.Add(p);
+                                                    }
+                                                }
+                                            }
+
+                                            if (i.Organization.Emails != null && i.Organization.Emails.Count > 0)
+                                            {
+                                                foreach (var e in i.Organization.Emails.ToList())
+                                                {
+                                                    if (dbOrganization.Emails.ToList() != null)
+                                                    {
+                                                        foreach (var dbOrganizationEmail in dbOrganization.Emails.ToList())
+                                                        {
+
+
+                                                            dbx.Entry(dbOrganizationEmail).Entity.ContactId = e.ContactId;
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        dbx.Emails.Attach(e);
+                                                        dbOrganization.Emails.Add(e);
+                                                    }
+                                                }
+
+                                            }
+
+                                            if (i.Organization.Websites != null && i.Organization.Websites.Count > 0)
+                                            {
+                                                foreach (var w in i.Organization.Websites.ToList())
+                                                {
+                                                    if (dbOrganization.Websites.ToList() != null)
+                                                    {
+                                                        foreach (var dbOrganizationWebsite in dbOrganization.Websites.ToList())
+                                                        {
+
+
+                                                            dbx.Entry(dbOrganizationWebsite).Entity.Website = w.Website;
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        dbx.webSite1s.Attach(w);
+                                                        dbOrganization.Websites.Add(w);
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                        else
+                                        {
+
+                                            dbx.Organizations.Attach(i.Organization);
+                                            dbIndividual.Organization = i.Organization;
+
+                                        }
+                                    }
+                                }
+                                else
+                                {
+
+
+                                    dbx.Individuals.Attach(i);
+                                    dbResult.Individual.Add(i);
+
+                                }
+
+
+
+                            }
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        System.Console.WriteLine(e.ToString());
+
+                    }
+
+
+                    #endregion dbResult
+
+                }
+
+            }
+
+
+            dbx.SaveChanges();
+            dbx.Dispose();
+
+            #endregion EF6
+
+
+
+            #region  mongodb
+
+            var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"],new StandardCachingStrategy<ResultHistory,string>( new RedisCachingProvider(Configuration["Data:RedisConnection:ConnectionString"], 6379,false)));
              var repo = new MongoDbRepository<Result, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<Result, string>(new RedisCachingProvider(Configuration["Data:RedisConnection:ConnectionString"], 6379,false)));
 
           //  var repo1 = new MongoDbRepository<ResultHistory, string>(Configuration["Data:MongoDbConnection:ConnectionString"], new StandardCachingStrategy<ResultHistory, string>());
@@ -424,463 +883,9 @@ namespace R
             
             dbResultHistory.CreateIndex(indexKeys, indexOptions);
 
+            #endregion
 
 
-            #region EF6
-
-            
-
-            ApplicationDbContext dbx = new ApplicationDbContext();
-
-            foreach (var rr in results)
-            {
-
-
-                //Result history
-                #region result history
-                try
-                {
-                    ResultHistory resultHistory = new ResultHistory();
-                    resultHistory.ResultDateTime = DateTime.Now;
-                    resultHistory.ResultId = rr.Id;
-
-                    string price1 = rr.Property.Price.Replace('$', ' ');
-                    if (rr.Property.Price.IndexOf(',') >= 0)
-                    {
-                        string[] price = price1.Split(',');
-                        price1 = price[0] + price[1];
-                    }
-
-
-                    resultHistory.Price = Convert.ToSingle(price1);
-                    dbx.ResultHistories.Add(resultHistory);
-
-                }
-                catch (Exception e)
-                {
-
-                    System.Console.WriteLine(e.ToString());
-
-
-                }
-                #endregion result history
-
-
-                //Related Objects
-
-                Result dbResult = new Result();
-
-
-                try
-                {
-
-
-                    dbResult = dbx.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.AlternateURL)
-                    .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking)
-                    .Include(r => r.Property.Photo)
-                    .Include(r => r.Individual)
-                     .Include(r => r.Individual.Select(v => v.Organization))
-                    .Include(r => r.Individual.Select(v => v.Organization.Address))
-                    .Include(r => r.Individual.Select(v => v.Organization.Phones))
-                    .Include(r => r.Individual.Select(v => v.Organization.Emails))
-                    .Include(r => r.Individual.Select(v => v.Organization.Websites))
-                    .Include(r => r.Individual.Select(v => v.Phones))
-                    .Include(r => r.Individual.Select(v => v.Websites))
-                    .Include(r => r.Individual.Select(v => v.Emails)).SingleOrDefault(r => r.Id == rr.Id);
-
-
-
-                }
-                catch (Exception e)
-                {
-
-
-                    System.Console.WriteLine(e.ToString());
-                }
-
-
-
-                if (dbResult == null)
-                {
-                    dbx.Results.Add(rr);
-                }
-                else
-                {
-
-                    #region  dbResult
-
-                    
-                  try
-                  {
-
-
-                      dbx.Entry(dbResult).CurrentValues.SetValues(rr);
-
-                      var dbBuilding = dbResult.Building;
-                      var dbLand = dbResult.Land;
-                      var dbAlternateURL = dbResult.AlternateURL;
-                      var dbProperty = dbResult.Property;
-                      var dbProAddress = dbResult.Property.Address;
-
-
-                      if (rr.Building != null)
-                      {
-                          if (dbBuilding != null)
-                          {
-                              
-                              dbx.Entry(dbBuilding).Entity.BathroomTotal = rr.Building.BathroomTotal;
-                          }
-                          else
-                          {
-                              dbx.Buildings.Attach(rr.Building);
-                              dbResult.Building = rr.Building;
-
-                          }
-                      }
-
-                      if (rr.Land != null)
-                      {
-                          if (dbLand != null)
-                          {
-
-                             
-                              dbx.Entry(dbLand).Entity.LandscapeFeatures = rr.Land.LandscapeFeatures;
-                          }
-                          else
-                          {
-
-                              dbx.Lands.Attach(rr.Land);
-                              dbResult.Land = rr.Land;
-
-                          }
-                      }
-
-
-                      if (rr.AlternateURL != null)
-                      {
-                          if (dbAlternateURL != null)
-                          {
-
-                             
-                              dbx.Entry(dbAlternateURL).Entity.BrochureLink = rr.AlternateURL.BrochureLink;
-                          }
-                          else
-                          {
-                              try
-                              {
-                                  dbx.AlternateURLs.Attach(rr.AlternateURL);
-                                  dbResult.AlternateURL = rr.AlternateURL;
-                              }
-                              catch { }
-                          }
-                      }
-
-
-                      if (rr.Property != null)
-                      {
-                          if (dbProperty != null)
-                          {
-
-                             
-                              dbx.Entry(dbProperty).Entity.Price = rr.Property.Price;
-
-                          }
-                          else
-                          {
-                              dbx.Properties.Attach(rr.Property);
-                              dbResult.Property = rr.Property;
-                          }
-                      }
-
-
-                      if (rr.Property.Address != null)
-                      {
-                          if (dbProAddress != null)
-                          {
-
-                             
-                              dbx.Entry(dbProAddress).Entity.AddressText = rr.Property.Address.AddressText;
-                          }
-                          else
-                          {
-
-                              dbx.Address2s.Attach(rr.Property.Address);
-                              dbResult.Property.Address = rr.Property.Address;
-                          }
-                      }
-
-
-                      if (rr.Property.Parking != null && rr.Property.Parking.Count > 0)
-                      {
-                          foreach (var p in rr.Property.Parking.ToList())
-                          {
-
-                              if (dbProperty.Parking.ToList() != null)
-                              {
-
-                                  foreach (var dbProParking in dbProperty.Parking.ToList())
-                                  {
-
-
-                                     
-                                      dbx.Entry(dbProParking).Entity.Spaces = p.Spaces;
-                                  }
-
-                              }
-                              else
-                              {
-
-                                  dbx.Parkings.Attach(p);
-                                  dbProperty.Parking.Add(p);
-
-
-                              }
-                          }
-                      }
-
-                      if (rr.Property.Photo != null && rr.Property.Photo.Count > 0)
-                      {
-                          foreach (var p in rr.Property.Photo.ToList())
-                          {
-
-                              if (dbProperty.Photo.ToList() != null)
-                              {
-                                  foreach (var dbPhoto in dbProperty.Photo.ToList())
-                                  {
-
-                                     
-                                      dbx.Entry(dbPhoto).Entity.HighResPath = p.HighResPath;
-                                  }
-
-                              }
-                              else
-                              {
-                                  dbx.Photoes.Attach(p);
-                                  dbProperty.Photo.Add(p);
-                              }
-                          }
-                      }
-
-                      if (rr.Individual != null && rr.Individual.Count > 0)
-                      {
-                          foreach (var i in rr.Individual.ToList())
-                          {
-                              var dbIndividual = dbResult.Individual.SingleOrDefault(In => In.IndividualID == i.IndividualID);
-                              if (dbIndividual != null)
-                              {
-
-                                  
-                                  dbx.Entry(dbIndividual).Entity.LastName = i.LastName;
-
-                                  if (i.Phones != null && i.Phones.Count > 0)
-                                  {
-                                      foreach (var p in i.Phones.ToList())
-                                      {
-
-
-                                          if (dbIndividual.Phones.ToList() != null)
-                                          {
-                                              foreach (var dbIndividualPhone in dbIndividual.Phones.ToList())
-                                              {
-                                                    
-                                                  dbx.Entry(dbIndividualPhone).Entity.PhoneNumber = p.PhoneNumber;
-                                              }
-                                          }
-                                          else
-                                          {
-                                              dbx.Phone2s.Attach(p);
-                                              dbIndividual.Phones.Add(p);
-                                          }
-
-
-                                      }
-                                  }
-
-
-                                  if (i.Emails != null && i.Emails.Count > 0)
-                                  {
-                                      foreach (var e in i.Emails.ToList())
-                                      {
-                                          if (dbIndividual.Emails.ToList() != null)
-                                          {
-                                              foreach (var dbIndividualEmail in dbIndividual.Emails.ToList())
-                                              {
-
-                                                  
-                                                  dbx.Entry(dbIndividualEmail).Entity.ContactId = e.ContactId;
-                                              }
-                                          }
-                                          else
-                                          {
-                                              dbx.Email2s.Attach(e);
-                                              dbIndividual.Emails.Add(e);
-                                          }
-
-                                      }
-                                  }
-
-                                  if (i.Websites != null && i.Websites.Count > 1)
-                                  {
-                                      foreach (var w in i.Websites.ToList())
-                                      {
-                                          if (dbIndividual.Websites.ToList() != null)
-                                          {
-                                              foreach (var dbIndividualWebsite in dbIndividual.Websites.ToList())
-                                              {
-
-                                                 
-                                                  dbx.Entry(dbIndividualWebsite).Entity.Website = w.Website;
-                                              }
-                                          }
-                                          else
-                                          {
-                                              dbx.Website2s.Attach(w);
-                                              dbIndividual.Websites.Add(w);
-                                          }
-
-
-                                      }
-                                  }
-
-                                  var dbOrganization = dbIndividual.Organization;
-                                  if (i.Organization != null)
-                                  {
-                                      if (dbOrganization != null)
-                                      {
-
-
-                                          
-                                          dbx.Entry(dbOrganization).Entity.Name = i.Name;
-
-
-                                          var dbOrganizationAddress = dbIndividual.Organization.Address;
-
-                                          if (i.Organization.Address != null)
-                                          {
-                                              if (dbOrganizationAddress != null)
-                                              {
-
-
-                                                 
-                                                  dbx.Entry(dbOrganizationAddress).Entity.AddressText = i.Organization.Address.AddressText;
-                                              }
-                                              else
-                                              {
-
-                                                  dbx.Addresses.Attach(i.Organization.Address);
-                                                  dbOrganization.Address = i.Organization.Address;
-
-                                              }
-                                          }
-
-                                          if (i.Organization.Phones != null && i.Organization.Phones.Count > 0)
-                                          {
-                                              foreach (var p in i.Organization.Phones.ToList())
-                                              {
-
-                                                  if (dbOrganization.Phones.ToList() != null)
-                                                  {
-                                                      foreach (var dbOrganizationPhone in dbOrganization.Phones.ToList())
-                                                      {
-
-                                                         
-                                                          dbx.Entry(dbOrganizationPhone).Entity.PhoneNumber = p.PhoneNumber;
-                                                      }
-                                                  }
-                                                  else
-                                                  {
-                                                      dbx.Phones.Attach(p);
-                                                      dbOrganization.Phones.Add(p);
-                                                  }
-                                              }
-                                          }
-
-                                          if (i.Organization.Emails != null && i.Organization.Emails.Count > 0)
-                                          {
-                                              foreach (var e in i.Organization.Emails.ToList())
-                                              {
-                                                  if (dbOrganization.Emails.ToList() != null)
-                                                  {
-                                                      foreach (var dbOrganizationEmail in dbOrganization.Emails.ToList())
-                                                      {
-
-                                                        
-                                                          dbx.Entry(dbOrganizationEmail).Entity.ContactId = e.ContactId;
-                                                      }
-                                                  }
-                                                  else
-                                                  {
-                                                      dbx.Emails.Attach(e);
-                                                      dbOrganization.Emails.Add(e);
-                                                  }
-                                              }
-
-                                          }
-
-                                          if (i.Organization.Websites != null && i.Organization.Websites.Count > 0)
-                                          {
-                                              foreach (var w in i.Organization.Websites.ToList())
-                                              {
-                                                  if (dbOrganization.Websites.ToList() != null)
-                                                  {
-                                                      foreach (var dbOrganizationWebsite in dbOrganization.Websites.ToList())
-                                                      {
-
-                                                          
-                                                          dbx.Entry(dbOrganizationWebsite).Entity.Website = w.Website;
-
-                                                      }
-                                                  }
-                                                  else
-                                                  {
-                                                      dbx.webSite1s.Attach(w);
-                                                      dbOrganization.Websites.Add(w);
-                                                  }
-                                              }
-                                          }
-
-                                      }
-                                      else
-                                      {
-
-                                          dbx.Organizations.Attach(i.Organization);
-                                          dbIndividual.Organization = i.Organization;
-
-                                      }
-                                  }
-                              }
-                              else
-                              {
-
-
-                                  dbx.Individuals.Attach(i);
-                                  dbResult.Individual.Add(i);
-
-                              }
-
-
-
-                          }
-                      }
-                  }
-                  catch (Exception e)
-                  {
-                      System.Console.WriteLine(e.ToString());
-
-                  }
-                
-                 
-                    #endregion dbResult
-
-                }
-
-            }
-
-
-            dbx.SaveChanges();
-            dbx.Dispose();
-           
-            #endregion EF6
 
         }
 
@@ -1151,8 +1156,6 @@ namespace R
 
         public static void Main(string[] args)
         {
-
-
 
             if( Configuration["Task:True"] == "false")
             { 

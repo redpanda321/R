@@ -1,6 +1,7 @@
 {
   "authors": [ "tliu" ],
   "dependencies": {
+    "EntityFramework": "6.1.3",
     "Newtonsoft.Json": "8.0.3",
     "RestSharp": "105.2.3",
     "SharpRepository.CacheRepository": "1.4.7",

@@ -11,6 +11,8 @@ using MongoDB.Bson.Serialization;
 using System.Security.Cryptography;
 using static MongoDB.Driver.WriteConcern;
 
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace R.Common.Models
 {
 
@@ -152,7 +154,9 @@ namespace R.Common.Models
 
         public int Id { get; set; }
         public string AddressText { get; set; }
+        [Index]
         public double Longitude { get; set; }
+        [Index]
         public double Latitude { get; set; }
     }
 
@@ -241,11 +245,12 @@ namespace R.Common.Models
        // [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; } 
 
-   
+       [Index]
         public string MlsNumber { get; set; }
         public string PublicRemarks { get; set; }
 
         public string PostalCode { get; set; }
+        [Index]
         public string RelativeDetailsURL { get; set; }
 
         public Building Building { get; set; }

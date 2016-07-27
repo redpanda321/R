@@ -1,16 +1,9 @@
-﻿using R.Models;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Threading.Tasks;
+using R.Models;
 
 namespace R.Migrations
 {
-    
-        public class Configuration : DbMigrationsConfiguration<ApplicationDbContext> 
-	{  	}
-
-
-    
+	public class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+	{
+	}
 }

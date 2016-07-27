@@ -14,9 +14,10 @@ namespace R.Models
     {
 
         public static string ConnectionString { get; set; } =
-          // "Server=(localdb)\\mssqllocaldb; AttachDBFilename=|DataDirectory|\\R.mdf;Trusted_Connection=True;MultipleActiveResultSets=true";
-            "Server=(localdb)\\mssqllocaldb;Database=R;Trusted_Connection=True;MultipleActiveResultSets=true";
-         // "Server=x.x.x.x;uid=xx;pwd=xxx;Database=R;MultipleActiveResultSets=true";
+          //"Server=(localdb)\\mssqllocaldb; AttachDBFilename=|DataDirectory|\\R.mdf;Trusted_Connection=True;MultipleActiveResultSets=true";
+          //  "Server=(localdb)\\mssqllocaldb;Database=R;Trusted_Connection=True;MultipleActiveResultSets=true";
+          // "Server=x.x.x.x;uid=xx;pwd=xxx;Database=R;MultipleActiveResultSets=true";
+          "Server=(localdb)\\mssqllocaldb;Database=RX;Trusted_Connection=True;MultipleActiveResultSets=true";
 
 
 
@@ -25,7 +26,7 @@ namespace R.Models
 
             Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
 
-          //  Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
 
         }
 
