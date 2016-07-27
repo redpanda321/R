@@ -1840,7 +1840,7 @@
       },
       "R.Common/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.5.2",
+        "framework": ".NETFramework,Version=v4.5.1",
         "dependencies": {
           "Newtonsoft.Json": "8.0.3",
           "RestSharp": "105.2.3",
@@ -1850,10 +1850,10 @@
           "WebSocketSharp": "1.0.3-rc10"
         },
         "compile": {
-          "net452/R.Common.dll": {}
+          "net451/R.Common.dll": {}
         },
         "runtime": {
-          "net452/R.Common.dll": {}
+          "net451/R.Common.dll": {}
         }
       }
     }

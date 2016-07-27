@@ -19,6 +19,7 @@ using RestSharp.Deserializers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+using R.Models;
 using R.Common.Models;
 
 
@@ -427,9 +428,9 @@ namespace R
 
             #region EF6
 
-            /*
+            
 
-            ApplicationDbContext db = new ApplicationDbContext();
+            ApplicationDbContext dbx = new ApplicationDbContext();
 
             foreach (var rr in results)
             {
@@ -452,7 +453,7 @@ namespace R
 
 
                     resultHistory.Price = Convert.ToSingle(price1);
-                    db.ResultHistories.Add(resultHistory);
+                    dbx.ResultHistories.Add(resultHistory);
 
                 }
                 catch (Exception e)
@@ -474,7 +475,7 @@ namespace R
                 {
 
 
-                    dbResult = db.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.AlternateURL)
+                    dbResult = dbx.Results.Include(r => r.Building).Include(r => r.Land).Include(r => r.AlternateURL)
                     .Include(r => r.Property).Include(r => r.Property.Address).Include(r => r.Property.Parking)
                     .Include(r => r.Property.Photo)
                     .Include(r => r.Individual)
@@ -501,7 +502,7 @@ namespace R
 
                 if (dbResult == null)
                 {
-                    db.Results.Add(rr);
+                    dbx.Results.Add(rr);
                 }
                 else
                 {
@@ -513,7 +514,7 @@ namespace R
                   {
 
 
-                      db.Entry(dbResult).CurrentValues.SetValues(rr);
+                      dbx.Entry(dbResult).CurrentValues.SetValues(rr);
 
                       var dbBuilding = dbResult.Building;
                       var dbLand = dbResult.Land;
@@ -527,11 +528,11 @@ namespace R
                           if (dbBuilding != null)
                           {
                               
-                              db.Entry(dbBuilding).Entity.BathroomTotal = rr.Building.BathroomTotal;
+                              dbx.Entry(dbBuilding).Entity.BathroomTotal = rr.Building.BathroomTotal;
                           }
                           else
                           {
-                              db.Buildings.Attach(rr.Building);
+                              dbx.Buildings.Attach(rr.Building);
                               dbResult.Building = rr.Building;
 
                           }
@@ -543,12 +544,12 @@ namespace R
                           {
 
                              
-                              db.Entry(dbLand).Entity.LandscapeFeatures = rr.Land.LandscapeFeatures;
+                              dbx.Entry(dbLand).Entity.LandscapeFeatures = rr.Land.LandscapeFeatures;
                           }
                           else
                           {
 
-                              db.Lands.Attach(rr.Land);
+                              dbx.Lands.Attach(rr.Land);
                               dbResult.Land = rr.Land;
 
                           }
@@ -561,13 +562,13 @@ namespace R
                           {
 
                              
-                              db.Entry(dbAlternateURL).Entity.BrochureLink = rr.AlternateURL.BrochureLink;
+                              dbx.Entry(dbAlternateURL).Entity.BrochureLink = rr.AlternateURL.BrochureLink;
                           }
                           else
                           {
                               try
                               {
-                                  db.AlternateURLs.Attach(rr.AlternateURL);
+                                  dbx.AlternateURLs.Attach(rr.AlternateURL);
                                   dbResult.AlternateURL = rr.AlternateURL;
                               }
                               catch { }
@@ -581,12 +582,12 @@ namespace R
                           {
 
                              
-                              db.Entry(dbProperty).Entity.Price = rr.Property.Price;
+                              dbx.Entry(dbProperty).Entity.Price = rr.Property.Price;
 
                           }
                           else
                           {
-                              db.Properties.Attach(rr.Property);
+                              dbx.Properties.Attach(rr.Property);
                               dbResult.Property = rr.Property;
                           }
                       }
@@ -598,12 +599,12 @@ namespace R
                           {
 
                              
-                              db.Entry(dbProAddress).Entity.AddressText = rr.Property.Address.AddressText;
+                              dbx.Entry(dbProAddress).Entity.AddressText = rr.Property.Address.AddressText;
                           }
                           else
                           {
 
-                              db.Address2s.Attach(rr.Property.Address);
+                              dbx.Address2s.Attach(rr.Property.Address);
                               dbResult.Property.Address = rr.Property.Address;
                           }
                       }
@@ -622,14 +623,14 @@ namespace R
 
 
                                      
-                                      db.Entry(dbProParking).Entity.Spaces = p.Spaces;
+                                      dbx.Entry(dbProParking).Entity.Spaces = p.Spaces;
                                   }
 
                               }
                               else
                               {
 
-                                  db.Parkings.Attach(p);
+                                  dbx.Parkings.Attach(p);
                                   dbProperty.Parking.Add(p);
 
 
@@ -648,13 +649,13 @@ namespace R
                                   {
 
                                      
-                                      db.Entry(dbPhoto).Entity.HighResPath = p.HighResPath;
+                                      dbx.Entry(dbPhoto).Entity.HighResPath = p.HighResPath;
                                   }
 
                               }
                               else
                               {
-                                  db.Photoes.Attach(p);
+                                  dbx.Photoes.Attach(p);
                                   dbProperty.Photo.Add(p);
                               }
                           }
@@ -669,7 +670,7 @@ namespace R
                               {
 
                                   
-                                  db.Entry(dbIndividual).Entity.LastName = i.LastName;
+                                  dbx.Entry(dbIndividual).Entity.LastName = i.LastName;
 
                                   if (i.Phones != null && i.Phones.Count > 0)
                                   {
@@ -682,12 +683,12 @@ namespace R
                                               foreach (var dbIndividualPhone in dbIndividual.Phones.ToList())
                                               {
                                                     
-                                                  db.Entry(dbIndividualPhone).Entity.PhoneNumber = p.PhoneNumber;
+                                                  dbx.Entry(dbIndividualPhone).Entity.PhoneNumber = p.PhoneNumber;
                                               }
                                           }
                                           else
                                           {
-                                              db.Phone2s.Attach(p);
+                                              dbx.Phone2s.Attach(p);
                                               dbIndividual.Phones.Add(p);
                                           }
 
@@ -706,12 +707,12 @@ namespace R
                                               {
 
                                                   
-                                                  db.Entry(dbIndividualEmail).Entity.ContactId = e.ContactId;
+                                                  dbx.Entry(dbIndividualEmail).Entity.ContactId = e.ContactId;
                                               }
                                           }
                                           else
                                           {
-                                              db.Email2s.Attach(e);
+                                              dbx.Email2s.Attach(e);
                                               dbIndividual.Emails.Add(e);
                                           }
 
@@ -728,12 +729,12 @@ namespace R
                                               {
 
                                                  
-                                                  db.Entry(dbIndividualWebsite).Entity.Website = w.Website;
+                                                  dbx.Entry(dbIndividualWebsite).Entity.Website = w.Website;
                                               }
                                           }
                                           else
                                           {
-                                              db.Website2s.Attach(w);
+                                              dbx.Website2s.Attach(w);
                                               dbIndividual.Websites.Add(w);
                                           }
 
@@ -749,7 +750,7 @@ namespace R
 
 
                                           
-                                          db.Entry(dbOrganization).Entity.Name = i.Name;
+                                          dbx.Entry(dbOrganization).Entity.Name = i.Name;
 
 
                                           var dbOrganizationAddress = dbIndividual.Organization.Address;
@@ -761,12 +762,12 @@ namespace R
 
 
                                                  
-                                                  db.Entry(dbOrganizationAddress).Entity.AddressText = i.Organization.Address.AddressText;
+                                                  dbx.Entry(dbOrganizationAddress).Entity.AddressText = i.Organization.Address.AddressText;
                                               }
                                               else
                                               {
 
-                                                  db.Addresses.Attach(i.Organization.Address);
+                                                  dbx.Addresses.Attach(i.Organization.Address);
                                                   dbOrganization.Address = i.Organization.Address;
 
                                               }
@@ -783,12 +784,12 @@ namespace R
                                                       {
 
                                                          
-                                                          db.Entry(dbOrganizationPhone).Entity.PhoneNumber = p.PhoneNumber;
+                                                          dbx.Entry(dbOrganizationPhone).Entity.PhoneNumber = p.PhoneNumber;
                                                       }
                                                   }
                                                   else
                                                   {
-                                                      db.Phones.Attach(p);
+                                                      dbx.Phones.Attach(p);
                                                       dbOrganization.Phones.Add(p);
                                                   }
                                               }
@@ -804,12 +805,12 @@ namespace R
                                                       {
 
                                                         
-                                                          db.Entry(dbOrganizationEmail).Entity.ContactId = e.ContactId;
+                                                          dbx.Entry(dbOrganizationEmail).Entity.ContactId = e.ContactId;
                                                       }
                                                   }
                                                   else
                                                   {
-                                                      db.Emails.Attach(e);
+                                                      dbx.Emails.Attach(e);
                                                       dbOrganization.Emails.Add(e);
                                                   }
                                               }
@@ -826,13 +827,13 @@ namespace R
                                                       {
 
                                                           
-                                                          db.Entry(dbOrganizationWebsite).Entity.Website = w.Website;
+                                                          dbx.Entry(dbOrganizationWebsite).Entity.Website = w.Website;
 
                                                       }
                                                   }
                                                   else
                                                   {
-                                                      db.webSite1s.Attach(w);
+                                                      dbx.webSite1s.Attach(w);
                                                       dbOrganization.Websites.Add(w);
                                                   }
                                               }
@@ -842,7 +843,7 @@ namespace R
                                       else
                                       {
 
-                                          db.Organizations.Attach(i.Organization);
+                                          dbx.Organizations.Attach(i.Organization);
                                           dbIndividual.Organization = i.Organization;
 
                                       }
@@ -852,7 +853,7 @@ namespace R
                               {
 
 
-                                  db.Individuals.Attach(i);
+                                  dbx.Individuals.Attach(i);
                                   dbResult.Individual.Add(i);
 
                               }
@@ -876,9 +877,9 @@ namespace R
             }
 
 
-            db.SaveChanges();
-
-           */
+            dbx.SaveChanges();
+            dbx.Dispose();
+           
             #endregion EF6
 
         }
