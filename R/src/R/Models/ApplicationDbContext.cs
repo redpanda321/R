@@ -8,17 +8,25 @@ using System.Threading.Tasks;
 using R.Common.Models;
 
 
+/*
+public Configuration()
+{
+
+    AutomaticMigrationsEnabled = true;
+}
+*/
+
 namespace R.Models
 {
   public  class ApplicationDbContext : DbContext
     {
 
         public static string ConnectionString { get; set; } =
-          //"Server=(localdb)\\mssqllocaldb; AttachDBFilename=|DataDirectory|\\R.mdf;Trusted_Connection=True;MultipleActiveResultSets=true";
-          //  "Server=(localdb)\\mssqllocaldb;Database=R;Trusted_Connection=True;MultipleActiveResultSets=true";
-          // "Server=x.x.x.x;uid=xx;pwd=xxx;Database=R;MultipleActiveResultSets=true";
-          "Server=(localdb)\\mssqllocaldb;Database=RX;Trusted_Connection=True;MultipleActiveResultSets=true";
-
+         //"Server=(localdb)\\mssqllocaldb; AttachDBFilename=|DataDirectory|\\R.mdf;Trusted_Connection=True;MultipleActiveResultSets=true";
+         //  "Server=(localdb)\\mssqllocaldb;Database=R;Trusted_Connection=True;MultipleActiveResultSets=true";
+         // "Server=x.x.x.x;uid=xx;pwd=xxx;Database=R;MultipleActiveResultSets=true";
+         // "Server=(localdb)\\mssqllocaldb;Database=RX;Trusted_Connection=True;MultipleActiveResultSets=true";
+         "Server=(localdb)\\mssqllocaldb;AttachDbFileName=C:\\data\\MyDB1.mdf;Trusted_Connection=True;MultipleActiveResultSets=true";
 
 
         public ApplicationDbContext() : base(ConnectionString)
@@ -31,7 +39,7 @@ namespace R.Models
         }
 
 
-
+        public DbSet<XResultHistory> XResultHistories { get; set; }
         public DbSet<ResultHistory> ResultHistories { get; set; }
 
 

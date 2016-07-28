@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using static MongoDB.Driver.WriteConcern;
 
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace R.Common.Models
 {
@@ -180,6 +181,7 @@ namespace R.Common.Models
     public class Property
     {
         public int Id { get; set; }
+       
         public string Price { get; set; }
         public string Type { get; set; }
         public Address2 Address { get; set; }
@@ -229,7 +231,7 @@ namespace R.Common.Models
         public DateTime ResultDateTime { get; set; }
 
         public string ResultId { get; set; }
-
+        [Index]
         public float Price { get; set; }
 
 
@@ -238,19 +240,34 @@ namespace R.Common.Models
     }
 
 
+    public class XResultHistory
+    {
+
+        public int Id { get; set; }
+        public DateTime ResultDateTime { get; set; }
+
+        public string ResultId { get; set; }
+      
+        public float Price { get; set; }
+
+
+
+    }
+
+
+
     public class Result
     {
 
        [BsonId(IdGenerator = typeof(StringObjectIdGenerator))]
        // [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; } 
-
-       [Index]
+        
         public string MlsNumber { get; set; }
         public string PublicRemarks { get; set; }
 
         public string PostalCode { get; set; }
-        [Index]
+      
         public string RelativeDetailsURL { get; set; }
 
         public Building Building { get; set; }

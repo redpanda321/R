@@ -30,6 +30,8 @@ using SharpRepository.MongoDbRepository;
 using MongoDB.Bson;
 using SharpRepository.Repository.Caching;
 using SharpRepository.Caching.Redis;
+using System.Data.Entity.Validation;
+using System.Data.Entity.Migrations;
 
 namespace R
 {
@@ -43,6 +45,8 @@ namespace R
             Configuration = builder.Build();
 
            ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
+
+          
 
             Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
@@ -318,9 +322,10 @@ namespace R
                 #region result history
                 try
                 {
-                    ResultHistory resultHistory = new ResultHistory();
-                    resultHistory.ResultDateTime = DateTime.Now;
-                    resultHistory.ResultId = rr.Id;
+                    XResultHistory resultHistory1 = new XResultHistory();
+                    resultHistory1.ResultDateTime = DateTime.Now;
+                    resultHistory1.ResultId = rr.Id;
+                    resultHistory1.Id = (int)DateTime.Now.Ticks;
 
                     string price1 = rr.Property.Price.Replace('$', ' ');
                     if (rr.Property.Price.IndexOf(',') >= 0)
@@ -330,18 +335,42 @@ namespace R
                     }
 
 
-                    resultHistory.Price = Convert.ToSingle(price1);
-                    dbx.ResultHistories.Add(resultHistory);
+
+                    resultHistory1.Price = Convert.ToSingle(price1);
+
+                    dbx.XResultHistories.Add(resultHistory1);
+                   // dbx.SaveChanges();
 
                 }
                 catch (Exception e)
                 {
-
                     System.Console.WriteLine(e.ToString());
 
 
                 }
+
+                /*
+                catch (DbEntityValidationException  e)
+                {
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                            eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                ve.PropertyName, ve.ErrorMessage);
+                        }
+                    }
+
+                    //System.Console.WriteLine(e.ToString());
+
+
+                }
+
+                */
                 #endregion result history
+
 
 
                 //Related Objects
@@ -751,10 +780,17 @@ namespace R
                     #endregion dbResult
 
                 }
+               // dbx.SaveChanges();
+
+
+
+               
+
 
             }
 
 
+            //dbx.SaveChangesAsync();
             dbx.SaveChanges();
             dbx.Dispose();
 
@@ -933,7 +969,7 @@ namespace R
                             if (results.results != null & results.results.Count > 0)
                                 SaveResults(results.results);
                         }
-                        catch { }
+                        catch (Exception e) { System.Console.WriteLine(e.ToString()); }
 
 
 
