@@ -1431,10 +1431,10 @@
       ]
     },
     "Microsoft.Extensions.DependencyModel/1.0.0-rc2-002702": {
-      "sha512": "Rh926JrApTMNtf1RvN71m7uLZQ+ZO5LgMz+jAjW5bI0PXC8PhA3jA9XeOWJMnBr1d9leSrG12IxJtoA7FsDMbw==",
+      "sha512": "xLEhTaEJw+3o49TNfPJ0I4ZBPe56kIIgHYmrQo6AibTfdaIV36TyvjznIGwRc53x87xKavq88PlV4tpL+jUiJQ==",
       "type": "package",
-      "path": "Microsoft.Extensions.DependencyModel/1.0.0-rc2-002702",
       "files": [
+        "Microsoft.Extensions.DependencyModel.1.0.0-rc2-002702.nupkg",
         "Microsoft.Extensions.DependencyModel.1.0.0-rc2-002702.nupkg.sha512",
         "Microsoft.Extensions.DependencyModel.nuspec",
         "lib/net451/Microsoft.Extensions.DependencyModel.dll",
@@ -1506,9 +1506,10 @@
       ]
     },
     "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc2-final": {
-      "sha512": "OjXClhPcccu39GNAs6SH6J2iC2R883Wco7LKvPqnjo1aKJQRp9vFVFVueutJFABncZO7BZINgZCwgLxVQN3yIg==",
+      "sha512": "fQSiG4u+IteQMY+D9XrQxCx96wq553EaXoANerD7mLu9+yFtgQXbiE53sSvJAldp7PfukDStz70WCanSOmPFxQ==",
       "type": "package",
       "files": [
+        "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc2-final.nupkg",
         "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc2-final.nupkg.sha512",
         "Microsoft.Extensions.PlatformAbstractions.nuspec",
         "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll",
@@ -1532,7 +1533,6 @@
     "Migrator.EF6.Tools/1.0.0-rc2-3": {
       "sha512": "SNero7zfbLlmwwiVM2tUH3fojPyTjNh2lyqyWjqwk4ipvklB0Hvmy8r13Gk/AypbbHn7NCkxDugUhY0ZdEzhYw==",
       "type": "package",
-      "path": "Migrator.EF6.Tools/1.0.0-rc2-3",
       "files": [
         "Migrator.EF6.Tools.1.0.0-rc2-3.nupkg.sha512",
         "Migrator.EF6.Tools.nuspec",
