@@ -4952,20 +4952,6 @@
   },
   "tools": {
     ".NETCoreApp,Version=v1.0": {
-      "BundlerMinifier.Core/2.0.238": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.App": "1.0.0",
-          "NUglify": "1.5.0",
-          "Newtonsoft.Json": "9.0.1"
-        },
-        "compile": {
-          "lib/netcoreapp1.0/dotnet-bundle.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp1.0/dotnet-bundle.dll": {}
-        }
-      },
       "Microsoft.AspNetCore.Razor.Tools/1.0.0-preview2-final": {
         "type": "package",
         "dependencies": {
@@ -5005,7 +4991,6 @@
   },
   "projectFileToolGroups": {
     ".NETCoreApp,Version=v1.0": [
-      "BundlerMinifier.Core >= 2.0.238",
       "Microsoft.AspNetCore.Razor.Tools >= 1.0.0-preview2-final",
       "Microsoft.AspNetCore.Server.IISIntegration.Tools >= 1.0.0-preview2-final"
     ]

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B357BAC7-529E-4D81-A0D2-71041B19C8DE}</ProjectGuid>
+    <ProjectGuid>{3C114EE4-2F78-4BDE-9AF3-EB38AE809740}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>WebSocketSharp</RootNamespace>
     <AssemblyName>websocket-sharp</AssemblyName>
@@ -147,9 +147,5 @@
     <Compile Include="Server\WebSocketServiceHost`1.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="Server\" />
-    <Folder Include="Net\" />
-    <Folder Include="Net\WebSockets\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

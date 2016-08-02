@@ -894,7 +894,7 @@ namespace R
             repo.Dispose();
             repo1.Dispose();
 
-
+            //creare index
             var server = new MongoClient(Configuration["Data:MongoDbConnection:ConnectionString"]).GetServer();
             var db = server.GetDatabase("Result");
             var dbResults = db.GetCollection<Result>("Result");
@@ -918,6 +918,9 @@ namespace R
             indexKeys = new IndexKeysDocument(keys);
             
             dbResultHistory.CreateIndex(indexKeys, indexOptions);
+
+            repo.Dispose();
+            repo1.Dispose();
 
             #endregion
 
