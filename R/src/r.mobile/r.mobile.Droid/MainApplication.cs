@@ -22,8 +22,7 @@ namespace r.mobile.Droid
             RegisterActivityLifecycleCallbacks(this);
             //A great place to initialize Xamarin.Insights and Dependency Services!
             
-            //Websocket
-            Websockets.Droid.WebsocketConnection.Link();
+         
 
         }
 
