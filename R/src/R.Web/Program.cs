@@ -22,7 +22,7 @@ namespace R.Web
             IConfiguration configuration = builder.Build();
 
             //WebSocket Server
-            var wssv = new WebSocketServer(configuration["ConnectionStrings:MongoDbConnection:ConnectionString"]);
+            var wssv = new WebSocketServer(configuration["ConnectionStrings:WebSocketServer:ConnectionString"]);
             wssv.AddWebSocketService<ResultBehavior>("/ResultBehavior");
             wssv.Start();
 
