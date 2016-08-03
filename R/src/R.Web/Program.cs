@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 
 using WebSocketSharp.Server;
 using R.Web.Services;
+using Microsoft.Extensions.Configuration;
 
 namespace R.Web
 {
@@ -15,8 +16,13 @@ namespace R.Web
         public static void Main(string[] args)
         {
 
+
+            //Configuration
+            var builder = new ConfigurationBuilder().SetBasePath(System.IO.Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+            IConfiguration configuration = builder.Build();
+
             //WebSocket Server
-            var wssv = new WebSocketServer("ws://192.168.0.13:51151");
+            var wssv = new WebSocketServer(configuration["ConnectionStrings:MongoDbConnection:ConnectionString"]);
             wssv.AddWebSocketService<ResultBehavior>("/ResultBehavior");
             wssv.Start();
 
