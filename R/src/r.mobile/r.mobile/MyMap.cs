@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TK.CustomMap;
 
-namespace r.mobile
+namespace R.Mobile
 {
     public class MyMap : TKCustomMap
     {

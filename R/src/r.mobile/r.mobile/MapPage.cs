@@ -13,11 +13,11 @@ using Plugin.Geolocator.Abstractions;
 using TK.CustomMap;
 
 using Newtonsoft.Json;
-using r.mobile.Models;
+using R.Mobile.Models;
 
 using WebSocketSharp;
 
-namespace r.mobile
+namespace R.Mobile
 {
     class MapPage:ContentPage
     {
@@ -75,7 +75,7 @@ namespace r.mobile
             
             //WebSocket
            
-            m_WebSocketResult = new WebSocketSharp.WebSocket("ws://192.168.1.121:51151/ResultBehavior");
+            m_WebSocketResult = new WebSocketSharp.WebSocket("ws://192.168.0.17:51151/ResultBehavior");
             m_WebSocketResult.OnMessage += M_WebSocketResult_OnMessage;
 
 
@@ -98,7 +98,7 @@ namespace r.mobile
 
             //WebSocket
 
-            r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
+            R.Mobile.Models.Position jPosition = R.Mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
 
             m_WebSocketResult.Connect();
             m_WebSocketResult.Send(JsonConvert.SerializeObject(jPosition));
@@ -122,7 +122,7 @@ namespace r.mobile
 
             //WebSocket
 
-            r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
+            R.Mobile.Models.Position jPosition = R.Mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
 
             m_WebSocketResult.Connect();
             m_WebSocketResult.Send(JsonConvert.SerializeObject(jPosition));
@@ -149,7 +149,7 @@ namespace r.mobile
 
             //WebSocket
             
-            r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
+            R.Mobile.Models.Position jPosition = R.Mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
 
             m_WebSocketResult.Connect();
             m_WebSocketResult.Send(JsonConvert.SerializeObject(jPosition));
@@ -235,7 +235,7 @@ namespace r.mobile
 
             //WebSocket
 
-            r.mobile.Models.Position jPosition = r.mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
+            R.Mobile.Models.Position jPosition = R.Mobile.Util.Tool.GetPosition(xPosition.Latitude, xPosition.Longitude, 3);
             m_WebSocketResult.Send(JsonConvert.SerializeObject(jPosition));
 
         }
