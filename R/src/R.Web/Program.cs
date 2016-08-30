@@ -34,8 +34,8 @@ namespace R.Web
             }
 
             //Console
-             Console.WriteLine("\nPress Enter key to stop the server...");
-             Console.ReadLine();
+            // Console.WriteLine("\nPress Enter key to stop the server...");
+            // Console.ReadLine();
 
             // MVC
            var host = new WebHostBuilder()

@@ -1,5 +1,8 @@
 ﻿
 
+create index i1 on xresulthistories (price,resultdatetime);
+
+
 select count(*) from results;
 select count(*) from resulthistories;
 
