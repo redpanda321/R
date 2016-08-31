@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace r.mobile.Util
+namespace R.Mobile.Util
 {
  public class Tool
     {
@@ -15,9 +15,9 @@ namespace r.mobile.Util
         /// <param name="longitude"></param>
         /// <param name="distance"></param>
         /// <returns></returns>
-        public static r.mobile.Models.Position GetPosition(double latitude, double longitude, double distance)
+        public static R.Mobile.Models.Position GetPosition(double latitude, double longitude, double distance)
         {
-            var position = new r.mobile.Models.Position();
+            var position = new R.Mobile.Models.Position();
 
 
             double longitudeMin = ( longitude - distance/(111 * Math.Cos(latitude)) ) ;

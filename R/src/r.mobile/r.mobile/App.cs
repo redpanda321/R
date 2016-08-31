@@ -1,31 +1,41 @@
-﻿using Plugin.Geolocator;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
 
-namespace r.mobile
+namespace R.Mobile
 {
     public class App : Application
     {
 
-        public TabbedPage m_Tabs; 
-
+        public TabbedPage m_Tabs;
         public App()
         {
 
-            
-          
+            // The root page of your application
             m_Tabs = new TabbedPage();
-           
             m_Tabs.Children.Add(new MapPage());
-            //main page
             MainPage = m_Tabs;
 
 
 
+            /*
+            MainPage = new ContentPage
+            {
+                Content = new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.Center,
+                    Children = {
+                        new Label {
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            Text = "Welcome to Xamarin Forms!"
+                        }
+                    }
+                }
+            };
+            */
         }
 
         protected override void OnStart()

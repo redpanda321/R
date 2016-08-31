@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 
 
-namespace r.mobile.Models
+namespace R.Mobile.Models
 {
     
     public class ErrorCode

@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace r.mobile.Windows
+namespace R.Mobile.Windows
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace r.mobile.Windows
         {
             this.InitializeComponent();
 
-            LoadApplication(new r.mobile.App());
+            LoadApplication(new R.Mobile.App());
         }
     }
 }
