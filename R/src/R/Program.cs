@@ -22,7 +22,6 @@ using Newtonsoft.Json.Linq;
 using R.Models;
 using R.Common.Models;
 
-
 using Microsoft.Extensions.Configuration;
 
 using MongoDB.Driver;
@@ -44,10 +43,8 @@ namespace R
 
             Configuration = builder.Build();
 
-           ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
-
-          
-
+            ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
+            
             Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
 
@@ -758,11 +755,15 @@ namespace R
                                 }
                                 else
                                 {
+                                    try
+                                    {
 
-
-                                    dbx.Individuals.Attach(i);
-                                    dbResult.Individual.Add(i);
-
+                                        dbx.Individuals.Attach(i);
+                                        dbResult.Individual.Add(i);
+                                    } catch (Exception e)
+                                    {
+                                        System.Console.WriteLine(e.ToString());
+                                    }
                                 }
 
 

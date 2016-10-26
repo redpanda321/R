@@ -1431,10 +1431,10 @@
       ]
     },
     "Microsoft.Extensions.DependencyModel/1.0.0-rc2-002702": {
-      "sha512": "xLEhTaEJw+3o49TNfPJ0I4ZBPe56kIIgHYmrQo6AibTfdaIV36TyvjznIGwRc53x87xKavq88PlV4tpL+jUiJQ==",
+      "sha512": "Rh926JrApTMNtf1RvN71m7uLZQ+ZO5LgMz+jAjW5bI0PXC8PhA3jA9XeOWJMnBr1d9leSrG12IxJtoA7FsDMbw==",
       "type": "package",
+      "path": "Microsoft.Extensions.DependencyModel/1.0.0-rc2-002702",
       "files": [
-        "Microsoft.Extensions.DependencyModel.1.0.0-rc2-002702.nupkg",
         "Microsoft.Extensions.DependencyModel.1.0.0-rc2-002702.nupkg.sha512",
         "Microsoft.Extensions.DependencyModel.nuspec",
         "lib/net451/Microsoft.Extensions.DependencyModel.dll",
@@ -1506,10 +1506,10 @@
       ]
     },
     "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc2-final": {
-      "sha512": "fQSiG4u+IteQMY+D9XrQxCx96wq553EaXoANerD7mLu9+yFtgQXbiE53sSvJAldp7PfukDStz70WCanSOmPFxQ==",
+      "sha512": "OjXClhPcccu39GNAs6SH6J2iC2R883Wco7LKvPqnjo1aKJQRp9vFVFVueutJFABncZO7BZINgZCwgLxVQN3yIg==",
       "type": "package",
+      "path": "Microsoft.Extensions.PlatformAbstractions/1.0.0-rc2-final",
       "files": [
-        "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc2-final.nupkg",
         "Microsoft.Extensions.PlatformAbstractions.1.0.0-rc2-final.nupkg.sha512",
         "Microsoft.Extensions.PlatformAbstractions.nuspec",
         "lib/net451/Microsoft.Extensions.PlatformAbstractions.dll",
