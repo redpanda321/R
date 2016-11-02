@@ -1,25 +1,16 @@
 {
   "name": "jquery",
-  "main": "dist/jquery.js",
-  "license": "MIT",
-  "ignore": [
-    "package.json"
-  ],
-  "keywords": [
-    "jquery",
-    "javascript",
-    "browser",
-    "library"
-  ],
+  "version": "1.6.4",
+  "main": "./jquery.js",
+  "dependencies": {},
   "homepage": "https://github.com/jquery/jquery-dist",
-  "version": "2.2.0",
-  "_release": "2.2.0",
+  "_release": "1.6.4",
   "_resolution": {
     "type": "version",
-    "tag": "2.2.0",
-    "commit": "6fc01e29bdad0964f62ef56d01297039cdcadbe5"
+    "tag": "1.6.4",
+    "commit": "2888caeba9ea9bbd3f9a5c97c2af6e89319a6329"
   },
   "_source": "https://github.com/jquery/jquery-dist.git",
-  "_target": "2.2.0",
+  "_target": "1.6.4",
   "_originalSource": "jquery"
 }
