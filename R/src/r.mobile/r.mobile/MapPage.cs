@@ -75,7 +75,7 @@ namespace R.Mobile
             
             //WebSocket
            
-            m_WebSocketResult = new WebSocketSharp.WebSocket("ws://192.168.0.17:51151/ResultBehavior");
+            m_WebSocketResult = new WebSocketSharp.WebSocket("ws://192.168.0.121:51151/ResultBehavior");
             m_WebSocketResult.OnMessage += M_WebSocketResult_OnMessage;
 
 
