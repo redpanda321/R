@@ -324,7 +324,7 @@ namespace R
                     resultHistory1.ResultId = rr.Id;
                     resultHistory1.Id = (int)DateTime.Now.Ticks;
 
-                    string price1 = rr.Property.Price.Replace('$', ' ');
+                    string price1 = rr.Property.Price.Replace('$', ' ').Replace(" +  GST +  QST","");
                     if (rr.Property.Price.IndexOf(',') >= 0)
                     {
                         string[] price = price1.Split(',');
@@ -823,7 +823,7 @@ namespace R
 
                         //Result
 
-                        string price1 = r.Property.Price.Replace('$', ' ');
+                        string price1 = r.Property.Price.Replace('$', ' ').Replace(" +  GST +  QST", "");
                         if (r.Property.Price.IndexOf(',') >= 0)
                         {
                             string[] price = price1.Split(',');
