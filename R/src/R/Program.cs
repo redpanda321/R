@@ -38,15 +38,14 @@ namespace R
     {
         static Program()
         {
-
             var builder = new ConfigurationBuilder().SetBasePath(System.IO.Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).AddEnvironmentVariables();
 
             Configuration = builder.Build();
 
-            ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
-            
-            Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
+           ApplicationDbContext.ConnectionString = Configuration["Data:DefaultConnection:ConnectionString"];
+
+           Database.SetInitializer<ApplicationDbContext>(new CreateDatabaseIfNotExists<ApplicationDbContext>());
+           Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, R.Migrations.Configuration>());
 
         }
         public static IConfigurationRoot Configuration { get; set; }
@@ -300,6 +299,10 @@ namespace R
             #endregion EF6
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="results"></param>
         public static void SaveResults(List<Result> results)
         {
 
@@ -313,7 +316,6 @@ namespace R
 
             foreach (var rr in results)
             {
-
 
                 //Result history
                 #region result history
@@ -367,7 +369,6 @@ namespace R
 
                 */
                 #endregion result history
-
 
 
                 //Related Objects
@@ -755,15 +756,11 @@ namespace R
                                 }
                                 else
                                 {
-                                    try
-                                    {
 
-                                        dbx.Individuals.Attach(i);
-                                        dbResult.Individual.Add(i);
-                                    } catch (Exception e)
-                                    {
-                                        System.Console.WriteLine(e.ToString());
-                                    }
+
+                                    dbx.Individuals.Attach(i);
+                                    dbResult.Individual.Add(i);
+
                                 }
 
 
@@ -928,7 +925,17 @@ namespace R
 
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="longitudeMin"></param>
+        /// <param name="longitudeMax"></param>
+        /// <param name="latitudeMin"></param>
+        /// <param name="latitudeMax"></param>
+        /// <param name="longitude"></param>
+        /// <param name="latitude"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
         public static void ProcessThing(string longitudeMin, string longitudeMax, string latitudeMin, string latitudeMax, string longitude, string latitude, int from, int to)
         {
 
@@ -942,9 +949,7 @@ namespace R
 
                     for (int i = from; i <= to; i++)
                     {
-
-
-
+                       
                         //Sleep 1~5 s
                        // Random random = new Random();
                        // var span = random.Next(1000, 5000);
@@ -986,7 +991,6 @@ namespace R
 
 
         }
-        
         /// <summary>
         /// Craweler
         /// </summary>

@@ -26,7 +26,7 @@ namespace R.Models
          //  "Server=(localdb)\\mssqllocaldb;Database=R;Trusted_Connection=True;MultipleActiveResultSets=true";
          // "Server=x.x.x.x;uid=xx;pwd=xxx;Database=R;MultipleActiveResultSets=true";
          // "Server=(localdb)\\mssqllocaldb;Database=RX;Trusted_Connection=True;MultipleActiveResultSets=true";
-         "Server=(localdb)\\mssqllocaldb;AttachDbFileName=C:\\data\\MyDB1.mdf;Trusted_Connection=True;MultipleActiveResultSets=true";
+         "Server=localhost\\SQLEXPRESS;AttachDbFileName=C:\\data\\MyDB1.mdf;Trusted_Connection=True;MultipleActiveResultSets=true";
 
 
         public ApplicationDbContext() : base(ConnectionString)
